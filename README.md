@@ -6,6 +6,6 @@ Norepted is a youtube video embedder, it basically embeds a video, like how your
 2. <WORK IN PROGRESS> Run it with replit with this link: <link>
 3. <WORK IN PROGRESS> Run it with codesandbox with this link: <link>
 # How you use it
-1. Enter your youtube link in the orange text box.
-<br>2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard.
-<br>3. Now the video embeds down below, it may take a few seconds depending on how fast your computer is.
+1. Enter your youtube link in the orange text box. <br>
+2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
+3. Now the video embeds down below, it may take a few seconds depending on how fast your computer is.
