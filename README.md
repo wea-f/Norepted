@@ -10,5 +10,5 @@ Norepted is a youtube video embedder, it basically embeds a video, like how your
 2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
 3. Now the video embeds down below, it may take a few seconds depending on how fast your computer is.
 # How does it work
-  Norepted is a youtube video embedder, it basically embeds a video, like how your teacher embeds a video on Google Slides for class.
-The code simply takes the video id from the url and attaches to youtube-nocookie.com, the embeded youtube video link. That link then goes into a html video element and your video appears like magic!
+  Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
+The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embeded youtube video link. That link then goes into a html video element and your video appears just like that!
