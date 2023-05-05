@@ -18,6 +18,6 @@ Norepted is a youtube video embedder, it basically embeds a video, like how your
 4. After each video, a wall of 3x3 videos will appear. You can copy the links of these videos and paste it in the orange box to restart the cycle.
 # How does it work
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
-The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embeded youtube video link. That link then goes into a html video element and your video appears just like that!
+The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embeded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
 **If you need help or want to give feedback, my discord is: weaf#8525**
   
