@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+
+html {
+  font-family:"Fredoka", "sans-serif";
+  background-color:#1E88E5;
+  color: white;
+}
+
+button {
+  font-family: "Fredoka", "sans-serif";
+  background-color:#64DD17;
+  color:white;
+  border-color:white;
+  display:block;
+  margin: 0 auto;
+  font-size: 18px;
+  
+}
+
+#copy {
+  background-color:#512DA8;
+  
+}
+
+#title {
+  color:#E53935;
+}
+
+#how_it_works {
+  background-color:#00E5FF;
+  font-size:15px;
+  border-color:#1E88E5
+}
+
+#more_info {
+  display:hidden;
+
+}
+input {
+  font-family: "Fredoka", "sans-serif";
+  background-color:#F57F17;
+  color:white;
+  border-color:white;
+  display:block;
+  margin:0 auto;
+  font-size:20px;
+}
+
+h1, h3, h4, h5 {
+  text-align:center;
+}
+
+iframe {
+  display:block;
+  margin:0 auto;
+}
+    </style>
+  </head>
+<body>
+<h1 id="title"> Norepted <h1> 
+ <h3> Paste your youtube link in the orange box. Then press the LAUNCH button. </h3>
+  <h4> If you want, press the "COPY" button to copy a link, open it in a new tab.</h4>
+    <p id="more_info" display="hidden"> Norepted is a youtube video embedder, it <br> basically embeds a video, like how your <br> teacher embeds a video on Google Slides <br> for class. <br>    The code simply takes the video id from the <br> url and attaches to youtube-nocookie.com, <br> the embeded youtube video link. That <br> link then goes into a html video element <br> and your video appears like magic!</p>
+  
+ <button id="how_it_works"onclick="how_it_works()"> For More Information </button>
+  <br>
+  <input id="link"><br>
+  <button onclick="fix_link()"> LAUNCH </button>
+  <br>
+  <button id="copy" onclick="copy_link()"> COPY </button>
+
+  <h4> Tip: Press "Enter" on your keyboard to launch the video faster. </h4>
+  <h3> ↓ The video will show down here ↓</h3>
+  <h5> (It might take a few seconds) </h5>
+  <iframe id="video" width="650" height="425" frameborder="0" src=" " allowfullscreen> </iframe>
+  <h5 id="socials"> Made by the user WG563 on codepen.io, aka weaf</h5>
+  
+  <a href="https://github.com/wea-f/Norepted/blob/91c4700c3306fdda13d452ea0aaef56fe557da6d/Terms%20of%20Conditions"> Terms </a>
+
+  </body>
+<script>
+document.getElementById("more_info").style.display = "none"
+function fix_link() {
+  var link = document.getElementById("link").value
+  
+  var link2 = link.replace(/ /gi, "")
+  var video_id = link.replace("https://www.youtube.com/watch?v=", "")
+  video_id = video_id.replace("https://youtu.be/", "")
+  //video_id = video_id.replace("&feature=emb_rel_pause", "")
+  video_id = video_id.replace("&embeds_euri=https%3A%2F%2Fcdpn.io%2F&feature=emb_rel_end", "")
+  var final_link = "https://www.youtube-nocookie.com/embed/" + video_id
+  final_link = final_link.replace("&feature=emb_rel_end","")
+  document.getElementById("video")
+.src = final_link
+}
+
+document.body.onkeyup = function(c) {
+  if (c.key == "Enter" ||
+      c.code == "Enter" ||      
+      c.keyCode == 13      
+  ) {
+    fix_link()
+  }
+}
+
+function copy_link() {
+    var link = document.getElementById("link").value
+    var link2 = link.replace(/ /gi, "")
+    var video_id = link.replace("https://www.youtube.com/watch?v=", "")
+    video_id = video_id.replace("https://youtu.be/", "")
+    video_id = video_id.replace("&feature=emb_rel_pause", "")
+    video_id = video_id.replace("&embeds_euri=https%3A%2F%2Fcdpn.io%2F&feature=emb_rel_end","")
+    var final_link = "https://www.youtube-nocookie.com/embed/" + video_id
+    navigator.clipboard.writeText(final_link)
+}
+
+function how_it_works() {
+  // t = document.getElementById("more_info")
+  // if (t.style.display == "none") {
+  //   t.style.display = "block"
+  //   document.getElementById("how_it_works").innerHTML = "Hide"
+  // } 
+  // else {
+  //   t.style.display = "none"
+  //   document.getElementById("how_it_works").innerHTML = "How it works"
+    window.open("https://github.com/wea-f/Norepted/blob/main/README.md")
+}
+</script>
+</html>
