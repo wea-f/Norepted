@@ -7,10 +7,11 @@ Norepted is a youtube video embedder, it basically embeds a video, like how your
 - Norepted would appear in your history, but not anything youtube related (since the video is IN the site), so anyone who would look at your history wouldn't be sus about it (well unless they know what Norepted is)!
 - If you want to save a video, you can press the "Copy" button and it will copy the link. Paste this link on another tab and bookmark it. Notice the link will take you to the embedded video that completely fills the whole screen.
 # How you access it
-1. Run it with codepen with this link: https://codepen.io/weaF_z/full/RwJVywE
-2. <WORK IN PROGRESS> Run it with replit with this link: Coming soon!<link>
-3. <WORK IN PROGRESS> Run it with codesandbox with this link: Coming Soon!<link>
-4. Run it with Google Sites with this link: https://sites.google.com/ccs.k12.in.us/norepted?usp=sharing
+1. Run it with codepen: https://codepen.io/weaF_z/full/RwJVywE
+2. <WORK IN PROGRESS> Run it with replit: Coming soon!<link>
+3. <WORK IN PROGRESS> Run it with codesandbox: Coming Soon!<link>
+4. Run it with Google Sites: https://sites.google.com/ccs.k12.in.us/norepted?usp=sharing
+5. Run it with github: http://wea-f.github.io/Norepted
 # How you use it
 1. Enter your youtube link in the orange text box. <br>
 2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
