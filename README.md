@@ -9,7 +9,7 @@ Norepted is a youtube video embedder/blocker/player.
 # How you access it
 1. Run it with codepen: https://codepen.io/weaF_z/full/RwJVywE
 2. Run it with replit: https://youtube-unblocker-norepted.wea-f.repl.co
-3. <WORK IN PROGRESS> Run it with codesandbox: Coming Soon!<link>
+3. <WORK IN PROGRESS> Run it with codesandbox: https://gzhhqm.csb.app
 4. Run it with Google Sites: https://sites.google.com/ccs.k12.in.us/norepted?usp=sharing
 5. Run it with github: http://wea-f.github.io/Norepted
 # How you use it
