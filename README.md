@@ -13,6 +13,7 @@ Norepted is a youtube video embedder/blocker/player.
 3. <WORK IN PROGRESS> Run it with codesandbox: https://gzhhqm.csb.app
 4. Run it with Google Sites: https://sites.google.com/ccs.k12.in.us/norepted?usp=sharing
 5. Run it with github: http://wea-f.github.io/Norepted
+6. Run it with Playcode: https://1594204.playcode.io
 # How you use it
 1. Paste your youtube link in the orange text box. (For example https://www.youtube.com/watch?v=dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)<br>
 2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
