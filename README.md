@@ -7,7 +7,7 @@ Norepted is a youtube video embedder/blocker/player.
 - No youtube-related things would be in your history, only the site, Norepted.
 - You can save a video by pressing the "Copy" button and it will copy the link. Paste this link on another tab and bookmark it. Notice the link will take you to the embedded video that completely fills the whole screen.
 # How you access it
-**If none of these 5 links work for you, please tell me**
+**If none of these links work for you, please tell me**
 1. Run it with codepen: https://codepen.io/weaF_z/full/RwJVywE
 2. Run it with replit: https://youtube-unblocker-norepted.wea-f.repl.co
 3. <WORK IN PROGRESS> Run it with codesandbox: https://gzhhqm.csb.app
