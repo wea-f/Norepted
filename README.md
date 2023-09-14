@@ -4,7 +4,7 @@ Norepted is a youtube video embedder/blocker/player.
 # Features
 - Norepted will prevent the annoying video ads however the pop-up ads will still appear (You could just close it).
 - Norepted will also play restricted videos by your school organization.
-- No youtube-related things would be in your history, only the site, Norepted.
+- No youtube-related things would be in your history, only the site, Norepted will be.
 - You can save a video by pressing the "Copy" button and it will copy the link. Paste this link on another tab and bookmark it. Notice the link will take you to the embedded video that completely fills the whole screen.
 # How you access it
 **If none of these links work for you, please tell me**
