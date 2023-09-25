@@ -8,12 +8,13 @@ Norepted is a youtube video embedder/blocker/player.
 - You can save a video by pressing the "Copy" button and it will copy the link. Paste this link on another tab and bookmark it. Notice the link will take you to the embedded video that completely fills the whole screen.
 # How you access it
 **If none of these links work for you, please tell me**
-1. Run it with codepen: https://codepen.io/weaF_z/full/RwJVywE
-2. Run it with replit: https://youtube-unblocker-norepted.wea-f.repl.co
-3. <WORK IN PROGRESS> Run it with codesandbox: https://gzhhqm.csb.app
-4. Run it with Google Sites: https://sites.google.com/ccs.k12.in.us/norepted?usp=sharing
-5. Run it with github: http://wea-f.github.io/Norepted
-6. Run it with Playcode: https://1594204.playcode.io (press "SKIP INTRO" to access Norepted)
+1. Run it with [CodePen](https://codepen.io/weaF_z/full/RwJVywE)
+2. Run it with [Replit](https://youtube-unblocker-norepted.wea-f.repl.co)
+3. Run it with [Codesandbox](https://gzhhqm.csb.app)
+4. Run it with [Google sites](https://sites.google.com/ccs.k12.in.us/norepted?usp=sharing)
+5. Run it with [Github](http://wea-f.github.io/Norepted)
+6. Run it with [Playcode](https://1594204.playcode.io) (press "SKIP INTRO" to access Norepted)
+7. Run it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal)
 # How you use it
 1. Paste your youtube link in the orange text box. (For example https://www.youtube.com/watch?v=dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)<br>
 2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
@@ -23,5 +24,4 @@ Norepted is a youtube video embedder/blocker/player.
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
 The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embeded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
 **Please help improve this site by providng feedback and reporting any problems. If I'm not responding to your issue, feel free to message me on discord: weaf8525**
-
   
