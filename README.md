@@ -11,7 +11,7 @@ Norepted is a youtube video embedder/blocker/player.
 1. Run it with [Codesandbox (recommended)](https://gzhhqm.csb.app)
 2. Run it with [Replit](https://youtube-unblocker-norepted.wea-f.repl.co)
 3. Run it with [CodePen](https://codepen.io/weaF_z/full/RwJVywE)
-4. Run it with [Google sites](Coming Soon)
+4. Run it with Google sites (Coming Soon)
 5. Run it with [Github](http://wea-f.github.io/Norepted)
 6. Run it with [Playcode](https://1594204.playcode.io) (press "SKIP INTRO" to access Norepted)
 7. Run it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal)
