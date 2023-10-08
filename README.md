@@ -14,7 +14,7 @@ Norepted is a youtube video embedder/blocker/player.
 3. Access it with [Github](http://wea-f.github.io/Norepted)
 4. Access it with [Replit](https://youtube-unblocker-norepted.wea-f.repl.co)
 5. Access it with Google sites (Coming Soon)
-7. Access it with [Playcode](https://1594204.playcode.io) (press "SKIP INTRO" to access Norepted)
+7. Access it with [Playcode]([https://norepted.playcode.io/]) (press "SKIP INTRO" to access Norepted)
 8. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal)
 # How you use it
 1. Paste your youtube link in the orange text box. (For example https://www.youtube.com/watch?v=dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)<br>
