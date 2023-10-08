@@ -33,9 +33,16 @@ button {
 #how_it_works {
   background-color:#00E5FF;
   font-size:15px;
-  border-color:#1E88E5
+  border-color:#1E88E5;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+    
 }
 
+#viewcounter {
+  text-align: center;
+}
 #more_info {
   display:hidden;
 
@@ -70,7 +77,12 @@ iframe {
   </head>
 <body>
 <h1 id="title"> Norepted <h1> 
- <h3> Paste your youtube link in the orange box. Then press the LAUNCH button. </h3>
+<h3> Paste your youtube link in the orange box. Then press the LAUNCH button. <br> <br>To exit the site, press "0," doing this way will remove Norepted from your history. <br> <br>To hide the tab, press "1."</h3></h3>
+  <div id="viewcounter">
+ <a href='https://www.free-counters.org/'>https://www.free-Counters.org</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=a2eb040e0ecc8e07cf6e5a6c6ce6268a0d82ebeb'></script>
+<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1085823/t/1"></script>
+  </div>
+  
   <h4 id="copy_tip"> If you want, press the "COPY" button to copy a link, open it in a new tab.</h4>
     <h4 id="tip"> Tip: Press "Enter" on your keyboard to launch the video faster. </h4>
   <br>
@@ -82,10 +94,13 @@ iframe {
   <h5> (It might take a few seconds) </h5>
   <iframe id="video" width="650" height="425" frameborder="0" src=" " allowfullscreen> </iframe>
   <br>
-     <button id="how_it_works"onclick="how_it_works()"> More Information / Terms </button>
+     <button id="how_it_works" 
+onclick="how_it_works()"> More Information / Terms </button>
   
-    <h5 id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> </h5>
+  <h5 id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> </h5>
 
+    
+ 
 
     
    </body>
@@ -111,6 +126,17 @@ document.body.onkeyup = function(c) {
   ) {
     fix_link()
     
+  }
+  else if (c.key == "0") {
+    c.preventDefault();
+		c.stopPropagation();
+    window.location.replace("https://www.google.com/webhp?igu=1");
+  }
+  else if (c.key == "1") {
+    c.preventDefault();
+		c.stopPropagation();
+    document.title = "about:blank";
+    // document.querySelector("link[rel*='icon']").href = "https://rawcdn.githack.com/lbannana/lbannana.github.io/master/img/google.ico";
   }
 }
 
