@@ -1,11 +1,10 @@
 # Norepted
-Youtube Video Embedder
-Norepted is a youtube video embedder/blocker/player.
+Norepted is a youtube video embedder/unblocker/player that has many features including: history hiding, **zero ads**, and more! 
 # Features
 - Norepted will **completely remove ads**.
 - Norepted will also **play restricted videos** by your school organization.
 - Press "0" to exit from Norepted to **completely remove it from your history.**
-- Press "1" to disguise your tab to Google Drive instead of Norepted, refresh to undisguse.
+- Press "1" to disguise your tab to Google Drive instead of Norepted, refresh to undisguise.
 - You can save a video by pressing the "Copy" button and it will copy the link. Paste this link on another tab and bookmark it. Notice the link will take you to the embedded video that completely fills the whole screen.
 # How you access it
 **If none of these links work for you, please tell me**
