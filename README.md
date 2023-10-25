@@ -27,4 +27,5 @@ If you want to hide Norepted from other people seeing it on your screen, press "
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
 The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embeded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
 **Please help improve this site by providng feedback and reporting any problems. If I'm not responding to your issue, feel free to message me on discord: weaf8525**
+**I am not responsible in anyway if you get in trouble while using Norepted, it is YOUR device and YOU control it.**
   
