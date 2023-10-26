@@ -2,105 +2,130 @@
 <html>
   <head>
     <style>
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap");
 
 html {
-  font-family:"Fredoka", "sans-serif";
-  background-color:#1E88E5;
+  font-family: "Fredoka", "sans-serif";
+  background-color: #1e88e5;
   color: white;
 }
 
 button {
   font-family: "Fredoka", "sans-serif";
-  background-color:#64DD17;
-  color:white;
-  border-color:white;
-  display:block;
+  background-color: #64dd17;
+  color: white;
+  border-color: white;
+  display: block;
   margin: 0 auto;
   font-size: 18px;
-  
 }
 
 #copy {
-  background-color:#512DA8;
-  
+  background-color: #512da8;
 }
 
 #title {
-  color:#E53935;
+  color: #e53935;
 }
 
-#how_it_works {
-  background-color:#00E5FF;
-  font-size:15px;
-  border-color:#1E88E5;
-  position: relative;
-  bottom: 0;
-  text-align: center;
-    
+#footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
-#viewcounter {
-  text-align: center;
+#footer a,
+#footer img {
+  margin: 0 15px;
+  width: 100px;
+  height: auto;
 }
+
 #more_info {
-  display:hidden;
-
+  display: hidden;
 }
 input {
   font-family: "Fredoka", "sans-serif";
-  background-color:#F57F17;
-  color:white;
-  border-color:white;
-  display:block;
-  margin:0 auto;
-  font-size:20px;
+  background-color: #f57f17;
+  color: white;
+  border-color: white;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
 }
 
-h1, h3, h4, h5 {
-  text-align:center;
+h1,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
 }
 
 iframe {
-  display:block;
-  margin:0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 #tip {
-  color:lightgreen;
+  color: lightgreen;
 }
 
-#copy_tip {
-  color:#512DA8;
+#condition {
+  color: #e53935;
+  text-align: center;
 }
+
+#seperator {
+  text-align: center;
+  font-size: 30px;
+}
+#copy_tip {
+  color: #512da8;
+}
+
+#footer a,
+#footer img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
     </style>
   </head>
 <body>
 <h1 id="title"> Norepted <h1> 
-<h3> Paste your youtube link in the orange box. Then press the LAUNCH button. <br> <br>To exit the site, press "0," doing this way will remove Norepted from your history. <br> <br>To hide the tab, press "1."</h3></h3>
-  <div id="viewcounter">
-    <script type="text/javascript" src="https://www.stat-counter.org/count/d4k5"></script>
-
- <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"></script>
-  </div>  
+    <h3> Paste your youtube link in the orange box. Then press the LAUNCH button. <br> <br>To exit the site, press "0," doing this way will remove Norepted from your history. <br> <br>To hide the tab, press "1."</h3></h3>
+      <h4 id="copy_tip"> If you want, press the "COPY" button to copy a link, open it in a new tab.</h4>
+        <h4 id="tip"> Tip: Press "Enter" on your keyboard to launch the video faster. </h4>
+      <br>
+      <input id="link"><br>
+      <button onclick="fix_link()"> LAUNCH </button>
+      <br>
+      <button id="copy" onclick="copy_link()"> COPY </button>
+      <h3> The video will show down here</h3>
+      <h5> (It might take a few seconds) </h5>
+      <iframe id="video" width="650" height="425" frameborder="0" src=" " allowfullscreen> </iframe>
+      <br>
+      <div id="seperator">
+      <span> -------------------------------------------------- </span>
+        </div>
   
-  <h4 id="copy_tip"> If you want, press the "COPY" button to copy a link, open it in a new tab.</h4>
-    <h4 id="tip"> Tip: Press "Enter" on your keyboard to launch the video faster. </h4>
-  <br>
-  <input id="link"><br>
-  <button onclick="fix_link()"> LAUNCH </button>
-  <br>
-  <button id="copy" onclick="copy_link()"> COPY </button>
-  <h3> ↓ The video will show down here ↓</h3>
-  <h5> (It might take a few seconds) </h5>
-  <iframe id="video" width="650" height="425" frameborder="0" src=" " allowfullscreen> </iframe>
-  <br>
-     <button id="how_it_works" 
-onclick="how_it_works()"> More Information / Terms </button>
+        <div id="footer">
+            <div class="visitor-counter">
+              <script type="text/javascript" src="https://www.stat-counter.org/count/d6u8"></script><br>
+            </div>
+            <div class="visitor-counter">
+              <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"> </script>
+            </div>
+            <div class="visitor-counter">
+              <a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=huxoacnd&nd=5&style=1" border="0" alt="website counter"> </a>
+            </div>
+          </div>
   
-  <h5 id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> </h5>
-
-    
+      <h5 id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> <br> FOR MORE INFO AND TERMS CHECK IT OUT <a href="https://github.com/wea-f/Norepted" target="_blank"> HERE </a> <br>
+        <span id="condition">!!! I am NOT responsible in anyway if you get in trouble while using Norepted, it is YOUR device and YOU control it. !!! </span>
+        </h5>
     
  
 
