@@ -7,7 +7,7 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 - Press "1" to disguise your tab to Google Drive instead of Norepted, refresh to undisguise.
 - You can save a video by pressing the "Copy" button and it will copy the link. Paste this link on another tab and bookmark it. Notice the link will take you to the embedded video that completely fills the whole screen.
 # How you access it
-**If none of these links work for you, please tell me**
+**NOTE: IT MAY TAKE SOME TIME TO LOAD, IF SO PLEASE WAIT**
 1. Access it with [Codesandbox](https://gzhhqm.csb.app)
 2. Access it with [CodePen](https://codepen.io/weaF_z/full/RwJVywE)
 3. Access it with [Github](http://wea-f.github.io/Norepted)
