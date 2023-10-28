@@ -14,7 +14,9 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 4. Access it with [Replit](https://youtube-unblocker-norepted.wea-f.repl.co)
 5. Access it with Google sites (Coming Soon)
 7. Access it with [Playcode](https://norepted.playcode.io) (press "SKIP INTRO" to access Norepted)
-8. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal)
+8. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal) <br>
+
+**!!! I am not responsible in anyway if you get in trouble while using Norepted, it is YOUR device and YOU control it. !!!**
 # How you use it
 1. Paste your youtube link in the orange text box. (For example https://www.youtube.com/watch?v=dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)<br>
 2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
@@ -27,5 +29,4 @@ If you want to hide Norepted from other people seeing it on your screen, press "
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
 The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embeded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
 **Please help improve this site by providng feedback and reporting any problems. If I'm not responding to your issue, feel free to message me on discord: weaf8525** <br>
-**!!! I am not responsible in anyway if you get in trouble while using Norepted, it is YOUR device and YOU control it. !!!**
   
