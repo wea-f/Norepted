@@ -12,7 +12,7 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 2. Access it with [CodePen](https://codepen.io/weaF_z/full/RwJVywE)
 3. Access it with [Github](http://wea-f.github.io/Norepted)
 4. Access it with [Replit](https://youtube-unblocker-norepted.wea-f.repl.co)
-5. Access it with Google sites (Coming Soon)
+5. Access it with [Google Sites](https://sites.google.com/view/n0repted/home)
 7. Access it with [Playcode](https://norepted.playcode.io) (press "SKIP INTRO" to access Norepted)
 8. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal) <br>
 
