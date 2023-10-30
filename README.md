@@ -5,6 +5,7 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 - Norepted will also **play restricted videos** by your school organization.
 - Press "0" to exit from Norepted to **completely remove it from your history.**
 - Press "1" to disguise your tab to Google Drive instead of Norepted, refresh to undisguise.
+- Smooth, minimalistic way of accessing youtube videos!
 - You can save a video by pressing the "Copy" button and it will copy the link. Paste this link on another tab and bookmark it. Notice the link will take you to the embedded video that completely fills the whole screen.
 # How you access it
 **NOTE: IT MAY TAKE SOME TIME TO LOAD, IF SO PLEASE WAIT**
