@@ -105,6 +105,15 @@ iframe {
     </style>
   </head>
 <body>
+    <nav>
+    <div class="heading">
+       <a href="https://discord.gg/Cqaa8x82Ch" class="headinglink" target="new">Norepted</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/proxy.html">proxy</a></li>
+    </ul>
+  </nav>
 <h1 class="fade-in" id="title"> Norepted <h1> 
   <h3 class="fade-in"> Paste your youtube link in the orange box. Then press the LAUNCH button. <br> <br>To exit the site, press "0," doing this way will remove Norepted from your history. <br> <br>To hide the tab, press "1."</h3></h3>
     <h4 class="fade-in" id="copy_tip"> If you want, press the "COPY" button to copy a link, open it in a new tab.</h4>
@@ -141,6 +150,32 @@ iframe {
     
    </body>
 <script>
+  import express from "express";
+  import http from "node:http";
+  import createBareServer from "@tomphttp/bare-server-node";
+  import path from "node:path";
+
+  
+  const server = http.createServer();
+  const app = express(server);
+  const bareServer = createBareServer("/bare/");
+
+  server.on("request", (req, res) => {
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeRequest(req, res);
+  } else {
+    app(req, res);
+  }
+});
+
+server.on("upgrade", (req, socket, head) => {
+  if (bareServer.shouldRoute(req)) {
+    bareServer.routeUpgrade(req, socket, head);
+  } else {
+    socket.end();
+  }
+});
+  
 //TEST LINK: https://www.youtube.com/watch?v=DneTJMXtqAQ 
 function setFavicons(favImg) {
   let headTitle = document.querySelector("head");
