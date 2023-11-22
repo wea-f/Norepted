@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+#particles-js {
+  position: fixed; 
+  width: 100%;
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-position: 50% 50%; 
+  z-index: -1;
+}
+
+html {
+  font-family: "Fredoka", "sans-serif";
+  /*background-color: #1e88e5;*/
+  color: white;
+}
+
+
+button {
+  font-family: "Fredoka", "sans-serif";
+  background-color: #64dd17;
+  color: white;
+  border-color: white;
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+#copy {
+  background-color: #AB47BC;
+}
+
+#title {
+  color: #e53935;
+  font-family: "Fredoka", "sans-serif";
+}
+
+#footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer a,
+#footer img {
+  margin: 0 15px;
+  width: 100px;
+  height: auto;
+}
+
+#more_info {
+  display: hidden;
+}
+input {
+  font-family: "Fredoka", "sans-serif";
+  background-color: #f57f17;
+  color: white;
+  border-color: white;
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  border-radius: 15px;
+  border-style: ridge;
+}
+#aboutblank {
+  background-color: #BDBDBD;
+}
+
+::placeholder {
+  color: #FFC107;
+  font-size:20px;
+  text-align: center;
+  font-family: "Fredoka", "sans-serif";
+}
+h1,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  font-family: "Fredoka", "sans-serif";
+}
+
+iframe {
+  display: block;
+  margin: 0 auto;
+}
+
+#tip {
+  color: lightgreen;
+  font-family: "Fredoka", "sans-serif";
+}
+
+#condition {
+  color: #e53935;
+  text-align: center;
+  font-size: 18px;
+  font-family: "Fredoka", "sans-serif";
+}
+
+#seperator {
+  text-align: center;
+  font-size: 30px;
+}
+#copy_tip {
+  font-family: "Fredoka", "sans-serif";
+  color: #AB47BC;
+}
+
+#footer a,
+#footer img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.65s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+body {
+  background: linear-gradient(to bottom, rgb(30, 136, 229), rgb(0, 0, 139));
+  background-attachment: fixed;
+}
