@@ -1,302 +1,49 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
-#particles-js {
-  position: fixed; 
-  width: 100%;
-  height: 100%; 
-  background-repeat: no-repeat;
-  background-position: 50% 50%; 
-  z-index: -1;
-}
+<div id="particles-js"></div>
+<h1 class="fade-in" id="title"> Norepted </h1> 
+<h3 class="fade-in"> Directions: Paste your youtube video link in the box and press the LAUNCH button.</h3>
+ <h3 class="fade-in"> To exit Norepted, press "0."  </h3>
+ <h3 class="fade-in"> To hide the tab, press "1."</h3>
+<a id="aboutblank" onclick="aboutblank()" class="fade-in"><button id="aboutblank">Open in about:blank</button></a>
+  <h4 class="fade-in" id="copy_tip"> To save a video, press the "COPY" button and bookmark the copied link. </h4>
+    <h4 class="fade-in" id="tip"> Shortcut: Press "Enter" on your keyboard to launch faster. </h4>
+  <br>
+  <input class="fade-in" placeholder="Youtube Link Here" id="link"><br>
+  <button class="fade-in" onclick="fix_link()"> LAUNCH </button>
+  <br>
+  <button class="fade-in" id="copy" onclick="copy_link()"> COPY </button>
+  <h3 class="fade-in"> The video will show down below </h3>
+  <h5 class="fade-in"> (It might take a few seconds, please be patient) </h5>
+  <iframe loading class="fade-in" id="video" width="650" height="425" frameborder="0" src=" " allowfullscreen></iframe>
+  <br>
+  <div class="fade-in" id="seperator">
+  <span> -------------------------------------------------- </span>
+    </div>
 
-html {
-  font-family: "Fredoka", "sans-serif";
-  /*background-color: #1e88e5;*/
-  color: white;
-}
-
-
-button {
-  font-family: "Fredoka", "sans-serif";
-  background-color: #64dd17;
-  color: white;
-  border-color: white;
-  display: block;
-  margin: 0 auto;
-  font-size: 18px;
-  border-radius: 10px;
-}
-
-#copy {
-  background-color: #AB47BC;
-}
-
-#title {
-  color: #e53935;
-  font-family: "Fredoka", "sans-serif";
-}
-
-#footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-#footer a,
-#footer img {
-  margin: 0 15px;
-  width: 100px;
-  height: auto;
-}
-
-#more_info {
-  display: hidden;
-}
-input {
-  font-family: "Fredoka", "sans-serif";
-  background-color: #f57f17;
-  color: white;
-  border-color: white;
-  display: block;
-  margin: 0 auto;
-  font-size: 20px;
-  border-radius: 15px;
-  border-style: ridge;
-}
-#aboutblank {
-  background-color: #BDBDBD;
-}
-
-::placeholder {
-  color: #FFC107;
-  font-size:20px;
-  text-align: center;
-  font-family: "Fredoka", "sans-serif";
-}
-h1,
-h3,
-h4,
-h5,
-h6 {
-  text-align: center;
-  font-family: "Fredoka", "sans-serif";
-}
-
-iframe {
-  display: block;
-  margin: 0 auto;
-}
-
-#tip {
-  color: lightgreen;
-  font-family: "Fredoka", "sans-serif";
-}
-
-#condition {
-  color: #e53935;
-  text-align: center;
-  font-size: 18px;
-  font-family: "Fredoka", "sans-serif";
-}
-
-#seperator {
-  text-align: center;
-  font-size: 30px;
-}
-#copy_tip {
-  font-family: "Fredoka", "sans-serif";
-  color: #AB47BC;
-}
-
-#footer a,
-#footer img {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.65s ease-in;
-}
-
-.fade-in.active {
-  opacity: 1;
-}
-
-body {
-  background: linear-gradient(to bottom, rgb(30, 136, 229), rgb(0, 0, 139));
-  background-attachment: fixed;
-}
-
-
-    </style>
-  </head>
-<body>
-  <div id="particles-js"></div>
-  <h1 class="fade-in" id="title"> Norepted </h1> 
-  <h3 class="fade-in"> Directions: Paste your youtube video link in the box and press the LAUNCH button.</h3>
-   <h3 class="fade-in"> To exit Norepted, press "0."  </h3>
-   <h3 class="fade-in"> To hide the tab, press "1."</h3>
-  <a id="aboutblank" onclick="aboutblank()" class="fade-in"><button id="aboutblank">Open in about:blank</button></a>
-    <h4 class="fade-in" id="copy_tip"> To save a video, press the "COPY" button and bookmark the copied link. </h4>
-      <h4 class="fade-in" id="tip"> Shortcut: Press "Enter" on your keyboard to launch faster. </h4>
-    <br>
-    <input class="fade-in" placeholder="Youtube Link Here" id="link"><br>
-    <button class="fade-in" onclick="fix_link()"> LAUNCH </button>
-    <br>
-    <button class="fade-in" id="copy" onclick="copy_link()"> COPY </button>
-    <h3 class="fade-in"> The video will show down below </h3>
-    <h5 class="fade-in"> (It might take a few seconds, please be patient) </h5>
-    <iframe loading class="fade-in" id="video" width="650" height="425" frameborder="0" src=" " allowfullscreen></iframe>
-    <br>
-    <div class="fade-in" id="seperator">
-    <span> -------------------------------------------------- </span>
+     <div id="footer" class="fade-in">
+         <div class="visitor-counter">
+          <script type="text/javascript" src="https://www.stat-counter.org/count/d6u8"></script><br>
+        </div>
+        <div class="fade-in">
+          <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"> </script>
+        </div>
+        <div class="fade-in">
+          <a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=huxoacnd&nd=5&style=1" border="0" alt="website counter"> </a>
+        </div>
       </div>
 
-       <div id="footer" class="fade-in">
-           <div class="visitor-counter">
-            <script type="text/javascript" src="https://www.stat-counter.org/count/d6u8"></script><br>
-          </div>
-          <div class="fade-in">
-            <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"> </script>
-          </div>
-          <div class="fade-in">
-            <a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=huxoacnd&nd=5&style=1" border="0" alt="website counter"> </a>
-          </div>
-        </div>
- 
-    <h5 class="fade-in" id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> <br> FOR MORE INFO AND LICENSE, GO <a href="https://github.com/wea-f/Norepted" target="_blank"> HERE </a> <br>
-      <span class="fade-in" id="condition">!!! I am NOT responsible in anyway if you get in trouble related to Norepted, it is YOUR device and YOU control it. !!! </span>
-      </h5>
-      
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <h5 class="fade-in" id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> <br> FOR MORE INFO AND LICENSE, GO <a href="https://github.com/wea-f/Norepted" target="_blank"> HERE </a> <br>
+    <span class="fade-in" id="condition">!!! I am NOT responsible in anyway if you get in trouble related to Norepted, it is YOUR device and YOU control it. !!! </span>
+    </h5>
+    
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
 
 
-   </body>
-<script>
-//TEST LINK: https://www.youtube.com/watch?v=DneTJMXtqAQ 
-function setFavicons(favImg) {
-  let headTitle = document.querySelector("head");
-  let setFavicon = document.createElement("link");
-  setFavicon.setAttribute("rel", "shortcut icon");
-  setFavicon.setAttribute("href", favImg);
-  headTitle.appendChild(setFavicon);
-}
-
-function fix_link() {
-  var link = document.getElementById("link").value
-  
-  var link2 = link.replace(/ /gi, "")
-  var video_id = link.replace("https://www.youtube.com/watch?v=", "")
-  video_id = video_id.replace("https://youtu.be/", "")
-  //video_id = video_id.replace("&feature=emb_rel_pause", "")
-  video_id = video_id.replace("&embeds_euri=https%3A%2F%2Fcdpn.io%2F&feature=emb_rel_end", "")
-  var final_link = "https://www.youtube-nocookie.com/embed/" + video_id
-  final_link = final_link.replace("&feature=emb_rel_end","")
-  document.getElementById("video")
-.src = final_link
-  document.getElementById("video").style.border = "1px solid white";
-
-}
-
-document.body.onkeyup = function(c) {
-  if (c.key == "Enter" ||
-      c.code == "Enter" ||      
-      c.keyCode == 13      
-  ) {
-    fix_link()
-    
-  }
-  else if (c.key == "0") {
-    c.preventDefault();
-    c.stopPropagation();
-    window.location.replace("https://www.google.com/webhp?igu=1");
-  }
-  else if (c.key == "1") {
-    c.preventDefault();
-    c.stopPropagation();
-    document.title = "My Drive - Google Drive";
-setFavicons("https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png");
-  }
-}
-
-function copy_link() {
-    var link = document.getElementById("link").value
-    var link2 = link.replace(/ /gi, "")
-    var video_id = link.replace("https://www.youtube.com/watch?v=", "")
-    video_id = video_id.replace("https://youtu.be/", "")
-    video_id = video_id.replace("&feature=emb_rel_pause", "")
-    video_id = video_id.replace("&embeds_euri=https%3A%2F%2Fcdpn.io%2F&feature=emb_rel_end","")
-    var final_link = "https://www.youtube-nocookie.com/embed/" + video_id
-    navigator.clipboard.writeText(final_link)
-}
-
-function how_it_works() {
-    window.open("https://github.com/wea-f/Norepted/tree/master")
-}
-
-function aboutblank() {
-    let url = window.location.href;
-    var w = window.open("about:blank", "_blank");
-    w.document.write('<iframe style="position: absolute;top: 0px;bottom: 0px;right: 0px;width: 100%;border: none;margin: 0;padding: 0;overflow: hidden;z-index: 99999;height: 100%;" src="' + url + '"></iframe>');
-    window.close('','_parent','');
-
-}
-// //SCROLL ANIMATION
-const fadeInElems = document.querySelectorAll('.fade-in');
-
-const debounce = (fn) => {
-  let frame;
-  return (...params) => {
-    if (frame) { 
-      cancelAnimationFrame(frame);
-    }
-    frame = requestAnimationFrame(() => {
-      fn(...params);
-    });
-  } 
-};
-
-const handleScroll = debounce(() => {
-  const windowHeight = window.innerHeight;
-  const scrollTop = window.scrollY;
-  const scrollBottom = scrollTop + windowHeight;
-  
-  fadeInElems.forEach(elem => {
-    const top = elem.offsetTop;
-    const height = elem.offsetHeight;
-    const bottom = top + height;
-    const isBeforeBottom = bottom - scrollTop > 0;
-    const isAfterTop = top < scrollBottom;
-
-    if (isBeforeBottom && isAfterTop) {
-      elem.classList.add('active');
-    } else {
-      elem.classList.remove('active');
-    }
-  });
-});
-
-document.addEventListener('scroll', handleScroll); 
-
-
-//Fade in elements on load
-fadeInElems.forEach(elem => {
-  const isVisible = (elem.offsetTop - window.scrollY) < window.innerHeight;
-  if (isVisible) {
-    elem.classList.add('active');
-  } else {
-    elem.classList.remove('active');
-  }
-});
-</script>
-<script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="particles.js">
 </script>
-</html>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  
