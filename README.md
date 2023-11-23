@@ -23,11 +23,11 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 1. Paste your youtube link in the orange text box where it says "youtube link here". (For example https://www.youtube.com/watch?v=dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)<br>
 2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
 3. Now the video will appear below, it may take a few seconds depending on how fast your computer is. <br>
-4. In the end of the video, a wall of 3x3 recommended videos will appear. You can copy the links of those videos and paste it in the orange box and press the green "LAUNCH" button to restart the cycle.
+4. In the end of the video, a wall of 3x3 recommended videos will appear. You can copy the links of those videos and paste it in the orange box and press the green "LAUNCH" button to restart the cycle. <br>
 
-If you want to hide the link, press the "open in about:blank" button.
-To exit from Norepted, simply press "0" to ensure it stays hidden from your history.
-To hide the tab, press "1" to disguise it, refresh to undisguise.
+If you want to hide the link, press the "open in about:blank" button. <br>
+To exit from Norepted, simply press "0" to ensure it stays hidden from your history. <br>
+To hide the tab, press "1" to disguise it, refresh to undisguise. <br>
 # How it works
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
 The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embedded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
