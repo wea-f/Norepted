@@ -31,5 +31,15 @@ To hide the tab, press "1" to disguise it, refresh to undisguise. <br>
 # How it works
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
 The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embedded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
+# Guidelines
+Here are some tips to follow: <br>
+1	If you somehow know the creator in real life, please do not snitch on the creator. <br>
+
+2	Please do not report this website to a teacher or principal [You can still do it, of course, but why?]. You can share it with your friends, but please make it limited. If you didn’t figure it out already, Norepted stands for “not reported.” The whole reason why this website was made was so it would not be restricted.<br>
+
+3	Don’t use it too much, especially during school [if you are]. I recommend only using it in school for educational purposes. I repeat, educational purposes. And after school, you can do whatever you want, but please note to frequently touch grass and take a break.<br>
+
+4	Enjoy the website while it lasts. I know probably one day Norepted would be reported and restricted [how ironic], but please be thankful for this convenience and don’t get too attached.<br><br>
+ --- the creator of Norepted<br>
 **Please help improve this site by providng feedback and reporting any problems. If I'm not responding to your issue, feel free to message me on discord: weaf8525** <br>
   
