@@ -1,4 +1,4 @@
-# Norepted
+# Norepted v1.4
 Norepted is a youtube video embedder/unblocker/player that has many features including: history hiding, **zero ads**, and more! 
 # Features
 - Norepted will **completely remove ads** from videos.
