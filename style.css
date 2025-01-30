@@ -1,12 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
-#particles-js {
-  position: fixed; 
-  width: 100%;
-  height: 100%; 
-  background-repeat: no-repeat;
-  background-position: 50% 50%; 
-  z-index: -1;
-}
 
 html {
   font-family: "Fredoka", "sans-serif";
@@ -26,13 +18,93 @@ button {
   border-radius: 10px;
 }
 
+
+#launch {
+  position: relative;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-top: 0px;
+  padding: 5px 12px;
+}
+#launch:hover {
+  background-color: #58C114;
+}
+#launch:active {
+  background-color: #4BA611; 
+  translate: translateY(0%, -5%);
+  
+}
 #copy {
   background-color: #AB47BC;
+  &:hover {
+    background-color: #963EA5;
+  }
+  &:active {
+    background-color: #80358D;
+  }
 }
+/*Input and Clear*/
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center align vertically */
+  margin: 0px auto; /* Adjust for spacing, as needed */
+  margin-top: 0px;
+}
+
+.input-container input {    
+  font-family: "Fredoka", "sans-serif";
+  background-color: #f57f17; 
+  color: white;
+  border: 2px solid white; 
+  display: inline-block;
+  /* margin: 0px 50vh; */
+  margin-right: 10px;
+  font-size: 16px;
+  border-radius: 15px;
+  padding: 6px 10px; 
+  width: 200px;
+  height: 32px; 
+  position: relative; 
+  transition: 0.2s;
+  box-shadow: none;
+  outline: 0;
+
+
+  &:focus {
+    border: 4px solid white;
+    box-shadow: 0 0 7px 0px white;
+    transition: 0.2s;
+  }
+}
+/* CLear Button  */
+.input-container button {
+  background: transparent;
+  border-color: red;
+  margin: 8px;
+  &:hover{
+    background-color:  #BF0000;
+  }
+
+  &:active {
+    background-color: #9F0000;
+  }
+}
+
+::placeholder {
+  color: #FFC107;
+  font-size: 18px;
+  text-align: center;
+  font-family: "Fredoka", "sans-serif";
+}
+
 
 #title {
   color: #e53935;
   font-family: "Fredoka", "sans-serif";
+  
+
 }
 
 #footer {
@@ -52,27 +124,25 @@ button {
 #more_info {
   display: hidden;
 }
-input {
-  font-family: "Fredoka", "sans-serif";
-  background-color: #f57f17;
-  color: white;
-  border-color: white;
-  display: block;
-  margin: 0 auto;
-  font-size: 20px;
-  border-radius: 15px;
-  border-style: ridge;
-}
+
 #aboutblank {
   background-color: #BDBDBD;
+  &:hover {
+    background-color: #A5A5A5;
+  }
+  &:active {
+    background-color: #8E8E8E;
+  }
 }
 
-::placeholder {
-  color: #FFC107;
-  font-size:20px;
-  text-align: center;
-  font-family: "Fredoka", "sans-serif";
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center align vertically */
+  margin: 0px auto; 
 }
+
 h1,
 h3,
 h4,
@@ -85,6 +155,7 @@ h6 {
 iframe {
   display: block;
   margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 #tip {
@@ -103,9 +174,11 @@ iframe {
   text-align: center;
   font-size: 30px;
 }
+
 #copy_tip {
   font-family: "Fredoka", "sans-serif";
   color: #AB47BC;
+
 }
 
 #footer a,
@@ -114,16 +187,134 @@ iframe {
   vertical-align: middle;
 }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.65s ease-in;
-}
-
-.fade-in.active {
-  opacity: 1;
-}
-
 body {
   background: linear-gradient(to bottom, rgb(30, 136, 229), rgb(0, 0, 139));
   background-attachment: fixed;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background-position: center;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  margin: 8px;
+}
+
+nav {
+  padding: 4px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 10000px;
+  overflow: hidden;
+  align-items: center;
+  background: linear-gradient(rgb(0, 0, 160, 0.7), rgb(30, 136, 239, 0.7));
+  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin: 0 auto;
+  transition: 0.1s;
+}
+
+.heading {
+  color: rgb(255, 0, 0);
+  text-transform: uppercase;
+  font-size: 20px;
+  
+}
+
+
+.size-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none; /* Safari - text should not be selectable*/ */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  margin-top: 12px;
+}
+.size-button {
+  padding: 2px 8px;
+
+  background-color: transparent; 
+  color: white;
+  border: 1x solid white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin: 0 2px;
+  font-size: 18px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* &:hover {
+    background-color: #78E46A;  Darker green 
+  } */
+  &:active {
+    /* background-color: #69C85D; /*#4BA611; /* Even darker green */ 
+    transform: translateY(2px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
+
+#plus {
+  &:hover {
+    background-color: #78E46A; /* Darker green */
+  }
+  &:active {
+    background-color: #69C85D; /*#4BA611; /* Even darker green */
+}
+}
+  
+#minus {
+  &:hover {
+    background-color: #F64141;
+  }
+  &:active {
+    background-color: #D73939;
+  }
+}
+
+#default {  
+  &:hover {
+    background-color: #FFFAB1;
+  }
+  &:active {
+    background-color: #F9EF61;
+  }
+}
+
+#instructions {
+  /* Overall container styles */
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* White border with slight transparency */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding for text */
+  margin: 5px auto; /* Center the container and add margin */
+  margin-bottom: 0px;
+  max-width: 650px; /* Limit container width */
+  text-align: center; /* Center text */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
+}
+
+.hide-button, 
+.show-button {
+  background-color: rgba(201, 201, 201, 0.37); /* Gray background with transparency */
+  color: white; /* White text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 6px 14px; /* Padding */
+  font-size: 16px; 
+  margin-top: 10px; /* Add some margin above the button *\
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  
+  transition: background-color 0.2s ease-in-out; /* Smooth transition for hover */ 
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.466); /* Slightly brighter background on hover */
+  }
+
+}
+
+.show-button {
+  display:none;
+  margin: 16px auto; 
 }
