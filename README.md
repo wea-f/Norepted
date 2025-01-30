@@ -25,7 +25,7 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 4. In the end of the video, a wall of 3x3 recommended videos will appear. You can copy the links of those videos and paste it in the orange box and press the green "LAUNCH" button to restart the cycle. <br>
 
 If you want to hide the link, press the "open in about:blank" button. <br>
-To exit from Norepted, simply press "0" to ensure it stays hidden from your history. <br>
+To exit from Norepted, simply press "0" and "-" to ensure it stays hidden from your history. <br>
 To hide the tab, press "1" to disguise it, refresh to undisguise. <br>
 # How it works
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
