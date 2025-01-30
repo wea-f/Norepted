@@ -1,7 +1,7 @@
 particlesJS("particles-js", {
     "particles": {
         "number": {
-            "value": 140,
+            "value": 100, // was 140 too laggy
             "density": {
                 "enable": true,
                 "value_area": 800
@@ -54,7 +54,7 @@ particlesJS("particles-js", {
         },
         "move": {
             "enable": true,
-            "speed": 6.413648243462092,
+            "speed": 4.813648243462092, // was 6
             "direction": "top",
             "random": true,
             "straight": false,
