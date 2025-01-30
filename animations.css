@@ -1,0 +1,167 @@
+/* Fade in animations and particles */
+.fade-in{
+  opacity: 0;
+  transition: opacity 0.65s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  z-index: -1;
+}
+
+/* Heading and home button click and hover animations */
+
+.headinglink {
+  color: rgb(255, 0, 0);
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3); /*4 20*/
+  letter-spacing: 2px;
+  font-size: 35px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  transition: .2s;
+  background: none;
+  position: relative;
+  border: none;
+
+  &:hover {
+    background-color: rgba(201, 201, 201, 0.37);
+    padding: 2px 13px;
+    transform: translate(0%, -1%);
+    transition: 0.2s;
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.466);
+    transform: translateY(0);
+
+    transition: all 100ms;
+    /* Shorter transition for active */
+
+    &:after {
+      opacity: 1;
+      transition: 0ms;
+      /* Transition for box-shadow */
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    /* Inherit border-radius from button */
+    opacity: 0;
+    transition: all 0.45s;
+    box-shadow: 0 0 7px 15px white;
+    background-color: rgba(201, 201, 201, 0.37);
+  }
+}
+
+
+
+.animbutton {
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1;
+  min-height: 2rem;
+  padding: 0 10px;
+  transition: all 250ms;
+  position: relative;
+  /* Necessary for absolute positioning of :after */
+
+  &:hover {
+    background-color: rgba(201, 201, 201, 0.37);
+    transform: translateY(0%, -1%);
+    padding: 0px 13px;
+    transition: all 200ms;
+    /* Shorter transition for hover */
+  }
+
+  &:active {
+    background-color: rgba(255, 255, 255, 0.466);
+    transform: translateY(0);
+
+    transition: all 100ms;
+    /* Shorter transition for active */
+
+    &:after {
+      opacity: 1;
+      transition: 0ms;
+      /* Transition for box-shadow */
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    /* Inherit border-radius from button */
+    opacity: 0;
+    transition: all 0.45s;
+    box-shadow: 0 0 15px 10px white;
+    background-color: rgba(201, 201, 201, 0.37);
+  }
+}
+
+.homebutton {
+  position:relative;
+
+  &:hover {
+    transform: translateY(0%, -1%);
+    transition: all 200ms;
+    /* Shorter transition for hover */
+  }
+
+
+  &:active {
+    transform: translateY(0);
+    transition: all 100ms;
+    /* Shorter transition for active */
+
+    &:after {
+      opacity: 1;
+      transition: 0ms;
+      /* Transition for box-shadow */
+      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    opacity: 0;
+    transition: all 0.65s;
+    box-shadow: 0 0 11px 13px white;
+  }
+}
+
+
