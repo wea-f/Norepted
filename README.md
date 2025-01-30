@@ -1,4 +1,4 @@
-# Norepted v1.4
+# Norepted v1.5
 Norepted is a youtube video embedder/unblocker/player that has many features including: history hiding, **zero ads**, and more! 
 # Features
 - Norepted will **completely remove ads** from videos.
@@ -6,17 +6,16 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 - Can be opened in about:blank to keep the link hidden.
 - Press "0" to exit from Norepted to **completely remove it from your history.**
 - Press "1" to disguise your tab to Google Drive instead of Norepted, refresh to undisguise.
-- Smooth, fast, and minimalistic way of accessing youtube videos!
 - Save a video by pressing the "Copy" button and bookmarking the copied link.
+- Change size of video display and can show/hide instructions for minimalistic use!
 # How you access it
 **NOTE: IT MAY TAKE SOME TIME TO LOAD, IF SO PLEASE WAIT**
 1. Access it with [Codesandbox](https://gzhhqm.csb.app)
 2. Access it with [CodePen](https://codepen.io/weaF_z/full/RwJVywE)
 3. Access it with [Github](http://wea-f.github.io/Norepted)
-4. Access it with [Replit](https://youtube-unblocker-norepted.wea-f.repl.co)
-5. Access it with [Google Sites](https://sites.google.com/view/n0repted/home)
-7. Access it with [Playcode](https://norepted.playcode.io) (press "SKIP INTRO" to access Norepted)
-8. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal) <br>
+4. Access it with [Google Sites](https://sites.google.com/view/n0repted/home)
+5. Access it with [Playcode](https://norepted.playcode.io) (press "SKIP INTRO" to access Norepted)
+6. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal) <br>
 
 **!!! I am not responsible in anyway if you get in trouble while using Norepted, it is YOUR device and YOU control it. !!!**
 # How you use it
