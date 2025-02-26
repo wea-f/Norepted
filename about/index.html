@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+#particles-js {
+  position: fixed; 
+  width: 100%;
+  height: 100%; 
+  background-repeat: no-repeat;
+  background-position: 50% 50%; 
+  z-index: -1;
+}
+
+html {
+  font-family: "Fredoka", "sans-serif";
+  /*background-color: #1e88e5;*/
+  color: white;
+}
+
+
+button {
+  font-family: "Fredoka", "sans-serif";
+  background-color: #64dd17;
+  color: white;
+  border-color: white;
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+#title {
+  color: #e53935;
+  font-family: "Fredoka", "sans-serif";
+}
+
+#footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer a,
+#footer img {
+  margin: 0 15px;
+  width: 100px;
+  height: auto;
+}
+
+#more_info {
+  display: hidden;
+}
+
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  font-family: "Fredoka", "sans-serif";
+}
+
+h1 {
+   color: red;
+}
+
+#footer a,
+#footer img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.65s ease-in;
+}
+
+.fade-in.active {
+  opacity: 1;
+}
+
+body {
+  background: linear-gradient(to bottom, rgb(30, 136, 229), rgb(0, 0, 139));
+  background-attachment: fixed;
+}
+
+header {
+  display: flex ;
+  width: 100% ;
+  justify-content: center ;
+  background-position: center ;
+  padding: 0 ;
+  text-align: center;
+  text-decoration: none;
+  margin: 8px;
+}
+
+nav {
+  padding: 4px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 10000px;
+  overflow: hidden;
+  align-items: center;
+  background: linear-gradient(rgb(0, 0, 160), rgb(30, 136, 239));  
+  box-shadow: 0px 8px 24px 0px rgba(0,0,0,0.4);
+  position: relative;
+  margin: 0 auto;
+  transition: 0.1s;
+}
+
+
+header button:hover {
+  border: transparent 2px rgba(255, 255, 255, 0.596);
+  background-color: rgba(201, 201, 201, 0.37);
+  padding: 0px 10px;
+  transform: translate(0%,-3%);
+  transition: 0.2s;
+}
+
+header button: active {
+  background-color: rgba(255, 255, 255, 0.466);
+  transform: translateY(0);
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+
+header button {
+  background: transparent;  
+  border: none;
+  box-sizing: border-box;
+  font-size: 20px;
+  text-align: center;
+  justify-content: center;
+  line-height: 1;
+  min-height: 2rem;
+  transition: all 250ms;
+}
+.heading {
+  color: rgb(255, 0, 0);
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.headinglink {
+  color: rgb(255, 0, 0);
+  letter-spacin: 7px;
+  font-size: 35px;
+  text-align: center;
+  text-decoration: none;
+  transition: .2s;
+  background: none;
+  border: none;
+}
+
+.headinglink:hover {
+  border: transparent 2px rgba(255, 255, 255, 0.596);
+  background-color: rgba(201, 201, 201, 0.37);
+  padding: 0px 10px;
+  transform: translate(0%,-3%);
+  transition: 0.2s;
+}
+    </style>
+      <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Norepted - About</title>
+  </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZQCTP11KMS');
+</script>
+<body>
+  <div id="particles-js"></div>
+  <nav>
+    <div class="heading">
+      <button onclick="home()" class="headinglink"> Norepted v1.5</button>
+    </div>
+    <header>
+      <button onclick="home()">Home</button>
+      <button onclick="bookmarklets()">Bookmarklets</button>
+      <button onclick="about()">About</button>
+      <!-- <a href="/projects.html">Games</a>
+      <a href="/settings.html">Settings</a> -->
+      <button onclick="suggestions()">Suggestions</button>
+
+    </header>
+  </nav>
+  <h1 class="fade-in" id="norepted">Norepted</h1>
+<p class="fade-in">Norepted is a youtube video embedder/unblocker/player that has many features including: history hiding, <strong>zero ads</strong>, and more! </p>
+<h1 class="fade-in" id="features">Features</h1>
+<ul>
+<li class="fade-in">Norepted will <strong class="fade-in">completely remove ads</strong> from videos.</li>
+<li class="fade-in">Norepted will also <strong class="fade-in">play restricted videos.</strong></li>
+<li class="fade-in">Can be opened in about:blank to keep the link hidden.</li>
+<li class="fade-in">Press &quot;0&quot; to exit from Norepted to <strong class="fade-in">completely remove it from your history.</strong></li>
+<li class="fade-in">Press &quot;1&quot; to disguise your tab to Google Drive instead of Norepted, refresh to undisguise.</li>
+<li class="fade-in">Smooth, fast, and minimalistic way of accessing youtube videos!</li>
+<li class="fade-in">Save a video by pressing the &quot;Copy&quot; button and bookmarking the copied link. </li>
+<h1  class="fade-in" id="how-you-use-it">How you use it</h1>
+<ol>
+<li class="fade-in">Paste your youtube link in the orange text box where it says &quot;youtube link here&quot;. (For example <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a> or <a href="https://youtu.be/dQw4w9WgXcQ">https://youtu.be/dQw4w9WgXcQ</a>)<br></li>
+<li class="fade-in">Next, Press the green &quot;LAUNCH&quot; button or press the &quot;Enter&quot; key on your keyboard. <br></li>
+<li class="fade-in">Now the video will appear below, it may take a few seconds depending on how fast your computer is. <br></li>
+<li class="fade-in">In the end of the video, a wall of 3x3 recommended videos will appear. You can copy the links of those videos and paste it in the orange box and press the green &quot;LAUNCH&quot; button to restart the cycle. <br></li>
+</ol>
+<p class="fade-in">If you want to hide the link, press the &quot;open in about:blank&quot; button. <br>
+To exit from Norepted, simply press &quot;0&quot; to ensure it stays hidden from your history. <br>
+To hide the tab, press &quot;1&quot; to disguise it, refresh to undisguise. <br></p>
+<h1  class="fade-in" id="how-it-works">How it works</h1>
+<p class="fade-in">  Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
+The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embedded youtube video link. That link then goes into a html video element and your video appears just like that! <br></p>
+<h1  class="fade-in" id="guidelines">Guidelines</h1>
+<p class="fade-in">Here are some tips to follow: <br>
+1)    If you somehow know the creator in real life, please do not snitch on the creator. <br></p>
+<p class="fade-in">2)    Please do not report this website to a teacher or principal [You can still do it, of course, but why?]. You can share it with your friends, but please make it limited. If you didn’t figure it out already, Norepted stands for “not reported.” The whole reason why this website was made was so it would not be restricted.<br></p>
+<p class="fade-in">3)    Don’t use it too much, especially during school [if you are]. I recommend only using it in school for educational purposes. I repeat, educational purposes. And after school, you can do whatever you want, but please note to frequently touch grass and take a break.<br></p>
+<p class="fade-in">4)    Enjoy the website while it lasts. I know probably one day Norepted would be reported and restricted [how ironic], but please be thankful for this convenience and don’t get too attached.<br><br>
+ - the creator of Norepted<br> <br>
+<strong class="fade-in">Please help improve this site by providing feedback and reporting any problems.</strong> <br></p>
+
+
+</body> 
+ <script>
+function suggestions() {
+  window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", '_blank').focus();
+}
+
+function home() {
+  window.location.assign("/");
+}
+
+function bookmarklets() {
+  window.location.assign("/bookmarklets");
+}
+
+function about() {
+  window.location.assign("/about");
+}
+
+const fadeInElems = document.querySelectorAll('.fade-in');
+
+const debounce = (fn) => {
+  let frame;
+  return (...params) => {
+    if (frame) { 
+      cancelAnimationFrame(frame);
+    }
+    frame = requestAnimationFrame(() => {
+      fn(...params);
+    });
+  } 
+};
+
+const handleScroll = debounce(() => {
+  const windowHeight = window.innerHeight;
+  const scrollTop = window.scrollY;
+  const scrollBottom = scrollTop + windowHeight;
+
+  fadeInElems.forEach(elem => {
+    const top = elem.offsetTop;
+    const height = elem.offsetHeight;
+    const bottom = top + height;
+    const isBeforeBottom = bottom - scrollTop > 0;
+    const isAfterTop = top < scrollBottom;
+
+    if (isBeforeBottom && isAfterTop) {
+      elem.classList.add('active');
+    } else {
+      elem.classList.remove('active');
+    }
+  });
+});
+
+document.addEventListener('scroll', handleScroll); 
+
+
+//Fade in elements on load
+fadeInElems.forEach(elem => {
+  const isVisible = (elem.offsetTop - window.scrollY) < window.innerHeight;
+  if (isVisible) {
+    elem.classList.add('active');
+  } else {
+    elem.classList.remove('active');
+  }
+});
+
+
+ </script>
+   <script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ <script src="particles.js"> </script>
+
+ </html>
