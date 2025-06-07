@@ -29,8 +29,8 @@ To exit from Norepted, simply press "0" and "-" to ensure it stays hidden from y
 To hide the tab, press "1" to disguise it, refresh to undisguise. <br>
 # How it works
   Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
-The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embedded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
-# Guidelines
+The code simply takes the video id from the inputed url and attaches it to youtube.com/embed, the embedded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
+# Guidelines (you don't have to read this its old)
 Here are some tips to follow: <br>
 1	If you somehow know the creator in real life, please do not snitch on the creator. <br>
 
@@ -40,5 +40,5 @@ Here are some tips to follow: <br>
 
 4	Enjoy the website while it lasts. I know probably one day Norepted would be reported and restricted [how ironic], but please be thankful for this convenience and don’t get too attached.<br><br>
  --- the creator of Norepted<br>
-**Please help improve this site by providng feedback and reporting any problems. If I'm not responding to your issue, feel free to message me on discord: weaf8525** <br>
+**Please help improve this site by providng feedback and reporting any problems. I'm open!!** <br>
   
