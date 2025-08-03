@@ -1,5 +1,5 @@
 var DELAYa = prompt("Directions: \n 1. Enter CPS \n 2. Click an element \n 3. Click the same spot to stop. \n \n Enter the CPS (clicks per second). ENTER -1 to cancel: "); 
-if (DELAYa == -1) {
+if (DELAYa == "-1") {
 	return;
 }
 var DELAY = 1000 / DELAYa;
