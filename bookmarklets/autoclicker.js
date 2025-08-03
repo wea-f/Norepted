@@ -1,7 +1,8 @@
 var DELAYa = prompt("Directions: \n 1. Enter CPS \n 2. Click an element \n 3. Click the same spot to stop. \n \n Enter the CPS (clicks per second). Enter 0 to cancel: "); 
-// if (DELAYa == 0) {
-// 	return;
-// }
+var shouldRun = true;
+if (DELAYa == 0) {
+	shouldRun = false;
+}
 var DELAY = 1000 / DELAYa;
 
 var autoClickerStyleElement = document.createElement("style");
@@ -9,7 +10,7 @@ autoClickerStyleElement.innerHTML = "*{cursor: crosshair !important;}";
 document.body.appendChild(autoClickerStyleElement);
 
 function addClicker(e) {
-	if (!e.isTrusted) {
+	if (!e.isTrusted || !shouldRun) {
 		return;
 	}
 	
