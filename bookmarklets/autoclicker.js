@@ -1,7 +1,7 @@
 var DELAYa = prompt("Directions: \n 1. Enter CPS \n 2. Click an element \n 3. Click the same spot to stop. \n \n Enter the CPS (clicks per second). Enter 0 to cancel: "); 
-if (DELAYa == 0) {
-	return;
-}
+// if (DELAYa == 0) {
+// 	return;
+// }
 var DELAY = 1000 / DELAYa;
 
 var autoClickerStyleElement = document.createElement("style");
