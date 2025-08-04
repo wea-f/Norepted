@@ -1,24 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
 
-html {
-  font-family: "Fredoka", "sans-serif";
-  /*background-color: #1e88e5;*/
-  color: white;
-}
-
-
-button {
-  font-family: "Fredoka", "sans-serif";
-  background-color: #64dd17;
-  color: white;
-  border-color: white;
-  display: block;
-  margin: 0 auto;
-  font-size: 18px;
-  border-radius: 10px;
-}
-
-
+/* Main Buttons */
 #launch {
   position: relative;
   font-size: 22px;
@@ -26,47 +8,91 @@ button {
   letter-spacing: 2px;
   margin-top: 0px;
   padding: 5px 12px;
-}
-#launch:hover {
-  background-color: #58C114;
-}
-#launch:active {
-  background-color: #4BA611; 
-  translate: translateY(0%, -5%);
   
+  &:hover {
+    background-color: #58C114;
+  }
+  &:active {
+    background-color: #4BA611;
+    translate: translateY(0%, -5%)
+  }
 }
+
 #copy {
   background-color: #AB47BC;
+
   &:hover {
     background-color: #963EA5;
   }
+
   &:active {
     background-color: #80358D;
   }
 }
-/*Input and Clear*/
+
+#aboutblank {
+  background-color: #BDBDBD;
+
+  &:hover {
+    background-color: #A5A5A5;
+  }
+
+  &:active {
+    background-color: #8E8E8E;
+  }
+}
+
+/* Instructions buttons */
+.hide-button,
+.show-button {
+  background-color: rgba(201, 201, 201, 0.37);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 14px;
+  font-size: 16px;
+  margin-top: 10px;
+
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+
+  /* This transition applies to both the base state and the hover state */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Corrected hover state for both buttons */
+.hide-button:hover,
+.show-button:hover {
+  background-color: rgba(255, 255, 255, 0.466);
+}
+
+.show-button {
+  display: none;
+  margin: 16px auto;
+}
+/* -------------------------------------------------- */
+
+/*Input*/
 .input-container {
   display: flex;
   justify-content: center;
-  align-items: center; /* Center align vertically */
-  margin: 0px auto; /* Adjust for spacing, as needed */
+  align-items: center;
+  margin: 0px auto;
   margin-top: 0px;
 }
 
-.input-container input {    
-  font-family: "Fredoka", "sans-serif";
-  background-color: #f57f17; 
+.input-container input {
+  background-color: #f57f17;
   color: white;
-  border: 2px solid white; 
+  border: 2px solid white;
   display: inline-block;
   /* margin: 0px 50vh; */
   margin-right: 10px;
   font-size: 16px;
   border-radius: 15px;
-  padding: 6px 10px; 
+  padding: 6px 10px;
   width: 200px;
-  height: 32px; 
-  position: relative; 
+  height: 32px;
+  position: relative;
   transition: 0.2s;
   box-shadow: none;
   outline: 0;
@@ -78,120 +104,25 @@ button {
     transition: 0.2s;
   }
 }
-/* CLear Button  */
-.input-container button {
-  background: transparent;
-  border-color: red;
-  margin: 8px;
-  &:hover{
-    background-color:  #BF0000;
-  }
-
-  &:active {
-    background-color: #9F0000;
-  }
-}
 
 ::placeholder {
   color: #FFC107;
   font-size: 18px;
   text-align: center;
-  font-family: "Fredoka", "sans-serif";
 }
 
-
-#title {
-  color: #e53935;
-  font-family: "Fredoka", "sans-serif";
-  
-
-}
-
-#footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-#footer a,
-#footer img {
-  margin: 0 15px;
-  width: 100px;
-  height: auto;
-}
-
-#more_info {
-  display: hidden;
-}
-
-#aboutblank {
-  background-color: #BDBDBD;
-  &:hover {
-    background-color: #A5A5A5;
-  }
-  &:active {
-    background-color: #8E8E8E;
-  }
-}
+/* -------------------------------------  */
 
 .container {
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center; /* Center align vertically */
-  margin: 0px auto; 
+  align-items: center;
+  /* Center align vertically */
+  margin: 0px auto;
 }
 
-h1,
-h3,
-h4,
-h5,
-h6 {
-  text-align: center;
-  font-family: "Fredoka", "sans-serif";
-}
-
-iframe {
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-#tip {
-  color: lightgreen;
-  font-family: "Fredoka", "sans-serif";
-}
-
-#condition {
-  color: #e53935;
-  text-align: center;
-  font-size: 18px;
-  font-family: "Fredoka", "sans-serif";
-}
-
-#seperator {
-  text-align: center;
-  font-size: 30px;
-}
-
-#copy_tip {
-  font-family: "Fredoka", "sans-serif";
-  color: #AB47BC;
-
-}
-
-#footer a,
-#footer img {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-body {
-  background: linear-gradient(to bottom, rgb(30, 136, 229), rgb(0, 0, 139));
-  background-attachment: fixed;
-}
-
+/* Header */
 header {
   display: flex;
   width: 100%;
@@ -202,10 +133,14 @@ header {
   text-decoration: none;
   margin: 8px;
 }
+header button {
+  background: transparent;  
+}
 
 nav {
   padding: 4px;
   border-radius: 15px;
+  box-sizing: border-box; 
   width: 100%;
   max-width: 10000px;
   overflow: hidden;
@@ -213,7 +148,7 @@ nav {
   background: linear-gradient(rgb(0, 0, 160, 0.7), rgb(30, 136, 239, 0.7));
   box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.4);
   position: relative;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   transition: 0.1s;
 }
 
@@ -221,99 +156,219 @@ nav {
   color: rgb(255, 0, 0);
   text-transform: uppercase;
   font-size: 20px;
-  
-}
 
-
-.size-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-user-select: none; /* Safari - text should not be selectable*/ */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
-  margin-top: 12px;
 }
+/*  ------------------------------------------------ */
+/* SIZE BUTTONS */
 .size-button {
   padding: 2px 8px;
 
-  background-color: transparent; 
+  background-color: transparent;
   color: white;
-  border: 1x solid white;
+  border: 1px solid white;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-  margin: 0 2px;
+  /* margin: 0 2px; */
+  margin: 5px 0;
   font-size: 18px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  /* &:hover {
-    background-color: #78E46A;  Darker green 
-  } */
+
   &:active {
-    /* background-color: #69C85D; /*#4BA611; /* Even darker green */ 
     transform: translateY(2px);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   }
 }
 
 
-#plus {
+.plus {
   &:hover {
-    background-color: #78E46A; /* Darker green */
+    background-color: #78E46A;
+    /* Darker green */
   }
+
   &:active {
-    background-color: #69C85D; /*#4BA611; /* Even darker green */
+    background-color: #69C85D;
+    /*#4BA611; /* Even darker green */
+  }
 }
-}
-  
-#minus {
+
+.minus {
   &:hover {
     background-color: #F64141;
   }
+
   &:active {
     background-color: #D73939;
   }
 }
 
-#default {  
+.default {
+  background-color: #FFC107;
   &:hover {
-    background-color: #FFFAB1;
+    background-color: #ffd145;
   }
+
   &:active {
-    background-color: #F9EF61;
+    background-color: #ffe083;
   }
 }
 
-#instructions {
-  /* Overall container styles */
-  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* White border with slight transparency */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Padding for text */
-  margin: 5px auto; /* Center the container and add margin */
-  margin-bottom: 0px;
-  max-width: 650px; /* Limit container width */
-  text-align: center; /* Center text */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Drop shadow effect */
-}
-
-.hide-button, 
-.show-button {
-  background-color: rgba(201, 201, 201, 0.37); /* Gray background with transparency */
-  color: white; /* White text color */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  padding: 6px 14px; /* Padding */
-  font-size: 16px; 
-  margin-top: 10px; /* Add some margin above the button *\
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+/* ------------------------ Embedded Videos  ---------------- */
+/* Videos Container */
+#videoPlayersContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  flex-direction: ;
+  gap: 20px; /* Space between each video unit */
+  justify-content: center; /* Center units */
+  padding: 20px;
+  margin: 0 auto; 
+  width: 100%;
   
-  transition: background-color 0.2s ease-in-out; /* Smooth transition for hover */ 
+}
+
+/* Wrapper for each video unit (video display + controls) */
+.video-unit-wrapper {
+  position: relative; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  margin-bottom: 20px;
+  border-radius: 8px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+  transition: transform 0.2s ease-in-out;
+
   &:hover {
-    background-color: rgba(255, 255, 255, 0.466); /* Slightly brighter background on hover */
+    transform: translateY(-5px);
   }
+}
+
+/* Video display (iframe + close button) - child of video unit */
+.video-display {
+  position: relative; /* For absolute positioning of close button */
+  overflow: hidden;
+  border-radius: 8px; 
+}
+
+.video-display iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 8px;
+  box-shadow: none; 
+}
+
+/* Close button */
+.close-video-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #D73939;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+/* Video Size Controls */
+.video-size-controls {
+  position: absolute; 
+ 
+  left: calc(50% + (var(--video-width) / 2) + 10px); 
+  transform: translateX(-50%); 
+  top: 50%; 
+  transform: translateY(-50%); 
+  margin-left: 10px; 
+
+  left: 100%; /* Pushes it to the right of the video-display (within video-unit-wrapper) */
+  margin-left: 10px;
+  top: 0; 
+
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 5; /* Ensure it's above other elements but below close button */
+}
+
+.video-unit-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.video-size-controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); 
+  right: -60px; /* Adjust this value based on the exact width of your controls + desired gap */
+   left: 100%;
+   margin-left: 10px; 
 
 }
 
+.video-unit-wrapper {
+  /* Initial size for the wrapper, it will grow with the video-display */
+  width: fit-content; 
+  min-width: INITIAL_VIDEO_WIDTH + 60px; 
+}
+
+.close-video-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #D73939;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  font-size: 1em;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.2s ease;
+}
+
+.close-video-button:hover {
+  background-color: #e16b6b;
+}
+
+.close-video-button:active {
+  background-color: #a12b2b;
+}
+
+#feedbackMessage {
+  opacity: 0; /* Start completely transparent */
+  visibility: hidden;
+  height: 0; 
+  margin: 0 auto; 
+  padding: 0 20px; 
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease, padding 0.3s ease, margin 0.3s ease; 
+  max-width: 400px;
+}
+
+#feedbackMessage.active {
+  opacity: 1; /* Fully visible */
+  visibility: visible; 
+  height: auto; 
+  padding: 10px 20px; 
+  margin: 15px auto; 
+}
 .show-button {
   display:none;
   margin: 16px auto; 
