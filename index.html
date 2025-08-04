@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Google Tag Manager -->
+<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -10,15 +10,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Norepted</title>
+  <title>Norepted v1.6</title>
+  <link rel="preload" href="./style.css" as="style">
+  <link rel="preload" href="./animations.css" as="style">
+  <link rel="preload" href="./script.js" as="script">
+  <link rel="preload" href="./animations.js" as="script">
+  
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./animations.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="preload" as="font">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
-</head>
-<!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -27,16 +32,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-ZQCTP11KMS');
 </script>
+</head>
 
 <body>
-  <!-- Google Tag Manager (noscript) -->
+<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div id="particles-js"></div>
 <nav>
   <div class="heading fade-in">
-    <button onclick="home()" class="headinglink fade-in"> Norepted v1.5</button>
+    <button onclick="home()" class="headinglink fade-in"> Norepted v1.6</button>
   </div>
   <header>
     <button onclick="home()" class="animbutton fade-in">Home</button>
@@ -51,41 +57,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h1 id="title"class="fade-in"> Youtube Watcher </h1>
   
   <div id="instructions"class="fade-in">
-<h3 class="fade-in"> Directions: Paste your youtube video link in the box and press the LAUNCH button.</h3>
-<h3 class="fade-in"> Press - and 0 at once to exit safely and quickly. </h3>
-<h3 class="fade-in"> Press 1 to hide the tab. </h3>
-<a id="aboutblank" onclick="aboutblank()" class="fade-in"><button id="aboutblank" class="fade-in homebutton">Open in
+    <h2 id="u" class="fade-in"> How To Use: </h2>
+<h3 id="f" class="fade-in"> Paste your youtube video link in the <a> orange box </a> and press the <a id="g">LAUNCH</a> button (or press the <a id="g">Enter</a> key).</h3>
+    <h2 id="u" class="fade-in"> Features: </h2>
+    <h3 id="f" class="fade-in"> Press <a id="g">+</a> or <a id="r">-</a> to increase/decrease video size. Press <a id="ye">&#8634</a> to reset your changes.</h3>
+    
+<h3 id="e" class="fade-in"> Press <a>0</a> to exit faster and hide history. </h3>
+<h3 id="e" class="fade-in" title="Tab Cloak: Disguises tab as Google Drive"> For a Tab Disguise (into Google Drive), press <a id="y">1</a>. </h3>
+  
+<a id="aboutblank" onclick="aboutblank()" class="fade-in"><button id="aboutblank" class="fade-in homebutton" title="about:blank cloak">Open in
     about:blank</button></a>
-<h4 class="fade-in" id="copy_tip"> To save a video, press the "COPY" button and bookmark the copied link. </h4>
-<h4 class="fade-in" id="tip"> Shortcut: Press 'Enter' on your keyboard to launch faster. </h4>
-    <button class="hide-button fade-in"> Hide Instructions </button>
+<h4 class="fade-in" id="copy_tip"> To <a id="p">save</a> a video, press the <a id="p">"COPY"</a> button and <a id="p"> bookmark </a> the copied link. </h4>
+<!-- <h4 class="fade-in" id="tip"> Shortcut: Press 'Enter' on your keyboard to launch faster. </h4> -->
+    <button class="hide-button fade-in" title="Hide Instructions"> Hide Instructions </button>
   </div>
   <div>
-    <button class="show-button">Show Instructions</button> 
+    <button class="show-button" title="Show Instructions">Show Instructions</button> 
     </div>
   
   <br>
   <div class="input-container fade-in">
     <input type="text" id="link" class="fade-in" placeholder="YouTube link here" />
-    <button id="clear-button" class="fade-in homebutton" onclick="document.getElementById('link').value = '';">Clear</button>
   </div>
 <br>
-<button class="fade-in homebutton" id="launch" onclick="fix_link()"> LAUNCH </button>
+<button class="fade-in homebutton" id="launch" title="Launch"> LAUNCH </button>
 <br>
-<button class="fade-in homebutton" id="copy" onclick="copy_link()"> COPY </button>
-<br>
+
+
   
-<h3 class="fade-in"> The video will show down below </h3>
-<!-- <h5 class="fade-in"> (It might take a few seconds, please be patient) </h5>
-<div class="container fade-in"> -->
-  <div class="loading fade-in" id="loading"></div>
-  <iframe style="display:none;" class="fade-in" id="video" width="650" height="425" frameborder="0" src=" " allowfullscreen></iframe>
-</div>
-  <div class="size-controls fade-in" style="display: none;">
-    Size: <button class="size-button" id="minus" onclick="decreaseSize()">-</button>
+<button class="fade-in homebutton" id="copy" onclick="copy_link()" title="Copy"> COPY </button>
+<br>
+
+<h3 id="offtext"class="fade-in"> The video(s) will show down below </h3> 
+
+  <div id="feedbackMessage"></div>
+  
+  <!-- <div class="main-content-wrapper"> -->
+    <div class="container fade-in">
+      <div id="videoPlayersContainer">
+        </div>
+    </div>
+  <!-- </div> -->
+  
+
+  <!-- <div class="size-controls fade-in" style="display: none;">
+    Size <br><button class="size-button" id="minus" onclick="decreaseSize()">-</button>
     <button class="size-button" id="plus" onclick="increaseSize()">+</button> 
-    <!-- <button class="size-button" id="default" onclick="defaultSize()"> Default </button> -->
-  </div>
+    <button class="size-button" id="default" onclick="defaultSize()"> &#8635; </button>
+  </div> -->
 
 <br>
 <div class="fade-in" id="seperator">
@@ -93,23 +112,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <div id="footer" class="fade-in">
-  <div class="visitor-counter">
-    <script type="text/javascript" src="https://www.stat-counter.org/count/d6u8"></script><br>
-  </div>
-  <div class="fade-in">
-    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"> </script>
-  </div>
-</div>
+  <div class="visitor-counters-wrapper">
+    <div class="visitor-counter fade-in">
+      <script type="text/javascript" src="https://www.stat-counter.org/count/d6u8"></script><br>
+    </div>
+    
+    
+    <div class="fade-in visitor-counter">
+      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"> </script>
+
+      </div>
+      
+    </div>
+    
+  
 
 <h5 class="fade-in" id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on
     codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a
     href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> <br> FOR MORE INFO AND LICENSE, GO <a
     href="https://github.com/wea-f/Norepted" target="_blank"> HERE </a> <br>
-  <span class="fade-in" id="condition">!!! I am NOT responsible in anyway if you get in trouble related to Norepted,
-    it is YOUR device and YOU control it. !!! </span>
+  <span class="fade-in" id="condition"> &#9888;&#65039; I am NOT responsible in anyway if you get in trouble related to Norepted,
+    it is YOUR device and YOU control it. &#9888;&#65039; </span>
 </h5>
-</body>
-<script>
+  </div>
+  <script defer src="script.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script defer src="particles.js"></script>
+  <script defer src="animations.js"></script>
+
+  <script>
 
 function setFavicons(favImg) {
   let headTitle = document.querySelector("head");
@@ -119,130 +150,16 @@ function setFavicons(favImg) {
   headTitle.appendChild(setFavicon);
 }
 
-// Link Embed
-function fix_link() {
-  var link = document.getElementById("link").value
-  const loadingEle = document.getElementById('loading');
-  const video = document.getElementById('video');
-  const sizeControls = document.querySelector('.size-controls');
-
-  loadingEle.style.display = "inline";
-  var video_id = link.replace(/^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu.be\/)([\w-]+).*$/, "$1");
-
-  var final_link = "https://www.youtube-nocookie.com/embed/" + video_id; 
-  video.src = final_link
-
-  video.style.border = "0.5px solid white";
-  video.style.display = "inline";
-  video.style.opacity = 1;
-  sizeControls.style.display = 'flex'; 
-  video.style.display = 'block'; 
-  // Wait for the iframe content to load completely:
-  video.onload = () => {
-    adjustIframeHeight(); 
-  };
-}
-// Size buttons
-const video = document.getElementById('video');
-const sizeControls = document.querySelector('.size-controls');
-const minusButton = document.getElementById('minus');
-const plusButton = document.getElementById('plus');
-const currentWidth = video.offsetWidth; // Initial width (650px)
-const currentHeight = video.offsetHeight; // Initial height (425px)
   
-function decreaseSize() {
-  video.style.width = video.offsetWidth * 0.8 + "px";
-  adjustIframeHeight();
-}
-function increaseSize() {
-  video.style.width = video.offsetWidth * 1.2 + "px";
-  adjustIframeHeight();
-}
-  // Default
-// function defaultSize() {
-//   video.style.width = 72 + "%";
-//   video.style.height = 49.5 + "%";
-// }
-  
-function adjustIframeHeight() {
-  // This will adjust the iframe's height to maintain aspect ratio:
-  video.style.height = ((425 / 650) * video.offsetWidth) + 'px';
-}
-// Hide/Show Instructions
-  const hideButton = document.querySelector('.hide-button');
-  const showButton = document.querySelector('.show-button');
-  const instructionsDiv = document.getElementById('instructions');
-  hideButton.addEventListener('click', () => {
-    instructionsDiv.style.display = 'none';
-    instructionsDiv.classList.remove('active');
-    // instructionsDiv.querySelectorAll("*").classList.remove('active');
-    hideButton.style.display = 'none';
-    
-    showButton.style.display = 'block'; 
-    showButton.classList.add("active");
-  });
-
-  showButton.addEventListener('click', () => {
-    instructionsDiv.style.display = 'block';
-    instructionsDiv.classList.add('active');
-    // instructionsDiv.querySelectorAll("*").classList.add('active');
-
-    showButton.style.display = 'none';
-    // instructionsDiv.querySelector(".show-button").classList.remove('active');
-    hideButton.style.display = 'block';
-    hideButton.classList.add("active");
-  });
-
-  // Shortcuts
-document.body.onkeyup = function (c) {
-  if (c.key == "Enter" ||
-    c.code == "Enter" ||
-    c.keyCode == 13
-  ) {
-    fix_link()
-
-  }
-    // exit
-  else if (c.key == "0") {
-    c.preventDefault();
-    c.stopPropagation();
-    window.location.replace("https://www.google.com/webhp?igu=1");
-  }
-
-  else if (c.keyCode == 189 && c.keyCode == 48) {
-    c.preventDefault();
-    c.stopPropagation();
-
-    window.location.replace("https://www.google.com/webhp?igu=1");
-  }
-    // Hide tab
-  else if (c.key == "1") {
-    c.preventDefault();
-    c.stopPropagation();
-    document.title = "My Drive - Google Drive";
-    setFavicons("https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png");
-  }
-}
-// Copy link
-function copy_link() {
-  var link = document.getElementById("link").value
-  var link2 = link.replace(/ /gi, "")
-  var video_id = link.replace("https://www.youtube.com/watch?v=", "")
-  video_id = video_id.replace("https://youtu.be/", "")
-  video_id = video_id.replace("&feature=emb_rel_pause", "")
-  video_id = video_id.replace("&embeds_euri=https%3A%2F%2Fcdpn.io%2F&feature=emb_rel_end", "")
-  var final_link = "https://www.youtube-nocookie.com/embed/" + video_id
-  navigator.clipboard.writeText(final_link)
-}
-
 // About:Blank button loader
 function aboutblank() {
   let url = window.location.href;
   var w = window.open("about:blank", "_blank");
   w.document.write('<iframe style="position: absolute;top: 0px;bottom: 0px;right: 0px;width: 100%;border: none;margin: 0;padding: 0;overflow: hidden;z-index: 99999;height: 100%;" src="' + url + '"></iframe>');
-  window.close('', '_parent', '');
+  w.document.close(); // Important to close the document for the iframe to load correctly
+  // window.close('', '_parent', '');
 
-}
+} 
 
 // Header Navigation
 function suggestions() {
@@ -254,17 +171,13 @@ function home() {
 }
 
 function bookmarklets() {
-  window.location.assign("/norepted/bookmarklets/");
+  window.location.assign("/bookmarklets");
 }
 
 function about() {
-  window.location.assign("/norepted/about/");
+  window.location.assign("/about");
 }
 
 </script>
-<script rel="preload" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="particles.js"></script>
-
-  <script src="animations.js"> </script>
-
+</body>
 </html>

@@ -1,11 +1,194 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap'); */
+
+/* The fundamentals */
+html {
+  font-family: "Fredoka", "sans-serif";
+  /*background-color: #1e88e5;*/
+  color: white;
+}
+
+::placeholder {
+  font-family: "Fredoka", "sans-serif";
+}
+
+button {
+  font-family: "Fredoka", "sans-serif";
+  background-color: #64dd17;
+  color: white;
+  border-color: white;
+  display: block;
+  margin: 0 auto;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  font-family: "Fredoka", "sans-serif";
+}
+body {
+  background: linear-gradient(to bottom, rgb(30, 136, 229), rgb(0, 0, 139));
+  background-attachment: fixed;
+  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+  display: flex; /* Enable flexbox */
+  flex-direction: column; /* Stack children vertically */
+  text-align: center;
+  margin: 1;
+}
+
+/*  Text  Colors + Footer (visitor counter and socials)*/
+#instructions {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  margin: 5px auto;
+  margin-bottom: 0px;
+  max-width: 650px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#instructions #u {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+#tip {
+  color: lightgreen;
+}
+
+#condition {
+  color: #e53935;
+  text-align: center;
+  font-size: 18px;
+}
+
+#seperator {
+  text-align: center;
+  font-size: 30px;
+}
+
+#copy_tip #p {
+  color: #AB47BC;
+
+}
+
+
+.visitor-counters-wrapper {
+  display: flex;
+  justify-content: center; /* Align items horizontally from left to right space-evenly*/
+  align-items: center;    
+}
+
+.visitor-counter {
+  display: inline-flex;
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center;   
+  text-align: center;
+  margin: 0 25px;
+  /* border: 1px dashed black;  */
+  /* Ref for adjusting  */
+}
+
+/* First Counter adjustment */
+.visitor-counter:first-child a {
+  margin-top: 50%;
+  /* margin: 0 auto; */
+}
+
+/* Second counter adjustmnet */
+.visitor-counter:last-child a {
+  /* margin: 0 auto; */
+  margin-top: 10%; 
+}
+
+#footer {
+  margin-top: auto; /* This will push the footer down, taking up available space */
+  border-radius: 10px;
+  margin-bottom: 0px; /* Keep this if you want the footer right at the bottom */
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: 5px;
+}
+
+
+
+#title {
+  color: #e53935;
+}
+
+#socials {
+  text-align: center; 
+  font-family: "Fredoka", "sans-serif"; /* Use the consistent font */
+  color: white; /* Maintain white text color */
+  font-size: 16px; /* Adjust font size for readability */
+  line-height: 1.6; /* Improve line spacing */
+  padding: 20px; /* Add some padding around the text */
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 950px; 
+  margin-bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px; 
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+}
+#f a {
+  color: #f57f17;
+}
+#e #y {
+  color: #FFC107;
+}
+#e a {
+  color: #e53935;
+}
+#f #g {
+  color: lightgreen;
+}
+#f #ye {
+  color: #FFC107;
+}
+#socials a {
+  color: #AB47BC; 
+  text-decoration: none; 
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#socials a:hover {
+  color: #963EA5; 
+  text-decoration: underline; 
+}
+
+#socials #condition {
+  display: block; 
+  margin-top: 15px; 
+  font-weight: bold;
+  color: #e53935; 
+}
+
+/* -------------------------------- */
+
 /* Fade in animations and particles */
 .fade-in{
   opacity: 0;
-  transition: opacity 0.65s ease-in;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
+  /*  .4*/
 }
 
 .fade-in.active {
   opacity: 1;
+  transform: translateY(0);
 }
 #particles-js {
   position: fixed;
