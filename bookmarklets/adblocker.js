@@ -1,1 +1,26 @@
-var st = confirm('strict adblocker?%27);%20if(st){var%20invisible%20=%20document.createElement(%27style%27);%20invisible.innerHTML%20=%20%27iframe{display:none}%20embed{display:none}%20object{display:none}%20frame{display:none}%27;%20document.body.appendChild(invisible);%20setInterval(function(){var%20embeds%20=%20document.querySelectorAll(%27iframe,%20embed,%20frame,%20object%27);%20for(i%20=%200;%20i%20%3C%20embeds.length;%20i++){embeds[i].remove()}},%20500)}%20else{var%20adblock%20=%20document.createElement(%27style%27);%20adblock.innerHTML%20=%20%27[src*=adserver]%20{display:%20none;%20}%20[src*=adlinks]%20{display:%20none;}%20[src*=adtech]%20{display:none;}%20[id*=google_ads]%20{%20display:%20none;%20}%20[src*=doubleclick.net]%20{%20display:none;}%20[src*=googlead]%20{%20display:%20none;%20}%20[href*=googlead]%20{%20display:none;}%20[src*=googlesyndication]%20{%20display:%20none;}%20[src*=ads.]%20{%20display:%20none;%20}%20[src*=.ad]%20{display:%20none;%20}%20[src*=ad.]%20{display:none;}%20[src*=adsmart]%20{%20display:none;}%27;%20document.body.appendChild(adblock)}%20if(st){var%20elements%20=%20document.body.querySelectorAll(%27*%27);%20for(i2%20=%200;%20i2%20%3C%20elements.length;%20i2++){if(elements[i2].id.includes(%27google_ads_iframe%27)){elements[i2].remove()}}}%20var%20x%20=%20document.getElementsByClassName(%27video-stream%20html5-main-video%27)[0];%20function%20videoblock()%20{%20if(x.src.includes(%27pltype=adhost%27))%20{%20x.currentTime%20=%20999999999;%20}}%20setInterval(videoblock,%2010)
+javascript:/* Adblock Simple NOT MADE BY WEAF, MADE BY kbauer */
+
+(function(){
+const exceptOrigins = [
+  'https://disqus.com',
+  document.origin
+];
+function remIF(e){
+  try{
+    var orgn = new URL(e.src || 'http://unknown-src').origin;
+    if( ! exceptOrigins.includes(orgn)){
+      e.parentElement.removeChild(e);
+      console.log('REMOVE IFRAME',orgn);
+    }
+  } catch(err) {
+    console.log('REMOVE ERROR',err);
+  }
+}
+function remIFs(){
+  for(var e of document.getElementsByTagName('iframe')){
+    remIF(e);
+  }
+}
+/* Must repeat to catch recurring frames. */
+window.setInterval(remIFs,500);
+})();
