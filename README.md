@@ -15,7 +15,9 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 3. Access it with [Github](http://wea-f.github.io/Norepted)
 4. Access it with [Google Sites](https://sites.google.com/view/n0repted/home)
 5. Access it with [Playcode](https://norepted.playcode.io) (press "SKIP INTRO" to access Norepted)
-6. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal) <br>
+6. Access it with [VERCEL](https://norepted-delta.vercel.app/)
+7. Access it with [NETLIFY](norepted.netlify.app)
+8. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal) <br>
 
 **!!! I am not responsible in anyway if you get in trouble while using Norepted, it is YOUR device and YOU control it. !!!**
 # How you use it 
