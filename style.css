@@ -161,16 +161,20 @@ nav {
 /*  ------------------------------------------------ */
 /* SIZE BUTTONS */
 .size-button {
-  padding: 2px 8px;
-
+  line-height: 1;
   background-color: transparent;
   color: white;
   border: 1px solid white;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-  /* margin: 0 2px; */
   margin: 5px 0;
-  font-size: 18px;
+  font-size: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
   &:active {
@@ -218,7 +222,7 @@ nav {
 #videoPlayersContainer {
   display: flex;
   flex-wrap: wrap; 
-  flex-direction: ;
+  flex-direction: column;
   gap: 20px; /* Space between each video unit */
   justify-content: center; /* Center units */
   padding: 20px;
@@ -229,9 +233,9 @@ nav {
 
 /* Wrapper for each video unit (video display + controls) */
 .video-unit-wrapper {
-  position: relative; 
-  display: flex; 
-  justify-content: center; 
+  position: relative; /* Absolute positioning of size-controls */
+  display: flex; /* Flex container to allow margin auto on video-display */
+  justify-content: center;
   align-items: center; 
   margin-bottom: 20px;
   border-radius: 8px; 
@@ -281,13 +285,13 @@ nav {
  
   left: calc(50% + (var(--video-width) / 2) + 10px); 
   transform: translateX(-50%); 
-  top: 50%; 
+  top: 50%; /* Vertically center it with the video */
   transform: translateY(-50%); 
-  margin-left: 10px; 
+  margin-left: 10px; /* This margin will be applied only if flex-direction is row */
 
   left: 100%; /* Pushes it to the right of the video-display (within video-unit-wrapper) */
-  margin-left: 10px;
-  top: 0; 
+  margin-left: 10px; /* Space from the right edge of the video */
+  top: 0; /* Align top with video */
 
   display: flex;
   flex-direction: column; /* Stack buttons vertically */
@@ -300,9 +304,10 @@ nav {
   z-index: 5; /* Ensure it's above other elements but below close button */
 }
 
+/* .video-size-controls positioning */
 .video-unit-wrapper {
   position: relative;
-  display: flex;
+  display: flex; /* Still flex to hold videoDisplay */
   justify-content: center; 
   align-items: center;
 }
@@ -310,17 +315,16 @@ nav {
 .video-size-controls {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%); 
-  right: -60px; /* Adjust this value based on the exact width of your controls + desired gap */
-   left: 100%;
-   margin-left: 10px; 
+  transform: translateY(-50%); /* Center vertically */
 
+  right: -60px; 
+   left: 100%; 
+   margin-left: 10px; 
 }
 
 .video-unit-wrapper {
-  /* Initial size for the wrapper, it will grow with the video-display */
   width: fit-content; 
-  min-width: INITIAL_VIDEO_WIDTH + 60px; 
+  min-width: INITIAL_VIDEO_WIDTH + 60px; /* Roughly video width + controls width */
 }
 
 .close-video-button {
@@ -349,7 +353,7 @@ nav {
 
 #feedbackMessage {
   opacity: 0; /* Start completely transparent */
-  visibility: hidden;
+  visibility: hidden; 
   height: 0; 
   margin: 0 auto; 
   padding: 0 20px; 
@@ -358,18 +362,14 @@ nav {
   font-weight: bold;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease, padding 0.3s ease, margin 0.3s ease; 
+  transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease, padding 0.3s ease, margin 0.3s ease; /* Animate all properties */
   max-width: 400px;
 }
 
 #feedbackMessage.active {
-  opacity: 1; /* Fully visible */
+  opacity: 1; 
   visibility: visible; 
-  height: auto; 
+  height: auto; /* Allow height to expand based on content */
   padding: 10px 20px; 
   margin: 15px auto; 
-}
-.show-button {
-  display:none;
-  margin: 16px auto; 
 }
