@@ -34,10 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Make fadeInObserver globally available for dynamic elements
     window.fadeInObserver = fadeInObserver;
 });
 
-// keyboard shortcuts
+// Optimize keyboard shortcuts
 document.addEventListener('keyup', function(e) {
   switch(e.key) {
     case "Enter":
@@ -58,3 +59,16 @@ document.addEventListener('keyup', function(e) {
       break;
   }
 }, { passive: false });
+
+// Header Navigation
+function suggestions() {
+  window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", '_blank').focus();
+}
+
+function setFavicons(favImg) {
+  let headTitle = document.querySelector("head");
+  let setFavicon = document.createElement("link");
+  setFavicon.setAttribute("rel", "shortcut icon");
+  setFavicon.setAttribute("href", favImg);
+  headTitle.appendChild(setFavicon);
+}
