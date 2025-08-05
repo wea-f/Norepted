@@ -32,6 +32,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   gtag('config', 'G-ZQCTP11KMS');
 </script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
@@ -98,13 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
   <!-- </div> -->
-  
 
-  <!-- <div class="size-controls fade-in" style="display: none;">
-    Size <br><button class="size-button" id="minus" onclick="decreaseSize()">-</button>
-    <button class="size-button" id="plus" onclick="increaseSize()">+</button> 
-    <button class="size-button" id="default" onclick="defaultSize()"> &#8635; </button>
-  </div> -->
 
 <br>
 <div class="fade-in" id="seperator">
@@ -135,22 +130,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     it is YOUR device and YOU control it. &#9888;&#65039; </span>
 </h5>
   </div>
-  <script src="script.js"></script>
+  
   <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script defer src="particles.js"></script>
-  <script src="animations.js"></script>
+  <script defer src="animations.js"></script>
 
   <script>
-
-function setFavicons(favImg) {
-  let headTitle = document.querySelector("head");
-  let setFavicon = document.createElement("link");
-  setFavicon.setAttribute("rel", "shortcut icon");
-  setFavicon.setAttribute("href", favImg);
-  headTitle.appendChild(setFavicon);
-}
-
-  
 // About:Blank button loader
 function aboutblank() {
   let url = window.location.href;
@@ -160,24 +145,17 @@ function aboutblank() {
   // window.close('', '_parent', '');
 
 } 
+    function home() {
+      window.location.assign("./");
+    }
 
-// Header Navigation
-function suggestions() {
-  window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", '_blank').focus();
-}
+    function bookmarklets() {
+      window.location.assign("./bookmarklets");
+    }
 
-function home() {
-  window.location.assign("/");
-}
-
-function bookmarklets() {
-  window.location.assign("/bookmarklets");
-}
-
-function about() {
-  window.location.assign("/about");
-}
-
+    function about() {
+      window.location.assign("./about");
+    }
 </script>
 </body>
 </html>
