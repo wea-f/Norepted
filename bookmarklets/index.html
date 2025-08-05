@@ -66,6 +66,7 @@
             color: #e0e0e0;
     }
 </style>
+    <script defer src="../animations.js"></script>
     </head>
 
 <body>
@@ -191,32 +192,18 @@
     </body>
       <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
       <script defer src="../particles.js"></script>
-      <script defer src="../animations.js"></script>
-    <script>
-        // Navigation functions
-        function suggestions() {
-            window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", '_blank').focus();
-        }
+      <script>
+          function home() {
+            window.location.assign("../");
+          }
 
-        function home() {
-            window.location.assign("/");
-        }
+          function bookmarklets() {
+            window.location.assign("./");
+          }
 
-        function about() {
-            window.location.assign("/about");
-        }
-
-        function bookmarklets() {
-            window.location.assign("/bookmarklets");
-        }
-
-        // Favicon setting function
-        function setFavicons(favImg) {
-            let headTitle = document.querySelector("head");
-            let setFavicon = document.createElement("link");
-            setFavicon.setAttribute("rel", "shortcut icon");
-            setFavicon.setAttribute("href", favImg);
-            headTitle.appendChild(setFavicon);
-        }
-    </script>
+          function about() {
+            window.location.assign("../about/");
+          }
+      </script>
+    
 </html>
