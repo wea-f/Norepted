@@ -9,7 +9,6 @@ Norepted is a youtube video embedder/unblocker/player that has many features inc
 - Save a video by pressing the "Copy" button and bookmarking the copied link.
 - Change size of video display (+, -, and reset to default) and can show/hide instructions!
 # How you access it
-**NOTE: IT MAY TAKE SOME TIME TO LOAD, IF SO PLEASE WAIT**
 1. Access it with [Codesandbox](https://gzhhqm.csb.app)
 2. Access it with [CodePen](https://codepen.io/weaF_z/full/RwJVywE)
 3. Access it with [Github](http://wea-f.github.io/Norepted)
