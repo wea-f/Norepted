@@ -124,6 +124,29 @@ https://app.wwwwwwau.shadowbrowser.duckdns.org/
 https://rammerhead-10.swanndvr.net/
 
 ### Rammerhead
+https://areyousure.bostoncareercounselor.com/
+https://frittledsocool.bostoncareercounselor.com/
+https://thatswhattheywantyoutothink.bostoncareercounselor.com/
+https://wecanbebees.primeflk.ch/
+https://rammermyhammer.goteeem.com/
+https://lolgod15try.ndr.cl/
+https://nana.a.drciocan.ro/
+https://nana.b.drciocan.ro/
+https://nana.rammerhead.runolas.pl/
+https://drive.google.com.csdue.it/
+https://verynormalsite.wendyandnick.net/
+https://www.itrsa.chiqui.ar/
+https://notdominospizzeria.fluxus.org/
+https://justdoit.ndr.cl/
+https://abhub1134.truckstore.ch/
+https://nana.ssk.rinet.ai/
+https://nana.rammer.dinprima.ro/
+https://nana.rammer.swift.cl/
+https://damianlikesjulie.wakemeup.ru/
+https://rammerheadscience.dougtreadwell.com/
+https://www.itrsa.env.lntxbox.com/
+https://join.snak.today.for.proxy.links.bostoncareercounselor.com/
+https://infinite.bostoncareercounselor.com/
 https://gym.clas.swork.networkindia.com/
 https://drive.google.com.mikata.ru/
 https://imwitboolymon.bad.mn/
@@ -133,6 +156,8 @@ https://run-away.run.place/
 https://space.zzylos.lol/
 
 ### Selenite
+https://guide.flightbooker.co.za/
+https://map.flightbooker.co.za/
 https://labs.sciencevictory.com/
 http://selenitetransportcorporation.stc.com.tuintransporte.com.ar/
 http://selenitenetwork.com.network-xxiii.net/
@@ -237,6 +262,21 @@ http://coolpro.bloguinsports.com
 http://za.mreasandiego.com
 
 ### Vapor
+http://welcome-to-learning.fredrikkivi.se/
+http://wow.education.cellophaneslinger.net/
+https://dih.com/
+http://helpmecheckthisout.help
+https://rizzmas2025.marqenhotels.com/
+https://prismboi.clicksoftware.co.uk/
+https://cheap.fursuits.savenowclub.com/
+https://doublebrr.patapim.clicksoftware.co.uk/
+https://triple.t.clicksoftware.co.uk/
+https://happynewdestenation.pintravel.ro/
+https://cliffbayschools.anjumanallana.in/
+https://helpmecheckthisout.help/
+https://prism.global.ssl.fastly.net/
+https://helpmecheckthisout.help/
+https://helpmecheckthisout.help/
 http://w5lchix94p3p.104.36.84.18.nip.io
 http://qwxdcn0duisg.104.36.84.18.nip.io
 http://gmvx2fjxboj8.104.36.84.18.nip.io
@@ -244,6 +284,7 @@ http://104.36.84.18.nip.io
 http://94e83gr78y2i.104.36.84.18.nip.io
 http://ra9tethuaq5d.104.36.84.18.nip.io
 http://484evayionw2.104.36.84.18.nip.io
+
 
 ### Daydream X
 https://edu.prostitutki-na-vyezd.com/
@@ -281,3 +322,83 @@ https://utauloid.space/
 
 ### Truffled
 https://discord.tattoo/
+
+
+### gn math
+https://math-lessons-space-17244170.codehs.me/index.html
+https://crimsonviper8605.codehs.me/
+https://indexkool-17244295.codehs.me/index.html
+https://slingshotswitch-17245605.codehs.me/
+https://homework-gaming-17245536.codehs.me/
+https://new-sandbox-program-9-17245499.codehs.me/
+https://new-sandbox-program-7-17245449.codehs.me/
+https://new-sandbox-program-8-17245465.codehs.me/
+https://object-fighters-is-peak-17245571.codehs.me/
+https://spar-kart-sunday-17245573.codehs.me/
+https://mark-i-made-a-stake-17245582.codehs.me/
+https://goob-17245597.codehs.me/
+https://pneumonoultramicroscopicsilicovolcanoconiosis-67-17245612.codehs.me/
+https://trombone-is-da-best-intrument-17245404.codehs.me/
+https://roblock-is-life-67-17245755.codehs.me/
+https://mathlessonsproski-17246090.codehs.me/index.html
+https://six-seven-five-five-17246203.codehs.me/index.html
+https://funni-steam-web-17246226.codehs.me/index.html
+https://brainrot-88-17246223.codehs.me/index.html
+https://gn-math-67-17246219.codehs.me/index.html
+https://sigma-skull-emoji-17246216.codehs.me/index.html
+https://ohio-apply-lat-17246212.codehs.me/index.html
+https://github-guthib-17246489.codehs.me/
+https://deer-club-17246500.codehs.me/
+https://67-67-67-67-67-67-67-67-67-67-67-67-67-67-67-67-67-67--17246506.codehs.me/
+https://what-is-this-diddyblud-doing-on-a-calculator-17246519.codehs.me/
+https://is-blud-einstein-17246524.codehs.me/
+https://hi-17246585.codehs.me/
+https://grandmanoob.codehs.me/
+https://sethmightshoothimself.codehs.me/
+https://sites.google.com/view/crazycats-gn-math/play
+https://pug-really-gatekeeping-public-methods.global.ssl.fastly.net/
+https://copyparty.blahaj.dedyn.io/gn-math.html
+https://gn-math6q12.hosteriafutaleufu.cl/
+https://gn-math7sz2.hosteriafutaleufu.cl/
+https://gn-mathmm71.hosteriafutaleufu.cl/
+https://gn-matholn1.hosteriafutaleufu.cl/
+https://gn-mathq6bv.hosteriafutaleufu.cl/
+https://blahaj.dedyn.io/gn.html
+https://pug-really-gatekeeping-public-methods.global.ssl.fastly.net/
+https://ccs0715.789888.xyz/
+https://gn-math-t.github.io/
+https://eclipzeunbgs.codehs.me/
+https://gn-mathq6bv.hosteriafutaleufu.cl/
+https://gn-mathq6bv.hosteriafutaleufu.cl/
+https://mrvaporwave25.github.io/breadkartextremecomingsoonquestionmark/
+https://project-one-15257027.codehs.me/?id=468
+https://samsmathwork.strangled.net/
+
+### Piza game:
+http://pizagame.com
+http://pizagame.pages.dev
+http://pizzaeditiongames.bitbucket.io
+
+### Froggies Arcade: 
+http://directory.leeschoolsk12.org.cdn.cloudflare.net
+http://math-homework.site
+http://venturehq.net
+
+### Misc. 
+http://quiz-70.pro
+http://quiz25.live
+
+### Total Science
+http://d11jzht7mj96rr.cloudfront.net
+
+### Astronomy Hub: 
+http://kriptic-edition-3-0.vercel.app
+http://kripticedition2.neocities.org
+http://kriptic-edition-3-0.vercel.app
+http://kripticedition2.neocities.org
+http://kriptic-edition-3-0.vercel.app
+
+### Vertex Gold:
+http://gold-static.pages.dev
+
+
