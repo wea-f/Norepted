@@ -1,10 +1,9 @@
-<!-- This file is used on the Links page of Norepted. Its basically a shortened copy of mainUnblockers.md from [ByePassHub](https://github.com/wea-f/ByePassHub) so that the website can parse it. -->
-
-### ByePassHub Google Doc
+### ByePassHub
+https://github.com/wea-f/ByePassHub
 https://docs.google.com/document/d/1BC-_DkqMcnJDN2hQWWZCjB-Gp-U2CVtznrVOIP-mRv4/edit?usp=sharing <br>
 
 ### Norepted 
-https://norepted.netlify.app/ Note: click "Skip Intro" <br>
+https://norepted.netlify.app/ <br>
 https://norepted-delta.vercel.app/ <br>
 https://norepted.playcode.io/ <br>
 https://gzhhqm.csb.app/ <br>
