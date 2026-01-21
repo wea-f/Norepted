@@ -1,148 +1,239 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-56W5VNZD');</script>
-<!-- End Google Tag Manager -->
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-56W5VNZD");
+    </script>
+    <!-- End Google Tag Manager -->
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>About Norepted</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norepted - About</title>
 
-<!-- Preload stuff (faster) -->
-<link rel="preload" href="../animations.css" as="style">
-<link rel="preload" href="../animations.js" as="script">
-<link rel="preload" href="../particles.js" as="script">
-<link rel="preload" href="../style.css" as="style">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../animations.css" />
 
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="../animations.css">
-  
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="preload" as="font">
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
+    <style>
+      h1 {
+        color: red;
+      }
 
+      #instructions {
+        margin-bottom: 15px;
+        margin-top: 15px;
+      }
 
-  h1 {
-     color: red;
-  }
+      #instructions h1 {
+        padding: 0px;
+        margin: 0px;
+      }
 
-  #instructions {
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
+      a {
+        color: lightgreen;
+      }
+    </style>
 
-  #instructions h1 {
-    padding: 0px;
-    margin: 0px;
-  }
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-ZQCTP11KMS");
+    </script>
+  </head>
 
-a {
-  color: lightgreen;
-}
-</style>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZQCTP11KMS');
-</script>
-</head>
+    <div id="particles-js"></div>
 
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <nav class="navbar fade-in">
+      <div class="logo">Norepted v1.6.2</div>
+      <div class="nav-links">
+        <button onclick="home()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          Home
+        </button>
+        <button onclick="bookmarklets()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+          Bookmarklets
+        </button>
+        <button onclick="openLinksPage()" class="nav-btn">
+          <span class="badge-new">New!</span>
+          <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+          Links
+        </button>
+        <button onclick="about()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          About
+        </button>
+        <button onclick="suggestions()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+          Suggestions
+        </button>
+      </div>
+    </nav>
 
-<div id="particles-js" class="fade-in"></div>
-<nav class="fade-in">
-  <div class="heading fade-in">
-    <button onclick="home()" class="headinglink fade-in"> Norepted v1.6</button>
-  </div>
-  <header class="fade-in">
-    <button onclick="home()" class="fade-in animbutton">Home</button>
-    <button onclick="bookmarklets()" class="fade-in animbutton">Bookmarklets</button>
-    <button onclick="about()" class="fade-in animbutton">About</button>
-    <button onclick="suggestions()" class="fade-in animbutton">Suggestions</button>
-  </header>
-</nav>
+    <main>
+      <section class="card">
+        <div class="card-header fade-in">
+          <h2>What is Norepted?</h2>
+        </div>
+        <p class="fade-in">
+          Norepted is a high-performance YouTube unblocker designed for school
+          and work environments. It offers <strong>zero ads</strong>, restricted
+          video playback, and history hiding privacy features to keep your
+          browsing private.
+        </p>
+        <a
+          href="https://github.com/wea-f/Norepted"
+          target="_blank"
+          class="license-link"
+          > Check out the github repository for the latest information.</a
+        >
+      </section>
 
-<div id="instructions">
-  <h1 class="fade-in" id="norepted">Norepted v1.6</h1>
-  <p class="fade-in">Norepted is a youtube video embedder/unblocker/player that has many features including: history hiding, <strong class="fade-in">zero ads</strong>, and more! </p>
-</div>
+      <section class="card fade-in">
+        <div class="card-header">
+          <h2 class="fade-in" style="color: #58c114">Pro Features</h2>
+        </div>
+        <ul class="instruction-list">
+          <li>
+            <span class="highlight fade-in">No Ads:</span> Experience uninterrupted
+            viewing.
+          </li>
+          <li>
+            <span class="highlight fade-in">History Hider:</span> Press "-" to instantly
+            wipe the session away from your history.
+          </li>
+          <li>
+            <span class="highlight fade-in">Cloaking:</span> Press "`" to disguise the
+            tab as Google Drive, as well as an about:blank cloaker.
+          </li>
+          <li>
+            <span class="highlight fade-in">Saving:</span> Press the purple COPY icon
+            and bookmark the link to easily save videos.
+          </li>
+          <li>
+            <span class="highlight fade-in">Bypass:</span> Play restricted or age-gated
+            videos effortlessly.
+          </li>
+        </ul>
+      </section>
 
-<div id="instructions"> 
-  <h1 class="fade-in" id="features">Features</h1>
-  <li class="fade-in">Norepted will <strong class="fade-in">completely remove ads</strong> from videos.</li>
-  <li class="fade-in">Norepted will also <strong class="fade-in">play restricted videos.</strong></li>
-  <li class="fade-in">Can be opened in about:blank to keep the link hidden.</li>
-  <li class="fade-in">Press &quot;0&quot; to exit from Norepted to <strong class="fade-in">completely remove it from your history.</strong></li>
-  <li class="fade-in">Press &quot;1&quot; to disguise your tab to Google Drive instead of Norepted, refresh to undisguise.</li>
-  <li class="fade-in">Smooth, fast, and minimalistic way of accessing youtube videos!</li>
-  <li class="fade-in">Save a video by pressing the &quot;Copy&quot; button and bookmarking the copied link. </li>
-</div>
+      <section class="card fade-in">
+        <div class="card-header">
+          <h2>How it works</h2>
+        </div>
+        <p>
+          Norepted embeds a video based on your youtube video link, similarly to
+          how your teacher embeds a video on Google Slides for class. The code
+          simply takes the youtube video id from your url and attaches it to
+          youtube-nocookie.com, the embedded youtube video link. That link then
+          goes into a html frame element and your video appears just like that!
+        </p>
+      </section>
 
-<div id="instructions">
-  <h1 class="fade-in" id="how-you-use-it">How you use it</h1>
-  <ol class="fade-in">
-    <li class="fade-in">Paste your youtube link in the orange text box where it says &quot;youtube link here&quot;. (For example <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="fade-in">https://www.youtube.com/watch?v=dQw4w9WgXcQ</a> or <a href="https://youtu.be/dQw4w9WgXcQ" class="fade-in">https://youtu.be/dQw4w9WgXcQ</a>)<br class="fade-in"></li>
-    <li class="fade-in">Next, Press the green &quot;LAUNCH&quot; button or press the &quot;Enter&quot; key on your keyboard. <br class="fade-in"></li>
-    <li class="fade-in">Now the video will appear below, it may take a few seconds depending on how fast your computer is. <br class="fade-in"></li>
-    <li class="fade-in">In the end of the video, a wall of 3x3 recommended videos will appear. You can copy the links of those videos and paste it in the orange box and press the green &quot;LAUNCH&quot; button to restart the cycle. </li>
-  </ol>
-  <p class="fade-in">If you want to hide the link, press the &quot;open in about:blank&quot; button. <br class="fade-in">
-  To exit from Norepted, simply press &quot;0&quot; to ensure it stays hidden from your history. <br class="fade-in">
-  To hide the tab, press &quot;1&quot; to disguise it, refresh to undisguise. </p>
-</div>
+      <section class="card fade-in">
+        <div class="card-header fade-in">
+          <h2 style="color: #f64141">From the creator:</h2>
+        </div>
+        <p style="font-size: 0.9rem; color: #aaa">
+          1. Norepted stands for "not reported," so please don't! <br />
+          2. I recommend using Norepted as an education tool. Youtube may be
+          blocked which holds very useful videos. <br />
+          3. Touch grass frequently and take a break! Enjoy this site while it
+          lasts.
+        </p>
+        <div class="fade-in"
+          style="
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(246, 65, 65, 0.1);
+            border-radius: 8px;
+            border: 1px solid #f64141;
+          "
+        >
+          <span class="fade-in" style="color: #f64141">⚠️ Warning:</span> Use responsibly. You
+          control your device.
+        </div>
+      </section>
+      <div class="separator-line fade-in"></div>
+    </main>
+    
+    <footer id="footer" class="fade-in">
+      <div class="credits">
+        <p>
+          Made by
+          <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> /
+          <a href="https://github.com/wea-f" target="_blank">wea-f</a>
+        </p>
+        <p class="disclaimer">
+          &#9888;&#65039; I am NOT responsible for how you use Norepted. It is
+          YOUR device. &#9888;&#65039;
+        </p>
+        <a
+          href="https://github.com/wea-f/Norepted"
+          target="_blank"
+          class="license-link"
+          >View License & Info</a
+        >
+      </div>
+    </footer>
 
-<div id="instructions">
-  <h1 class="fade-in" id="how-it-works">How it works</h1>
-  <p class="fade-in">Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
-  The code simply takes the video id from the inputed url and attaches it to youtube-nocookie.com, the embedded youtube video link. That link then goes into a html video element and your video appears just like that! </p>
-</div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../particles.js"></script>
+    <script src="../animations.js"></script>
 
-<div id="instructions">
-  <h1 class="fade-in" id="guidelines">Guidelines</h1>
-  <p class="fade-in">Here are some tips to follow: <br class="fade-in">
-  1) If you somehow know the creator in real life, please do not snitch on the creator. <br class="fade-in"></p>
-  <p class="fade-in">2) Please do not report this website to a teacher or principal [You can still do it, of course, but why?]. You can share it with your friends, but please make it limited. If you didn't figure it out already, Norepted stands for "not reported." The whole reason why this website was made was so it would not be restricted.<br class="fade-in"></p>
-  <p class="fade-in">3) Don't use it too much, especially during school [if you are]. I recommend only using it in school for educational purposes. I repeat, educational purposes. And after school, you can do whatever you want, but please note to frequently touch grass and take a break.</p>
-  <p class="fade-in">4) Enjoy the website while it lasts. I know probably one day Norepted would be reported and restricted [how ironic], but please be thankful for this convenience and don't get too attached.<br class="fade-in"><br class="fade-in">
-  - the creator of Norepted<br class="fade-in"> <br class="fade-in">
-  <strong class="fade-in">Please help improve this site by providing feedback and reporting any problems.</strong> <br class="fade-in"></p>
-</div>
-  <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script defer src="../particles.js">
-  </script>
-  <script defer src="../animations.js"> </script>
+    <script>
+      function home() {
+        window.location.assign("../");
+      }
 
-  <script>
-    function home() {
-      window.location.assign("../");
-    }
-
-    function bookmarklets() {
-      window.location.assign("../bookmarklets/");
-    }
-
-    function about() {
-      window.location.assign("./");
-    }
-  </script>
-
-
-</body>
+      function bookmarklets() {
+        window.location.assign("../bookmarklets/");
+      }
+      function openLinksPage() {
+        window.location.assign("../links");
+      }
+      function about() {
+        window.location.assign("./");
+      }
+      function suggestions() {
+        window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", "_blank").focus();
+      }
+    </script>
+  </body>
 </html>
