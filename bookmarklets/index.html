@@ -1,209 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-56W5VNZD');</script>
-    <!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-56W5VNZD');</script>
+  <!-- End Google Tag Manager -->
 
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookmarklets - Norepted v1.6</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
-
-    <link rel="preload" href="../animations.css" as="style">
-    <link rel="preload" href="../animations.js" as="script">
-    <link rel="preload" href="../particles.js" as="script">
-    <link rel="preload" href="../style.css" as="style">
-
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../animations.css">
-    
-
-
-    <!-- CSS -->
-    <style>
-    a {
-            color: #8ab4f8; 
-    }
-    h1, h4 {
-      margin-block-end: 0em;
-    }
-
-    /* --- Bookmarklet Grid --- */
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookmarklets - Norepted v1.6.2</title>
+  
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../animations.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+  <!-- CSS -->
+  <style>
     #bookmarklets-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .bookmarkletdiv {
-            width: 30%;
-            min-width: 250px; /* Ensures they don't get too squished on smaller screens */
-            background-color: #1E88EF;
-            box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.4);
-            padding: 15px;
-            margin: 15px;
-            border-radius: 10px;
-            box-sizing: border-box; /* Better for layout */
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 16px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 15px;
     }
 
-    .bookmarkletdiv a {
-            color: white;
-            font-size: 1.2em;
-            font-weight: bold;
+    .bookmarkletdiv:hover {
+      transform: translateY(-8px);
+      border-color: #1E88EF;
+      box-shadow: 0 10px 30px rgba(30, 136, 239, 0.2);
+    }
+
+    /* Target the actual draggable link */
+    .bookmarklet {
+      background-color: #1E88EF;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      width: 100%;
+      margin-bottom: 15px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(30, 136, 239, 0.3);
+      /* These classes trigger your new script */
+      cursor: pointer;
     }
 
     .bookmarkletdiv p {
-            color: #e0e0e0;
+      color: #bbb;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      margin: 0;
     }
-</style>
-    <script defer src="../animations.js"></script>
-    </head>
 
-<body>
+    h3 { color: #FFC107; margin-top: 20px; }
+    h4 a { color: #58C114; text-decoration: none; }
+  </style>
+  <script src="../animations.js"></script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        gtag('config', 'G-ZQCTP11KMS');
-        </head>
-
-    </script>
+    gtag('config', 'G-ZQCTP11KMS');
+  </script>
+  </head>
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
     
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+  <div id="particles-js"></div>
+    <nav class="navbar fade-in">
+      <div class="logo">Norepted v1.6.2</div>
+      <div class="nav-links">
+        <button onclick="home()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          Home
+        </button>
+        <button onclick="bookmarklets()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+          Bookmarklets
+        </button>
+        <button onclick="openLinksPage()" class="nav-btn">
+          <span class="badge-new">New!</span>
+          <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+          Links
+        </button>
+        <button onclick="about()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          About
+        </button>
+        <button onclick="suggestions()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+          Suggestions
+        </button>
+      </div>
+    </nav>
+  <main>
+    <h1 class="fade-in" id="title"> Bookmarklets - Norepted v1.6 </h1>
+    <h3 class="fade-in"> Drag to bookmarks bar, or click to use on this webpage. To stop a running bookmarklet, refresh the tab you are on. </h3>
+    <h4 class="fade-in"> These bookmarklets can be found in the <a id="link" target="_blank" href="https://github.com/wea-f/ByePassHub"> ByePassHub github repository. </a> </h4>
+
+    <div id="bookmarklets-container fade-in">
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@f1eb7a9/bookmarklets/tabcloak.js').then(r => r.text()).then(eval)" class="bookmarklet secondary-btn fade-in"">Tab Cloak</a>
+        <p> Disguise any website you're on as Canvas, New Tab, or Google Drive!</p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:var element = document.getElementById('rusic-modal'); element.parentNode.removeChild(element);" class="bookmarklet secondary-btn fade-in"> Deactivate all bookmarklets </a>
+        <p> Stops any running bookmarklets (Probably doesn't work.) </p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href='javascript: fetch("https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js").then(r => r.text()).then(r => eval(r))' class="bookmarklet secondary-btn"> Edpuzzle Cheats </a>
+        <p> Activate on edpuzzle </p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href='javascript:console.log(document.body.contentEditable="true"==document.body.contentEditable?"false":"true");' class="bookmarklet secondary-btn">Edit any page</a>
+        <p>Edit any website content. Click it again to stop!</p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:(function () {var script=document.createElement('script');script.src='https://x-ray-goggles.mouse.org/webxray.js';script.className='webxray';script.setAttribute('data-lang','en-US');script.setAttribute('data-baseuri','https://x-ray-goggles.mouse.org');document.body.appendChild(script);}())" class="bookmarklet secondary-btn">X-Ray Goggles</a>
+        <p>This allows you to view and edit the source code of any website element. </p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:document.querySelectorAll('*').forEach(e=>e.setAttribute('style','background-color:#222;background-image:none;color:#'+(/^A|BU/.test(e.tagName)?'36c;text-decoration:underline;':'eee;')+e.getAttribute('style')))" class="bookmarklet secondary-btn">Dark Mode</a>
+        <p>This sets any page to dark mode.</p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href='javascript:void(document.head.appendChild(document.createElement("script")).src="https://cdn.jsdelivr.net/gh/Krazete/bookmarklets/piano.min.js")'class="bookmarklet secondary-btn">Piano</a>
+        <p>Adds a piano to the page.</p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href='javascript:(function()%7B(function() %7Bvar x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload %3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()' class="bookmarklet secondary-btn">Developer Console</a>
+        <p>This adds all features of the developer console to whatever page your on.</p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/asteroids.min.js';void(0);" class="bookmarklet secondary-btn">Asteroids</a>
+        <p>Play the game, Asteroids on the website you are on, destroying everything.</p>
+      </div>
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/katamari.js';void(0);" class="bookmarklet secondary-btn">Katamari</a>
+        <p>A game where you to collect the words on the page into a ball.</p>
+      </div>
+
+
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@a4cd53b/bookmarklets/autoclicker.js').then(r => r.text()).then(eval)" class="bookmarklet secondary-btn">Auto Clicker</a>
+        <p>Click on any element to select it as the autoclicker target. After clicking it once, Click the same element again to start autoclicking. Click it once more to stop.</p>
+      </div>
         
-    <div id="particles-js"></div>
+      <div class="bookmarkletdiv fade-in">
+        <a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@1bbb8e7/bookmarklets/adblocker.js').then(r => r.text()).then(eval)" class="bookmarklet secondary-btn" >Ad Blocker</a>
+        <p> Ad blocker for any website. Click it for every ad.</p>
+      </div>
 
-    
-        
-        <nav>
-            <div class="heading fade-in">
-                <button onclick="home()" class="headinglink fade-in"> Norepted v1.6</button>
-            </div>
-            <header>
-                <button onclick="home()" class="animbutton fade-in">Home</button>
-                <button onclick="bookmarklets()" class="animbutton fade-in">Bookmarklets</button>
-                <button onclick="about()" class="animbutton fade-in">About</button>
-                <button onclick="suggestions()" class="animbutton fade-in">Suggestions</button>
-            </header>
-        </nav>
-
-        <h1 class="fade-in" id="title"> Bookmarklets - Norepted v1.6 </h1>
-        <h3 class="fade-in"> Drag to bookmarks bar, or click to use on this webpage. To stop a running bookmarklet, refresh the tab you are on. </h3>
-        <h4 class="fade-in"> These bookmarklets can be found in the <a id="link" target="_blank" href="https://github.com/wea-f/ByePassHub"> ByePassHub github repository. </a> </h4>
-
-        <div id="bookmarklets-container">
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@f1eb7a9/bookmarklets/tabcloak.js').then(r => r.text()).then(eval)" class="bookmarklet">Tab Cloak</a>
-                <p class="fade-in"> Disguise any website you're on as Canvas, New Tab, or Google Drive!</p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:var element = document.getElementById('rusic-modal'); element.parentNode.removeChild(element);" class="bookmarklet"> Deactivate all bookmarklets </a>
-                <p  class="fade-in"> Stops any running bookmarklets (Probably doesn't work.) </p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href='javascript: fetch("https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js").then(r => r.text()).then(r => eval(r))' class="bookmarklet"> Edpuzzle Cheats </a>
-                <p class="fade-in"> Activate on edpuzzle </p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href='javascript:console.log(document.body.contentEditable="true"==document.body.contentEditable?"false":"true");' class="bookmarklet">Edit any page</a>
-                <p class="fade-in">Edit any website content. Click it again to stop!</p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:(function () {var script=document.createElement('script');script.src='https://x-ray-goggles.mouse.org/webxray.js';script.className='webxray';script.setAttribute('data-lang','en-US');script.setAttribute('data-baseuri','https://x-ray-goggles.mouse.org');document.body.appendChild(script);}())" class="bookmarklet">X-Ray Goggles</a>
-                <p  class="fade-in">This allows you to view and edit the source code of any website element. </p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:document.querySelectorAll('*').forEach(e=>e.setAttribute('style','background-color:#222;background-image:none;color:#'+(/^A|BU/.test(e.tagName)?'36c;text-decoration:underline;':'eee;')+e.getAttribute('style')))" class="bookmarklet">Dark Mode</a>
-                <p class="fade-in">This sets any page to dark mode.</p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                 <a href='javascript:void(document.head.appendChild(document.createElement("script")).src="https://cdn.jsdelivr.net/gh/Krazete/bookmarklets/piano.min.js")' class="bookmarklet">Piano</a>
-                <p class="fade-in">Adds a piano to the page.</p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href='javascript:(function()%7B(function() %7Bvar x %3D document.createElement("script")%3Bx.src %3D "https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload %3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()' class="bookmarklet">Developer Console</a>
-                <p class="fade-in">This adds all features of the developer console to whatever page your on.</p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/asteroids.min.js';void(0);" class="bookmarklet">Asteroids</a>
-                <p class="fade-in">Play the game, Asteroids on the website you are on, destroying everything.</p>
-            </div>
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/katamari.js';void(0);" class="bookmarklet">Katamari</a>
-                <p class="fade-in">A game where you to collect the words on the page into a ball.</p>
-            </div>
-
-
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@a4cd53b/bookmarklets/autoclicker.js').then(r => r.text()).then(eval)" class="bookmarklet fade-in">Auto Clicker</a>
-                <p class="fade-in">Click on any element to select it as the autoclicker target. After clicking it once, Click the same element again to start autoclicking. Click it once more to stop.</p>
-            </div>
-                
-            <div class="bookmarkletdiv fade-in">
-                <a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@1bbb8e7/bookmarklets/adblocker.js').then(r => r.text()).then(eval)" class="bookmarklet">Ad Blocker</a>
-                <p class="fade-in">Ad blocker for any website. Click it for every ad.</p>
-            </div>
-
-            
-        </div>
-        
-        <div id="seperator fade-in">
-            <span> -------------------------------------------------- </span>
-        </div>
-
-        <div id="footer" class="fade-in">
-          <div class="visitor-counters-wrapper">
-            <div class="visitor-counter fade-in">
-              <script type="text/javascript" src="https://www.stat-counter.org/count/d6u8"></script><br>
-            </div>
-
-
-            <div class="fade-in visitor-counter">
-              <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"> </script>
-              </div>
-
-            </div>
-
-            <h5 class="fade-in" id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on
-                codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a
-                href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> <br> FOR MORE INFO AND LICENSE, GO <a
-                href="https://github.com/wea-f/Norepted" target="_blank"> HERE </a> <br>
-              <span class="fade-in" id="condition"> &#9888;&#65039; I am NOT responsible in anyway if you get in trouble related to Norepted,
-                it is YOUR device and YOU control it. &#9888;&#65039; </span>
-            </h5>
+      
     </div>
-    </body>
-      <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-      <script defer src="../particles.js"></script>
-      <script>
-          function home() {
-            window.location.assign("../");
-          }
-
-          function bookmarklets() {
-            window.location.assign("./");
-          }
-
-          function about() {
-            window.location.assign("../about/");
-          }
-      </script>
     
+    <div class="separator-line fade-in"></div>
+  </main>
+  
+  <footer id="footer" class="fade-in">
+    <div class="credits">
+    <p>
+      Made by
+      <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> /
+      <a href="https://github.com/wea-f" target="_blank">wea-f</a>
+    </p>
+    <p class="disclaimer">
+      &#9888;&#65039; I am NOT responsible for how you use Norepted. It is
+      YOUR device. &#9888;&#65039;
+    </p>
+    <a
+      href="https://github.com/wea-f/Norepted"
+      target="_blank"
+      class="license-link"
+      >View License & Info</a
+    >
+    </div>
+  </footer>
+  </body>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="../particles.js"></script>
+  <script src="../animations.js"></script>
+    <script>
+      function home() {
+      window.location.assign("../");
+      }
+
+      function bookmarklets() {
+      window.location.assign("./");
+      }
+
+      function about() {
+      window.location.assign("../about/");
+      }
+      function openLinksPage() {
+        window.location.assign("../links/");
+      }
+      function suggestions() {
+      window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", "_blank").focus();
+        }
+    </script>
+  
 </html>
