@@ -1,161 +1,239 @@
-<!DOCTYPE html>
-<html>
-<head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-56W5VNZD');</script>
-<!-- End Google Tag Manager -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Norepted v1.6</title>
-  <link rel="preload" href="./style.css" as="style">
-  <link rel="preload" href="./animations.css" as="style">
-  <link rel="preload" href="./script.js" as="script">
-  <link rel="preload" href="./animations.js" as="script">
-  
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./animations.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="preload" as="font">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap" rel="stylesheet">
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-ZQCTP11KMS');
-</script>
-  <script defer src="script.js"></script>
-</head>
-
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<div id="particles-js"></div>
-<nav>
-  <div class="heading fade-in">
-    <button onclick="home()" class="headinglink fade-in"> Norepted v1.6</button>
-  </div>
-  <header>
-    <button onclick="home()" class="animbutton fade-in">Home</button>
-    <button onclick="bookmarklets()" class="animbutton fade-in">Bookmarklets</button>
-    <button onclick="about()" class="animbutton fade-in">About</button>
-    <!-- <a href="/projects.html">Games</a>
-    <a href="/settings.html">Settings</a> -->
-    <button onclick="suggestions()" class="animbutton fade-in">Suggestions</button>
-
-  </header>
-</nav>
-<h1 id="title"class="fade-in"> Youtube Watcher </h1>
-  
-  <div id="instructions"class="fade-in">
-    <h2 id="u" class="fade-in"> How To Use: </h2>
-<h3 id="f" class="fade-in"> Paste your youtube video link in the <a> orange box </a> and press the <a id="g">LAUNCH</a> button (or press the <a id="g">Enter</a> key).</h3>
-    <h2 id="u" class="fade-in"> Features: </h2>
-    <h3 id="f" class="fade-in"> Press <a id="g">+</a> or <a id="r">-</a> to increase/decrease video size. Press <a id="ye">&#8634</a> to reset your changes.</h3>
+<!doctype html>
+<html lang="en">
+  <head>
+     <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-56W5VNZD");
+    </script>
+     <!-- End Google Tag Manager -->
     
-<h3 id="e" class="fade-in"> Press <a>0</a> to exit faster and hide history. </h3>
-<h3 id="e" class="fade-in" title="Tab Cloak: Disguises tab as Google Drive"> For a Tab Disguise (into Google Drive), press <a id="y">1</a>. </h3>
-  
-<a id="aboutblank" onclick="aboutblank()" class="fade-in"><button id="aboutblank" class="fade-in homebutton" title="about:blank cloak">Open in
-    about:blank</button></a>
-<h4 class="fade-in" id="copy_tip"> To <a id="p">save</a> a video, press the <a id="p">"COPY"</a> button and <a id="p"> bookmark </a> the copied link. </h4>
-<!-- <h4 class="fade-in" id="tip"> Shortcut: Press 'Enter' on your keyboard to launch faster. </h4> -->
-    <button class="hide-button fade-in" title="Hide Instructions"> Hide Instructions </button>
-  </div>
-  <div>
-    <button class="show-button" title="Show Instructions">Show Instructions</button> 
-    </div>
-  
-  <br>
-  <div class="input-container fade-in">
-    <input type="text" id="link" class="fade-in" placeholder="YouTube link here" />
-  </div>
-<br>
-<button class="fade-in homebutton" id="launch" title="Launch"> LAUNCH </button>
-<br>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norepted v1.6.2</title>
 
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./animations.css" />
 
-  
-<button class="fade-in homebutton" id="copy" onclick="copy_link()" title="Copy"> COPY </button>
-<br>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
 
-<h3 id="offtext"class="fade-in"> The video(s) will show down below </h3> 
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-ZQCTP11KMS");
+    </script>
+  </head>
 
-  <div id="feedbackMessage"></div>
-  
-  <!-- <div class="main-content-wrapper"> -->
-    <div class="container fade-in">
-      <div id="videoPlayersContainer">
-        </div>
-    </div>
-  <!-- </div> -->
+  <body>
+    <!--GTAG  -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+<!--GTAG  -->
+    <div id="particles-js"></div>
 
-
-<br>
-<div class="fade-in" id="seperator">
-  <span> -------------------------------------------------- </span>
-</div>
-
-<div id="footer" class="fade-in">
-  <div class="visitor-counters-wrapper">
-    <div class="visitor-counter fade-in">
-      <script type="text/javascript" src="https://www.stat-counter.org/count/d6u8"></script><br>
-    </div>
-    
-    
-    <div class="fade-in visitor-counter">
-      <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1086686/t/1"> </script>
-
+    <nav class="navbar fade-in">
+      <div class="logo">Norepted v1.6.2</div>
+      <div class="nav-links">
+        <button onclick="home()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          Home
+        </button>
+        <button onclick="bookmarklets()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+          Bookmarklets
+        </button>
+        <button onclick="openLinksPage()" class="nav-btn">
+          <span class="badge-new">New!</span>
+          <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+          Links
+        </button>
+        <button onclick="about()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          About
+        </button>
+        <button onclick="suggestions()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+          Suggestions
+        </button>
       </div>
-      
-    </div>
+    </nav>
+
+    <main>
+        <h1 id="title" class="fade-in">YouTube Watcher</h1>
+
+      <div id="instructions" class="card fade-in">
+      <div class="card-header">
+        <h2>Instructions & Controls</h2>
+        <button class="hide-button" title="Hide Instructions and Settings">Hide</button>
+      </div>
+      <div class="card-content">
+        <ul class="instruction-list">
+          <li>
+            <strong>Watch:</strong> Paste a link in the Orange Box and press
+            <span class="highlight">LAUNCH</span> or 
+            <span class="highlight">Enter</span>.
+          </li>
+          
+          <li>
+            <strong>Privacy:</strong> Press
+
+            <span class="highlight">-</span> to exit and hide your history. Press
+
+            <span class="highlight">`</span> for a Tab Cloak.
+          </li>
+
+          <li>
+            <strong>Save & Share:</strong> After the video loads, press
+
+            <!-- <span class="highlight">COPY</span>  -->
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+            and bookmark the link.
+          </li>
+          <li>
+            <strong>Resize:</strong> Press <span class="highlight">+</span> or
+            <span class="highlight">-</span> on the side panel.
+
+          </li>
+        </ul>
+        <div class="action-row">
+
+          <button
+            id="aboutblank"
+            onclick="aboutblank()"
+            class="secondary-btn">
+            Open in about:blank
+
+          </button>
+
+        </div>
+      </div>
+      </div>  
+        
+        <button class="show-button fade-in">Show Instructions and Settings</button>
+
+        <div class="card fade-in settings-card" id="settings">
+            <div class="card-header">
+                <h2>Settings</h2>
+            </div>
+            <div class="card-content settings-row">
+                <div class="setting-label">
+                    <span>Low Performance Mode</span>
+                    <span id="optStatusText" class="status-indicator disabled">Disabled</span>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="optToggle" onchange="toggleOptimization()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="watch-interface fade-in">
+            <div class="control-panel">
+                <input type="text" id="link" placeholder="Paste YouTube link here..."/>
+                <button id="launch" class="primary-btn pulse-btn" title="Launch Video">LAUNCH</button>
+            </div>
+
+            <div class="tools-bar">
+                <button id="clearAll" onclick="clearAllVideos()" class="text-btn">Clear All Videos</button>
+            </div>
+        </div>
+
+        <div class="video-section fade-in">
+            <div class="separator-line"></div>
+
+
+            <div class="video-grid-frame">
+              <h3 id="offtext" class="subtle-text">Videos will appear here</h3>
+                <div id="videoPlayersContainer"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer id="footer" class="fade-in">
+
+      <div class="credits">
+        <p>
+          Made by
+          <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> /
+          <a href="https://github.com/wea-f" target="_blank">wea-f</a>
+        </p>
+        <p class="disclaimer">
+          &#9888;&#65039; I am NOT responsible for how you use Norepted. It is
+          YOUR device. &#9888;&#65039;
+        </p>
+        <a
+          href="https://github.com/wea-f/Norepted"
+          target="_blank"
+          class="license-link"
+          >View License & Info</a
+        >
+      </div>
+    </footer>
+    <script rel="preload" src="animations.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="particles.js"></script>
     
-  
 
-<h5 class="fade-in" id="socials"> Made by the user <a href="https://codepen.io/weaF_z" target=”_blank”> WG563 on
-    codepen.io </a>, aka <a href="https://github.com/wea-f" target=”_blank”>wea-f on github </a>, aka <a
-    href="https://replit.com/@wea-F" target=”_blank”> wea-F on replit </a> <br> FOR MORE INFO AND LICENSE, GO <a
-    href="https://github.com/wea-f/Norepted" target="_blank"> HERE </a> <br>
-  <span class="fade-in" id="condition"> &#9888;&#65039; I am NOT responsible in anyway if you get in trouble related to Norepted,
-    it is YOUR device and YOU control it. &#9888;&#65039; </span>
-</h5>
-  </div>
-  
-  <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script defer src="particles.js"></script>
-  <script defer src="animations.js"></script>
+    <script>
+      // Navigation Functions
+      function aboutblank() {
+        let url = window.location.href;
+        var w = window.open("about:blank", "_blank");
+        w.document.write(
+          '<iframe style="position: absolute;top: 0px;bottom: 0px;right: 0px;width: 100%;border: none;margin: 0;padding: 0;overflow: hidden;z-index: 99999;height: 100%;" src="' +
+            url +
+            '"></iframe>',
+        );
+        w.document.close();
+      }
+      function home() {
+        window.location.assign("./");
+      }
+      function bookmarklets() {
+        window.location.assign("./bookmarklets");
+      }
+      function about() {
+        window.location.assign("./about");
+      }
 
-  <script>
-// About:Blank button loader
-function aboutblank() {
-  let url = window.location.href;
-  var w = window.open("about:blank", "_blank");
-  w.document.write('<iframe style="position: absolute;top: 0px;bottom: 0px;right: 0px;width: 100%;border: none;margin: 0;padding: 0;overflow: hidden;z-index: 99999;height: 100%;" src="' + url + '"></iframe>');
-  w.document.close(); // Important to close the document for the iframe to load correctly
-  // window.close('', '_parent', '');
+      function suggestions() {
+        window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", "_blank").focus();
+      }
 
-} 
-    function home() {
-      window.location.assign("./");
-    }
-
-    function bookmarklets() {
-      window.location.assign("./bookmarklets");
-    }
-
-    function about() {
-      window.location.assign("./about");
-    }
-</script>
-</body>
+      function openLinksPage() {
+        window.location.assign("./links");
+      }
+    </script>
+  </body>
 </html>
