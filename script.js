@@ -11,6 +11,21 @@ const INITIAL_VIDEO_HEIGHT = 387;
 const RESIZE_STEP = 0.10;
 const ASPECT_RATIO = 0.5625;
 
+// --- FIX SCROLL RESTORATION ---
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
+window.onload = function() {
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+  }, 10); // Small delay to ensure layout is ready
+};
+
 function showToast(message, isError = false) {
     const toast = document.createElement("div");
     toast.className = "toast-notification";
