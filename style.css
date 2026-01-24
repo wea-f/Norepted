@@ -54,6 +54,21 @@ main {
   font-weight: bold;
 }
 
+.highlight-red {
+  color: #D73939;
+  font-weight: bold;
+}
+.highlight-purple {
+  color: #AB47BC;
+  font-weight: bold;
+}
+
+.highlight-yellow {
+  color: #ffd145;
+  font-weight: bold;
+}
+
+
 /* --- NAVBAR STYLES (UPDATED) --- */
 .navbar {
   width: 100%;
