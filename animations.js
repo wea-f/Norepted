@@ -30,6 +30,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.fadeInObserver = fadeInObserver;
+
+  // optimized mode
+  const savedMode = localStorage.getItem("optimizedMode") === "true";
+
+  // Set initial UI state
+
+  if (savedMode) {
+      document.body.classList.add("optimized");
+      const pContainer = document.getElementById("particles-js");
+      if (pContainer) pContainer.style.display = "none";
+  } 
+  
 });
 
 document.addEventListener("keyup", function(e) {
@@ -43,7 +55,7 @@ document.addEventListener("keyup", function(e) {
     e.stopPropagation();
     window.location.replace("https://www.google.com/webhp?igu=1");
     break;
-  case "``":
+  case "'":
     e.preventDefault();
     e.stopPropagation();
     document.title = "My Drive - Google Drive";
@@ -62,3 +74,17 @@ function setFavicons(favImg) {
   headTitle.appendChild(setFavicon);
 }
 
+// --- FIX SCROLL RESTORATION ---
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
+window.onload = function() {
+  setTimeout(function() {
+    window.scrollTo(0, 0);
+  }, 10); // Small delay to ensure layout is ready
+};
