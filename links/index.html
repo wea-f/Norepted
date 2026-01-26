@@ -216,6 +216,7 @@
     </nav>
 
     <main class="fade-in">
+      <h1 class="fade-in" id="title"> Links </h1>
       <div class="card fade-in">
         <div class="card-header">
           <h2>Proxy Link Tester</h2>
@@ -527,15 +528,23 @@
 
       // Open Selected
       openBtn.addEventListener("click", () => {
+        if (selectedLinks.size === 0) return;
         if (selectedLinks.size > 10) {
-          if (
-            !confirm(
-              `You are about to open ${selectedLinks.size} tabs. This might lag your device. Continue?`,
-            )
-          )
-            return;
+          if (!confirm(`You are about to open ${selectedLinks.size} tabs. Continue?`)) return;
         }
-        selectedLinks.forEach((url) => window.open(url, "_blank"));
+
+        let blocked = false;
+        selectedLinks.forEach((url) => {
+          const newWin = window.open(url, "_blank");
+
+          if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+            blocked = true;
+          }
+        });
+
+        if (blocked) {
+          alert("One site opened! Please turn on 'Always allow pop-ups and redirects' from Norepted to open multiple links!");
+        }
       });
 
       // UI Updater
