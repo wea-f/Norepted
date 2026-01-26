@@ -12,7 +12,7 @@
   
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bookmarklets - Norepted v1.6.2</title>
+  <title> Norepted - Bookmarklets</title>
   
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../animations.css">
@@ -100,7 +100,7 @@
     
   <div id="particles-js"></div>
     <nav class="navbar fade-in">
-      <div class="logo">Norepted - Bookmarklets </div>
+      <div class="logo">Norepted v1.6.2</div>
       <div class="nav-links">
         <button onclick="home()" class="nav-btn">
           <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -126,10 +126,16 @@
       </div>
     </nav>
   <main>
-    <h1 class="fade-in" id="title"> Bookmarklets - Norepted v1.6 </h1>
-    <h3 class="fade-in"> Drag to bookmarks bar, or click to use on this webpage. To stop a running bookmarklet, refresh the tab you are on. </h3>
-    <h4 class="fade-in"> These bookmarklets can be found in the <a id="link" target="_blank" href="https://github.com/wea-f/ByePassHub"> ByePassHub github repository. </a> </h4>
-
+    <h1 class="fade-in" id="title"> Bookmarklets </h1>
+    
+    <div class="card fade-in">
+      <div class="card-header">
+        <h2>How to Use</h2>
+      </div>
+      <h3 class="fade-in"> Drag to bookmarks bar, or click to use on this webpage. To stop a running bookmarklet, refresh the tab you are on. </h3>
+      <h4 class="fade-in"> These bookmarklets can be found in the <a id="link" target="_blank" href="https://github.com/wea-f/ByePassHub"> ByePassHub github repository. </a> </h4>
+      </div>
+    
     <div id="bookmarklets-container fade-in">
       <div class="bookmarkletdiv fade-in">
         <a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@f1eb7a9/bookmarklets/tabcloak.js').then(r => r.text()).then(eval)" class="bookmarklet secondary-btn fade-in"">Tab Cloak</a>
