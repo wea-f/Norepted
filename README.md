@@ -1,50 +1,88 @@
-# Norepted v1.6
-Norepted is a youtube video embedder/unblocker/player that has many features including: history hiding, **zero ads**, and more! 
-# Features
-- Norepted will **completely remove ads** from videos.
-- Norepted will also **play restricted videos.**
-- Can be opened in about:blank to keep the link hidden.
-- Press "0" to exit from Norepted to **completely remove it from your history.**
-- Press "1" to disguise your tab to Google Drive instead of Norepted, refresh to undisguise.
-- Save a video by pressing the "Copy" button and bookmarking the copied link.
-- Change size of video display (+, -, and reset to default) and can show/hide instructions!
-# How you access it
-1. Access it with [Codesandbox](https://gzhhqm.csb.app)
-2. Access it with [CodePen](https://codepen.io/weaF_z/full/RwJVywE)
-3. Access it with [Github](http://wea-f.github.io/Norepted)
-4. Access it with [Google Sites](https://sites.google.com/view/n0repted/home)
-5. Access it with [Playcode](https://norepted.playcode.io) (press "SKIP INTRO" to access Norepted)
-6. Access it with [VERCEL](https://norepted-delta.vercel.app/)
-7. Access it with [NETLIFY](https://norepted.netlify.app/)
-8. Access it with [Terminal](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal) <br>
+# Norepted v1.6.2
+#### YouTube Watcher & Proxy Hub
 
-**!!! I am not responsible in anyway if you get in trouble while using Norepted, it is YOUR device and YOU control it. !!!**
-# How you use it 
-1. Paste your youtube link in the orange text box where it says "youtube link here". (For example https://www.youtube.com/watch?v=dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)<br>
-2. Next, Press the green "LAUNCH" button or press the "Enter" key on your keyboard. <br>
-3. Now the video will appear below. <br>
-4. Once you are done, you could add more videos, or pressing the red x button to remove the video. Resize the video if needed with the plus and minus buttons to the side of the video. <br>
-<br>
+Norepted is a YouTube embedder and unblocker designed to watch Youtube videos that may be restricted (like at school). Version 1.6.2 introduces a complete UI overhaul and the highly requested **Links Page,** filled with 200+ links to proxies.
 
-If you want to hide the link, press the "open in about:blank" button. <br>
-To exit from Norepted, simply press "0" to ensure it stays hidden from your history. <br>
-To disguise the tab as google drive, press "1" to disguise it, refresh to undisguise. <br> <br>
-Change the size of the video frame with the +, - and reset buttons to the right side of each. <br>
-Feel free to add multiple videos! Press the X to remove the video.<br>
-# Bookmarklets Page
-This page is filled with bookmarklets to use right from Norepted. It includes fun games, an ad blocker, dark mode, an auto clicker, and more! Drag it to your bookmarks bar. (MAY NOT WORK FOR NEWER CHROMEBOOKS).
-# How it works
-  Norepted embeds a video based on your youtube video link. Similarly to how your teacher embeds a video on Google Slides for class.
-The code simply takes the video id from the inputed url and attaches it to youtube.com/embed, the embedded youtube video link. That link then goes into a html video element and your video appears just like that! <br>
-<!--# Guidelines (you don't have to read this its old)
-Here are some tips to follow: <br>
-1	If you somehow know the creator in real life, please do not snitch on the creator. <br>
+### 🌟 New in v1.6.2
 
-2	Please do not report this website to a teacher or principal [You can still do it, of course, but why?]. You can share it with your friends, but please make it limited. If you didn’t figure it out already, Norepted stands for “not reported.” The whole reason why this website was made was so it would not be restricted.<br>
+* **🔗 Links Page:** A massive new directory featuring working proxies and unblockers.
+* **🎨 UI Polish:** Added header icons, updated particle effects, and updated overall theme.
+* **🔖 Save:** Pre-existing launched videos are now saved after exiting the site.
+* **🧹 Optimized Code:** Added "low performance mode" for slower chromebooks, as well as removing unnecessary code.
 
-3	Don’t use it too much, especially during school [if you are]. I recommend only using it in school for educational purposes. I repeat, educational purposes. And after school, you can do whatever you want, but please note to frequently touch grass and take a break.<br>
+## ✨ Key Features
 
-4	Enjoy the website while it lasts. I know probably one day Norepted would be reported and restricted [how ironic], but please be thankful for this convenience and don’t get too attached.<br><br>
- --- the creator of Norepted<br> -->
-**Please help improve this site by providng feedback and reporting any problems. I'm open!!** <br>
-  
+* **🚫 Zero Ads:** Norepted strips all ads from videos for uninterrupted viewing.
+* **🔓 Bypass Restrictions:** Plays age-restricted and network-blocked videos via `youtube-nocookie` embedding.
+* **🙈 History Hiding (Panic Mode):** Instantly redirect to Google to scrub your current session from history (Press "-").
+* **🎭 Tab Cloaking:** Disguise your tab as "Google Drive" (Press "`").
+* **💾 Save & Bookmark:** Use the "Copy" button on the side panel to save and share direct links to videos.
+* **🖥️ Multi-Video Support:** Open multiple videos at once and resize them individually.
+
+---
+
+## 🚀 How to Access
+
+You can access Norepted through these mirrors:
+
+| Platform | Link |
+| --- | --- |
+| **Vercel** | [norepted-delta.vercel.app](https://norepted-delta.vercel.app/) |
+| **Netlify** | [norepted.netlify.app](https://norepted.netlify.app/) |
+| **CodeSandbox** | [gzhhqm.csb.app](https://gzhhqm.csb.app) |
+| **Playcode** | [norepted.playcode.io](https://norepted.playcode.io/) (Press "SKIP INTRO") |
+| **Playcode (2)** | [https://2650852.playcode.io/](https://2650852.playcode.io/) (Press "SKIP INTRO") |
+| **GitHub Pages** | [wea-f.github.io/Norepted](http://wea-f.github.io/Norepted) |
+| **CodePen** | [codepen.io/weaF_z](https://codepen.io/weaF_z/full/RwJVywE) |
+| **Google Sites** | [sites.google.com/view/n0repted](https://sites.google.com/view/n0repted/home) |
+| **Google Sites (2)** | [https://sites.google.com/view/norepted-mirror/home](https://sites.google.com/view/norepted-mirror/home) |
+| **Edgeone** | [https://norepted.edgeone.app/](https://norepted.edgeone.app/) |
+
+*Want to run it locally? [Check the Wiki.*](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal)
+
+---
+
+## 🎮 Controls & Usage
+
+### Watching Videos
+
+1. **Paste:** Copy a YouTube link (e.g., `https://www.youtube.com/watch?v=...`) into the orange box.
+2. **Launch:** Press **Enter** or click the green **LAUNCH** button.
+3. **Manage:**
+* Use the **+** / **-** buttons next to the video to resize.
+* Click **X** to remove a video.
+* Click the **Purple Copy Icon** to copy the unblocked link for bookmarking.
+* Press Clear All Videos button to clear all your videos (so you do not have to cancel them out individually).
+
+### Privacy Shortcuts (Hotkeys)
+
+* **`-` (Hyphen/Dash):** **Panic Mode.** Immediately exits Norepted and redirects to Google. Norepted will not be on your `chrome://history`.
+* **``` (Backtick):** **Tab Cloak.** Disguises the tab icon and title as "Google Drive." Refresh the page to undo.
+* **Open in about:blank:** Click the button in the "Instructions" panel to open Norepted with the url as `about:blank`
+
+---
+
+## 🔗 The Links Page (New v1.6.2)
+
+* **Bulk Testing:** Select multiple proxy links and open them all at once to find one that works on your network.
+* **Live Updates:** Fetches the latest links directly from GitHub.
+
+## 🔖 Bookmarklets
+
+The **Bookmarklets** page offers tools you can drag to your browser's bookmarks bar to use on *other* websites:
+
+---
+
+## ⚙️ How it Works
+
+Norepted functions similarly to how a teacher embeds a video into Google Slides.
+
+1. The site extracts the **Video ID** from your YouTube link.
+2. It creates an iframe pointing to `youtube-nocookie.com/embed/[ID]`.
+3. Because this domain is distinct from the main YouTube site, it often bypasses network filters and ad servers.
+
+---
+
+## ⚠️ Disclaimer
+
+> **I am NOT responsible for how you use Norepted.** It is YOUR device and YOU control it.

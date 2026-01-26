@@ -1,9 +1,28 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap'); */
 
+.fade-in{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
+  /*  .4*/
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  z-index: -1;
+}
+
 /* The fundamentals */
 html {
   font-family: "Fredoka", "sans-serif";
-  /*background-color: #1e88e5;*/
   color: white;
 }
 
@@ -23,8 +42,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-
-
 h1,
 h3,
 h4,
@@ -33,52 +50,60 @@ h6 {
   text-align: center;
   font-family: "Fredoka", "sans-serif";
 }
+
 body {
   background: linear-gradient(to bottom, rgb(30, 136, 229), rgb(0, 0, 139));
   background-attachment: fixed;
-  min-height: 100vh; /* Ensure the body takes at least the full viewport height */
-  display: flex; /* Enable flexbox */
-  flex-direction: column; /* Stack children vertically */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  margin: 1;
+  margin: 0;
+  padding: 0;
 }
 
-/*  Text  Colors + Footer (visitor counter and socials)*/
-#instructions {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  margin: 5px auto;
-  margin-bottom: 0px;
-  max-width: 650px;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+/* --- NAVBAR --- */
+.navbar {
+  width: 100%;
+  background: rgba(0, 0, 50, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-#instructions #u {
-  margin-block-start: 0em;
-  margin-block-end: 0em;
+.logo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff6b6b;
+  /* Reddish accent */
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-#tip {
-  color: lightgreen;
+.nav-links {
+  display: flex;
+  gap: 15px;
 }
 
-#condition {
-  color: #e53935;
-  text-align: center;
-  font-size: 18px;
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.2s;
 }
 
-#seperator {
-  text-align: center;
-  font-size: 30px;
-}
-
-#copy_tip #p {
-  color: #AB47BC;
-
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFC107;
 }
 
 
@@ -111,240 +136,191 @@ body {
   margin-top: 10%; 
 }
 
-#footer {
-  margin-top: auto; /* This will push the footer down, taking up available space */
-  border-radius: 10px;
-  margin-bottom: 0px; /* Keep this if you want the footer right at the bottom */
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  padding: 5px;
-}
-
-
-
-#title {
-  color: #e53935;
-}
-
-#socials {
-  text-align: center; 
-  font-family: "Fredoka", "sans-serif"; /* Use the consistent font */
-  color: white; /* Maintain white text color */
-  font-size: 16px; /* Adjust font size for readability */
-  line-height: 1.6; /* Improve line spacing */
-  padding: 20px; /* Add some padding around the text */
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 950px; 
-  margin-bottom: 0px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 10px; 
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
-}
-#f a {
-  color: #f57f17;
-}
-#e #y {
+/* --- STATUS & FOOTER --- */
+.status {
   color: #FFC107;
-}
-#e a {
-  color: #e53935;
-}
-#f #g {
-  color: lightgreen;
-}
-#f #ye {
-  color: #FFC107;
-}
-#socials a {
-  color: #AB47BC; 
-  text-decoration: none; 
-  transition: color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-#socials a:hover {
-  color: #963EA5; 
-  text-decoration: underline; 
-}
-
-#socials #condition {
-  display: block; 
-  margin-top: 15px; 
+  margin: 10px 0;
   font-weight: bold;
-  color: #e53935; 
 }
+
+.dismiss-btn {
+  margin-left: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 2px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+}
+
+.dismiss-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+footer {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.credits {
+  color: #aaa;
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.credits a {
+  color: #AB47BC;
+  text-decoration: none;
+}
+
+.credits a:hover {
+  text-decoration: underline;
+  color: #d68fe9;
+}
+
+
+
 
 /* -------------------------------- */
 
 /* Fade in animations and particles */
-.fade-in{
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out; 
-  /*  .4*/
-}
 
-.fade-in.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  z-index: -1;
-}
 
 /* Heading and home button click and hover animations */
 
-.headinglink {
-  color: rgb(255, 0, 0);
-  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3); /*4 20*/
-  letter-spacing: 2px;
-  font-size: 35px;
-  font-weight: 800;
-  text-align: center;
-  text-decoration: none;
-  transition: .2s;
-  background: none;
+.hide-button:hover,
+.show-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border-color: white;
+}
+
+/* ---  Bubble Effect --- */
+/* --- CLEANER BUTTON STATES (Prevents Animation Glitches) --- */
+.primary-btn, .secondary-btn, #searchButton, .size-button {
+    position: relative;
+    overflow: visible !important; /* CRITICAL: Allows bubbles to exit the button */
+    transition: all 0.2s ease;
+    z-index: 1;
+    border: none;
+}
+
+/* We removed translateY to prevent conflict with the bubble math */
+.primary-btn:hover, .secondary-btn:hover, #searchButton:hover {
+    filter: brightness(1.1);
+    cursor: pointer;
+}
+
+.primary-btn:active, .secondary-btn:active, #searchButton:active, .size-button:active {
+    transform: scale(0.92) rotate(-0.1deg); /* The "Exciting" Thump */
+}
+
+/* --- ANIMATED LAUNCH BUTTON --- */
+.pulse-btn {
   position: relative;
-  border: none;
-
-  &:hover {
-    background-color: rgba(201, 201, 201, 0.37);
-    padding: 2px 13px;
-    transform: translate(0%, -1%);
-    transition: 0.2s;
-  }
-
-  &:active {
-    background-color: rgba(255, 255, 255, 0.466);
-    transform: translateY(0);
-
-    transition: all 100ms;
-    /* Shorter transition for active */
-
-    &:after {
-      opacity: 1;
-      transition: 0ms;
-      /* Transition for box-shadow */
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    /* Inherit border-radius from button */
-    opacity: 0;
-    transition: all 0.45s;
-    box-shadow: 0 0 7px 15px white;
-    background-color: rgba(201, 201, 201, 0.37);
-  }
+  overflow: hidden;
+  /* Keep your existing button styles */
 }
 
-
-
-.animbutton {
-  background: transparent;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  line-height: 1;
-  min-height: 2rem;
-  padding: 0 10px;
-  transition: all 250ms;
-  position: relative;
-  /* Necessary for absolute positioning of :after */
-
-  &:hover {
-    background-color: rgba(201, 201, 201, 0.37);
-    transform: translateY(0%, -1%);
-    padding: 0px 13px;
-    transition: all 200ms;
-    /* Shorter transition for hover */
-  }
-
-  &:active {
-    background-color: rgba(255, 255, 255, 0.466);
-    transform: translateY(0);
-
-    transition: all 100ms;
-    /* Shorter transition for active */
-
-    &:after {
-      opacity: 1;
-      transition: 0ms;
-      /* Transition for box-shadow */
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    /* Inherit border-radius from button */
-    opacity: 0;
-    transition: all 0.45s;
-    box-shadow: 0 0 15px 10px white;
-    background-color: rgba(201, 201, 201, 0.37);
-  }
+.pulse-btn:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
 }
 
-.homebutton {
-  position:relative;
-
-  &:hover {
-    transform: translateY(0%, -1%);
-    transition: all 200ms;
-    /* Shorter transition for hover */
-  }
-
-
-  &:active {
-    transform: translateY(0);
-    transition: all 100ms;
-    /* Shorter transition for active */
-
-    &:after {
-      opacity: 1;
-      transition: 0ms;
-      /* Transition for box-shadow */
-      box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: inherit;
-    opacity: 0;
-    transition: all 0.65s;
-    box-shadow: 0 0 11px 13px white;
-  }
+/* Subtle glow animation for idle state */
+@keyframes glow-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(88, 193, 20, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(88, 193, 20, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(88, 193, 20, 0); }
 }
 
+.pulse-btn {
+  animation: glow-pulse 2s infinite;
+}
+/* Notification  when link is copied*/
+.toast-notification {
+  position: fixed;
+  bottom: -50px; /* Start off-screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #58C114;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid #58C114;
+  font-weight: bold;
+  z-index: 9999;
+  transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+  opacity: 0;
+}
 
+.toast-notification.show {
+  bottom: 30px;
+  opacity: 1;
+}
+
+/* Little elements */
+.separator-text {
+  color: #aaa;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.separator-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 30px 0;
+}
+
+.subtle-text {
+  color: #888;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* --- LOADING SPINNER FOR VIDEO --- */
+.video-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2; /* Above iframe but below controls */
+  pointer-events: none; /* Let clicks pass through if needed */
+  transition: opacity 0.3s ease;
+}
+
+.video-loading-overlay.hidden {
+  opacity: 0;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #58C114; /* Norepted Green */
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

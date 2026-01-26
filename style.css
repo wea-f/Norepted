@@ -1,257 +1,406 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+/* --- RESET & CORE --- */
+* {
+  box-sizing: border-box;
+}
 
-/* Main Buttons */
-#launch {
-  position: relative;
-  font-size: 22px;
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- CARDS & PANELS --- */
+.card {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #FFC107;
+  text-align: left;
+}
+
+.instruction-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.highlight {
+  color: #58C114;
   font-weight: bold;
+}
+
+.highlight-red {
+  color: #D73939;
+  font-weight: bold;
+}
+.highlight-purple {
+  color: #AB47BC;
+  font-weight: bold;
+}
+
+.highlight-yellow {
+  color: #ffd145;
+  font-weight: bold;
+}
+
+
+/* --- NAVBAR STYLES (UPDATED) --- */
+.navbar {
+  width: 100%;
+  background: rgba(0, 0, 50, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100; /* Ensure nav stays on top */
+}
+
+.logo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff6b6b;
+  text-transform: uppercase;
   letter-spacing: 2px;
-  margin-top: 0px;
-  padding: 5px 12px;
-  
-  &:hover {
-    background-color: #58C114;
-  }
-  &:active {
-    background-color: #4BA611;
-    translate: translateY(0%, -5%)
-  }
 }
 
-#copy {
-  background-color: #AB47BC;
-
-  &:hover {
-    background-color: #963EA5;
-  }
-
-  &:active {
-    background-color: #80358D;
-  }
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
-#aboutblank {
-  background-color: #BDBDBD;
-
-  &:hover {
-    background-color: #A5A5A5;
-  }
-
-  &:active {
-    background-color: #8E8E8E;
-  }
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-family: "Fredoka", "sans-serif";
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+  position: relative; /* Needed for the New badge */
 }
 
-/* Instructions buttons */
-.hide-button,
-.show-button {
-  background-color: rgba(201, 201, 201, 0.37);
+.nav-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  opacity: 0.9;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFC107;
+}
+
+/* "New!" Badge Style */
+.badge-new {
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  background-color: #ff4757;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  animation: badge-bounce 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes badge-bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-3px);}
+  60% {transform: translateY(-1.5px);}
+}
+
+/* --- BUTTONS --- */
+.primary-btn {
+  background-color: #58C114;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 6px 14px;
+  padding: 10px 24px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 0 #3e8e0e;
+}
+
+.primary-btn:hover {
+  background-color: #64dd17;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #3e8e0e;
+}
+
+.primary-btn:active {
+  box-shadow: 0 0 0 #3e8e0e;
+}
+
+.secondary-btn {
+  background-color: #AB47BC;
+  color: white;
+  border: none;
+  padding: 10px 20px;
   font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 0 #7b1fa2;
+}
+
+.secondary-btn:hover {
+  background-color: #ba68c8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #7b1fa2;
+}
+
+.secondary-btn:active {
+  box-shadow: 0 0 0 #7b1fa2;
+}
+
+.text-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ddd;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
   margin-top: 10px;
-
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-
-  /* This transition applies to both the base state and the hover state */
-  transition: background-color 0.2s ease-in-out;
 }
 
-/* Corrected hover state for both buttons */
-.hide-button:hover,
-.show-button:hover {
-  background-color: rgba(255, 255, 255, 0.466);
+.text-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
 }
+
+/* --- INPUTS --- */
+.watch-interface {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+input[type="text"] {
+  background-color: rgba(245, 127, 23, 0.9);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  width: 100%;
+  max-width: 400px;
+  outline: none;
+  transition: 0.3s;
+  font-family: 'Fredoka', sans-serif;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:focus {
+  background-color: #f57f17;
+  border-color: white;
+  box-shadow: 0 0 15px rgba(245, 127, 23, 0.5);
+}
+
+/* --- SETTINGS TOGGLE SWITCH --- */
+.settings-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.setting-label {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.status-indicator {
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-top: 4px;
+}
+.status-indicator.enabled { color: #58C114; }
+.status-indicator.disabled { color: #D73939; }
+
+/* The Switch Box */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .slider { background-color: #58C114; }
+input:checked + .slider:before { transform: translateX(22px); }
+
+
+/* --- FEEDBACK MESSAGE --- */
+#feedbackMessage {
+  min-height: 24px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  max-width: 600px;
+  border-radius: 4px;
+}
+
+#feedbackMessage.active {
+  opacity: 1;
+}
+
+/* --- HELPERS --- */
+.hidden { display: none; }
 
 .show-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  padding: 5px 12px;
+  margin-bottom: 10px;
+  color: #ddd;
   display: none;
-  margin: 16px auto;
-}
-/* -------------------------------------------------- */
-
-/*Input*/
-.input-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0px auto;
-  margin-top: 0px;
 }
 
-.input-container input {
-  background-color: #f57f17;
-  color: white;
-  border: 2px solid white;
-  display: inline-block;
-  /* margin: 0px 50vh; */
-  margin-right: 10px;
-  font-size: 16px;
-  border-radius: 15px;
-  padding: 6px 10px;
-  width: 200px;
-  height: 32px;
-  position: relative;
-  transition: 0.2s;
-  box-shadow: none;
-  outline: 0;
-
-
-  &:focus {
-    border: 4px solid white;
-    box-shadow: 0 0 7px 0px white;
-    transition: 0.2s;
-  }
+.hide-button, .show-button {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
 }
 
-::placeholder {
-  color: #FFC107;
-  font-size: 18px;
-  text-align: center;
+.hide-button {
+  background: transparent;
+  padding: 5px 10px;
+  margin-right: 2px;
+  color: #aaa;
 }
 
-/* -------------------------------------  */
-
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* Center align vertically */
-  margin: 0px auto;
+/* Optimization Class */
+body.optimized * {
+  animation: none !important;
+  transition: none !important;
+  box-shadow: none !important;
 }
 
-/* Header */
-header {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  background-position: center;
-  padding: 0;
-  text-align: center;
-  text-decoration: none;
-  margin: 8px;
-}
-header button {
-  background: transparent;  
-}
+body.optimized #particles-js { display: none !important; }
 
-nav {
-  padding: 4px;
-  border-radius: 15px;
-  box-sizing: border-box; 
-  width: 100%;
-  max-width: 10000px;
-  overflow: hidden;
-  align-items: center;
-  background: linear-gradient(rgb(0, 0, 160, 0.7), rgb(30, 136, 239, 0.7));
-  box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.4);
-  position: relative;
-  /* margin: 0 auto; */
-  transition: 0.1s;
+/* --- VIDEO GRID FRAME --- */
+.video-grid-frame {
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 200px;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin-top: 15px;
+    transition: border-color 0.3s;
 }
 
-.heading {
-  color: rgb(255, 0, 0);
-  text-transform: uppercase;
-  font-size: 20px;
+.video-grid-frame:hover { border-color: rgba(255, 255, 255, 0.4); }
 
+/* --- CONTROL PANEL --- */
+.control-panel {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
-/*  ------------------------------------------------ */
-/* SIZE BUTTONS */
-.size-button {
-  line-height: 1;
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  margin: 5px 0;
-  font-size: 1.5rem;
-  width: 2rem;
-  height: 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-
-  &:active {
-    transform: translateY(2px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  }
+.tools-bar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
-
-.plus {
-  &:hover {
-    background-color: #78E46A;
-    /* Darker green */
-  }
-
-  &:active {
-    background-color: #69C85D;
-    /*#4BA611; /* Even darker green */
-  }
-}
-
-.minus {
-  &:hover {
-    background-color: #F64141;
-  }
-
-  &:active {
-    background-color: #D73939;
-  }
-}
-
-.default {
-  background-color: #FFC107;
-  &:hover {
-    background-color: #ffd145;
-  }
-
-  &:active {
-    background-color: #ffe083;
-  }
-}
-
-/* ------------------------ Embedded Videos  ---------------- */
-/* Videos Container */
-#videoPlayersContainer {
-  display: flex;
-  flex-wrap: wrap; 
-  flex-direction: column;
-  gap: 20px; /* Space between each video unit */
-  justify-content: center; /* Center units */
-  padding: 20px;
-  margin: 0 auto; 
-  width: 100%;
-  
-}
-
-/* Wrapper for each video unit (video display + controls) */
+/* Wrapper for video unit */
 .video-unit-wrapper {
-  position: relative; /* Absolute positioning of size-controls */
-  display: flex; /* Flex container to allow margin auto on video-display */
+  position: relative;
+  display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   margin-bottom: 20px;
-  border-radius: 8px; 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
   transition: transform 0.2s ease-in-out;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
+  width: fit-content;
+  padding-right: 60px;
 }
 
-/* Video display (iframe + close button) - child of video unit */
+.video-unit-wrapper:hover { transform: translateY(-5px); }
+
+/* Video Display */
 .video-display {
-  position: relative; /* For absolute positioning of close button */
+  position: relative;
   overflow: hidden;
-  border-radius: 8px; 
+  border-radius: 8px;
+  background-color: #000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .video-display iframe {
@@ -259,10 +408,11 @@ nav {
   height: 100%;
   display: block;
   border-radius: 8px;
-  box-shadow: none; 
+  background-color: #000;
+  box-shadow: none;
 }
 
-/* Close button */
+/* Close "X" Button */
 .close-video-button {
   position: absolute;
   top: 5px;
@@ -273,103 +423,75 @@ nav {
   border-radius: 50%;
   width: 25px;
   height: 25px;
-  font-size: 1em;
+  font-size: 14px;
+  font-weight: bold;
   cursor: pointer;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.2s ease;
 }
 
+.close-video-button:hover { background-color: #e16b6b; }
+.close-video-button:active { background-color: #a12b2b; }
+
 /* Video Size Controls */
 .video-size-controls {
-  position: absolute; 
- 
-  left: calc(50% + (var(--video-width) / 2) + 10px); 
-  transform: translateX(-50%); 
-  top: 50%; /* Vertically center it with the video */
-  transform: translateY(-50%); 
-  margin-left: 10px; /* This margin will be applied only if flex-direction is row */
-
-  left: 100%; /* Pushes it to the right of the video-display (within video-unit-wrapper) */
-  margin-left: 10px; /* Space from the right edge of the video */
-  top: 0; /* Align top with video */
-
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  flex-direction: column; /* Stack buttons vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 5; /* Ensure it's above other elements but below close button */
+  z-index: 5;
+  margin-left: 10px;
 }
 
-/* .video-size-controls positioning */
-.video-unit-wrapper {
-  position: relative;
-  display: flex; /* Still flex to hold videoDisplay */
-  justify-content: center; 
-  align-items: center;
-}
-
-.video-size-controls {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); /* Center vertically */
-
-  right: -60px; 
-   left: 100%; 
-   margin-left: 10px; 
-}
-
-.video-unit-wrapper {
-  width: fit-content; 
-  min-width: INITIAL_VIDEO_WIDTH + 60px; /* Roughly video width + controls width */
-}
-
-.close-video-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  background: #D73939;
+.size-button {
+  padding: 0;
+  background-color: transparent;
   color: white;
   border: 1px solid white;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  font-size: 1em;
-  cursor: pointer;
-  z-index: 10;
-  transition: background-color 0.2s ease;
-}
-
-.close-video-button:hover {
-  background-color: #e16b6b;
-}
-
-.close-video-button:active {
-  background-color: #a12b2b;
-}
-
-#feedbackMessage {
-  opacity: 0; /* Start completely transparent */
-  visibility: hidden; 
-  height: 0; 
-  margin: 0 auto; 
-  padding: 0 20px; 
-  text-align: center;
-  font-size: 16px;
-  font-weight: bold;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease, padding 0.3s ease, margin 0.3s ease; /* Animate all properties */
-  max-width: 400px;
+  transition: background-color 0.3s ease;
+  margin: 5px 0;
+  font-size: 1.2rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
-#feedbackMessage.active {
-  opacity: 1; 
-  visibility: visible; 
-  height: auto; /* Allow height to expand based on content */
-  padding: 10px 20px; 
-  margin: 15px auto; 
+.size-button:active { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+
+.plus:hover { background-color: #78E46A; }
+.plus:active { background-color: #69C85D; }
+.minus:hover { background-color: #F64141; }
+.minus:active { background-color: #D73939; }
+.default:hover { background-color: #ffd145; }
+.default:active { background-color: #ffe083; }
+
+.default {
+  background-color: #FFC107;
+  color: black;
+  font-size: 1rem;
 }
+
+/* For about page bubbles */
+.bubble-trigger {
+    position: relative;
+    overflow: visible !important;
+}
+
+.copy-mini:hover svg path { fill: #ddd; }
+.copy-mini svg { pointer-events: none; }

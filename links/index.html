@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-56W5VNZD");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norepted - Links</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../animations.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* --- CONDENSED GRID STYLES --- */
+      .proxy-grid {
+        display: grid;
+        /* Smaller columns (200px) to fit more links per row */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      .proxy-card {
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 8px 10px; /* Condensed padding */
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        transition:
+          transform 0.2s ease,
+          border-color 0.2s ease;
+        backdrop-filter: blur(5px);
+        min-height: 50px; /* Ensure consistency */
+      }
+
+      .proxy-card:hover {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: #58c114;
+        transform: translateY(-2px);
+      }
+
+      .proxy-card.selected {
+        border-color: #58c114;
+        background: rgba(88, 193, 20, 0.2);
+      }
+
+      /* Checkbox */
+      .proxy-check {
+        display: flex;
+        align-items: center;
+      }
+      .proxy-checkbox {
+        width: 16px;
+        height: 16px;
+        accent-color: #58c114;
+        cursor: pointer;
+        z-index: 2;
+      }
+
+      /* Link Info Text */
+      .proxy-info {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        flex: 1;
+        justify-content: center;
+      }
+
+      .site-tag {
+        font-size: 0.65rem;
+        font-weight: bold;
+        color: #00ff88;
+        text-transform: uppercase;
+        opacity: 0.8;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .proxy-link {
+        font-size: 0.85rem;
+        color: #4fc3f7; /* Cyan for visibility */
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Adds '...' automatically if too long */
+        display: block;
+      }
+
+      /* --- BOTTOM CONTROLS --- */
+      .load-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 30px 0;
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 20px;
+      }
+
+      .custom-load-group {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 5px 10px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .small-input {
+        width: 50px;
+        padding: 5px;
+        border-radius: 4px;
+        border: 1px solid #555;
+        background: #222;
+        color: white;
+        text-align: center;
+        font-family: "Fredoka", sans-serif;
+      }
+
+      /* Disable state */
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        filter: grayscale(1);
+      }
+
+      .status-text {
+        width: 100%;
+        text-align: center;
+        color: #aaa;
+        font-size: 0.9rem;
+        margin-top: 5px;
+      }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-ZQCTP11KMS");
+    </script>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="particles-js"></div>
+
+    <nav class="navbar fade-in">
+      <div class="logo">Norepted v1.6.2</div>
+      <div class="nav-links">
+        <button onclick="home()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          Home
+        </button>
+        <button onclick="bookmarklets()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+          Bookmarklets
+        </button>
+        <button onclick="openLinksPage()" class="nav-btn">
+          <span class="badge-new">New!</span>
+          <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+          Links
+        </button>
+        <button onclick="about()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          About
+        </button>
+        <button onclick="suggestions()" class="nav-btn">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+          Suggestions
+        </button>
+      </div>
+    </nav>
+
+    <main class="fade-in">
+      <h1 class="fade-in" id="title"> Links </h1>
+      <div class="card fade-in">
+        <div class="card-header">
+          <h2>Proxy Link Tester</h2>
+        </div>
+        <p>
+          Fetches live links from
+          <a
+            href="https://github.com/wea-f/ByePassHub"
+            target="_blank"
+            style="color: #58c114"
+            >ByePassHub</a
+          >. <br />Select links by clicking the white boxes below to bulk open them.
+        </p>
+
+        <div class="controls-container" style="margin-top: 15px">
+          <div style="display: flex; gap: 10px; justify-content: center">
+            <button id="selectAll" class="secondary-btn" disabled>
+              Select All Loaded
+            </button>
+            <button id="openSelected" class="secondary-btn" disabled>
+              Open Selected (<span id="count">0</span>)
+            </button>
+          </div>
+        </div>
+        
+        <div class="fade-in"
+          style="
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(246, 65, 65, 0.1);
+            border-radius: 8px;
+            border: 1px solid #f64141;
+          "
+        >
+          <span class="fade-in" style="color: #f64141">⚠️ Warning:</span> I do not guarantee these links will work or are safe. Use at your own risk.
+        </div>
+        <!-- <div id="loading" class="status hidden">Fetching raw data...</div> -->
+      </div>
+
+      <div id="linkGrid" class="proxy-grid"></div>
+
+      <div class="load-container fade-in">
+        <button id="fetchLinks" class="primary-btn">
+          Load Latest Links (15)
+        </button>
+
+        <div class="custom-load-group">
+          <span style="font-size: 0.85rem; color: #ddd">Custom:</span>
+          <input
+            type="number"
+            id="customAmount"
+            class="small-input"
+            value="15"
+            min="1"
+            max="100"
+          />
+          <button
+            id="customFetch"
+            class="text-btn"
+            style="margin: 0; padding: 4px 8px; font-size: 0.85rem"
+          >
+            Load
+          </button>
+        </div>
+
+        <p id="progressText" class="status-text hidden">Loaded 0 of 0 links</p>
+        <p
+          id="allLoadedMsg"
+          class="hidden"
+          style="
+            color: #58c114;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+          "
+        >
+          ✓ All available links have been loaded.
+        </p>
+      </div>
+    </main>
+    <footer id="footer" class="fade-in">
+      <div class="credits">
+        <p>
+          Made by
+          <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> /
+          <a href="https://github.com/wea-f" target="_blank">wea-f</a>
+        </p>
+        <p class="disclaimer">
+          &#9888;&#65039; I am NOT responsible for how you use Norepted. It is
+          YOUR device. &#9888;&#65039;
+        </p>
+        <a
+          href="https://github.com/wea-f/Norepted"
+          target="_blank"
+          class="license-link"
+          >View License & Info</a
+        >
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="../particles.js"></script>
+    <script rel="preload" src="../animations.js"></script>
+
+    <script>
+      // --- DOM ELEMENTS ---
+      const fetchBtn = document.getElementById("fetchLinks");
+      const customFetchBtn = document.getElementById("customFetch");
+      const customInput = document.getElementById("customAmount");
+      const openBtn = document.getElementById("openSelected");
+      const selectAllBtn = document.getElementById("selectAll");
+      const grid = document.getElementById("linkGrid");
+      const countSpan = document.getElementById("count");
+      // const loading = document.getElementById("loading");
+      const allLoadedMsg = document.getElementById("allLoadedMsg");
+      const progressText = document.getElementById("progressText");
+
+      // --- STATE ---
+      let allFoundLinks = [];
+      let currentIndex = 0;
+      let selectedLinks = new Set();
+
+      // --- 1. FETCH & PARSE ---
+      async function ensureDataLoaded() {
+        // If we already have data, don't fetch again
+        if (allFoundLinks.length > 0) return true;
+
+        // loading.classList.remove("hidden");
+        fetchBtn.disabled = true;
+        customFetchBtn.disabled = true;
+
+        try {
+          // Fetching the raw markdown file
+          const res = await fetch(
+            "https://raw.githubusercontent.com/wea-f/Norepted/refs/heads/master/bphmirror.md",
+          );
+          if (!res.ok) throw new Error("GitHub fetch failed");
+          const text = await res.text();
+
+          parseMarkdown(text);
+
+          // loading.classList.add("hidden");
+          selectAllBtn.disabled = false; // Enable selection once data exists
+          fetchBtn.disabled = false;
+          customFetchBtn.disabled = false;
+
+          return true;
+        } catch (e) {
+          // loading.textContent =
+          //   "Error fetching links. Network might be blocked.";
+          // loading.style.color = "red";
+          return false;
+        }
+      }
+
+      function parseMarkdown(markdown) {
+        const urlRegex = /(https?:\/\/[^\s<]+)/g;
+        const lines = markdown.split("\n");
+        let currentHeader = "General";
+
+        lines.forEach((line) => {
+          // Detect headers like ### Interstellar
+          if (line.trim().startsWith("### ")) {
+            // Clean up string: remove ###, remove pipes |, remove [links]
+            currentHeader = line
+              .replace(/###/g, "")
+              .split("|")[0]
+              .split("[")[0]
+              .trim();
+          }
+
+          const match = line.match(urlRegex);
+          if (match) {
+            allFoundLinks.push({
+              url: match[0],
+              siteName: currentHeader,
+            });
+          }
+        });
+        console.log(`Parsed ${allFoundLinks.length} links.`);
+      }
+
+      // --- 2. RENDER BATCH ---
+      async function loadMore(amount) {
+        const success = await ensureDataLoaded();
+        if (!success) return;
+
+        // Calculate slice
+        const nextIndex = currentIndex + amount;
+        const batch = allFoundLinks.slice(currentIndex, nextIndex);
+
+        if (batch.length === 0 && allFoundLinks.length > 0) {
+          finishLoading();
+          return;
+        }
+
+        batch.forEach((linkData, i) => {
+          const url = linkData.url;
+
+          // Create Card
+          const card = document.createElement("div");
+          // NOTE: We rely on 'fade-in' for CSS, but we use observer to add 'active'
+          card.className = "proxy-card fade-in";
+
+          // Prepare clean display URL
+          const displayUrl = url
+            .replace("https://", "")
+            .replace("http://", "")
+            .replace(/\/$/, "");
+
+          card.innerHTML = `
+            <div class="proxy-check">
+                <input type="checkbox" class="proxy-checkbox" value="${url}">
+            </div>
+            <div class="proxy-info">
+                <span class="site-tag">${linkData.siteName}</span>
+                <span class="proxy-link" title="${url}">${displayUrl}</span>
+            </div>
+          `;
+
+          // Card Click Event
+          card.addEventListener("click", (e) => {
+            // Prevent double-toggle if clicking checkbox directly
+            const box = card.querySelector(".proxy-checkbox");
+
+            // Case 1: User clicked the checkbox -> Toggle Selection
+            if (e.target === box) {
+              if (box.checked) {
+                selectedLinks.add(url);
+                card.classList.add("selected");
+              } else {
+                selectedLinks.delete(url);
+                card.classList.remove("selected");
+              }
+              updateUI();
+              return; // Stop here, don't open link
+            }
+
+            // Case 2: User clicked the card body -> Open Link Immediately
+            window.open(url, "_blank");
+          });
+
+          grid.appendChild(card);
+
+          // --- Invis elements ---
+
+          if (window.fadeInObserver) {
+            window.fadeInObserver.observe(card);
+          } else {
+            card.classList.add("active");
+            card.style.opacity = 1;
+          }
+        });
+
+        // Update Index
+        currentIndex += batch.length;
+
+        // Update UI Text
+        progressText.classList.remove("hidden");
+        progressText.textContent = `Showing ${currentIndex} of ${allFoundLinks.length} links`;
+
+        // Check if done
+        if (currentIndex >= allFoundLinks.length) {
+          finishLoading();
+        }
+      }
+
+      function finishLoading() {
+        fetchBtn.disabled = true;
+        fetchBtn.textContent = "All Loaded";
+        customFetchBtn.disabled = true;
+        allLoadedMsg.classList.remove("hidden");
+      }
+
+      // --- 3. BUTTON EVENTS ---
+
+      // Default Load Button
+      fetchBtn.addEventListener("click", () => {
+        loadMore(15);
+      });
+
+      // Custom Load Button
+      customFetchBtn.addEventListener("click", () => {
+        let amt = parseInt(customInput.value);
+        if (!amt || amt < 1) amt = 15; // validation
+        loadMore(amt);
+      });
+
+      // Select All / Deselect All
+      selectAllBtn.addEventListener("click", () => {
+        const checkboxes = document.querySelectorAll(".proxy-checkbox");
+        // Check if we should Select All or Deselect All
+        // If any are unchecked -> Select All. If all checked -> Deselect.
+        const shouldSelect = Array.from(checkboxes).some((cb) => !cb.checked);
+
+        checkboxes.forEach((box) => {
+          box.checked = shouldSelect;
+          const card = box.closest(".proxy-card");
+          if (shouldSelect) {
+            selectedLinks.add(box.value);
+            card.classList.add("selected");
+          } else {
+            selectedLinks.delete(box.value);
+            card.classList.remove("selected");
+          }
+        });
+        updateUI();
+      });
+
+      // Open Selected
+      openBtn.addEventListener("click", () => {
+        if (selectedLinks.size === 0) return;
+        if (selectedLinks.size > 10) {
+          if (!confirm(`You are about to open ${selectedLinks.size} tabs. Continue?`)) return;
+        }
+
+        let blocked = false;
+        selectedLinks.forEach((url) => {
+          const newWin = window.open(url, "_blank");
+
+          if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+            blocked = true;
+          }
+        });
+
+        if (blocked) {
+          alert("One site opened! Please turn on 'Always allow pop-ups and redirects' from Norepted to open multiple links!");
+        }
+      });
+
+      // UI Updater
+      function updateUI() {
+        countSpan.textContent = selectedLinks.size;
+        openBtn.disabled = selectedLinks.size === 0;
+
+        // Update Select All Button Text
+        const checkboxes = document.querySelectorAll(".proxy-checkbox");
+        if (checkboxes.length > 0) {
+          const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
+          selectAllBtn.textContent = allChecked
+            ? "Deselect All"
+            : "Select All Loaded";
+        }
+      }
+
+      // Navigation Helpers
+      function home() {
+        window.location.assign("../");
+      }
+      function bookmarklets() {
+        window.location.assign("../bookmarklets/");
+      }
+      function openLinksPage() {
+        window.location.reload();
+      }
+      function about() {
+        window.location.assign("../about/");
+      }
+      function suggestions() {
+        window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", "_blank");
+      }
+    </script>
+  </body>
+</html>
