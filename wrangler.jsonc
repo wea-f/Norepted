@@ -1,5 +1,8 @@
 {
-  "name": "worker-name",
+  "name": "norepted",
   "compatibility_date": "2026-01-26",
-  "main": "index.html"
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS"
+  }
 }
