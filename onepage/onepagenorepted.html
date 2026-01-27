@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-56W5VNZD");
+    </script>
+     <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Norepted v1.6.2 </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet" />
+
+    <style>
+        /* =========================================
+           1. Animations.css
+           ========================================= */
+        .fade-in{opacity:0;transform:translateY(20px);transition:opacity .3s ease-out,transform .3s ease-out}
+.fade-in.active{opacity:1;transform:translateY(0)}
+#particles-js{position:fixed;width:100%;height:100%;background-repeat:no-repeat;background-position:50% 50%;z-index:-1}
+html{font-family:"Fredoka","sans-serif";color:#fff}
+::placeholder{font-family:"Fredoka","sans-serif"}
+button{font-family:"Fredoka","sans-serif";background-color:#64dd17;color:#fff;border-color:#fff;display:block;margin:0 auto;font-size:18px;border-radius:10px;transition:background-color .3s ease}
+h1,h3,h4,h5,h6{text-align:center;font-family:"Fredoka","sans-serif"}
+body{background:linear-gradient(to bottom,#1e88e5,#00008b);background-attachment:fixed;min-height:100vh;display:flex;flex-direction:column;text-align:center;margin:0;padding:0}
+.navbar{width:100%;background:#00003299;backdrop-filter:blur(10px);padding:15px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ffffff1a;box-shadow:0 4px 12px #0003}
+.logo{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:700;color:#ff6b6b;text-transform:uppercase;letter-spacing:2px}
+.nav-links{display:flex;gap:15px}
+.nav-btn{background:transparent;border:none;color:#fff;font-size:16px;cursor:pointer;padding:5px 10px;border-radius:5px;transition:all .2s}
+.nav-btn:hover{background:#ffffff1a;color:#FFC107}
+.visitor-counters-wrapper{display:flex;justify-content:center;align-items:center}
+.visitor-counter{display:inline-flex;flex-direction:row;justify-content:center;align-items:center;text-align:center;margin:0 25px}
+.visitor-counter:first-child a{margin-top:50%}
+.visitor-counter:last-child a{margin-top:10%}
+.status{color:#FFC107;margin:10px 0;font-weight:700}
+.dismiss-btn{margin-left:10px;background:#fff3;border:none;padding:2px 8px;border-radius:4px;cursor:pointer;color:#fff}
+.dismiss-btn:hover{background:#fff6}
+footer{width:100%;background:#00000080;padding:20px;margin-top:40px;border-top:1px solid #ffffff1a}
+.credits{color:#aaa;font-size:14px;margin-top:10px;line-height:1.6}
+.credits a{color:#AB47BC;text-decoration:none}
+.credits a:hover{text-decoration:underline;color:#d68fe9}
+.hide-button:hover,.show-button:hover{background:#ffffff1a;color:#fff;border-color:#fff}
+.primary-btn,.secondary-btn,#searchButton,.size-button{position:relative;overflow:visible!important;transition:all .2s ease;z-index:1;border:none}
+.primary-btn:hover,.secondary-btn:hover,#searchButton:hover{filter:brightness(1.1);cursor:pointer}
+.primary-btn:active,.secondary-btn:active,#searchButton:active,.size-button:active{transform:scale(0.92) rotate(-0.1deg)}
+
+.toast-notification{position:fixed;bottom:-50px;left:50%;transform:translateX(-50%);background:#000000e6;color:#58C114;padding:12px 24px;border-radius:30px;border:1px solid #58C114;font-weight:700;z-index:9999;transition:bottom .4s cubic-bezier(0.175,0.885,0.32,1.275),opacity .3s;opacity:0}
+.toast-notification.show{bottom:30px;opacity:1}
+.separator-text{color:#aaa;font-weight:700;margin:10px 0}
+.separator-line{width:100%;height:1px;background:#fff3;margin:30px 0}
+.subtle-text{color:#888;font-size:.9rem;margin-top:20px}
+.video-loading-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:#000000b3;display:flex;justify-content:center;align-items:center;z-index:2;pointer-events:none;transition:opacity .3s ease}
+.video-loading-overlay.hidden{opacity:0}
+.spinner{width:40px;height:40px;border:4px solid #ffffff4d;border-radius:50%;border-top-color:#58C114;animation:spin 1s ease-in-out infinite}
+@keyframes spin {
+to{transform:rotate(360deg)}
+}
+        /* =========================================
+           2. style.css
+           ========================================= */
+*{box-sizing:border-box}
+main{flex:1;width:100%;max-width:900;margin:0 auto;padding:20px;display:flex;flex-direction:column;align-items:center}
+.card{background:#0006;border:1px solid #fff3;border-radius:12px;padding:20px;width:100%;margin-bottom:20px;backdrop-filter:blur(5px);box-shadow:0 8px 32px #0000004d}
+.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;border-bottom:1px solid #ffffff1a;padding-bottom:10px}
+.card h2{margin:0;font-size:1.2rem;color:#FFC107;text-align:left}
+.instruction-list{list-style:none;padding:0;text-align:left;line-height:1.8}
+.highlight{color:#58C114;font-weight:700}
+.highlight-red{color:#D73939;font-weight:700}
+.highlight-purple{color:#AB47BC;font-weight:700}
+.highlight-yellow{color:#ffd145;font-weight:700}
+.navbar{width:100%;background:#00003299;backdrop-filter:blur(10px);padding:15px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ffffff1a;box-shadow:0 4px 12px #0003;z-index:100}
+.logo{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:700;color:#ff6b6b;text-transform:uppercase;letter-spacing:2px}
+.nav-links{display:flex;gap:15px;align-items:center}
+.nav-btn{background:transparent;border:none;color:#fff;font-size:16px;cursor:pointer;padding:8px 14px;border-radius:8px;transition:all .2s;font-family:"Fredoka","sans-serif";display:flex;align-items:center;gap:8px;position:relative}
+.nav-btn svg{width:18px;height:18px;fill:currentColor;opacity:.9}
+.nav-btn:hover{background:#ffffff1a;color:#FFC107}
+.badge-new{position:absolute;top:-8px;right:-5px;background-color:#ff4757;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:800;box-shadow:0 2px 5px #0000004d;text-transform:uppercase;animation:badge-bounce 2s infinite;pointer-events:none}
+@keyframes badge-bounce {
+0%,20%,50%,80%,100%{transform:translateY(0)}
+40%{transform:translateY(-3px)}
+60%{transform:translateY(-1.5px)}
+}
+.primary-btn{background-color:#58C114;color:#fff;border:none;padding:10px 24px;font-size:18px;border-radius:8px;cursor:pointer;font-weight:700;letter-spacing:1px;transition:all .2s;box-shadow:0 4px 0 #3e8e0e}
+.primary-btn:hover{background-color:#64dd17;transform:translateY(-2px);box-shadow:0 6px 0 #3e8e0e}
+.primary-btn:active{box-shadow:0 0 0 #3e8e0e}
+.secondary-btn{background-color:#AB47BC;color:#fff;border:none;padding:10px 20px;font-size:16px;border-radius:8px;cursor:pointer;transition:all .2s;box-shadow:0 4px 0 #7b1fa2}
+.secondary-btn:hover{background-color:#ba68c8;transform:translateY(-2px);box-shadow:0 6px 0 #7b1fa2}
+.secondary-btn:active{box-shadow:0 0 0 #7b1fa2}
+.text-btn{background:transparent;border:1px solid #ffffff4d;color:#ddd;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:14px;margin-top:10px}
+.text-btn:hover{background:#ffffff1a;color:#fff}
+.watch-interface{width:100%;display:flex;flex-direction:column;gap:15px;align-items:center}
+input[type="text"]{background-color:#f57f17e6;color:#fff;border:2px solid #ffffff80;border-radius:8px;padding:12px 20px;font-size:14px;width:100%;max-width:400px;outline:none;transition:.3s;font-family:'Fredoka',sans-serif}
+input[type="text"]::placeholder{color:#fffc}
+input[type="text"]:focus{background-color:#f57f17;border-color:#fff;box-shadow:0 0 15px #f57f1780}
+.settings-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
+.setting-label{display:flex;flex-direction:column;text-align:left}
+.status-indicator{font-size:.85rem;font-weight:700;margin-top:4px}
+.status-indicator.enabled{color:#58C114}
+.status-indicator.disabled{color:#D73939}
+.switch{position:relative;display:inline-block;width:50px;height:28px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;transition:.4s;border-radius:34px}
+.slider:before{position:absolute;content:"";height:20px;width:20px;left:4px;bottom:4px;background-color:#fff;transition:.4s;border-radius:50%}
+input:checked + .slider{background-color:#58C114}
+input:checked + .slider:before{transform:translateX(22px)}
+#feedbackMessage{min-height:24px;text-align:center;font-size:16px;font-weight:700;opacity:0;transition:opacity .3s ease;max-width:600px;border-radius:4px}
+#feedbackMessage.active{opacity:1}
+.hidden{display:none}
+.show-button{background:#ffffff1a;border:none;padding:5px 12px;margin-bottom:10px;color:#ddd;display:none}
+.hide-button,.show-button{border:1px solid #ffffff4d;border-radius:20px;cursor:pointer;font-size:14px;transition:all .2s ease}
+.hide-button{background:transparent;padding:5px 10px;margin-right:2px;color:#aaa}
+body.optimized *{animation:none!important;transition:none!important;box-shadow:none!important}
+body.optimized #particles-js{display:none!important}
+.video-grid-frame{border:2px dashed #fff3;border-radius:12px;padding:20px;min-height:200px;background:#0003;width:100%;margin-top:15px;transition:border-color .3s}
+.video-grid-frame:hover{border-color:#fff6}
+.control-panel{display:flex;gap:15px;width:100%;justify-content:center;align-items:center}
+.tools-bar{display:flex;justify-content:center;width:100%;margin-bottom:10px}
+.video-unit-wrapper{position:relative;display:flex;justify-content:center;align-items:center;margin-bottom:20px;transition:transform .2s ease-in-out;width:fit-content;padding-right:60px}
+.video-unit-wrapper:hover{transform:translateY(-5px)}
+.video-display{position:relative;overflow:hidden;border-radius:8px;background-color:#000;box-shadow:0 4px 20px #00000080}
+.video-display iframe{width:100%;height:100%;display:block;border-radius:8px;background-color:#000;box-shadow:none}
+.close-video-button{position:absolute;top:5px;right:5px;background:#D73939;color:#fff;border:1px solid #fff;border-radius:50%;width:25px;height:25px;font-size:14px;font-weight:700;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background-color .2s ease}
+.close-video-button:hover{background-color:#e16b6b}
+.close-video-button:active{background-color:#a12b2b}
+.video-size-controls{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:5px;background-color:#ffffff1a;border-radius:8px;box-shadow:0 2px 5px #0003;z-index:5;margin-left:10px}
+.size-button{padding:0;background-color:transparent;color:#fff;border:1px solid #fff;border-radius:8px;transition:background-color .3s ease;margin:5px 0;font-size:1.2rem;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 5px #0003;cursor:pointer}
+.size-button:active{box-shadow:0 1px 3px #0000004d}
+.plus:hover{background-color:#78E46A}
+.plus:active{background-color:#69C85D}
+.minus:hover{background-color:#F64141}
+.minus:active{background-color:#D73939}
+.default:hover{background-color:#ffd145}
+.default:active{background-color:#ffe083}
+.default{background-color:#FFC107;color:#000;font-size:1rem}
+.bubble-trigger{position:relative;overflow:visible!important}
+.copy-mini:hover svg path{fill:#ddd}
+.copy-mini svg{pointer-events:none}
+
+
+        /* =========================================
+           3. PAGE SPECIFIC STYLES
+           ========================================= */
+        
+        /* From Links Page */
+        .proxy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; width: 100%; margin: 20px 0; }
+        .proxy-card { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: transform 0.2s ease, border-color 0.2s ease; backdrop-filter: blur(5px); min-height: 50px; }
+        .proxy-card:hover { background: rgba(255, 255, 255, 0.15); border-color: #58c114; transform: translateY(-2px); }
+        .proxy-card.selected { border-color: #58c114; background: rgba(88, 193, 20, 0.2); }
+        .proxy-check { display: flex; align-items: center; }
+        .proxy-checkbox { width: 16px; height: 16px; accent-color: #58c114; cursor: pointer; z-index: 2; }
+        .proxy-info { display: flex; flex-direction: column; overflow: hidden; flex: 1; justify-content: center; }
+        .site-tag { font-size: 0.65rem; font-weight: bold; color: #00ff88; text-transform: uppercase; opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .proxy-link { font-size: 0.85rem; color: #4fc3f7; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
+        .load-container { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; padding: 30px 0; width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 20px; }
+        .custom-load-group { display: flex; align-items: center; gap: 5px; background: rgba(0, 0, 0, 0.3); padding: 5px 10px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .small-input { width: 50px; padding: 5px; border-radius: 4px; border: 1px solid #555; background: #222; color: white; text-align: center; font-family: "Fredoka", sans-serif; }
+        .status-text { width: 100%; text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px; }
+
+        /* From Bookmarklets Page */
+        #bookmarklets-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .bookmarkletdiv { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 25px; border-radius: 16px; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 15px; }
+        .bookmarkletdiv:hover { transform: translateY(-8px); border-color: #1E88EF; box-shadow: 0 10px 30px rgba(30, 136, 239, 0.2); }
+        .bookmarklet { background-color: #1E88EF; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; width: 100%; margin-bottom: 15px; display: inline-block; box-shadow: 0 4px 15px rgba(30, 136, 239, 0.3); cursor: pointer; }
+        .bookmarkletdiv p { color: #bbb; font-size: 0.95rem; line-height: 1.5; margin: 0; }
+
+        /* From About Page (Scoped to avoid conflict) */
+        #view-about h1 { color: red; } 
+        #view-about a { color: lightgreen; }
+
+        /* =========================================
+           4. Sections
+           ========================================= */
+        .spa-section {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.4s ease-out;
+            max-width: 100%;
+            
+            align-items: center;
+            
+        }
+        .spa-section.active-section {
+            display: flex; /* Show when active */
+            max-width: 100%;
+            flex: 1;
+            flex-direction: column;
+            align-items: center;
+            width: 55vw;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        #blueDisgust {
+          color: white;
+        }
+    </style>
+    <!-- GTAG -->
+        <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-ZQCTP11KMS");
+    </script>
+</head>
+
+<body>
+<!-- GTAG -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <div id="particles-js"></div>
+
+    <nav class="navbar fade-in">
+        <div class="logo">Norepted v1.6.2</div>
+        <div class="nav-links">
+            <button onclick="switchTab('home')" class="nav-btn">
+                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home
+            </button>
+            <button onclick="switchTab('bookmarklets')" class="nav-btn">
+                <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg> Bookmarklets
+            </button>
+            <button onclick="switchTab('links')" class="nav-btn">
+                <span class="badge-new">New!</span>
+                <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg> Links
+            </button>
+            <button onclick="switchTab('about')" class="nav-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> About
+            </button>
+            <button onclick="window.open('https://forms.gle/3TEjjsnqWUXgo5kQ7', '_blank')" class="nav-btn">
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg> Suggestions
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="view-home" class="spa-section active-section">
+            <h1 id="title" class="fade-in">YouTube Watcher</h1>
+<div id="instructions-home" class="card fade-in">
+<div class="card-header">
+<h2>Instructions & Controls</h2>
+<button class="hide-button" title="Hide Instructions and Settings">Hide</button>
+</div>
+<div class="card-content">
+<ul class="instruction-list">
+<li>
+<strong>Watch:</strong> Paste a link in the Orange Box and press
+<span class="highlight">LAUNCH</span> or
+<span class="highlight">Enter</span>.
+</li>
+<li>
+<strong>Privacy:</strong> Press
+<span class="highlight">-</span> to exit and hide your history. Press
+<span class="highlight">'</span> for a Tab Cloak.
+</li>
+<li>
+<strong>Save & Share:</strong> After the video loads, press
+<svg viewBox="0 0 24 24" width="16" height="16" fill="#AB47BC"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+and bookmark the link.
+</li>
+<li>
+<strong>Resize:</strong> Press <span class="highlight">+</span> or
+<span class="highlight-red">&#x2212;</span> or <span class="highlight-yellow"> &#x21BA; </span> on the side panel.
+</li>
+<li>
+<strong>Organize:</strong> Embed multiple videos. Press <span class="highlight-red">X</span> to remove one.
+</li>
+</ul>
+<div class="action-row">
+<button id="aboutblank" onclick="aboutblank()" class="secondary-btn">
+Open in about:blank
+</button>
+</div>
+</div>
+</div>
+<button class="show-button fade-in">Show Instructions and Settings</button>
+<div class="card fade-in settings-card" id="settings">
+<div class="card-header">
+<h2>Settings</h2>
+</div>
+<div class="card-content settings-row">
+<div class="setting-label">
+<span>Low Performance Mode</span>
+<span id="optStatusText" class="status-indicator disabled">Disabled</span>
+</div>
+<label class="switch">
+<input type="checkbox" id="optToggle" onchange="toggleOptimization()">
+<span class="slider round"></span>
+</label>
+</div>
+</div>
+<div class="watch-interface fade-in">
+<div class="control-panel">
+<input type="text" id="link" placeholder="Paste YouTube link here..."/>
+<button id="launch" class="primary-btn" title="Launch Video">LAUNCH</button>
+</div>
+<div class="tools-bar">
+<button id="clearAll" onclick="clearAllVideos()" class="text-btn">Clear All Videos</button>
+</div>
+</div>
+<div class="video-section fade-in">
+<div class="separator-line"></div>
+<div class="video-grid-frame">
+<h3 id="offtext" class="subtle-text">Videos will appear here</h3>
+<div id="videoPlayersContainer"></div>
+</div>
+</div>
+            </section>
+
+        <section id="view-bookmarklets" class="spa-section">
+            <h1 class="fade-in" id="title"> Bookmarklets  </h1>
+<div class="card fade-in">
+      <div class="card-header">
+        <h2>How to Use</h2>
+      </div>
+      <h3 class="fade-in"> Drag to bookmarks bar, or click to use on this webpage. To stop a running bookmarklet, refresh the tab you are on. </h3>
+      <h4 class="fade-in"> These bookmarklets can be found in the <a id="link" target="_blank" href="https://github.com/wea-f/ByePassHub"> ByePassHub github repository. </a> </h4>
+      </div>
+<div id="bookmarklets-container fade-in">
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@f1eb7a9/bookmarklets/tabcloak.js').then(r=>r.text()).then(eval)" class="bookmarklet secondary-btn fade-in"">Tab Cloak</a>
+<p> Disguise any website you're on as Canvas, New Tab, or Google Drive!</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:var element=document.getElementById('rusic-modal');element.parentNode.removeChild(element)" class="bookmarklet secondary-btn fade-in"> Deactivate all bookmarklets </a>
+<p> Stops any running bookmarklets (Probably doesn't work.) </p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href='javascript:fetch("https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js").then(r=>r.text()).then(r=>eval(r))' class="bookmarklet secondary-btn"> Edpuzzle Cheats </a>
+<p> Activate on edpuzzle </p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href='javascript:console.log(document.body.contentEditable="true"==document.body.contentEditable?"false":"true")' class="bookmarklet secondary-btn">Edit any page</a>
+<p>Edit any website content. Click it again to stop!</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:(function(){var script=document.createElement('script');script.src='https://x-ray-goggles.mouse.org/webxray.js';script.className='webxray';script.setAttribute('data-lang','en-US');script.setAttribute('data-baseuri','https://x-ray-goggles.mouse.org');document.body.appendChild(script);}())" class="bookmarklet secondary-btn">X-Ray Goggles</a>
+<p>This allows you to view and edit the source code of any website element. </p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:document.querySelectorAll('*').forEach(e=>e.setAttribute('style','background-color:#222;background-image:none;color:#'+(/^A|BU/.test(e.tagName)?'36c;text-decoration:underline;':'eee;')+e.getAttribute('style')))" class="bookmarklet secondary-btn">Dark Mode</a>
+<p>This sets any page to dark mode.</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href='javascript:void(document.head.appendChild(document.createElement("script")).src="https://cdn.jsdelivr.net/gh/Krazete/bookmarklets/piano.min.js")'class="bookmarklet secondary-btn">Piano</a>
+<p>Adds a piano to the page.</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href='javascript:(function()%7B(function()%7Bvar x%3D document.createElement("script")%3Bx.src%3D"https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload%3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()' class="bookmarklet secondary-btn">Developer Console</a>
+<p>This adds all features of the developer console to whatever page your on.</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:var s=document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/asteroids.min.js';void(0)" class="bookmarklet secondary-btn">Asteroids</a>
+<p>Play the game, Asteroids on the website you are on, destroying everything.</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:var s=document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/katamari.js';void(0)" class="bookmarklet secondary-btn">Katamari</a>
+<p>A game where you to collect the words on the page into a ball.</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@a4cd53b/bookmarklets/autoclicker.js').then(r=>r.text()).then(eval)" class="bookmarklet secondary-btn">Auto Clicker</a>
+<p>Click on any element to select it as the autoclicker target. After clicking it once, Click the same element again to start autoclicking. Click it once more to stop.</p>
+</div>
+<div class="bookmarkletdiv fade-in">
+<a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@1bbb8e7/bookmarklets/adblocker.js').then(r=>r.text()).then(eval)" class="bookmarklet secondary-btn">Ad Blocker</a>
+<p> Ad blocker for any website. Click it for every ad.</p>
+</div>
+</div>
+<div class="separator-line fade-in"></div>
+            </section>
+
+        <section id="view-links" class="spa-section">
+        <div class="card fade-in">
+<div class="card-header">
+<h2>Proxy Link Tester</h2>
+</div>
+<p>
+Fetches live links from
+<a href="https://github.com/wea-f/ByePassHub" target="_blank" style="color:#58c114">ByePassHub</a>. <br />Select links by clicking the white boxes below to bulk open them.
+</p>
+<div class="controls-container" style="margin-top:15px">
+<div style="display:flex;gap:10px;justify-content:center">
+<button id="selectAll" class="secondary-btn" disabled>
+Select All Loaded
+</button>
+<button id="openSelected" class="secondary-btn" disabled>
+Open Selected (<span id="count">0</span>)
+</button>
+</div>
+</div>
+<div class="fade-in" style="margin-top:20px;padding:10px;background:rgba(246,65,65,0.1);border-radius:8px;border:1px solid #f64141">
+<span class="fade-in" style="color:#f64141">⚠️ Warning:</span> I do not guarantee these links will work or are safe. Use at your own risk.
+</div>
+</div>
+<div id="linkGrid" class="proxy-grid"></div>
+<div class="load-container fade-in">
+<button id="fetchLinks" class="primary-btn">
+Load Latest Links (15)
+</button>
+<div class="custom-load-group">
+<span style="font-size:.85rem;color:#ddd">Custom:</span>
+<input type="number" id="customAmount" class="small-input" value="15" min="1" max="100" />
+<button id="customFetch" class="text-btn" style="margin:0;padding:4px 8px;font-size:.85rem">
+Load
+</button>
+</div>
+<p id="progressText" class="status-text hidden">Loaded 0 of 0 links</p>
+<p id="allLoadedMsg" class="hidden" style="color:#58c114;width:100%;text-align:center;font-weight:bold">
+✓ All available links have been loaded.
+</p>
+</div>
+            </section>
+
+        <section id="view-about" class="spa-section">
+        <section class="card">
+        <div class="card-header fade-in">
+          <h2>What is Norepted?</h2>
+        </div>
+        <p class="fade-in">
+          Norepted is a high-performance YouTube unblocker designed for school
+          and work environments. It offers <strong>zero ads</strong>, restricted
+          video playback, and history hiding privacy features to keep your
+          browsing private.
+        </p>
+        <a
+          href="https://github.com/wea-f/Norepted" target="_blank" class="license-link fade-in"> Check out the github repository for the latest information.</a>
+      </section>
+
+      <section class="card fade-in">
+        <div class="card-header">
+          <h2 class="fade-in" style="color: #58c114">Pro Features</h2>
+        </div>
+        <ul class="instruction-list">
+          <li>
+            <span class="highlight fade-in">No Ads:</span> Experience uninterrupted
+            viewing.
+          </li>
+          <li>
+            <span class="highlight fade-in">History Hider:</span> Press "-" to instantly
+            wipe the session away from your history.
+          </li>
+          <li>
+            <span class="highlight fade-in">Cloaking:</span> Press "/" to disguise the
+            tab as Google Drive, as well as an about:blank cloaker.
+          </li>
+          <li>
+            <span class="highlight fade-in">Saving:</span> Press the purple COPY icon
+            and bookmark the link to easily save videos.
+          </li>
+          <li>
+            <span class="highlight fade-in">Bypass:</span> Play restricted or age-gated
+            videos effortlessly.
+          </li>
+        </ul>
+      </section>
+
+      <section class="card fade-in">
+        <div class="card-header">
+          <h2>How it works</h2>
+        </div>
+        <p>
+          Norepted embeds a video based on your youtube video link, similarly to
+          how your teacher embeds a video on Google Slides for class. The code
+          simply takes the youtube video id from your url and attaches it to
+          youtube-nocookie.com, the embedded youtube video link. That link then
+          goes into a html frame element and your video appears just like that!
+        </p>
+      </section>
+
+      <section class="card fade-in">
+        <div class="card-header fade-in">
+          <h2 style="color: #f64141">From the creator:</h2>
+        </div>
+        <p style="font-size: 0.9rem; color: #aaa">
+          1. Norepted stands for "not reported," so please don't! <br />
+          2. I recommend using Norepted as an education tool. Youtube may be
+          blocked which holds very useful videos. <br />
+          3. Touch grass frequently and take a break! Enjoy this site while it
+          lasts.
+        </p>
+        <div class="fade-in"
+          style="
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(246, 65, 65, 0.1);
+            border-radius: 8px;
+            border: 1px solid #f64141;
+          "
+        >
+          <span class="fade-in" style="color: #f64141">⚠️ Warning:</span> Use responsibly. You
+          control your device.
+        </div>
+      </section>
+      <div class="separator-line fade-in"></div>
+            </section>
+    </main>
+
+    <footer id="footer" class="fade-in">
+        <div class="credits">
+            <p>Made by <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> / <a href="https://github.com/wea-f" target="_blank">wea-f</a></p>
+            <p class="disclaimer">&#9888;&#65039; I am NOT responsible for how you use Norepted. It is YOUR device. &#9888;&#65039;</p>
+            <a href="https://github.com/wea-f/Norepted" target="_blank" class="license-link">View License & Info</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // --- NAVIGATION LOGIC ---
+        function switchTab(tabName) {
+            // Hide all sections
+            document.querySelectorAll('.spa-section').forEach(el => {
+                el.classList.remove('active-section');
+            });
+            // Show selected section
+            const target = document.getElementById('view-' + tabName);
+            if (target) {
+                target.classList.add('active-section');
+                // Trigger scroll to top
+                window.scrollTo(0,0);
+                // Re-trigger animations if needed
+                if(window.fadeInObserver) {
+                    target.querySelectorAll('.fade-in').forEach(el => window.fadeInObserver.observe(el));
+                }
+            }
+        }
+        
+        // Navigation helper for About:Blank
+     function aboutblank() {
+        const siteUrl = window.location.href;
+        const win = window.open('about:blank', '_blank');
+
+        if (!win || win.closed) {
+            alert('Please allow popups for this feature to work.');
+            return;
+        }
+
+        const doc = win.document;
+        doc.title = "My Drive"; 
+
+        const iframe = doc.createElement('iframe');
+        iframe.src = siteUrl;
+        iframe.style.position = 'fixed';
+        iframe.style.top = '0';
+        iframe.style.bottom = '0';
+        iframe.style.left = '0';
+        iframe.style.right = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        iframe.style.margin = '0';
+        iframe.style.padding = '0';
+        iframe.style.overflow = 'hidden';
+        iframe.style.zIndex = '999999';
+        doc.body.style.margin = '0';
+        doc.body.appendChild(iframe);
+    }
+
+        /* =========================================
+           animations.js 
+           ========================================= */
+          
+document.addEventListener("DOMContentLoaded", () => {
+  const fadeInElems = document.querySelectorAll(".fade-in");
+
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px", 
+    threshold: 0.0
+  };
+
+  const fadeInObserver = new IntersectionObserver((entries) => {
+    requestAnimationFrame(() => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        } else {
+          entry.target.classList.remove("active");
+        }
+      });
+    });
+  }, observerOptions);
+
+  fadeInElems.forEach(elem => {
+    fadeInObserver.observe(elem);
+    const rect = elem.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    if (isVisible) {
+      elem.classList.add("active");
+    }
+  });
+
+  window.fadeInObserver = fadeInObserver;
+});
+
+document.addEventListener("keyup", function(e) {
+  switch(e.key) {
+  case "Enter":
+    const launchBtn = document.getElementById("launch");
+    if (launchBtn) launchBtn.click();
+    break;
+  case "-":
+    e.preventDefault();
+    e.stopPropagation();
+    window.location.replace("https://www.google.com/webhp?igu=1");
+    break;
+  case "'":
+    e.preventDefault();
+    e.stopPropagation();
+    document.title = "My Drive - Google Drive";
+    if (typeof setFavicons === "function") {
+      setFavicons("https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png");
+    }
+    break;
+  }
+}, { passive: false });
+
+function setFavicons(favImg) {
+  let headTitle = document.querySelector("head");
+  let setFavicon = document.createElement("link");
+  setFavicon.setAttribute("rel", "shortcut icon");
+  setFavicon.setAttribute("href", favImg);
+  headTitle.appendChild(setFavicon);
+}
+
+
+
+        /* =========================================
+           particles.js 
+           ========================================= */
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 50,
+      "density": { "enable": true, "value_area": 800 }
+    },
+    "color": { "value": "#ffffff" },
+    "shape": {
+      "type": "circle",
+      "stroke": { "width": 0, "color": "#000000" },
+    },
+    "opacity": {
+      "value": 0.3,
+      "random": true,
+      "anim": { "enable": true, "speed": 0.5, "opacity_min": 0.1, "sync": false }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": { "enable": false }
+    },
+    "line_linked": {
+      "enable": false,
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "top",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": false },
+      "onclick": { "enable": false },
+      "resize": true
+    }
+  },
+  "retina_detect": true
+});
+        /* =========================================
+           script.js
+           ========================================= */
+
+const urlInput = document.getElementById("link");
+const launch = document.getElementById("launch");
+const feedbackMessage = document.getElementById("feedbackMessage");
+const videoPlayersContainer = document.getElementById("videoPlayersContainer");
+const loadStatus = document.getElementById("loadStatus");
+const unhelpfulText = document.getElementById("offtext");
+
+// --- CONSTANTS ---
+const INITIAL_VIDEO_WIDTH = 688;
+const INITIAL_VIDEO_HEIGHT = 387;
+const RESIZE_STEP = 0.10;
+const ASPECT_RATIO = 0.5625;
+
+// --- FIX SCROLL RESTORATION ---
+if ('scrollRestoration' in history)
+{
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () =>
+{
+  window.scrollTo(0, 0);
+});
+
+window.onload = function()
+{
+  setTimeout(function()
+  {
+    window.scrollTo(0, 0);
+  }, 10); // Small delay to ensure layout is ready
+};
+
+function showToast(message, isError = false)
+{
+  const toast = document.createElement("div");
+  toast.className = "toast-notification";
+  if (isError) toast.style.borderColor = "#D73939"; // Red border for errors
+  toast.textContent = message;
+  document.body.appendChild(toast);
+
+  setTimeout(() => toast.classList.add("show"), 10);
+  setTimeout(() =>
+  {
+    toast.classList.remove("show");
+    setTimeout(() => toast.remove(), 500);
+  }, 3000);
+}
+
+function extractVideoId(url)
+{
+  if (/playlist|\/channel\/|\/@/.test(url)) return null;
+  const patterns = [
+    /youtu\.be\/([\w-]{11})/,
+    /[?&]v=([\w-]{11})/,
+    /embed\/([\w-]{11})/,
+    /shorts\/([\w-]{11})/,
+    /googleusercontent\.com\/youtube\.com\/5\/([\w-]{11})/,
+  ];
+  for (const pattern of patterns)
+  {
+    const match = url.match(pattern);
+    if (match && match[1]) return match[1];
+  }
+  return null;
+}
+
+function preflightCheck(videoId)
+{
+  return new Promise((resolve, reject) =>
+  {
+    const img = new Image();
+    let done = false;
+    img.onload = () =>
+    {
+      if (!done)
+      {
+        done = true;
+        resolve();
+      }
+    };
+    img.onerror = () =>
+    {
+      if (!done)
+      {
+        done = true;
+        reject("This video is unavailable or blocked.");
+      }
+    };
+    img.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+    setTimeout(() =>
+    {
+      if (!done)
+      {
+        done = true;
+        reject("Network blocked video access.");
+      }
+    }, 1500);
+  });
+}
+
+// --- PERSISTENCE UTILS ---
+function saveOpenVideos()
+{
+  const videos = [];
+  const wrappers = videoPlayersContainer.querySelectorAll(
+    ".video-unit-wrapper",
+  );
+  wrappers.forEach((wrapper) =>
+  {
+    if (wrapper.dataset.videoId)
+    {
+      videos.push(wrapper.dataset.videoId);
+    }
+  });
+  localStorage.setItem("savedVideos", JSON.stringify(videos));
+}
+
+function loadSavedVideos()
+{
+  const saved = localStorage.getItem("savedVideos");
+  if (saved)
+  {
+    try
+    {
+      const videoIds = JSON.parse(saved);
+      [...videoIds].reverse().forEach((videoId) =>
+      {
+        addVideoPlayer(videoId, false);
+      });
+    }
+    catch (e)
+    {
+      console.error("Failed to load saved videos", e);
+    }
+  }
+}
+
+// --- VIDEO PLAYER LOGIC ---
+function addVideoPlayer(videoId, showLoadedFeedback = true)
+{
+  if (unhelpfulText)
+  {
+    unhelpfulText.classList.remove("active");
+    unhelpfulText.style.display = "none";
+  }
+
+  if (!videoId) return showToast("Invalid YouTube URL.", true);
+
+  const videoUnitWrapper = document.createElement("div");
+  videoUnitWrapper.classList.add("video-unit-wrapper", "fade-in");
+  videoUnitWrapper.dataset.videoId = videoId;
+
+  // --- OPTIMIZED ATTRIBUTES ---
+  const iframe = document.createElement("iframe");
+  const origin = window.location.origin;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?origin=${origin}`;
+
+  iframe.setAttribute("frameborder", "0");
+  iframe.loading = "lazy";
+  iframe.allow =
+    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen";
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.borderRadius = "8px";
+
+  // Spinner load
+  const loadingOverlay = document.createElement("div");
+  loadingOverlay.className = "video-loading-overlay";
+  const spinner = document.createElement("div");
+  spinner.className = "spinner";
+  loadingOverlay.appendChild(spinner);
+
+  iframe.onload = () =>
+  {
+    loadingOverlay.classList.add("hidden");
+    setTimeout(() => loadingOverlay.remove(), 300);
+  };
+
+  const videoDisplay = document.createElement("div");
+  videoDisplay.classList.add("video-display");
+  videoDisplay.style.width = `${INITIAL_VIDEO_WIDTH}px`;
+  videoDisplay.style.height = `${INITIAL_VIDEO_HEIGHT}px`;
+  videoDisplay.dataset.initialWidth = INITIAL_VIDEO_WIDTH;
+  videoDisplay.dataset.initialHeight = INITIAL_VIDEO_HEIGHT;
+
+  const closeButton = document.createElement("button");
+  closeButton.textContent = "X";
+  closeButton.title = "Close Video";
+  closeButton.classList.add("close-video-button");
+  closeButton.addEventListener("click", () =>
+  {
+    videoUnitWrapper.remove();
+    saveOpenVideos();
+    if (videoPlayersContainer.children.length === 0 && unhelpfulText)
+    {
+      unhelpfulText.classList.add("active");
+      unhelpfulText.style.display = "block";
+    }
+  });
+
+  videoDisplay.appendChild(loadingOverlay);
+  videoDisplay.appendChild(iframe);
+  videoDisplay.appendChild(closeButton);
+
+  // --- CONTROLS SIDEBAR ---
+  const sizeControls = document.createElement("div");
+  sizeControls.classList.add("video-size-controls");
+
+  const createCtrlBtn = (text, cls, title, action) =>
+  {
+    const btn = document.createElement("button");
+    btn.innerHTML = text;
+    btn.className = `size-button ${cls}`;
+    btn.title = title;
+    btn.addEventListener("click", action);
+    return btn;
+  };
+
+  // Plus
+  sizeControls.appendChild(
+    createCtrlBtn("+", "plus", "Increase Size", () =>
+    {
+      const w = videoDisplay.offsetWidth * (1 + RESIZE_STEP);
+      resizeVideoElement(videoDisplay, w);
+    }),
+  );
+
+  // Minus
+  sizeControls.appendChild(
+    createCtrlBtn("\u2212", "minus", "Decrease Size", () =>
+    {
+      const w = videoDisplay.offsetWidth * (1 - RESIZE_STEP);
+      resizeVideoElement(videoDisplay, w);
+    }),
+  );
+
+  // Reset
+  sizeControls.appendChild(
+    createCtrlBtn("\u21BA", "default", "Reset Size", () =>
+    {
+      const w = parseInt(videoDisplay.dataset.initialWidth);
+      resizeVideoElement(videoDisplay, w);
+    }),
+  );
+
+  // Copy Button (SVG)
+  const copySvg = `<svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
+  const copyBtn = createCtrlBtn(
+    copySvg,
+    "copy-mini",
+    "Copy Video Link",
+    () =>
+    {
+      const finalLink = `https://www.youtube-nocookie.com/embed/${videoId}`;
+      window.open(finalLink, '_blank').focus();
+      navigator.clipboard.writeText(finalLink);
+      showToast("Video Link Copied and Opened!");
+    },
+  );
+  copyBtn.style.marginTop = "10px";
+  copyBtn.style.backgroundColor = "#AB47BC";
+
+  sizeControls.appendChild(copyBtn);
+
+  videoUnitWrapper.appendChild(videoDisplay);
+  videoUnitWrapper.appendChild(sizeControls);
+  videoPlayersContainer.prepend(videoUnitWrapper);
+
+  if (typeof fadeInObserver !== "undefined")
+    fadeInObserver.observe(videoUnitWrapper);
+
+  if (showLoadedFeedback)
+  {
+    showToast("Video Loaded Successfully!");
+  }
+  saveOpenVideos();
+}
+
+function resizeVideoElement(elementToResize, newWidth)
+{
+  const newHeight = newWidth * ASPECT_RATIO;
+  elementToResize.style.width = `${Math.round(newWidth)}px`;
+  elementToResize.style.height = `${Math.round(newHeight)}px`;
+}
+
+// --- LAUNCH HANDLER ---
+if (launch)
+{
+  launch.addEventListener("click", async () =>
+  {
+    const url = urlInput.value.trim();
+    if (!url) return showToast("Please paste a YouTube link first.");
+
+    const videoId = extractVideoId(url);
+    if (!videoId)
+      return showToast("That doesn't look like a valid YouTube link.");
+
+    launch.disabled = true;
+    showToast("Checking availability...");
+
+    try
+    {
+      await preflightCheck(videoId);
+      addVideoPlayer(videoId);
+      urlInput.value = "";
+    }
+    catch (err)
+    {
+      showToast(err);
+    }
+    finally
+    {
+      launch.disabled = false;
+    }
+  });
+}
+
+// --- Button Functions ---
+function toggleOptimization()
+{
+  const toggle = document.getElementById("optToggle");
+  const statusText = document.getElementById("optStatusText");
+  const isOpt = toggle.checked;
+
+  localStorage.setItem("optimizedMode", isOpt);
+
+  // Update Text UI
+  if (isOpt)
+  {
+    statusText.textContent = "Enabled";
+    statusText.classList.remove("disabled");
+    statusText.classList.add("enabled");
+    document.body.classList.add("optimized");
+  }
+  else
+  {
+    statusText.textContent = "Disabled";
+    statusText.classList.remove("enabled");
+    statusText.classList.add("disabled");
+    document.body.classList.remove("optimized");
+  }
+
+  // Handle Particles visibility
+  const pContainer = document.getElementById("particles-js");
+  if (pContainer) pContainer.style.display = isOpt ? "none" : "block";
+}
+
+function clearAllVideos()
+{
+  videoPlayersContainer.innerHTML = "";
+  if (unhelpfulText)
+  {
+    unhelpfulText.classList.add("active");
+    unhelpfulText.style.display = "block";
+  }
+  localStorage.removeItem("savedVideos");
+}
+
+// --- MAIN INIT ---
+document.addEventListener("DOMContentLoaded", () =>
+{
+  // Check saved mode
+  const savedMode = localStorage.getItem("optimizedMode") === "true";
+  const toggle = document.getElementById("optToggle");
+
+  // Set initial UI state
+  if (toggle)
+  {
+    toggle.checked = savedMode;
+    const statusText = document.getElementById("optStatusText");
+    if (savedMode)
+    {
+      statusText.textContent = "Enabled";
+      statusText.classList.add("enabled");
+      document.body.classList.add("optimized");
+      const pContainer = document.getElementById("particles-js");
+      if (pContainer) pContainer.style.display = "none";
+    }
+    else
+    {
+      statusText.classList.add("disabled");
+    }
+  }
+
+  loadSavedVideos();
+});
+
+// Toggle Instructions
+const settingsBox = document.querySelector(".settings-card");
+const instBox = document.getElementById("instructions-home");
+const hideBtn = document.querySelector(".hide-button");
+const showBtn = document.querySelector(".show-button");
+
+if (hideBtn && showBtn && settingsBox && instBox)
+{
+  hideBtn.onclick = () =>
+  {
+    instBox.style.display = "none";
+    settingsBox.style.display = "none";
+    showBtn.style.display = "block";
+  };
+  showBtn.onclick = () =>
+  {
+    instBox.style.display = "block";
+    settingsBox.style.display = "block";
+    showBtn.style.display = "none";
+  };
+}
+        /* =========================================
+           PASTE CONTENT OF Links Page Script HERE
+           (The contents inside <script> tag of index (4).html)
+           ========================================= */
+           const fetchBtn = document.getElementById("fetchLinks");
+const customFetchBtn = document.getElementById("customFetch");
+const customInput = document.getElementById("customAmount");
+const openBtn = document.getElementById("openSelected");
+const selectAllBtn = document.getElementById("selectAll");
+const grid = document.getElementById("linkGrid");
+const countSpan = document.getElementById("count");
+const allLoadedMsg = document.getElementById("allLoadedMsg");
+const progressText = document.getElementById("progressText");
+let allFoundLinks = [];
+let currentIndex = 0;
+let selectedLinks = new Set();
+async function ensureDataLoaded()
+{
+  if (allFoundLinks.length > 0) return !0;
+  fetchBtn.disabled = !0;
+  customFetchBtn.disabled = !0;
+  try
+  {
+    const res = await fetch("https://raw.githubusercontent.com/wea-f/Norepted/refs/heads/master/bphmirror.md", );
+    if (!res.ok) throw new Error("GitHub fetch failed");
+    const text = await res.text();
+    parseMarkdown(text);
+    selectAllBtn.disabled = !1;
+    fetchBtn.disabled = !1;
+    customFetchBtn.disabled = !1;
+    return !0
+  }
+  catch (e)
+  {
+    return !1
+  }
+}
+
+function parseMarkdown(markdown)
+{
+  const urlRegex = /(https?:\/\/[^\s<]+)/g;
+  const lines = markdown.split("\n");
+  let currentHeader = "General";
+  lines.forEach((line) =>
+  {
+    if (line.trim().startsWith("### "))
+    {
+      currentHeader = line.replace(/###/g, "").split("|")[0].split("[")[0].trim()
+    }
+    const match = line.match(urlRegex);
+    if (match)
+    {
+      allFoundLinks.push(
+      {
+        url: match[0],
+        siteName: currentHeader,
+      })
+    }
+  });
+  console.log(`Parsed ${allFoundLinks.length} links.`)
+}
+async function loadMore(amount)
+{
+  const success = await ensureDataLoaded();
+  if (!success) return;
+  const nextIndex = currentIndex + amount;
+  const batch = allFoundLinks.slice(currentIndex, nextIndex);
+  if (batch.length === 0 && allFoundLinks.length > 0)
+  {
+    finishLoading();
+    return
+  }
+  batch.forEach((linkData, i) =>
+  {
+    const url = linkData.url;
+    const card = document.createElement("div");
+    card.className = "proxy-card fade-in";
+    const displayUrl = url.replace("https://", "").replace("http://", "").replace(/\/$/, "");
+    card.innerHTML = `
+            <div class="proxy-check">
+                <input type="checkbox" class="proxy-checkbox" value="${url}">
+            </div>
+            <div class="proxy-info">
+                <span class="site-tag">${linkData.siteName}</span>
+                <span class="proxy-link" title="${url}">${displayUrl}</span>
+            </div>
+          `;
+    card.addEventListener("click", (e) =>
+    {
+      const box = card.querySelector(".proxy-checkbox");
+      if (e.target === box)
+      {
+        if (box.checked)
+        {
+          selectedLinks.add(url);
+          card.classList.add("selected")
+        }
+        else
+        {
+          selectedLinks.delete(url);
+          card.classList.remove("selected")
+        }
+        updateUI();
+        return
+      }
+      window.open(url, "_blank")
+    });
+    grid.appendChild(card);
+    if (window.fadeInObserver)
+    {
+      window.fadeInObserver.observe(card)
+    }
+    else
+    {
+      card.classList.add("active");
+      card.style.opacity = 1
+    }
+  });
+  currentIndex += batch.length;
+  progressText.classList.remove("hidden");
+  progressText.textContent = `Showing ${currentIndex} of ${allFoundLinks.length} links`;
+  if (currentIndex >= allFoundLinks.length)
+  {
+    finishLoading()
+  }
+}
+
+function finishLoading()
+{
+  fetchBtn.disabled = !0;
+  fetchBtn.textContent = "All Loaded";
+  customFetchBtn.disabled = !0;
+  allLoadedMsg.classList.remove("hidden")
+}
+fetchBtn.addEventListener("click", () =>
+{
+  loadMore(15)
+});
+customFetchBtn.addEventListener("click", () =>
+{
+  let amt = parseInt(customInput.value);
+  if (!amt || amt < 1) amt = 15;
+  loadMore(amt)
+});
+selectAllBtn.addEventListener("click", () =>
+{
+  const checkboxes = document.querySelectorAll(".proxy-checkbox");
+  const shouldSelect = Array.from(checkboxes).some((cb) => !cb.checked);
+  checkboxes.forEach((box) =>
+  {
+    box.checked = shouldSelect;
+    const card = box.closest(".proxy-card");
+    if (shouldSelect)
+    {
+      selectedLinks.add(box.value);
+      card.classList.add("selected")
+    }
+    else
+    {
+      selectedLinks.delete(box.value);
+      card.classList.remove("selected")
+    }
+  });
+  updateUI()
+});
+openBtn.addEventListener("click", () => {
+  if (selectedLinks.size === 0) return;
+  if (selectedLinks.size > 10) {
+    if (!confirm(`You are about to open ${selectedLinks.size} tabs. Continue?`)) return;
+  }
+
+  let blocked = false;
+  selectedLinks.forEach((url) => {
+    const newWin = window.open(url, "_blank");
+
+    if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
+      blocked = true;
+    }
+  });
+
+  if (blocked) {
+    alert("One site opened! Please turn on 'Always allow pop-ups and redirects' from Norepted to open multiple links!");
+  }
+});
+
+function updateUI()
+{
+  countSpan.textContent = selectedLinks.size;
+  openBtn.disabled = selectedLinks.size === 0;
+  const checkboxes = document.querySelectorAll(".proxy-checkbox");
+  if (checkboxes.length > 0)
+  {
+    const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
+    selectAllBtn.textContent = allChecked ? "Deselect All" : "Select All Loaded"
+  }
+}
+    </script>
+</body>
+</html>
