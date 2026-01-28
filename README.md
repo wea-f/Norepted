@@ -29,11 +29,12 @@ You can access Norepted through these mirrors:
 | --- | --- |
 | **Vercel** | [norepted-delta.vercel.app](https://norepted-delta.vercel.app/) |
 | **Netlify** | [norepted.netlify.app](https://norepted.netlify.app/) |
+| **Cloudflare** | [https://norepted.norepted.workers.dev/](https://norepted.norepted.workers.dev/) | 
 | **CodeSandbox** | [gzhhqm.csb.app](https://gzhhqm.csb.app) |
 | **Playcode** | [norepted.playcode.io](https://norepted.playcode.io/) (Press "SKIP INTRO") |
 | **Playcode (2)** | [https://2650852.playcode.io/](https://2650852.playcode.io/) (Press "SKIP INTRO") |
 | **GitHub Pages** | [wea-f.github.io/Norepted](http://wea-f.github.io/Norepted) |
-| **CodePen** | [codepen.io/weaF_z](https://codepen.io/weaF_z/full/RwJVywE) |
+| **CodePen** | [codepen.io/weaF_z/full/RwJVywE](https://codepen.io/weaF_z/full/RwJVywE) |
 | **Google Sites** | [sites.google.com/view/n0repted](https://sites.google.com/view/n0repted/home) |
 | **Google Sites (2)** | [https://sites.google.com/view/norepted-mirror/home](https://sites.google.com/view/norepted-mirror/home) |
 | **Edgeone** | [https://norepted.edgeone.app/](https://norepted.edgeone.app/) |
