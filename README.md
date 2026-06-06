@@ -1,34 +1,53 @@
 # Norepted v1.7
 #### Full Media & Unblocker Hub
 
-Norepted is a school-proof media hub designed to watch YouTube and browse the web where both are blocked. v1.7 is the biggest expansion yet — it rebuilds Norepted into a full single-page app with a new landing page, built-in YouTube search, a Shorts scroller, multi-source video fallback, and a multi-tab proxy browser, while keeping everything that worked in v1.6.2.
+Norepted is a school-proof media hub for watching YouTube and bypassing web restrictions where both are blocked. v1.7 is the biggest expansion yet — rebuilt as a full single-page app with a landing page, YouTube search, Shorts scroller, multi-source video fallback, and a multi-tab proxy browser.
+
+> **Before you start:** What works for you depends entirely on your school's network. Some features require access to external APIs or proxy servers that your school may block. This is normal — see the [Network Compatibility](#-network-compatibility) section below.
 
 ---
 
 ### 🌟 New in v1.7
 
-* **🏠 Landing Page:** New home screen with quick-access cards and privacy shortcuts front and center.
-* **🔍 YouTube Search:** Search for any video directly inside the Watch page — no URL needed.
-* **📱 Shorts Scroller:** A full TikTok-style Shorts viewer. Search, paste a URL, scroll with arrow keys or mouse wheel.
-* **🌐 Multi-Tab Browser:** Built-in proxy browser with multiple tabs, Google/Bing search toggle, refresh, fullscreen, and tab cloaking from the toolbar.
-* **🔁 Multi-Source Fallback:** Videos that don't load on one embed source can be retried on another with one button click.
-* **↩ Undo Close:** Accidentally closed a video? Undo it from the toast notification.
-* **🔗 Improved Link Loading:** The Proxy Links page now tries jsDelivr before raw GitHub, which is more reliable on managed networks.
+* **🏠 Landing Page** — New home screen with quick-access cards and privacy shortcuts front and center.
+* **🔍 YouTube Search** — Search for videos directly inside the Watch page. *Requires Google API access — may be blocked on some networks.*
+* **📱 Shorts Scroller** — TikTok-style Shorts viewer. Search, paste a URL, navigate with arrow keys or scroll wheel.
+* **🌐 Multi-Tab Browser** — Built-in proxy browser with tabs, URL bar, Google/Bing toggle, and fullscreen. *Dependent on external CORS proxies — may be blocked on managed devices.*
+* **🔁 Source Fallback** — When a video is restricted, a "Try next source" button cycles through alternate embed hosts.
+* **↩️ Undo Close** — Accidentally closed a video? Undo it from the toast notification.
+* **🔗 Improved Link Loading** — Links page now tries jsDelivr before raw GitHub for better compatibility on filtered networks.
 
 ---
 
 ## ✨ Key Features
 
-* **🚫 Zero Ads:** Embeds via `youtube-nocookie.com` — no YouTube ads, no interface.
-* **🔍 Search & Watch:** Find videos without ever going to youtube.com.
-* **📱 Shorts Scroller:** Scroll through Shorts with keyboard or mouse wheel.
-* **🌐 Proxy Browser:** Multi-tab browser that routes requests through CORS proxies.
-* **🔗 200+ Proxy Links:** Curated proxy directory, bulk-selectable and one-click openable.
-* **🙈 History Wipe:** Press `-` to redirect to Google and wipe Norepted from your session history.
-* **🎭 Tab Cloaking:** Disguise the tab as "Google Drive" from the landing page or browser toolbar.
-* **💾 Session Save:** Open videos restore automatically on next visit.
-* **🖥️ Multi-Video:** Embed multiple videos at once, resize each one independently.
-* **⚡ Low Performance Mode:** Toggle in the Watch page to disable animations and particles for slower Chromebooks.
+* **🚫 Zero Ads** — Embeds via `youtube-nocookie.com`. No YouTube interface, no ads.
+* **🔍 Search & Watch** — Find videos without visiting youtube.com. *(Network-dependent)*
+* **📱 Shorts Scroller** — Scroll through Shorts with keyboard or mouse wheel. *(Network-dependent)*
+* **🌐 Proxy Browser** — Multi-tab browser that routes requests through CORS proxies. *(Often blocked on managed networks — use Proxy Links as backup)*
+* **🔗 200+ Proxy Links** — Curated proxy directory. Bulk-select and open in one click.
+* **🙈 History Wipe** — Click the button on the landing page to redirect to Google and wipe Norepted from your session history.
+* **🎭 Tab Cloaking** — Disguise your tab as Google Drive from the landing page or browser toolbar.
+* **💾 Session Save** — Open videos restore automatically on your next visit.
+* **🖥️ Multi-Video** — Embed multiple videos at once and resize each one independently.
+* **⚡ Low Performance Mode** — Toggle in the Watch page to disable animations and particles for slower Chromebooks.
+
+---
+
+## 🌐 Network Compatibility
+
+Norepted's core feature — **embedding YouTube videos** — works on most school networks because it uses the same embed method teachers use in Google Slides (`youtube-nocookie.com`). Everything else depends on your network.
+
+| Feature | How it works | Works if your school blocks... |
+| --- | --- | --- |
+| **YouTube embed** | `youtube-nocookie.com` iframe | ✅ Usually works |
+| **YouTube search** | Google YouTube Data API | ❌ `googleapis.com` blocked |
+| **Shorts search** | Same API | ❌ `googleapis.com` blocked |
+| **Proxy Browser** | CORS proxy servers | ❌ Proxy domains blocked |
+| **Proxy Links** | GitHub-hosted list | ❌ `github.com` / `jsdelivr.net` blocked |
+| **Source fallback** | Invidious / Piped embed | ⚠️ Depends on instance |
+
+**If a feature doesn't work, it's your network — not a bug.** The embed player itself is the most reliable feature and works for the vast majority of users.
 
 ---
 
@@ -56,36 +75,35 @@ Norepted is a school-proof media hub designed to watch YouTube and browse the we
 
 ### Watching Videos
 
-1. **Search:** Type any video title in the search bar and click **Search**, or:
+1. **Search:** Type a title in the search bar and click **Search** *(requires API access)*, or:
 2. **Paste:** Drop a YouTube URL into the link box and press **Enter** or **Launch**.
 3. **Manage:**
-   * **+** / **−** to resize. **↺** to reset size.
-   * **⟳** (retry button) to try the next embed source if a video is restricted.
-   * **X** to close a video. An **Undo** toast appears for 5 seconds.
+   * **+** / **−** to resize. **↺** to reset.
+   * If a video shows a restriction error, click **Try next source** to cycle through alternate embed hosts.
+   * **X** to close. An **Undo** toast appears for 5 seconds.
    * Purple copy icon to copy and open the direct embed link for bookmarking.
-   * **Clear all videos** to remove everything at once.
+   * **Clear all videos** removes everything at once.
 
 ### Shorts Scroller
 
-1. Type a topic in the Shorts search bar and click **Find Shorts**, or paste a Shorts URL and click **Add**.
-2. Navigate with **↑ ↓ arrow keys**, **mouse wheel**, or the on-screen buttons.
+1. Search for a topic *(requires API access)*, or paste a Shorts URL and click **Add**.
+2. Navigate with **↑ ↓ arrow keys**, **mouse wheel** (while hovering the player), or the on-screen buttons.
 
 ### Proxy Browser
 
 1. Click **Browser** in the navbar.
-2. Type a URL or search term and press **Enter** or **Go**.
-3. Use the **+** tab button for new tabs. The **G / B** pills switch between Google and Bing search.
-4. If all proxies fail, a **Try Proxy Links** button appears — use it to find a working proxy from the Links page.
+2. Type a URL or search query and press **Enter** or **Go**.
+3. If all proxies fail, click **Try Proxy Links** to find a working proxy from the Links page.
 
-> **Note:** The proxy browser routes requests through third-party CORS proxies. These may be blocked on heavily managed school networks. If the browser fails, the Links page is the better option.
+> The proxy browser routes through third-party CORS proxies. These are frequently blocked on managed school networks. If it doesn't work, the **Proxy Links page** is the more reliable option.
 
 ### Privacy Shortcuts
 
-| Shortcut | Action |
+| Action | How |
 | --- | --- |
-| `-` (hyphen) | **Panic mode.** Redirects to Google immediately. Norepted won't appear in `chrome://history`. |
-| `` ` `` (backtick) | **Tab cloak.** Changes tab title and icon to look like Google Drive. Refresh to undo. |
-| **about:blank** button | Opens Norepted inside an `about:blank` window so the URL bar shows nothing. |
+| **History Wipe** | Click the button on the landing page. Redirects to Google — Norepted won't appear in `chrome://history`. |
+| **Tab Cloak** | Click on the landing page or in the browser toolbar. Changes title and icon to Google Drive. Refresh to undo. |
+| **about:blank** | Click the button on the landing page or Watch page to open Norepted inside an `about:blank` window. |
 
 ---
 
@@ -95,7 +113,7 @@ Norepted is a school-proof media hub designed to watch YouTube and browse the we
 > I do not guarantee all links are safe or working. I am not responsible for any consequences from using these sites. Use at your own risk.
 
 * **Bulk Testing:** Select multiple links and open them all at once to find one that works on your network.
-* **Live Updates:** Fetches the latest list directly from GitHub (tries jsDelivr first for better compatibility on filtered networks).
+* **Live Updates:** Fetches the latest list from GitHub (tries jsDelivr CDN first for better reach on filtered networks).
 * **Custom Load:** Choose how many links to load at a time.
 
 ---
@@ -104,10 +122,10 @@ Norepted is a school-proof media hub designed to watch YouTube and browse the we
 
 Norepted works the same way a teacher embeds a video in Google Slides.
 
-1. The site extracts the **Video ID** from your YouTube link.
+1. It extracts the **Video ID** from your YouTube link.
 2. It creates an `<iframe>` pointing to `youtube-nocookie.com/embed/[ID]`.
-3. Because this is a different domain from `youtube.com`, it often bypasses network filters and strips ads.
-4. If that source is restricted, the **⟳ retry button** cycles through alternate embed sources.
+3. Because this is a different domain from `youtube.com`, it often bypasses network filters and strips the YouTube UI and ads.
+4. If that source is restricted, the **Try next source** button cycles through Invidious and Piped as alternate embed hosts.
 
 ---
 
