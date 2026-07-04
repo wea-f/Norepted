@@ -28,187 +28,1220 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet" />
 
     <style>
-        /* =========================================
-           1. Animations.css
-           ========================================= */
-        .fade-in{opacity:0;transform:translateY(20px);transition:opacity .3s ease-out,transform .3s ease-out}
-.fade-in.active{opacity:1;transform:translateY(0)}
-#particles-js{position:fixed;width:100%;height:100%;background-repeat:no-repeat;background-position:50% 50%;z-index:-1}
-html{font-family:"Fredoka","sans-serif";color:#fff}
-::placeholder{font-family:"Fredoka","sans-serif"}
-button{font-family:"Fredoka","sans-serif";background-color:#64dd17;color:#fff;border-color:#fff;display:block;margin:0 auto;font-size:18px;border-radius:10px;transition:background-color .3s ease}
-h1,h3,h4,h5,h6{text-align:center;font-family:"Fredoka","sans-serif"}
-body{background:linear-gradient(to bottom,#1e88e5,#00008b);background-attachment:fixed;min-height:100vh;display:flex;flex-direction:column;text-align:center;margin:0;padding:0}
-.navbar{width:100%;background:#00003299;backdrop-filter:blur(10px);padding:15px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ffffff1a;box-shadow:0 4px 12px #0003}
-.logo{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:700;color:#ff6b6b;text-transform:uppercase;letter-spacing:2px}
-.nav-links{display:flex;gap:15px}
-.nav-btn{background:transparent;border:none;color:#fff;font-size:16px;cursor:pointer;padding:5px 10px;border-radius:5px;transition:all .2s}
-.nav-btn:hover{background:#ffffff1a;color:#FFC107}
-.visitor-counters-wrapper{display:flex;justify-content:center;align-items:center}
-.visitor-counter{display:inline-flex;flex-direction:row;justify-content:center;align-items:center;text-align:center;margin:0 25px}
-.visitor-counter:first-child a{margin-top:50%}
-.visitor-counter:last-child a{margin-top:10%}
-.status{color:#FFC107;margin:10px 0;font-weight:700}
-.dismiss-btn{margin-left:10px;background:#fff3;border:none;padding:2px 8px;border-radius:4px;cursor:pointer;color:#fff}
-.dismiss-btn:hover{background:#fff6}
-footer{width:100%;background:#00000080;padding:20px;margin-top:40px;border-top:1px solid #ffffff1a}
-.credits{color:#aaa;font-size:14px;margin-top:10px;line-height:1.6}
-.credits a{color:#AB47BC;text-decoration:none}
-.credits a:hover{text-decoration:underline;color:#d68fe9}
-.hide-button:hover,.show-button:hover{background:#ffffff1a;color:#fff;border-color:#fff}
-.primary-btn,.secondary-btn,#searchButton,.size-button{position:relative;overflow:visible!important;transition:all .2s ease;z-index:1;border:none}
-.primary-btn:hover,.secondary-btn:hover,#searchButton:hover{filter:brightness(1.1);cursor:pointer}
-.primary-btn:active,.secondary-btn:active,#searchButton:active,.size-button:active{transform:scale(0.92) rotate(-0.1deg)}
+      :root {
+  /* Orange accent (was green) */
+  --accent:       #F57C00;
+  --accent-bright:#FB8C00;
+  --accent-dim:   #E65100;
 
-.toast-notification{position:fixed;bottom:-50px;left:50%;transform:translateX(-50%);background:#000000e6;color:#58C114;padding:12px 24px;border-radius:30px;border:1px solid #58C114;font-weight:700;z-index:9999;transition:bottom .4s cubic-bezier(0.175,0.885,0.32,1.275),opacity .3s;opacity:0}
-.toast-notification.show{bottom:30px;opacity:1}
-.separator-text{color:#aaa;font-weight:700;margin:10px 0}
-.separator-line{width:100%;height:1px;background:#fff3;margin:30px 0}
-.subtle-text{color:#888;font-size:.9rem;margin-top:20px}
-.video-loading-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:#000000b3;display:flex;justify-content:center;align-items:center;z-index:2;pointer-events:none;transition:opacity .3s ease}
-.video-loading-overlay.hidden{opacity:0}
-.spinner{width:40px;height:40px;border:4px solid #ffffff4d;border-radius:50%;border-top-color:#58C114;animation:spin 1s ease-in-out infinite}
-@keyframes spin {
-to{transform:rotate(360deg)}
+  --purple:       #AB47BC;
+  --purple-dim:   #7b1fa2;
+  --red:          #ef4444;
+  --yellow:       #FFC107;
+
+  /* NOREPTED brand red */
+  --brand:        #F54927;
+
+  --surface:      rgba(0, 0, 0, 0.32);
+  --surface-hi:   rgba(0, 0, 0, 0.52);
+  --border:       rgba(255, 255, 255, 0.1);
+  --border-hi:    rgba(255, 255, 255, 0.2);
+
+  --text:         #ffffff;
+  --text-sub:     #b0bec5;
+  --text-muted:   #546e7a;
 }
-        /* =========================================
-           2. style.css
-           ========================================= */
-*{box-sizing:border-box}
-main{flex:1;width:100%;max-width:900;margin:0 auto;padding:20px;display:flex;flex-direction:column;align-items:center}
-.card{background:#0006;border:1px solid #fff3;border-radius:12px;padding:20px;width:100%;margin-bottom:20px;backdrop-filter:blur(5px);box-shadow:0 8px 32px #0000004d}
-.card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;border-bottom:1px solid #ffffff1a;padding-bottom:10px}
-.card h2{margin:0;font-size:1.2rem;color:#FFC107;text-align:left}
-.instruction-list{list-style:none;padding:0;text-align:left;line-height:1.8}
-.highlight{color:#58C114;font-weight:700}
-.highlight-red{color:#D73939;font-weight:700}
-.highlight-purple{color:#AB47BC;font-weight:700}
-.highlight-yellow{color:#ffd145;font-weight:700}
-.navbar{width:100%;background:#00003299;backdrop-filter:blur(10px);padding:15px 30px;display:flex;justify-content:space-between;align-items:center;border-bottom:2px solid #ffffff1a;box-shadow:0 4px 12px #0003;z-index:100}
-.logo{font-family:'Fredoka',sans-serif;font-size:24px;font-weight:700;color:#ff6b6b;text-transform:uppercase;letter-spacing:2px}
-.nav-links{display:flex;gap:15px;align-items:center}
-.nav-btn{background:transparent;border:none;color:#fff;font-size:16px;cursor:pointer;padding:8px 14px;border-radius:8px;transition:all .2s;font-family:"Fredoka","sans-serif";display:flex;align-items:center;gap:8px;position:relative}
-.nav-btn svg{width:18px;height:18px;fill:currentColor;opacity:.9}
-.nav-btn:hover{background:#ffffff1a;color:#FFC107}
-.badge-new{position:absolute;top:-8px;right:-5px;background-color:#ff4757;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;font-weight:800;box-shadow:0 2px 5px #0000004d;text-transform:uppercase;animation:badge-bounce 2s infinite;pointer-events:none}
-@keyframes badge-bounce {
-0%,20%,50%,80%,100%{transform:translateY(0)}
-40%{transform:translateY(-3px)}
-60%{transform:translateY(-1.5px)}
+
+/* ─── RESET ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-family: 'Fredoka', sans-serif; color: var(--text); scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(to bottom, #1e88e5, #00008b);
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0; padding: 0;
+  display: flex; flex-direction: column;
 }
-.primary-btn{background-color:#58C114;color:#fff;border:none;padding:10px 24px;font-size:18px;border-radius:8px;cursor:pointer;font-weight:700;letter-spacing:1px;transition:all .2s;box-shadow:0 4px 0 #3e8e0e}
-.primary-btn:hover{background-color:#64dd17;transform:translateY(-2px);box-shadow:0 6px 0 #3e8e0e}
-.primary-btn:active{box-shadow:0 0 0 #3e8e0e}
-.secondary-btn{background-color:#AB47BC;color:#fff;border:none;padding:10px 20px;font-size:16px;border-radius:8px;cursor:pointer;transition:all .2s;box-shadow:0 4px 0 #7b1fa2}
-.secondary-btn:hover{background-color:#ba68c8;transform:translateY(-2px);box-shadow:0 6px 0 #7b1fa2}
-.secondary-btn:active{box-shadow:0 0 0 #7b1fa2}
-.text-btn{background:transparent;border:1px solid #ffffff4d;color:#ddd;padding:8px 16px;border-radius:20px;cursor:pointer;font-size:14px;margin-top:10px}
-.text-btn:hover{background:#ffffff1a;color:#fff}
-.watch-interface{width:100%;display:flex;flex-direction:column;gap:15px;align-items:center}
-input[type="text"]{background-color:#f57f17e6;color:#fff;border:2px solid #ffffff80;border-radius:8px;padding:12px 20px;font-size:14px;width:100%;max-width:400px;outline:none;transition:.3s;font-family:'Fredoka',sans-serif}
-input[type="text"]::placeholder{color:#fffc}
-input[type="text"]:focus{background-color:#f57f17;border-color:#fff;box-shadow:0 0 15px #f57f1780}
-.settings-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
-.setting-label{display:flex;flex-direction:column;text-align:left}
-.status-indicator{font-size:.85rem;font-weight:700;margin-top:4px}
-.status-indicator.enabled{color:#58C114}
-.status-indicator.disabled{color:#D73939}
-.switch{position:relative;display:inline-block;width:50px;height:28px}
-.switch input{opacity:0;width:0;height:0}
-.slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;transition:.4s;border-radius:34px}
-.slider:before{position:absolute;content:"";height:20px;width:20px;left:4px;bottom:4px;background-color:#fff;transition:.4s;border-radius:50%}
-input:checked + .slider{background-color:#58C114}
-input:checked + .slider:before{transform:translateX(22px)}
-#feedbackMessage{min-height:24px;text-align:center;font-size:16px;font-weight:700;opacity:0;transition:opacity .3s ease;max-width:600px;border-radius:4px}
-#feedbackMessage.active{opacity:1}
-.hidden{display:none}
-.show-button{background:#ffffff1a;border:none;padding:5px 12px;margin-bottom:10px;color:#ddd;display:none}
-.hide-button,.show-button{border:1px solid #ffffff4d;border-radius:20px;cursor:pointer;font-size:14px;transition:all .2s ease}
-.hide-button{background:transparent;padding:5px 10px;margin-right:2px;color:#aaa}
-body.optimized *{animation:none!important;transition:none!important;box-shadow:none!important}
-body.optimized #particles-js{display:none!important}
-.video-grid-frame{border:2px dashed #fff3;border-radius:12px;padding:20px;min-height:200px;background:#0003;width:100%;margin-top:15px;transition:border-color .3s}
-.video-grid-frame:hover{border-color:#fff6}
-.control-panel{display:flex;gap:15px;width:100%;justify-content:center;align-items:center}
-.tools-bar{display:flex;justify-content:center;width:100%;margin-bottom:10px}
-.video-unit-wrapper{position:relative;display:flex;justify-content:center;align-items:center;margin-bottom:20px;transition:transform .2s ease-in-out;width:fit-content;padding-right:60px}
-.video-unit-wrapper:hover{transform:translateY(-5px)}
-.video-display{position:relative;overflow:hidden;border-radius:8px;background-color:#000;box-shadow:0 4px 20px #00000080}
-.video-display iframe{width:100%;height:100%;display:block;border-radius:8px;background-color:#000;box-shadow:none}
-.close-video-button{position:absolute;top:5px;right:5px;background:#D73939;color:#fff;border:1px solid #fff;border-radius:50%;width:25px;height:25px;font-size:14px;font-weight:700;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:background-color .2s ease}
-.close-video-button:hover{background-color:#e16b6b}
-.close-video-button:active{background-color:#a12b2b}
-.video-size-controls{position:absolute;right:0;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:5px;background-color:#ffffff1a;border-radius:8px;box-shadow:0 2px 5px #0003;z-index:5;margin-left:10px}
-.size-button{padding:0;background-color:transparent;color:#fff;border:1px solid #fff;border-radius:8px;transition:background-color .3s ease;margin:5px 0;font-size:1.2rem;width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 5px #0003;cursor:pointer}
-.size-button:active{box-shadow:0 1px 3px #0000004d}
-.plus:hover{background-color:#78E46A}
-.plus:active{background-color:#69C85D}
-.minus:hover{background-color:#F64141}
-.minus:active{background-color:#D73939}
-.default:hover{background-color:#ffd145}
-.default:active{background-color:#ffe083}
-.default{background-color:#FFC107;color:#000;font-size:1rem}
-.bubble-trigger{position:relative;overflow:visible!important}
-.copy-mini:hover svg path{fill:#ddd}
-.copy-mini svg{pointer-events:none}
 
+::placeholder { font-family: 'Fredoka', sans-serif; color: var(--text-muted); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-        /* =========================================
-           3. PAGE SPECIFIC STYLES
-           ========================================= */
-        
-        /* From Links Page */
-        .proxy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; width: 100%; margin: 20px 0; }
-        .proxy-card { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); padding: 8px 10px; border-radius: 8px; display: flex; align-items: center; gap: 10px; cursor: pointer; transition: transform 0.2s ease, border-color 0.2s ease; backdrop-filter: blur(5px); min-height: 50px; }
-        .proxy-card:hover { background: rgba(255, 255, 255, 0.15); border-color: #58c114; transform: translateY(-2px); }
-        .proxy-card.selected { border-color: #58c114; background: rgba(88, 193, 20, 0.2); }
-        .proxy-check { display: flex; align-items: center; }
-        .proxy-checkbox { width: 16px; height: 16px; accent-color: #58c114; cursor: pointer; z-index: 2; }
-        .proxy-info { display: flex; flex-direction: column; overflow: hidden; flex: 1; justify-content: center; }
-        .site-tag { font-size: 0.65rem; font-weight: bold; color: #00ff88; text-transform: uppercase; opacity: 0.8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .proxy-link { font-size: 0.85rem; color: #4fc3f7; text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
-        .load-container { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 15px; padding: 30px 0; width: 100%; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 20px; }
-        .custom-load-group { display: flex; align-items: center; gap: 5px; background: rgba(0, 0, 0, 0.3); padding: 5px 10px; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); }
-        .small-input { width: 50px; padding: 5px; border-radius: 4px; border: 1px solid #555; background: #222; color: white; text-align: center; font-family: "Fredoka", sans-serif; }
-        .status-text { width: 100%; text-align: center; color: #aaa; font-size: 0.9rem; margin-top: 5px; }
+/* ─── PARTICLES ──────────────────────────────────────── */
+#particles-js {
+  position: fixed;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
 
-        /* From Bookmarklets Page */
-        #bookmarklets-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-        .bookmarkletdiv { background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 25px; border-radius: 16px; transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s; display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 15px; }
-        .bookmarkletdiv:hover { transform: translateY(-8px); border-color: #1E88EF; box-shadow: 0 10px 30px rgba(30, 136, 239, 0.2); }
-        .bookmarklet { background-color: #1E88EF; color: white; text-decoration: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; width: 100%; margin-bottom: 15px; display: inline-block; box-shadow: 0 4px 15px rgba(30, 136, 239, 0.3); cursor: pointer; }
-        .bookmarkletdiv p { color: #bbb; font-size: 0.95rem; line-height: 1.5; margin: 0; }
+/* ─── NAVBAR ─────────────────────────────────────────── */
+.navbar {
+  position: sticky; top: 0; z-index: 200;
+  width: 100%; height: 54px;
+  background: rgba(0, 0, 50, 0.72);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0 24px; gap: 12px;
+}
 
-        /* From About Page (Scoped to avoid conflict) */
-        #view-about h1 { color: red; } 
-        #view-about a { color: lightgreen; }
+.logo {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 19px; font-weight: 600;
+  color: var(--brand);
+  letter-spacing: 2.5px; text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  user-select: none;
+}
 
-        /* =========================================
-           4. Sections
-           ========================================= */
-        .spa-section {
-            display: none; /* Hidden by default */
-            animation: fadeIn 0.4s ease-out;
-            max-width: 100%;
-            
-            align-items: center;
-            
-        }
-        .spa-section.active-section {
-            display: flex; /* Show when active */
-            max-width: 100%;
-            flex: 1;
-            flex-direction: column;
-            align-items: center;
-            width: 55vw;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        #blueDisgust {
-          color: white;
-        }
+.logo2 {
+  color: var(--brand);
+  align-items: center; 
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.version-badge {
+  font-size: 10px; font-weight: 400;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  color: var(--text-sub);
+  padding: 2px 7px; border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.nav-links { display: flex; align-items: center; gap: 2px; }
+
+.nav-btn {
+  background: transparent; border: none;
+  color: var(--text-sub);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 14px; font-weight: 400; cursor: pointer;
+  padding: 6px 11px; border-radius: 8px;
+  display: flex; align-items: center; gap: 5px;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.nav-btn svg { width: 15px; height: 15px; fill: currentColor; flex-shrink: 0; opacity: 0.75; }
+.nav-btn:hover, .nav-btn.active-nav { background: rgba(255,255,255,0.08); color: var(--text); }
+.nav-btn.active-nav { color: var(--accent); }
+.nav-btn-accent { color: var(--accent); }
+.nav-btn-accent:hover { background: rgba(245,124,0,0.1); color: var(--accent-bright); }
+
+/* ─── MAIN / SPA ──────────────────────────────────────── */
+main { flex: 1; display: flex; flex-direction: column; position: relative; z-index: 1; }
+
+.spa-section {
+  display: none; flex-direction: column;
+  align-items: center; width: 100%; flex: 1;
+}
+.spa-section.active-section {
+  display: flex;
+  animation: sectionIn 0.22s ease-out;
+}
+.spa-section:not(.full-screen-app):not(.landing-section).active-section {
+  max-width: 860px; margin: 0 auto; padding: 28px 20px 40px;
+}
+@keyframes sectionIn {
+  from { opacity: 0; transform: translateY(15px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── PAGE HEADER ─────────────────────────────────────── */
+.page-header { width: 100%; text-align: center; margin-bottom: 20px; }
+.page-title { font-size: 2rem; font-weight: 600; color: var(--text); margin: 0 0 6px; }
+.page-sub { font-size: 1rem; color: var(--text-sub); margin: 0; }
+
+/* ─── CARD ────────────────────────────────────────────── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 20px 22px;
+  width: 100%; margin-bottom: 18px;
+  backdrop-filter: blur(6px);
+}
+
+/* ─── LANDING ─────────────────────────────────────────── */
+.landing-section {
+  justify-content: center;
+  min-height: calc(100vh - 54px);
+  padding: 48px 24px 40px !important;
+  max-width: 100% !important;
+  gap: 0;
+}
+
+.landing-hero {
+  text-align: center;
+  margin-bottom: 52px;
+  display: flex; flex-direction: column; align-items: center; gap: 20px;
+}
+
+/* Ring / glow treatment around the logo */
+.landing-logo-ring {
+  position: relative;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 36px 60px;
+  border-radius: 28px;
+  border: 1px solid rgba(245, 73, 39, 0.18);
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.landing-logo-glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 30px;
+  background: transparent;
+  box-shadow:
+    0 0 40px rgba(245, 73, 39, 0.18),
+    0 0 100px rgba(245, 73, 39, 0.08),
+    inset 0 0 40px rgba(245, 73, 39, 0.04);
+  pointer-events: none;
+}
+
+.landing-title {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 600;
+  letter-spacing: 8px;
+  margin: 0 0 8px;
+  color: var(--brand);
+  text-shadow:
+    0 0 30px rgba(245, 73, 39, 0.55),
+    0 0 80px rgba(245, 73, 39, 0.2);
+}
+
+.landing-tagline {
+  font-size: 1.05rem;
+  color: var(--text-sub);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.landing-pills {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+}
+
+.landing-pill {
+  background: rgba(245, 124, 0, 0.1);
+  border: 1px solid rgba(245, 124, 0, 0.3);
+  color: var(--accent-bright);
+  padding: 4px 14px; border-radius: 20px;
+  font-size: 0.82rem; font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.landing-cards {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  justify-content: center;
+  max-width: 940px; width: 100%;
+  margin-bottom: 40px;
+}
+
+.landing-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 20px 22px;
+  cursor: pointer; display: flex; align-items: center;
+  gap: 16px; flex: 1 1 200px; max-width: 240px;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+  backdrop-filter: blur(8px); text-align: left;
+}
+.landing-card:hover {
+  border-color: var(--accent);
+  background: rgba(245, 124, 0, 0.06);
+  transform: translateY(-4px);
+}
+
+.landing-card-icon {
+  width: 46px; height: 46px;
+  background: rgba(245, 124, 0, 0.1);
+  border: 1px solid rgba(245, 124, 0, 0.25);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); flex-shrink: 0;
+}
+.landing-card-icon svg { width: 22px; height: 22px; }
+
+.landing-card-text { flex: 1; }
+.landing-card-text h3 { margin: 0 0 4px; font-size: 1rem; font-weight: 600; color: var(--text); }
+.landing-card-text p { margin: 0; font-size: 0.82rem; color: var(--text-sub); line-height: 1.4; }
+
+.landing-card-arrow { color: var(--text-muted); font-size: 1rem; flex-shrink: 0; transition: color 0.2s; }
+.landing-card:hover .landing-card-arrow { color: var(--accent); }
+
+.landing-shortcuts {
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center;
+}
+
+.shortcut-hint {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 0.82rem; color: var(--text-muted); cursor: pointer;
+  transition: color 0.15s;
+}
+.shortcut-hint:hover { color: var(--text-sub); }
+
+kbd {
+  background: var(--surface); border: 1px solid var(--border-hi);
+  color: var(--text-sub); padding: 3px 9px; border-radius: 6px;
+  font-family: 'Fredoka', sans-serif; font-size: 0.8rem;
+  cursor: pointer; transition: border-color 0.15s;
+}
+kbd:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ─── WATCH PAGE ──────────────────────────────────────── */
+.settings-row-bar {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; flex-wrap: wrap; padding: 12px 18px; margin-bottom: 16px;
+}
+.settings-left { display: flex; align-items: center; gap: 10px; }
+.settings-label { font-size: 0.9rem; color: var(--text-sub); }
+.status-indicator { font-size: 0.8rem; font-weight: 600; }
+.status-indicator.enabled { color: var(--accent); }
+.status-indicator.disabled { color: var(--text-muted); }
+.settings-right { display: flex; align-items: center; gap: 12px; }
+
+.input-block { width: 100%; display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px; }
+.input-row { display: flex; gap: 10px; width: 100%; }
+
+input[type="text"], input[type="number"] {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px; color: var(--text);
+  font-family: 'Fredoka', sans-serif; font-size: 15px;
+  padding: 11px 16px; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  flex: 1; min-width: 0; width: 100%;
+}
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.15);
+  background: rgba(0,0,0,0.45);
+}
+
+.small-input {
+  width: 56px !important; flex: 0 0 56px !important;
+  padding: 6px 8px !important; font-size: 13px !important;
+  text-align: center; border-radius: 8px !important;
+}
+
+.divider-or {
+  text-align: center; color: var(--text-muted); font-size: 0.85rem;
+  position: relative;
+}
+.divider-or::before, .divider-or::after {
+  content: ''; position: absolute; top: 50%;
+  width: 38%; height: 1px; background: var(--border);
+}
+.divider-or::before { left: 0; }
+.divider-or::after  { right: 0; }
+
+.tools-row {
+  display: flex; gap: 8px; justify-content: center;
+  align-items: center; flex-wrap: wrap; padding-top: 4px;
+}
+
+/* ─── BUTTONS ─────────────────────────────────────────── */
+button { font-family: 'Fredoka', sans-serif; cursor: pointer; border: none; transition: background 0.15s, transform 0.1s, box-shadow 0.15s; }
+button:active { transform: scale(0.96); }
+
+.btn-primary {
+  background: var(--accent); color: #fff;
+  padding: 10px 22px; font-size: 16px; font-weight: 600;
+  border-radius: 10px; letter-spacing: 0.5px;
+  box-shadow: 0 4px 0 var(--accent-dim); white-space: nowrap;
+}
+.btn-primary:hover { background: var(--accent-bright); transform: translateY(-1px); }
+.btn-primary:active { box-shadow: none; transform: translateY(1px); }
+
+.btn-secondary {
+  background: var(--purple); color: #fff;
+  padding: 10px 20px; font-size: 15px; font-weight: 600;
+  border-radius: 10px; box-shadow: 0 4px 0 var(--purple-dim); white-space: nowrap;
+}
+.btn-secondary:hover { background: #ba68c8; transform: translateY(-1px); }
+.btn-secondary:active { box-shadow: none; transform: translateY(1px); }
+
+.ghost-btn {
+  background: transparent; border: 1px solid var(--border-hi);
+  color: var(--text-sub); padding: 7px 14px; border-radius: 20px;
+  font-size: 13px; display: inline-flex; align-items: center; gap: 5px;
+}
+.ghost-btn:hover { background: rgba(255,255,255,0.07); color: var(--text); }
+.danger-btn { color: #f87171; border-color: rgba(239,68,68,0.3); }
+.danger-btn:hover { background: rgba(239,68,68,0.1); color: #fca5a5; }
+
+/* ─── SWITCH ──────────────────────────────────────────── */
+.switch { position: relative; display: inline-block; width: 46px; height: 26px; flex-shrink: 0; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+  position: absolute; cursor: pointer; inset: 0;
+  background: rgba(255,255,255,0.12); border-radius: 26px;
+  transition: 0.3s; border: 1px solid var(--border);
+}
+.slider::before {
+  content: ''; position: absolute;
+  width: 18px; height: 18px; left: 3px; bottom: 3px;
+  background: #fff; border-radius: 50%; transition: 0.3s;
+}
+input:checked + .slider { background: var(--accent); border-color: var(--accent); }
+input:checked + .slider::before { transform: translateX(20px); }
+
+/* ─── FADE-IN ─────────────────────────────────────────── */
+.fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+.fade-in.active { opacity: 1; transform: translateY(0); }
+
+/* ─── TOAST ───────────────────────────────────────────── */
+.toast-notification {
+  position: fixed; bottom: -60px; left: 50%; transform: translateX(-50%);
+  background: rgba(5, 5, 20, 0.95); color: var(--accent);
+  padding: 11px 22px; border-radius: 30px; border: 1px solid var(--accent);
+  font-weight: 600; font-size: 14px; z-index: 9999;
+  transition: bottom 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.25s;
+  opacity: 0; white-space: nowrap; max-width: 90vw; text-align: center;
+  outline: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+.toast-notification.show { bottom: 28px; opacity: 1; }
+.undo-toast button {
+  display: inline; margin: 0 0 0 8px; padding: 2px 9px;
+  font-size: 13px; border-radius: 6px; background: var(--yellow); color: #000; border: none;
+}
+
+/* ─── SEPARATORS / MISC ───────────────────────────────── */
+.separator-line { width: 100%; height: 1px; background: var(--border); margin: 18px 0; }
+.subtle-text { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin: 0; }
+
+/* ─── VIDEO AREA ──────────────────────────────────────── */
+.video-section { width: 100%; }
+.video-grid-frame {
+  border: 1px dashed var(--border); border-radius: 14px;
+  padding: 20px; min-height: 120px; background: rgba(0,0,0,0.12);
+}
+#videoPlayersContainer { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+
+.video-unit-wrapper {
+  position: relative; display: flex; justify-content: center;
+  align-items: center; margin-bottom: 8px; padding-right: 56px; width: fit-content;
+}
+.video-display {
+  position: relative; overflow: hidden; border-radius: 10px;
+  background: #000; box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+}
+.video-display iframe { width: 100%; height: 100%; display: block; border-radius: 10px; border: none; }
+
+.video-loading-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.6);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2; pointer-events: none; transition: opacity 0.3s;
+}
+.video-loading-overlay.hidden { opacity: 0; }
+
+.spinner {
+  width: 36px; height: 36px;
+  border: 3px solid rgba(255,255,255,0.2); border-radius: 50%;
+  border-top-color: var(--accent); animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.close-video-button {
+  position: absolute; top: 6px; right: 6px;
+  background: var(--red); color: #fff; border: none; border-radius: 50%;
+  width: 24px; height: 24px; font-size: 12px; font-weight: 700;
+  cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
+}
+.close-video-button:hover { background: #f87171; }
+
+.video-size-controls {
+  position: absolute; right: 0; top: 50%; transform: translateY(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 6px; background: rgba(255,255,255,0.08); border-radius: 10px; border: 1px solid var(--border);
+}
+.size-button {
+  width: 32px; height: 32px; background: transparent; color: #fff;
+  border: 1px solid var(--border); border-radius: 8px; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center; padding: 0; cursor: pointer;
+}
+.size-button:hover { background: rgba(255,255,255,0.1); }
+.plus:hover  { background: rgba(245,124,0,0.25); border-color: var(--accent); }
+.minus:hover { background: rgba(239,68,68,0.25); border-color: var(--red); }
+.default { background: var(--yellow); color: #000; border-color: transparent; font-size: 0.9rem; }
+.default:hover { background: #ffd54f; }
+.copy-mini { background: var(--purple) !important; border-color: transparent !important; margin-top: 6px; }
+.copy-mini:hover { background: #ba68c8 !important; }
+.copy-mini svg { pointer-events: none; }
+
+/* Fallback button */
+.fallback-mini {
+  background: rgba(245,124,0,0.22) !important;
+  border-color: rgba(245,124,0,0.45) !important;
+}
+
+.fallback-mini:hover {
+  background: rgba(245,124,0,0.4) !important;
+  border-color: var(--accent) !important;
+}
+/* ─── SEARCH RESULTS (no contained scroll — flows on page) ─ */
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+  gap: 10px; width: 100%;
+  /* NO max-height, NO overflow — results flow naturally in the page */
+  padding: 4px 0;
+}
+
+.search-result-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden; cursor: pointer;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.search-result-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+
+.search-thumb-wrap {
+  position: relative; width: 100%; aspect-ratio: 16/9; background: #000;
+}
+.search-thumb-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.search-duration {
+  position: absolute; bottom: 4px; right: 4px;
+  background: rgba(0,0,0,0.85); color: #fff;
+  font-size: 11px; padding: 2px 5px; border-radius: 4px; font-family: monospace;
+}
+
+.search-card-info { padding: 8px 10px 10px; }
+.search-card-title {
+  font-size: 12px; color: var(--text); margin: 0 0 3px; font-weight: 600; line-height: 1.3;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-align: left;
+}
+.search-card-channel { font-size: 11px; color: var(--text-sub); margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; text-align: left; }
+.search-card-date { font-size: 10px; color: var(--text-muted); margin: 2px 0 0; text-align: left; }
+
+/* ─── SHORTS ──────────────────────────────────────────── */
+.shorts-controls { margin-bottom: 18px; }
+
+.shorts-viewer {
+  width: 100%; display: flex; align-items: flex-start;
+  justify-content: center; gap: 16px; min-height: 480px;
+  position: relative;
+  padding: 14px;
+  border: 1px dashed rgba(255,255,255,0.28);
+  border-radius: 18px;
+  background: rgba(0,0,0,0.12);
+}
+
+.shorts-frame-wrap {
+  position: relative;
+  width: 320px; flex-shrink: 0;
+  aspect-ratio: 9/16;
+  border-radius: 16px; overflow: hidden;
+  background: #000;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+  border: 1px solid var(--border);
+  display: none;
+}
+/* Keep the visual pill as ::after */
+.shorts-frame-wrap::after {
+  content: 'Scroll area';
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.62);
+  color: rgba(255,255,255,0.78);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 11px;
+  letter-spacing: 0.2px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 3; /* Bumped up slightly */
+}
+.shorts-frame-wrap.has-content {
+  display: block;
+}
+
+.shorts-frame-wrap iframe {
+  width: 100%; height: 100%; border: none; display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.shorts-frame-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  pointer-events: auto; 
+  z-index: 2;
+}
+
+/* Ensure the underlying iframe element sits cleanly below the catch layer */
+.shorts-frame-wrap iframe {
+  position: relative;
+  z-index: 1;
+}
+
+.shorts-nav {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; padding-top: 80px;
+}
+
+.shorts-nav-btn {
+  width: 46px; height: 46px;
+  background: var(--surface); border: 1px solid var(--border-hi);
+  color: var(--text); border-radius: 50%;
+  font-size: 1.3rem; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.15s, border-color 0.15s;
+}
+.shorts-nav-btn:hover { background: rgba(245,124,0,0.15); border-color: var(--accent); color: var(--accent); }
+
+.shorts-counter { font-size: 0.85rem; color: var(--text-muted); font-weight: 600; }
+.shorts-pause-btn {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  color: var(--text-sub);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+.shorts-pause-btn:hover {
+  background: rgba(245,124,0,0.15);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.shorts-empty {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: var(--text-muted); font-size: 0.9rem; gap: 4px;
+  pointer-events: none;
+}
+
+/* Custom styling for your new Fallback/Mirror button */
+.fallback-shorts-btn {
+  background-color: rgba(255, 119, 0, 0.05); /* Very subtle orange tint */
+  color: #ff7700;                             /* Vibrant orange from your image */
+  border: 1.5px solid #ff7700;                /* Sharp orange border line */
+  border-radius: 30px;                        /* Perfectly rounded pill shapes matching the circle motif */
+  padding: 6px 14px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+/* Hover effect: Swaps the theme to mimic the solid orange filled look */
+.fallback-shorts-btn:hover {
+  background-color: #ff7700;
+  color: #001a80;                             /* Deep blue background text contrast */
+  box-shadow: 0 0 12px rgba(255, 119, 0, 0.4); /* Glow effect */
+  transform: translateY(-1px);
+}
+
+/* Active click state feedback */
+.fallback-shorts-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 4px rgba(255, 119, 0, 0.2);
+}
+
+/* Optional: Subtle rotation animation on the icon when hovered */
+.fallback-shorts-btn:hover {
+  font-weight: bold;
+}
+
+/* ─── LINKS PAGE ──────────────────────────────────────── */
+.proxy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px; width: 100%; margin: 10px 0;
+}
+.proxy-card {
+  background: var(--surface); border: 1px solid var(--border);
+  padding: 8px 12px; border-radius: 10px;
+  display: flex; align-items: center; gap: 10px;
+  cursor: pointer; transition: border-color 0.15s, transform 0.15s; min-height: 48px;
+}
+.proxy-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.proxy-card.selected { border-color: var(--accent); background: rgba(245,124,0,0.08); }
+.proxy-checkbox { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+.proxy-info { display: flex; flex-direction: column; overflow: hidden; flex: 1; }
+.site-tag { font-size: 0.6rem; font-weight: 700; color: var(--accent); text-transform: uppercase; opacity: 0.85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.proxy-link { font-size: 0.82rem; color: #7dd3fc; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.load-container {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 12px; padding: 20px 0; width: 100%;
+  border-top: 1px solid var(--border); margin-top: 10px;
+}
+.custom-load-group {
+  display: flex; align-items: center; gap: 6px;
+  background: var(--surface); padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border);
+}
+.status-text { width: 100%; text-align: center; color: var(--text-sub); font-size: 0.85rem; }
+
+/* ─── ABOUT ───────────────────────────────────────────── */
+.feature-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.feature-list li { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--text-sub); }
+.fl-badge { color: var(--accent); font-weight: 700; font-size: 1rem; }
+
+/* ─── BROWSER (full-screen, no separate tab bar) ─────── */
+.full-screen-app {
+  position: fixed !important; inset: 0 !important;
+  width: 100vw !important; height: 100vh !important;
+  max-width: none !important; padding: 0 !important; margin: 0 !important;
+  z-index: 500;
+  /* Match site background so toolbar blends in */
+  background: linear-gradient(to bottom, #1e88e5, #00008b);
+  background-attachment: fixed;
+  display: none;
+}
+.full-screen-app.active-section { display: flex; }
+
+.browser-shell { width: 100%; height: 100%; display: flex; flex-direction: column; }
+
+/* SINGLE combined toolbar (tabs + controls merged) */
+.browser-toolbar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 50, 0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0; position: relative;
+  min-height: 50px;
+}
+
+/* Tab strip lives inside the toolbar */
+.tab-strip {
+  display: flex; flex-shrink: 1; min-width: 0;
+  max-width: 340px; overflow-x: auto; gap: 2px;
+  scrollbar-width: none; align-items: center;
+}
+.tab-strip::-webkit-scrollbar { display: none; }
+
+.browser-tab {
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 12px; height: 32px; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid transparent;
+  color: var(--text-muted); font-family: 'Fredoka', sans-serif;
+  font-size: 12px; cursor: pointer;
+  min-width: 90px; max-width: 160px;
+  transition: background 0.15s, color 0.15s; white-space: nowrap; user-select: none;
+}
+.browser-tab:hover { background: rgba(255,255,255,0.09); color: var(--text-sub); }
+.browser-tab.active { background: rgba(255,255,255,0.14); border-color: var(--border); color: var(--text); }
+
+.tab-title { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+.close-tab {
+  background: transparent; border: none; color: var(--text-muted);
+  font-size: 14px; line-height: 1; width: 16px; height: 16px;
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; padding: 0; transition: background 0.1s, color 0.1s;
+}
+.close-tab:hover { background: rgba(239,68,68,0.2); color: var(--red); }
+
+.new-tab-inline {
+  flex-shrink: 0;
+}
+
+.toolbar-divider {
+  width: 1px; height: 24px; background: var(--border); flex-shrink: 0; margin: 0 2px;
+}
+
+.tb-btn {
+  background: transparent; border: none; color: var(--text-sub);
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; transition: background 0.15s, color 0.15s;
+}
+.tb-btn:hover { background: rgba(255,255,255,0.08); color: var(--text); }
+
+.toolbar-engine-pills {
+  display: flex; background: rgba(0,0,0,0.35); border: 1px solid var(--border);
+  border-radius: 8px; padding: 2px; gap: 2px; flex-shrink: 0;
+}
+.engine-pill {
+  background: transparent; border: none; color: var(--text-muted);
+  font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700;
+  width: 26px; height: 24px; border-radius: 6px; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.engine-pill:hover { background: rgba(255,255,255,0.07); color: var(--text); }
+.engine-pill.active { background: var(--accent); color: #fff; }
+
+.toolbar-url-wrap {
+  flex: 1; display: flex; align-items: center;
+  background: rgba(0,0,0,0.38); border: 1px solid var(--border);
+  border-radius: 10px; padding: 0 12px; gap: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s; min-width: 0;
+}
+.url-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245,124,0,0.12);
+}
+
+.url-bar {
+  flex: 1; background: transparent; border: none; color: var(--text);
+  font-family: 'Fredoka', sans-serif; font-size: 14px; outline: none;
+  padding: 8px 0; min-width: 0; width: 100%; box-shadow: none !important;
+}
+.url-bar::placeholder { color: var(--text-muted); font-family: 'Fredoka', sans-serif; }
+
+.tb-go-btn {
+  background: var(--accent); color: #fff; border: none; border-radius: 8px;
+  padding: 7px 14px; font-family: 'Fredoka', sans-serif;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  flex-shrink: 0; box-shadow: 0 3px 0 var(--accent-dim);
+}
+.tb-go-btn:hover { background: var(--accent-bright); }
+.tb-go-btn:active { box-shadow: none; transform: translateY(1px); }
+
+/* LOADING BAR */
+.browser-loader {
+  position: absolute; bottom: 0; left: 0;
+  height: 2px; width: 100%; background: var(--accent);
+  display: none; animation: loadBar 1.5s ease-in-out infinite; transform-origin: 0% 50%;
+}
+@keyframes loadBar {
+  0%   { transform: translateX(-100%) scaleX(0.3); }
+  50%  { transform: translateX(20%)   scaleX(0.6); }
+  100% { transform: translateX(100%)  scaleX(0.3); }
+}
+
+.proxy-status-bar {
+  background: rgba(245,124,0,0.08); border-bottom: 1px solid rgba(245,124,0,0.2);
+  color: var(--accent); font-family: 'Fredoka', sans-serif; font-size: 12px;
+  padding: 4px 16px; flex-shrink: 0;
+}
+.proxy-status-bar.hidden { display: none; }
+
+/* IFRAMES */
+/* Change background from #fff to transparent */
+.iframes-area { flex: 1; position: relative; background: transparent; overflow: hidden; }
+.browser-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: none; }
+.browser-frame.active { display: block; }
+
+/* NEW TAB — transparent so the gradient bg shows through */
+.newtab-overlay {
+  position: absolute; inset: 0;
+  background: transparent;   /* shows site gradient behind */
+  display: none; align-items: center; justify-content: center;
+  z-index: 10; overflow: hidden;
+}
+.newtab-overlay.active { display: flex; }
+
+/* Subtle dot grid on top of the gradient */
+.newtab-overlay::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.newtab-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 28px;
+  width: 100%; max-width: 660px; padding: 0 20px;
+}
+
+.newtab-logo {
+  font-family: 'Fredoka', sans-serif; font-size: 58px; font-weight: 600;
+  color: var(--brand); letter-spacing: 7px;
+  text-shadow: 0 0 50px rgba(245, 73, 39, 0.45), 0 0 100px rgba(245, 73, 39, 0.15);
+  user-select: none;
+}
+
+.newtab-search-wrap {
+  width: 100%; max-width: 560px;
+  display: flex; align-items: center;
+  background: rgba(0,0,50,0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-hi);
+  border-radius: 50px; padding: 0 8px 0 20px; gap: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.newtab-search-input:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(245,124,0,0.12);
+}
+.newtab-engine-icon { color: var(--accent); font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 700; flex-shrink: 0; width: 24px; text-align: center; }
+.newtab-search-input {
+  flex: 1; background: transparent; border: none; color: var(--text);
+  font-family: 'Fredoka', sans-serif; font-size: 17px; outline: none;
+  padding: 14px 0; min-width: 0; box-shadow: none !important;
+}
+.newtab-search-input::placeholder { color: var(--text-muted); font-family: 'Fredoka', sans-serif; }
+.newtab-search-btn {
+  background: var(--accent); border: none; color: #fff;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; transition: background 0.15s;
+}
+.newtab-search-btn:hover { background: var(--accent-bright); }
+
+.newtab-shortcuts { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 560px; }
+.shortcut-item {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  cursor: pointer; padding: 10px; border-radius: 12px; border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s; width: 74px;
+}
+.shortcut-item:hover { background: rgba(255,255,255,0.06); border-color: var(--border); }
+.shortcut-icon { width: 42px; height: 42px; border-radius: 12px; background: rgba(255,255,255,0.08); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; overflow: hidden; }
+.shortcut-icon img { width: 26px; height: 26px; object-fit: contain; }
+.shortcut-label { font-family: 'Fredoka', sans-serif; font-size: 11px; color: var(--text-sub); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+
+/* ─── FOOTER ──────────────────────────────────────────── */
+footer {
+  width: 100%; background: rgba(0,0,0,0.35); padding: 16px 24px;
+  border-top: 1px solid var(--border); z-index: 1; position: relative;
+}
+.credits { text-align: center; font-size: 13px; color: var(--text-muted); display: flex; flex-direction: column; gap: 4px; }
+.credits a { color: var(--purple); }
+.credits a:hover { color: #ce93d8; }
+
+/* ─── CHANGELOG MODAL ────────────────────────────────── */
+.cl-backdrop {
+  position: fixed; inset: 0; z-index: 10000;
+  background: rgba(0, 0, 20, 0.82);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  animation: clFadeIn 0.3s ease-out;
+}
+.cl-backdrop.hidden { display: none; }
+
+@keyframes clFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.cl-date {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888888;          /* Muted gray so it stays in the background */
+  font-weight: 500;
+  letter-spacing: 0.05em;  /* Gives the dashes and numbers a clean, modern look */
+  margin-bottom: 12px;     /* Spaces it nicely above the version header */
+}
+
+.cl-box {
+  background: linear-gradient(145deg, rgba(10,10,40,0.98), rgba(20,20,60,0.98));
+  border: 1px solid rgba(245, 124, 0, 0.35);
+  border-radius: 20px;
+  padding: 28px 28px 24px;
+  max-width: 480px; width: 100%;
+  box-shadow: 0 0 60px rgba(245, 73, 39, 0.15), 0 24px 60px rgba(0,0,0,0.6);
+  animation: clSlideUp 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+@keyframes clSlideUp {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+.cl-header { text-align: center; margin-bottom: 20px; }
+
+.cl-version {
+  display: inline-block;
+  background: rgba(245, 124, 0, 0.15);
+  border: 1px solid rgba(245, 124, 0, 0.4);
+  color: var(--accent);
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  padding: 3px 12px; border-radius: 20px; text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.cl-title {
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1.7rem; font-weight: 600;
+  color: var(--text); margin: 6px 0 4px;
+}
+
+.cl-sub {
+  font-size: 0.88rem; color: var(--text-sub); margin: 0;
+}
+
+.cl-list {
+  list-style: none; padding: 0; margin: 0 0 16px;
+  display: flex; flex-direction: column; gap: 11px;
+}
+
+.cl-list li {
+  display: flex; align-items: flex-start; gap: 12px;
+  font-size: 0.9rem; color: var(--text-sub); line-height: 1.4;
+}
+
+.cl-icon {
+  font-size: 1.1rem; flex-shrink: 0;
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cl-list strong { color: var(--text); font-weight: 600; }
+
+.cl-notice {
+  background: rgba(239, 68, 68, 0.07);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.8rem; color: #fca5a5; line-height: 1.5;
+  margin-bottom: 18px;
+}
+
+.cl-btn {
+  width: 100%;
+  background: var(--accent);
+  color: #fff; border: none;
+  border-radius: 12px;
+  padding: 13px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem; font-weight: 600;
+  cursor: pointer; letter-spacing: 0.5px;
+  box-shadow: 0 4px 0 var(--accent-dim);
+  transition: background 0.15s, transform 0.1s;
+}
+.cl-btn:hover { background: var(--accent-bright); transform: translateY(-1px); }
+.cl-btn:active { box-shadow: none; transform: translateY(1px); }
+.cl-github-link {
+  display: block; text-align: center;
+  font-size: 0.8rem; color: var(--text-muted);
+  text-decoration: none; margin-bottom: 10px;
+  transition: color 0.15s;
+}
+.cl-github-link:hover { color: var(--accent); text-decoration: none; }
+
+.cl-content {
+  flex: 1;
+}
+
+.cl-content p {
+  margin: 2px 0 0;
+  color: var(--text-sub);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.cl-tip {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  background: rgba(245, 124, 0, 0.08);
+  border: 1px solid rgba(245, 124, 0, 0.18);
+
+  color: #ffcf9b;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+/* ─── OPTIMIZED MODE ──────────────────────────────────── */
+
+.video-unit-wrapper,
+.search-result-card,
+.proxy-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 260px 180px;
+}
+
+/* @media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  #particles-js {
+    display: none !important;
+  }
+} */
+
+body.optimized * { animation: none !important; transition: none !important; box-shadow: none !important; }
+body.optimized #particles-js { display: none !important; }
+
+.hidden { display: none !important; }
+
+@media (max-width: 760px) {
+  .navbar {
+    height: auto;
+    min-height: 54px;
+    align-items: flex-start;
+    padding: 8px 10px;
+    gap: 8px;
+    position: sticky;
+  }
+
+  .navbar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 34px;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(to left, rgba(0,0,50,0.92), rgba(0,0,50,0));
+  }
+
+  .logo {
+    padding-top: 6px;
+    font-size: 16px;
+    letter-spacing: 1.6px;
+    flex-shrink: 0;
+  }
+
+  .nav-links {
+    overflow-x: auto;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    max-width: calc(100vw - 106px);
+    padding-right: 26px;
+  }
+
+  .nav-links::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-btn {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .landing-section {
+    min-height: auto;
+    padding: 34px 14px 28px !important;
+  }
+
+  .landing-logo-ring {
+    padding: 28px 24px;
+    width: 100%;
+  }
+
+  .landing-title {
+    letter-spacing: 4px;
+  }
+
+  .input-row,
+  .settings-row-bar,
+  .shorts-controls .page-sub {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .video-grid-frame {
+    padding: 12px;
+  }
+
+  .video-unit-wrapper {
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 48px;
+  }
+
+  .video-display {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-size-controls {
+    top: auto;
+    right: 50%;
+    bottom: 0;
+    transform: translateX(50%);
+    flex-direction: row;
+  }
+
+  .shorts-viewer {
+    min-height: 0;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+
+  .shorts-frame-wrap {
+    width: min(100%, 320px);
+  }
+
+  .shorts-nav {
+    flex-direction: row;
+    padding-top: 0;
+  }
+
+  #shortsPasteInput {
+    width: 100% !important;
+    margin: 8px 0 0 !important;
+  }
+
+  .browser-toolbar {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-right: 34px;
+  }
+
+  .browser-toolbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .browser-toolbar::after {
+    content: '';
+    position: sticky;
+    right: -34px;
+    width: 34px;
+    height: 38px;
+    flex: 0 0 34px;
+    margin-left: -34px;
+    pointer-events: none;
+    background: linear-gradient(to left, rgba(0,0,50,0.92), rgba(0,0,50,0));
+  }
+
+  .cl-backdrop {
+    align-items: flex-start;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  .cl-box {
+    padding: 20px 18px 18px;
+    border-radius: 16px;
+    max-height: calc(100vh - 24px);
+  }
+
+  .cl-title {
+    font-size: 1.35rem;
+  }
+
+  .cl-list {
+    gap: 8px;
+  }
+
+  .cl-list li {
+    font-size: 0.82rem;
+  }
+}
+
+.modal-content {
+    overflow-y: auto;
+    max-height: 80vh;
+}
+body.modal-open {
+    overflow: hidden;
+}
     </style>
     <!-- GTAG -->
         <script
@@ -237,521 +1270,593 @@ body.optimized #particles-js{display:none!important}
     ></noscript>
     <div id="particles-js"></div>
 
-    <nav class="navbar fade-in">
-        <div class="logo">Norepted v1.6.2</div>
-        <div class="nav-links">
-            <button onclick="switchTab('home')" class="nav-btn">
-                <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg> Home
-            </button>
-            <button onclick="switchTab('bookmarklets')" class="nav-btn">
-                <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg> Bookmarklets
-            </button>
-            <button onclick="switchTab('links')" class="nav-btn">
-                <span class="badge-new">New!</span>
-                <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg> Links
-            </button>
-            <button onclick="switchTab('about')" class="nav-btn">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg> About
-            </button>
-            <button onclick="window.open('https://forms.gle/3TEjjsnqWUXgo5kQ7', '_blank')" class="nav-btn">
-                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg> Suggestions
-            </button>
-        </div>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="site-navbar">
+      <div class="logo" onclick="switchTab('landing')" style="cursor:pointer">
+        NOREPTED <span class="version-badge">v1.7</span>
+      </div>
+      <div class="nav-links">
+        <button onclick="switchTab('landing')" class="nav-btn" id="nav-landing">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Home</span>
+        </button>
+        <button onclick="switchTab('home')" class="nav-btn" id="nav-home">
+          <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <span>Watch</span>
+        </button>
+        <button onclick="switchTab('shorts')" class="nav-btn" id="nav-shorts">
+          <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14zm-4.5-8.5l-3.5 2 3.5 2v-4z"/></svg>
+          <span>Shorts</span>
+        </button>
+       
+        <button onclick="switchTab('about')" class="nav-btn" id="nav-about">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <span>About</span>
+        </button>
+        <button onclick="switchTab('browser')" class="nav-btn nav-btn-accent" id="nav-browser">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z"/></svg>
+          <span>Browser</span>
+        </button>
+        <button onclick="window.open('https://forms.gle/3TEjjsnqWUXgo5kQ7','_blank')" class="nav-btn" id="nav-suggest">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+          <span>Feedback</span>
+        </button>
+      </div>
     </nav>
 
     <main>
-        <section id="view-home" class="spa-section active-section">
-            <h1 id="title" class="fade-in">YouTube Watcher</h1>
-<div id="instructions-home" class="card fade-in">
-<div class="card-header">
-<h2>Instructions & Controls</h2>
-<button class="hide-button" title="Hide Instructions and Settings">Hide</button>
-</div>
-<div class="card-content">
-<ul class="instruction-list">
-<li>
-<strong>Watch:</strong> Paste a link in the Orange Box and press
-<span class="highlight">LAUNCH</span> or
-<span class="highlight">Enter</span>.
-</li>
-<li>
-<strong>Privacy:</strong> Press
-<span class="highlight">-</span> to exit and hide your history. Press
-<span class="highlight">'</span> for a Tab Cloak.
-</li>
-<li>
-<strong>Save & Share:</strong> After the video loads, press
-<svg viewBox="0 0 24 24" width="16" height="16" fill="#AB47BC"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-and bookmark the link.
-</li>
-<li>
-<strong>Resize:</strong> Press <span class="highlight">+</span> or
-<span class="highlight-red">&#x2212;</span> or <span class="highlight-yellow"> &#x21BA; </span> on the side panel.
-</li>
-<li>
-<strong>Organize:</strong> Embed multiple videos. Press <span class="highlight-red">X</span> to remove one.
-</li>
-</ul>
-<div class="action-row">
-<button id="aboutblank" onclick="aboutblank()" class="secondary-btn">
-Open in about:blank
+
+      <!-- ===== LANDING ===== -->
+      <section id="view-landing" class="spa-section active-section landing-section">
+
+        <div class="landing-hero">
+          <div class="landing-logo-ring">
+            <div class="landing-logo-glow"></div>
+            <h1 class="landing-title">NOREPTED</h1>
+            <p class="landing-tagline">Your personal media hub</p>
+          </div>
+
+          <div class="landing-pills">
+            <span class="landing-pill">Distraction free viewing</span>
+            <span class="landing-pill">Privacy-focused</span>
+            <span class="landing-pill">Optimized for students</span>
+          </div>
+        </div>
+
+        <div class="landing-cards">
+          <div class="landing-card" onclick="switchTab('home')">
+            <div class="landing-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+            </div>
+            <div class="landing-card-text">
+              <h3>Watch YouTube</h3>
+              <p>Paste a link or search, then watch in a clean embed. Supports multiple videos, press red X to remove one.</p>
+            </div>
+            <span class="landing-card-arrow">→</span>
+          </div>
+
+          <div class="landing-card" onclick="switchTab('shorts')">
+            <div class="landing-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14zm-4.5-8.5l-3.5 2 3.5 2v-4z"/></svg>
+            </div>
+            <div class="landing-card-text">
+              <h3>Shorts Scroller</h3>
+              <p>Scroll through YouTube Shorts.</p>
+            </div>
+            <span class="landing-card-arrow">→</span>
+          </div>
+
+          <div class="landing-card" onclick="switchTab('browser')">
+            <div class="landing-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.008 8.008 0 0 1 5.08 16zm2.95-8H5.08a8.03 8.03 0 0 1 4.33-3.56c-.6 1.11-1.06 2.31-1.38 3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.008 8.008 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+            </div>
+            <div class="landing-card-text">
+              <h3>Web Browser</h3>
+              <p>Multi-tab browser with fallback proxy support.</p>
+            </div>
+            <span class="landing-card-arrow">→</span>
+          </div>
+
+
+
+        <div class="landing-shortcuts">
+          <span class="shortcut-hint" onclick="toggleStealth()">
+            <kbd>\</kbd> Tab Icon Toggle
+          </span>
+          <span class="shortcut-hint" onclick="window.location.replace('https://google.com')">
+            <kbd>-</kbd> Redirect to Google
+          </span>
+          <span class="shortcut-hint" onclick="aboutblank()">
+            <kbd>☐</kbd> about:blank
+          </span>
+        </div>
+      </section>
+
+      <!-- ===== WATCH ===== -->
+      <section id="view-home" class="spa-section">
+        <div class="page-header fade-in">
+          <h2 class="page-title">YouTube Watcher</h2>
+          <p class="page-sub">Paste a link or search, then watch in a clean embed.</p>
+        </div>
+
+        <div class="settings-row-bar card fade-in">
+          <div class="settings-left">
+            <span class="settings-label">Low Performance Mode</span>
+            <span id="optStatusText" class="status-indicator disabled">Off</span>
+          </div>
+          <div class="settings-right">
+            <label class="switch">
+              <input type="checkbox" id="optToggle" onchange="toggleOptimization()">
+              <span class="slider"></span>
+            </label>
+            <button onclick="aboutblank()" class="ghost-btn">about:blank</button>
+          </div>
+        </div>
+
+        <div class="input-block fade-in">
+          <div class="input-row">
+            <input type="text" id="link" placeholder="Paste YouTube link here…"/>
+            <button id="launch" class="btn-primary">Launch</button>
+          </div>
+
+          <div class="divider-or">or search YouTube</div>
+
+          <div class="input-row">
+            <input type="text" id="ytSearchInput" placeholder="Search for any video…"/>
+            <button id="ytSearchBtn" class="btn-secondary">Search</button>
+          </div>
+
+          <!-- Search results flow inline, no contained scroll -->
+          <div id="ytSearchResults" class="search-results-grid" style="display:none;"></div>
+
+          <div class="tools-row">
+            <button onclick="clearSearchResults()" class="ghost-btn" id="clearSearchBtn" style="display:none;">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              Clear search
+            </button>
+            <button onclick="clearAllVideos()" class="ghost-btn danger-btn">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+              Clear all videos
+            </button>
+          </div>
+        </div>
+
+        <div class="video-section fade-in">
+          <div class="separator-line"></div>
+          <div class="video-grid-frame">
+            <p id="offtext" class="subtle-text">Videos will appear here</p>
+            <div id="videoPlayersContainer"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SHORTS ===== -->
+      <section id="view-shorts" class="spa-section">
+        <div class="page-header fade-in">
+          <h2 class="page-title">Shorts Scroller</h2>
+          <p class="page-sub">Scroll through YouTube Shorts. Hover the video and use ↑ ↓ or mouse wheel to cycle videos. </p>
+        </div>
+
+        <div class="shorts-controls card fade-in">
+          <div class="input-row">
+            <input type="text" id="shortsSearchInput" placeholder="Search for Shorts… (e.g. funny cats)"/>
+            <button id="shortsSearchBtn" class="btn-primary">Find Shorts</button>
+          </div>
+          <p class="page-sub" style="margin-top:8px;font-size:0.8rem;">
+            Or paste a Shorts URL: <input type="text" id="shortsPasteInput" placeholder="https://youtube.com/shorts/…" style="width:260px;display:inline-block;padding:6px 12px;font-size:13px;margin-left:8px;"/> 
+            <button onclick="addShortsFromUrl()" class="ghost-btn" style="margin-left:6px;">Add</button>
+          </p>
+        </div>
+
+        <div class="shorts-viewer fade-in" id="shortsViewer">
+          <div class="shorts-frame-wrap" id="shortsFrameWrap">
+            <!-- iframes injected by JS -->
+          </div>
+          <div class="shorts-nav">
+            <button class="shorts-nav-btn" id="shortsPrev" onclick="navigateShort(-1)" title="Previous">↑</button>
+            <span class="shorts-counter" id="shortsCounter">0 / 0</span>
+            <button class="shorts-nav-btn" id="shortsNext" onclick="navigateShort(1)" title="Next">↓</button>
+            <button class="shorts-pause-btn" id="shortsPause" onclick="toggleShortPlayback()" title="Pause or play">Pause</button>
+
+            <button class="shorts-nav-btn fallback-shorts-btn" id="shortsFallback" onclick="tryNextShortsSource()" title="Try another server mirror" style="margin-left: 6px;">↺ Source</button>
+          </div>
+          
+          <button id="shortsLoadMore" class="ghost-btn" style="margin-top: 12px; display: none;">Load More</button>
+          
+          <div class="shorts-empty" id="shortsEmpty">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor" style="opacity:0.25;margin-bottom:12px;"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99z"/></svg>
+            <p>Search for Shorts above or paste a URL to get started.</p>
+          </div>
+        </div>
+      </section>
+
+
+
+      <!-- ===== BROWSER (full-screen, hides navbar/footer) ===== -->
+      <section id="view-browser" class="spa-section full-screen-app">
+        <div class="browser-shell">
+
+          <div class="browser-toolbar">
+            <div id="browser-loader" class="browser-loader"></div>
+
+            <!-- Home button replaces the separate tab bar home btn -->
+            <button class="tb-btn" onclick="closeBrowserApp()" title="Back to Norepted">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+            </button>
+
+            <div id="tab-container" class="tab-strip"></div>
+
+            <button onclick="createNewTab()" class="tb-btn new-tab-inline" title="New Tab">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+            </button>
+
+            <div class="toolbar-divider"></div>
+
+            <button class="tb-btn" onclick="refreshActiveTab()" title="Refresh">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+            </button>
+
+            <button class="tb-btn" onclick="switchBrowserProxy()" title="Switch Proxy Source">
+  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+    <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
+  </svg>
 </button>
-</div>
-</div>
-</div>
-<button class="show-button fade-in">Show Instructions and Settings</button>
-<div class="card fade-in settings-card" id="settings">
-<div class="card-header">
-<h2>Settings</h2>
-</div>
-<div class="card-content settings-row">
-<div class="setting-label">
-<span>Low Performance Mode</span>
-<span id="optStatusText" class="status-indicator disabled">Disabled</span>
-</div>
-<label class="switch">
-<input type="checkbox" id="optToggle" onchange="toggleOptimization()">
-<span class="slider round"></span>
-</label>
-</div>
-</div>
-<div class="watch-interface fade-in">
-<div class="control-panel">
-<input type="text" id="link" placeholder="Paste YouTube link here..."/>
-<button id="launch" class="primary-btn" title="Launch Video">LAUNCH</button>
-</div>
-<div class="tools-bar">
-<button id="clearAll" onclick="clearAllVideos()" class="text-btn">Clear All Videos</button>
-</div>
-</div>
-<div class="video-section fade-in">
-<div class="separator-line"></div>
-<div class="video-grid-frame">
-<h3 id="offtext" class="subtle-text">Videos will appear here</h3>
-<div id="videoPlayersContainer"></div>
-</div>
-</div>
-            </section>
 
-        <section id="view-bookmarklets" class="spa-section">
-            <h1 class="fade-in" id="title"> Bookmarklets  </h1>
-<div class="card fade-in">
-      <div class="card-header">
-        <h2>How to Use</h2>
-      </div>
-      <h3 class="fade-in"> Drag to bookmarks bar, or click to use on this webpage. To stop a running bookmarklet, refresh the tab you are on. </h3>
-      <h4 class="fade-in"> These bookmarklets can be found in the <a id="link" target="_blank" href="https://github.com/wea-f/ByePassHub"> ByePassHub github repository. </a> </h4>
-      </div>
-<div id="bookmarklets-container fade-in">
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@f1eb7a9/bookmarklets/tabcloak.js').then(r=>r.text()).then(eval)" class="bookmarklet secondary-btn fade-in"">Tab Cloak</a>
-<p> Disguise any website you're on as Canvas, New Tab, or Google Drive!</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:var element=document.getElementById('rusic-modal');element.parentNode.removeChild(element)" class="bookmarklet secondary-btn fade-in"> Deactivate all bookmarklets </a>
-<p> Stops any running bookmarklets (Probably doesn't work.) </p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href='javascript:fetch("https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js").then(r=>r.text()).then(r=>eval(r))' class="bookmarklet secondary-btn"> Edpuzzle Cheats </a>
-<p> Activate on edpuzzle </p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href='javascript:console.log(document.body.contentEditable="true"==document.body.contentEditable?"false":"true")' class="bookmarklet secondary-btn">Edit any page</a>
-<p>Edit any website content. Click it again to stop!</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:(function(){var script=document.createElement('script');script.src='https://x-ray-goggles.mouse.org/webxray.js';script.className='webxray';script.setAttribute('data-lang','en-US');script.setAttribute('data-baseuri','https://x-ray-goggles.mouse.org');document.body.appendChild(script);}())" class="bookmarklet secondary-btn">X-Ray Goggles</a>
-<p>This allows you to view and edit the source code of any website element. </p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:document.querySelectorAll('*').forEach(e=>e.setAttribute('style','background-color:#222;background-image:none;color:#'+(/^A|BU/.test(e.tagName)?'36c;text-decoration:underline;':'eee;')+e.getAttribute('style')))" class="bookmarklet secondary-btn">Dark Mode</a>
-<p>This sets any page to dark mode.</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href='javascript:void(document.head.appendChild(document.createElement("script")).src="https://cdn.jsdelivr.net/gh/Krazete/bookmarklets/piano.min.js")'class="bookmarklet secondary-btn">Piano</a>
-<p>Adds a piano to the page.</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href='javascript:(function()%7B(function()%7Bvar x%3D document.createElement("script")%3Bx.src%3D"https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FSnowLord7%2Fdevconsole%40master%2Fmain.js"%3Bx.onload%3D alert("Loaded Developer Console!")%3Bdocument.head.appendChild(x)%3B%7D)()%7D)()' class="bookmarklet secondary-btn">Developer Console</a>
-<p>This adds all features of the developer console to whatever page your on.</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:var s=document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/asteroids.min.js';void(0)" class="bookmarklet secondary-btn">Asteroids</a>
-<p>Play the game, Asteroids on the website you are on, destroying everything.</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:var s=document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='https://cdn.jsdelivr.net/gh/skysthelimitt/Selenite/js/katamari.js';void(0)" class="bookmarklet secondary-btn">Katamari</a>
-<p>A game where you to collect the words on the page into a ball.</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@a4cd53b/bookmarklets/autoclicker.js').then(r=>r.text()).then(eval)" class="bookmarklet secondary-btn">Auto Clicker</a>
-<p>Click on any element to select it as the autoclicker target. After clicking it once, Click the same element again to start autoclicking. Click it once more to stop.</p>
-</div>
-<div class="bookmarkletdiv fade-in">
-<a href="javascript:fetch('https://cdn.jsdelivr.net/gh/wea-f/Norepted@1bbb8e7/bookmarklets/adblocker.js').then(r=>r.text()).then(eval)" class="bookmarklet secondary-btn">Ad Blocker</a>
-<p> Ad blocker for any website. Click it for every ad.</p>
-</div>
-</div>
-<div class="separator-line fade-in"></div>
-            </section>
+            <div class="toolbar-engine-pills">
+              <button class="engine-pill active" data-engine="google" onclick="setEngine(this,'google')">G</button>
+              <button class="engine-pill" data-engine="bing" onclick="setEngine(this,'bing')">B</button>
+            </div>
 
-        <section id="view-links" class="spa-section">
+            <div class="toolbar-url-wrap">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="flex-shrink:0;opacity:0.35"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2z"/></svg>
+              <input type="text" id="browser-url" class="url-bar" placeholder="Search or enter URL…" autocomplete="off" spellcheck="false">
+            </div>
+
+            <button id="browser-go" class="tb-go-btn">Go</button>
+
+            <button class="tb-btn" onclick="toggleStealth()" title="Cloak Tab">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </button>
+            <button class="tb-btn" onclick="toggleFullScreen()" title="Fullscreen">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+          </div>
+
+          <div id="proxy-status" class="proxy-status-bar hidden">Connecting…</div>
+
+          <div id="iframes-container" class="iframes-area">
+            <div id="new-tab-screen" class="newtab-overlay active">
+              <div class="newtab-content">
+                <div class="newtab-logo">NOREPTED</div>
+                <div class="newtab-search-wrap">
+                  <div class="newtab-engine-icon" id="newtab-engine-icon">G</div>
+                  <input type="text" id="big-browser-url" class="newtab-search-input" placeholder="Search or enter URL…" autocomplete="off" spellcheck="false">
+                  <button class="newtab-search-btn" onclick="loadFromBigSearch()">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+                  </button>
+                </div>
+                <div class="newtab-shortcuts" id="newtab-shortcuts"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ===== ABOUT ===== -->
+      <section id="view-about" class="spa-section">
+        <div class="page-header fade-in">
+          <h2 class="page-title">About Norepted</h2>
+          <p class="page-sub">A YouTube unblocker built for school &amp; work environments.</p>
+        </div>
         <div class="card fade-in">
-<div class="card-header">
-<h2>Proxy Link Tester</h2>
-</div>
-<p>
-Fetches live links from
-<a href="https://github.com/wea-f/ByePassHub" target="_blank" style="color:#58c114">ByePassHub</a>. <br />Select links by clicking the white boxes below to bulk open them.
-</p>
-<div class="controls-container" style="margin-top:15px">
-<div style="display:flex;gap:10px;justify-content:center">
-<button id="selectAll" class="secondary-btn" disabled>
-Select All Loaded
-</button>
-<button id="openSelected" class="secondary-btn" disabled>
-Open Selected (<span id="count">0</span>)
-</button>
-</div>
-</div>
-<div class="fade-in" style="margin-top:20px;padding:10px;background:rgba(246,65,65,0.1);border-radius:8px;border:1px solid #f64141">
-<span class="fade-in" style="color:#f64141">⚠️ Warning:</span> I do not guarantee these links will work or are safe. Use at your own risk.
-</div>
-</div>
-<div id="linkGrid" class="proxy-grid"></div>
-<div class="load-container fade-in">
-<button id="fetchLinks" class="primary-btn">
-Load Latest Links (15)
-</button>
-<div class="custom-load-group">
-<span style="font-size:.85rem;color:#ddd">Custom:</span>
-<input type="number" id="customAmount" class="small-input" value="15" min="1" max="100" />
-<button id="customFetch" class="text-btn" style="margin:0;padding:4px 8px;font-size:.85rem">
-Load
-</button>
-</div>
-<p id="progressText" class="status-text hidden">Loaded 0 of 0 links</p>
-<p id="allLoadedMsg" class="hidden" style="color:#58c114;width:100%;text-align:center;font-weight:bold">
-✓ All available links have been loaded.
-</p>
-</div>
-            </section>
-
-        <section id="view-about" class="spa-section">
-        <section class="card">
-        <div class="card-header fade-in">
-          <h2>What is Norepted?</h2>
+          <h3 style="color:var(--accent);margin:0 0 10px;">What is it?</h3>
+          <p>Norepted embeds YouTube videos using the same method a teacher uses to embed videos in Google Slides — the official embed URL. It extracts your video ID and loads it in an iframe with no YouTube interface, no ads, and no browsing history.</p>
+          <a href="https://github.com/wea-f/Norepted" target="_blank" style="color:var(--accent);">GitHub Repository →</a>
         </div>
-        <p class="fade-in">
-          Norepted is a high-performance YouTube unblocker designed for school
-          and work environments. It offers <strong>zero ads</strong>, restricted
-          video playback, and history hiding privacy features to keep your
-          browsing private.
-        </p>
-        <a
-          href="https://github.com/wea-f/Norepted" target="_blank" class="license-link fade-in"> Check out the github repository for the latest information.</a>
+        <div class="card fade-in">
+          <h3 style="color:var(--accent);margin:0 0 12px;">Features</h3>
+          <ul class="feature-list">
+            <li><span class="fl-badge">✓</span> Limited* ads in embeds</li>
+            <li><span class="fl-badge">✓</span> YouTube search &amp; Shorts scroller</li>
+            <li><span class="fl-badge">✓</span> Multi-tab proxy browser</li>
+            <li><span class="fl-badge">✓</span> Tab cloaking (looks like Google Drive)</li>
+            <li><span class="fl-badge">✓</span> History wipe shortcut</li>
+            <li><span class="fl-badge">✓</span> Saves your open videos across sessions</li>
+          </ul>
+        </div>
+        
+        <div class="separator-line fade-in"></div>
       </section>
 
-      <section class="card fade-in">
-        <div class="card-header">
-          <h2 class="fade-in" style="color: #58c114">Pro Features</h2>
-        </div>
-        <ul class="instruction-list">
-          <li>
-            <span class="highlight fade-in">No Ads:</span> Experience uninterrupted
-            viewing.
-          </li>
-          <li>
-            <span class="highlight fade-in">History Hider:</span> Press "-" to instantly
-            wipe the session away from your history.
-          </li>
-          <li>
-            <span class="highlight fade-in">Cloaking:</span> Press "/" to disguise the
-            tab as Google Drive, as well as an about:blank cloaker.
-          </li>
-          <li>
-            <span class="highlight fade-in">Saving:</span> Press the purple COPY icon
-            and bookmark the link to easily save videos.
-          </li>
-          <li>
-            <span class="highlight fade-in">Bypass:</span> Play restricted or age-gated
-            videos effortlessly.
-          </li>
-        </ul>
-      </section>
-
-      <section class="card fade-in">
-        <div class="card-header">
-          <h2>How it works</h2>
-        </div>
-        <p>
-          Norepted embeds a video based on your youtube video link, similarly to
-          how your teacher embeds a video on Google Slides for class. The code
-          simply takes the youtube video id from your url and attaches it to
-          youtube-nocookie.com, the embedded youtube video link. That link then
-          goes into a html frame element and your video appears just like that!
-        </p>
-      </section>
-
-      <section class="card fade-in">
-        <div class="card-header fade-in">
-          <h2 style="color: #f64141">From the creator:</h2>
-        </div>
-        <p style="font-size: 0.9rem; color: #aaa">
-          1. Norepted stands for "not reported," so please don't! <br />
-          2. I recommend using Norepted as an education tool. Youtube may be
-          blocked which holds very useful videos. <br />
-          3. Touch grass frequently and take a break! Enjoy this site while it
-          lasts.
-        </p>
-        <div class="fade-in"
-          style="
-            margin-top: 20px;
-            padding: 10px;
-            background: rgba(246, 65, 65, 0.1);
-            border-radius: 8px;
-            border: 1px solid #f64141;
-          "
-        >
-          <span class="fade-in" style="color: #f64141">⚠️ Warning:</span> Use responsibly. You
-          control your device.
-        </div>
-      </section>
-      <div class="separator-line fade-in"></div>
-            </section>
     </main>
-
-    <footer id="footer" class="fade-in">
-        <div class="credits">
-            <p>Made by <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> / <a href="https://github.com/wea-f" target="_blank">wea-f</a></p>
-            <p class="disclaimer">&#9888;&#65039; I am NOT responsible for how you use Norepted. It is YOUR device. &#9888;&#65039;</p>
-            <a href="https://github.com/wea-f/Norepted" target="_blank" class="license-link">View License & Info</a>
-        </div>
+    <!-- ===== FOOTER ===== -->
+    <footer id="site-footer" class="fade-in">
+      <div class="credits">
+        <p>Made by <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> / <a href="https://github.com/wea-f" target="_blank">wea-f</a></p>
+        <a href="https://github.com/wea-f/Norepted" target="_blank">View License &amp; Info</a>
+      </div>
     </footer>
+    <!-- ===== v1.7 CHANGELOG POP-UP ===== -->
+    <div id="changelog-modal" class="cl-backdrop" role="dialog" aria-modal="true" aria-label="What's new in v1.7">
+  <div class="cl-box">
+    <div class="cl-date" style="text-align: center; font-size: 0.85em; color: #888;">-- 07/04/26 --</div>
+      
+    <div class="cl-header">
+      <span class="cl-version">v1.7</span>
+      <h2 class="cl-title">Welcome to <a class="logo2"> Norepted </a> </h2>
+      <p class="cl-sub">v1.7 is a massive update featuring a brand-new multi-tab browser, Youtube Shorts support, and a totally revamped UI.</p>
+    </div>
+
+    <ul class="cl-list">
+      <li>
+        <span class="cl-icon">🌐</span>
+        <div>
+          <strong>Multi-Tab Browser</strong> 
+          Access the web directly inside with the new proxy-based browser.
+        </div>
+      </li>
+      <li>
+        <span class="cl-icon">📱</span>
+        <div>
+          <strong>Shorts Scroller</strong> 
+          Dive into YouTube Shorts with full scroll integration and backup viewing sources.
+        </div>
+      </li>
+      <li>
+        <span class="cl-icon">🔍</span>
+        <div>
+          <strong>In-App YouTube Search</strong> 
+          Securely search for videos directly on the Watch and Shorts page. 
+        </div>
+      </li>
+
+
+      
+
+      <li>
+  <span class="cl-icon">🔀</span>
+
+  <div class="cl-content">
+    <strong>Smart Source Switching</strong>
+
+    <div class="cl-tip">
+      Some filters block certain sources. If a video or proxy fails,
+      press the shuffle (🔀) button to instantly try another one.
+    </div>
+  </div>
+</li>
+
+      <li>
+        <span class="cl-icon">⚡</span>
+        <div>
+          <strong>Smarter & Faster</strong> 
+          Accidentally closed a video? Hit the "Undo" pop-up. Slow? Performance mode automatically turns on.
+        </div>
+      </li>
+
+     
+    </ul>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://github.com/wea-f/Norepted" target="_blank" class="cl-github-link" style="display: inline-block; margin-bottom: 15px;">
+        ★ Star on GitHub
+      </a>
+      <br>
+      <button class="cl-btn" id="cl-dismiss">Got it, let's go →</button>
+    </div>
+  </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
-        // --- NAVIGATION LOGIC ---
-        function switchTab(tabName) {
-            // Hide all sections
-            document.querySelectorAll('.spa-section').forEach(el => {
-                el.classList.remove('active-section');
-            });
-            // Show selected section
-            const target = document.getElementById('view-' + tabName);
-            if (target) {
-                target.classList.add('active-section');
-                // Trigger scroll to top
-                window.scrollTo(0,0);
-                // Re-trigger animations if needed
-                if(window.fadeInObserver) {
-                    target.querySelectorAll('.fade-in').forEach(el => window.fadeInObserver.observe(el));
-                }
-            }
-        }
-        
-        // Navigation helper for About:Blank
-     function aboutblank() {
-        const siteUrl = window.location.href;
-        const win = window.open('about:blank', '_blank');
+    // ─── NAVIGATION ───────────────────────────────────────
+function switchTab(tabName) {
+  document.querySelectorAll('.spa-section').forEach(el => el.classList.remove('active-section'));
 
-        if (!win || win.closed) {
-            alert('Please allow popups for this feature to work.');
-            return;
-        }
+  const target = document.getElementById('view-' + tabName);
+  if (!target) return;
+  target.classList.add('active-section');
 
-        const doc = win.document;
-        doc.title = "My Drive"; 
+  // Show / hide site chrome for browser mode
+  const navbar  = document.getElementById('site-navbar');
+  const footer  = document.getElementById('site-footer');
+  if (tabName === 'browser') {
+    if (navbar) navbar.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+  } else {
+    if (navbar) navbar.style.display = '';
+    if (footer) footer.style.display = '';
+    // Only scroll to top when NOT adding a video from search
+    window.scrollTo(0, 0);
+  }
 
-        const iframe = doc.createElement('iframe');
-        iframe.src = siteUrl;
-        iframe.style.position = 'fixed';
-        iframe.style.top = '0';
-        iframe.style.bottom = '0';
-        iframe.style.left = '0';
-        iframe.style.right = '0';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = 'none';
-        iframe.style.margin = '0';
-        iframe.style.padding = '0';
-        iframe.style.overflow = 'hidden';
-        iframe.style.zIndex = '999999';
-        doc.body.style.margin = '0';
-        doc.body.appendChild(iframe);
-    }
+  // Update active nav highlight
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+  const activeBtn = document.getElementById('nav-' + tabName);
+  if (activeBtn) activeBtn.classList.add('active-nav');
 
-        /* =========================================
-           animations.js 
-           ========================================= */
-          
-document.addEventListener("DOMContentLoaded", () => {
-  const fadeInElems = document.querySelectorAll(".fade-in");
+// Retrigger fade-ins for newly shown section
+  if (window.fadeInObserver) {
+    target.querySelectorAll('.fade-in:not(.active)').forEach(el => window.fadeInObserver.observe(el));
+  }
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px", 
-    threshold: 0.0
-  };
-
-  const fadeInObserver = new IntersectionObserver((entries) => {
-    requestAnimationFrame(() => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-        } else {
-          entry.target.classList.remove("active");
-        }
+  // Pause shorts when navigating away, restore when coming back
+  const shortsWrap = document.getElementById('shortsFrameWrap');
+  if (shortsWrap) {
+    if (tabName !== 'shorts') {
+      shortsWrap.querySelectorAll('iframe').forEach(f => {
+        if (f.src) { f.dataset.savedSrc = f.src; f.src = ''; }
       });
-    });
-  }, observerOptions);
+    } else {
+      if (shortsQueue.length > 0) buildShortsFrame(shortsQueue[shortsIndex], false);
+    }
+  }
+}
 
-  fadeInElems.forEach(elem => {
-    fadeInObserver.observe(elem);
-    const rect = elem.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-    if (isVisible) {
-      elem.classList.add("active");
+// About:Blank cloaker
+function aboutblank() {
+  const siteUrl = window.location.href;
+  const win = window.open('about:blank', '_blank');
+  if (!win || win.closed) { alert('Please allow popups for this feature.'); return; }
+  const doc = win.document;
+  doc.title = "My Drive";
+  const iframe = doc.createElement('iframe');
+  Object.assign(iframe.style, { position:'fixed', top:0, bottom:0, left:0, right:0, width:'100%', height:'100%', border:'none', margin:0, padding:0, overflow:'hidden', zIndex:999999 });
+  iframe.src = siteUrl;
+  doc.body.style.margin = '0';
+  doc.body.appendChild(iframe);
+}
+
+// ─── FADE-IN (one-shot, lightweight) ─────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.0 });
+
+  document.querySelectorAll(".fade-in").forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight) {
+      el.classList.add("active");
+    } else {
+      observer.observe(el);
     }
   });
-
-  window.fadeInObserver = fadeInObserver;
+  window.fadeInObserver = observer;
 });
 
+// ─── ENTER KEY — context-aware ─────────────────────────
+// Triggers search if cursor is in search box, launches if cursor is in link box
 document.addEventListener("keyup", function(e) {
-  switch(e.key) {
-  case "Enter":
+  if (e.key !== "Enter") return;
+
+  // Do nothing inside the browser section
+  const browserView = document.getElementById('view-browser');
+  if (browserView && browserView.classList.contains('active-section')) return;
+
+  const focused = document.activeElement;
+
+  if (focused && focused.id === 'ytSearchInput') {
+    document.getElementById('ytSearchBtn')?.click();
+  } else if (focused && focused.id === 'shortsSearchInput') {
+    document.getElementById('shortsSearchBtn')?.click();
+  } else if (focused && focused.id === 'shortsPasteInput') {
+    addShortsFromUrl();
+  } else {
+    // Default: launch video
     const launchBtn = document.getElementById("launch");
-    if (launchBtn) launchBtn.click();
-    break;
-  case "-":
-    e.preventDefault();
-    e.stopPropagation();
-    window.location.replace("https://www.google.com/webhp?igu=1");
-    break;
-  case "'":
-    e.preventDefault();
-    e.stopPropagation();
-    document.title = "My Drive - Google Drive";
-    if (typeof setFavicons === "function") {
-      setFavicons("https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png");
-    }
-    break;
+    if (launchBtn && !launchBtn.disabled) launchBtn.click();
   }
 }, { passive: false });
 
 function setFavicons(favImg) {
-  let headTitle = document.querySelector("head");
-  let setFavicon = document.createElement("link");
-  setFavicon.setAttribute("rel", "shortcut icon");
-  setFavicon.setAttribute("href", favImg);
-  headTitle.appendChild(setFavicon);
+  const link = document.createElement("link");
+  link.setAttribute("rel", "shortcut icon");
+  link.setAttribute("href", favImg);
+  document.head.appendChild(link);
 }
 
-
-
-        /* =========================================
-           particles.js 
-           ========================================= */
-particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 50,
-      "density": { "enable": true, "value_area": 800 }
-    },
-    "color": { "value": "#ffffff" },
-    "shape": {
-      "type": "circle",
-      "stroke": { "width": 0, "color": "#000000" },
-    },
-    "opacity": {
-      "value": 0.3,
-      "random": true,
-      "anim": { "enable": true, "speed": 0.5, "opacity_min": 0.1, "sync": false }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": { "enable": false }
-    },
-    "line_linked": {
-      "enable": false,
-    },
-    "move": {
-      "enable": true,
-      "speed": 2,
-      "direction": "top",
-      "random": true,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false
+// ─── PARTICLES (performance optimizations v1.7) ─
+function shouldDefaultToOptimized() {
+// debug:
+  console.log(
+    "[Optimization]",
+    {
+      reduceMotion:
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+      cores: navigator.hardwareConcurrency,
+      ram: navigator.deviceMemory
     }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": { "enable": false },
-      "onclick": { "enable": false },
-      "resize": true
-    }
-  },
-  "retina_detect": true
-});
-        /* =========================================
-           script.js
-           ========================================= */
+  );
 
-const urlInput = document.getElementById("link");
-const launch = document.getElementById("launch");
-const feedbackMessage = document.getElementById("feedbackMessage");
+  return (
+    navigator.hardwareConcurrency <= 4 ||
+    navigator.deviceMemory <= 4
+    
+  );
+}
+
+function destroyParticles() {
+  try {
+    const dom = window.pJSDom?.[0];
+    if (dom?.pJS?.fn?.vendors?.destroy) dom.pJS.fn.vendors.destroy();
+    window.pJSDom = [];
+  } catch(e) {}
+}
+
+function initParticles() {
+  if (document.body.classList.contains("optimized")) return;
+  if (!window.particlesJS || window.pJSDom?.length) return;
+//   Reduce value
+  particlesJS("particles-js", {
+     particles: {
+       number: { value: 43, density: { enable: true, value_area: 1100 } },
+       color: { value: ["#ffffff", "#F5A27A", "#F57C00"] },
+       shape: { type: "circle" },
+       opacity: { value: 0.45, random: true, anim: { enable: false } },
+       size: { value: 2.4, random: true, anim: { enable: false } },
+       line_linked: { enable: false },
+       move: {
+         enable: true,
+         speed: 1.4,
+         direction: "top",
+         random: true,
+         straight: false,
+         out_mode: "out",
+         bounce: false
+       }
+     },
+     interactivity: {
+       detect_on: "canvas",
+       events: { onhover: { enable: false }, onclick: { enable: false }, resize: false }
+     },
+     retina_detect: false
+   });
+ }
+
+document.addEventListener("visibilitychange", () => {
+  try {
+    const pJS = window.pJSDom?.[0]?.pJS;
+    if (pJS) pJS.particles.move.enable = !document.hidden;
+  } catch (e) {}
+})
+   
+
+
+// ─── CONSTANTS ────────────────────────────────────────
+const urlInput              = document.getElementById("link");
+const launch                = document.getElementById("launch");
 const videoPlayersContainer = document.getElementById("videoPlayersContainer");
-const loadStatus = document.getElementById("loadStatus");
-const unhelpfulText = document.getElementById("offtext");
+const unhelpfulText         = document.getElementById("offtext");
 
-// --- CONSTANTS ---
-const INITIAL_VIDEO_WIDTH = 688;
+const INITIAL_VIDEO_WIDTH  = 688;
 const INITIAL_VIDEO_HEIGHT = 387;
-const RESIZE_STEP = 0.10;
-const ASPECT_RATIO = 0.5625;
+const RESIZE_STEP          = 0.10;
+const ASPECT_RATIO         = 0.5625;
 
-// --- FIX SCROLL RESTORATION ---
-if ('scrollRestoration' in history)
-{
-  history.scrollRestoration = 'manual';
-}
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+window.onload = () => setTimeout(() => window.scrollTo(0, 0), 10);
 
-window.addEventListener('beforeunload', () =>
-{
-  window.scrollTo(0, 0);
-});
-
-window.onload = function()
-{
-  setTimeout(function()
-  {
-    window.scrollTo(0, 0);
-  }, 10); // Small delay to ensure layout is ready
-};
-
-function showToast(message, isError = false)
-{
+// ─── TOAST ────────────────────────────────────────────
+function showToast(message, isError = false) {
   const toast = document.createElement("div");
   toast.className = "toast-notification";
-  if (isError) toast.style.borderColor = "#D73939"; // Red border for errors
+  if (isError) { toast.style.borderColor = "#ef4444"; toast.style.color = "#f87171"; }
   toast.textContent = message;
   document.body.appendChild(toast);
-
   setTimeout(() => toast.classList.add("show"), 10);
-  setTimeout(() =>
-  {
-    toast.classList.remove("show");
-    setTimeout(() => toast.remove(), 500);
-  }, 3000);
+  setTimeout(() => { toast.classList.remove("show"); setTimeout(() => toast.remove(), 500); }, 3000);
 }
 
-function extractVideoId(url)
-{
+// ─── EXTRACT VIDEO ID ─────────────────────────────────
+function extractVideoId(url) {
   if (/playlist|\/channel\/|\/@/.test(url)) return null;
   const patterns = [
     /youtu\.be\/([\w-]{11})/,
@@ -760,552 +1865,959 @@ function extractVideoId(url)
     /shorts\/([\w-]{11})/,
     /googleusercontent\.com\/youtube\.com\/5\/([\w-]{11})/,
   ];
-  for (const pattern of patterns)
-  {
-    const match = url.match(pattern);
-    if (match && match[1]) return match[1];
-  }
+  for (const p of patterns) { const m = url.match(p); if (m && m[1]) return m[1]; }
   return null;
 }
 
-function preflightCheck(videoId)
-{
-  return new Promise((resolve, reject) =>
-  {
-    const img = new Image();
-    let done = false;
-    img.onload = () =>
-    {
-      if (!done)
-      {
-        done = true;
-        resolve();
-      }
-    };
-    img.onerror = () =>
-    {
-      if (!done)
-      {
-        done = true;
-        reject("This video is unavailable or blocked.");
-      }
-    };
-    img.src = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-    setTimeout(() =>
-    {
-      if (!done)
-      {
-        done = true;
-        reject("Network blocked video access.");
-      }
-    }, 1500);
-  });
+function extractShortsId(url) {
+  const m = url.match(/shorts\/([\w-]{11})/);
+  return m ? m[1] : extractVideoId(url);
 }
 
-// --- PERSISTENCE UTILS ---
-function saveOpenVideos()
-{
-  const videos = [];
-  const wrappers = videoPlayersContainer.querySelectorAll(
-    ".video-unit-wrapper",
-  );
-  wrappers.forEach((wrapper) =>
-  {
-    if (wrapper.dataset.videoId)
-    {
-      videos.push(wrapper.dataset.videoId);
+// ─── UNDO ─────────────────────────────────────────────
+let lastClosedVideo = null;
+
+// ─── PERSISTENCE ──────────────────────────────────────
+function saveOpenVideos() {
+  const ids = [];
+  videoPlayersContainer.querySelectorAll(".video-unit-wrapper").forEach(w => {
+    if (w.dataset.videoId) ids.push(w.dataset.videoId);
+  });
+  localStorage.setItem("savedVideos", JSON.stringify(ids));
+}
+
+function loadSavedVideos() {
+  try {
+    const saved = localStorage.getItem("savedVideos");
+    if (!saved) return;
+    JSON.parse(saved).reverse().forEach(id => addVideoPlayer(id, false));
+  } catch(e) { console.error("Failed to load saved videos", e); }
+}
+
+// ─── VIDEO PLAYER ─────────────────────────────────────
+
+//  Fetch embed sources live
+let liveEmbedSources = [];
+
+async function initializeLiveSources() {
+  try {
+    const response = await fetch("https://api.invidious.io/instances.json?sort_by=health");
+    if (!response.ok) {
+      throw new Error(`sources http: ${response.status}`);
     }
-  });
-  localStorage.setItem("savedVideos", JSON.stringify(videos));
-}
+    
+    const invidiousData = await response.ok ? await response.json() : [];
+    const dynamicSources = [];
 
-function loadSavedVideos()
-{
-  const saved = localStorage.getItem("savedVideos");
-  if (saved)
-  {
-    try
-    {
-      const videoIds = JSON.parse(saved);
-      [...videoIds].reverse().forEach((videoId) =>
-      {
-        addVideoPlayer(videoId, false);
+    if (Array.isArray(invidiousData)) {
+      invidiousData.forEach(([name, details]) => {
+        // Correcting the schema path to details.monitor.uptime
+        if (
+          details.type === "https" && 
+          details.uri && 
+          details.monitor && 
+          details.monitor.uptime > 95 &&
+          details.monitor.last_status === 200
+        ) {
+          dynamicSources.push(id => `${details.uri}/embed/${id}`);
+        }
       });
     }
-    catch (e)
-    {
-      console.error("Failed to load saved videos", e);
+
+    // Shuffle the dynamic instances to spread out user traffic
+    liveEmbedSources = dynamicSources.sort(() => Math.random() - 0.5);
+    
+    // Telemetry logs to verify it works in DevTools
+    console.log(`Loaded ${liveEmbedSources.length} good fallback urls.`);
+
+    for (let i = 0; i < liveEmbedSources.length; i++) {
+      console.log(`Mirror ${i + 1}:`, liveEmbedSources[i]("test_id"));
     }
+
+  } catch (error) {
+    console.error("Some error when loading instances:", error);
   }
 }
 
-// --- VIDEO PLAYER LOGIC ---
-function addVideoPlayer(videoId, showLoadedFeedback = true)
-{
-  if (unhelpfulText)
-  {
-    unhelpfulText.classList.remove("active");
-    unhelpfulText.style.display = "none";
+//---------------
+const EMBED_SOURCES = [
+  id => `https://www.youtube-nocookie.com/embed/${id}?autoplay=0&rel=0&playsinline=1&origin=${window.location.origin}`,
+  id => `https://www.youtube.com/embed/${id}?autoplay=0&rel=0&playsinline=1&origin=${window.location.origin}`
+];
+
+// Add live sources to the pool after fetching
+function getEmbedSourcesPool() {
+  return [...EMBED_SOURCES, ...liveEmbedSources];
+}
+
+function addVideoPlayer(videoId, showLoadedFeedback = true) {
+  if (unhelpfulText) { unhelpfulText.classList.remove("active"); unhelpfulText.style.display = "none"; }
+  if (!videoId) return showToast("Input a YouTube video URL.", true);
+
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("video-unit-wrapper", "fade-in");
+  wrapper.dataset.videoId = videoId;
+
+  const iframe = document.createElement("iframe");
+  let srcIdx = 0;
+  let fallbackTimer = null;
+
+  const overlay = document.createElement("div");
+  overlay.className = "video-loading-overlay";
+
+  function showSpinner() {
+    overlay.innerHTML = "";
+    overlay.appendChild(Object.assign(document.createElement("div"), {
+      className: "spinner"
+    }));
   }
 
-  if (!videoId) return showToast("Invalid YouTube URL.", true);
+  function showEmbedMessage(title, text, showRetry = false) {
+    overlay.classList.remove("hidden");
+    overlay.innerHTML = "";
 
-  const videoUnitWrapper = document.createElement("div");
-  videoUnitWrapper.classList.add("video-unit-wrapper", "fade-in");
-  videoUnitWrapper.dataset.videoId = videoId;
+    const box = document.createElement("div");
+    box.className = "embed-error";
 
-  // --- OPTIMIZED ATTRIBUTES ---
-  const iframe = document.createElement("iframe");
-  const origin = window.location.origin;
-  iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?origin=${origin}`;
+    const strong = document.createElement("strong");
+    strong.textContent = title;
+
+    const span = document.createElement("span");
+    span.textContent = text;
+
+    box.append(strong, span);
+
+    if (showRetry && srcIdx < EMBED_SOURCES.length) {
+      const btn = document.createElement("button");
+      btn.className = "ghost-btn";
+      btn.type = "button";
+      btn.textContent = "Try next source";
+      btn.addEventListener("click", tryNext);
+      box.appendChild(btn);
+    }
+
+    overlay.appendChild(box);
+  }
+
+  const sourcesPool = getEmbedSourcesPool(); // Get the combined list
+
+  function tryNext() {
+    clearTimeout(fallbackTimer);
+
+    if (srcIdx >= sourcesPool.length) {
+      showEmbedMessage(
+        "Video unavailable",
+        "This video could not be loaded via standard or alternative mirrors."
+      );
+      showToast("No available embed source worked.", true);
+      return;
+    }
+
+    showSpinner();
+    overlay.classList.remove("hidden");
+
+    iframe.src = sourcesPool[srcIdx](videoId);
+    srcIdx++;
+
+    fallbackTimer = setTimeout(() => {
+      showEmbedMessage(
+        "Still loading?",
+        "If the video fails to load, try a different mirror (click the bottom shuffle button).",
+        true
+      );
+    }, 4500);
+  }
 
   iframe.setAttribute("frameborder", "0");
+  iframe.setAttribute("allowfullscreen", "true");
   iframe.loading = "lazy";
-  iframe.allow =
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen";
-  iframe.style.width = "100%";
-  iframe.style.height = "100%";
-  iframe.style.borderRadius = "8px";
+  iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+  iframe.style.cssText = "width:100%;height:100%;border-radius:10px;";
 
-  // Spinner load
-  const loadingOverlay = document.createElement("div");
-  loadingOverlay.className = "video-loading-overlay";
-  const spinner = document.createElement("div");
-  spinner.className = "spinner";
-  loadingOverlay.appendChild(spinner);
-
-  iframe.onload = () =>
-  {
-    loadingOverlay.classList.add("hidden");
-    setTimeout(() => loadingOverlay.remove(), 300);
+  iframe.onload = () => {
+    clearTimeout(fallbackTimer);
+    overlay.classList.add("hidden");
   };
 
-  const videoDisplay = document.createElement("div");
-  videoDisplay.classList.add("video-display");
-  videoDisplay.style.width = `${INITIAL_VIDEO_WIDTH}px`;
-  videoDisplay.style.height = `${INITIAL_VIDEO_HEIGHT}px`;
-  videoDisplay.dataset.initialWidth = INITIAL_VIDEO_WIDTH;
-  videoDisplay.dataset.initialHeight = INITIAL_VIDEO_HEIGHT;
+  tryNext();
 
-  const closeButton = document.createElement("button");
-  closeButton.textContent = "X";
-  closeButton.title = "Close Video";
-  closeButton.classList.add("close-video-button");
-  closeButton.addEventListener("click", () =>
-  {
-    videoUnitWrapper.remove();
-    saveOpenVideos();
-    if (videoPlayersContainer.children.length === 0 && unhelpfulText)
-    {
-      unhelpfulText.classList.add("active");
-      unhelpfulText.style.display = "block";
+  const display = document.createElement("div");
+  display.className = "video-display";
+  display.style.cssText = `width:${INITIAL_VIDEO_WIDTH}px;height:${INITIAL_VIDEO_HEIGHT}px;`;
+  display.dataset.initialWidth  = INITIAL_VIDEO_WIDTH;
+  display.dataset.initialHeight = INITIAL_VIDEO_HEIGHT;
+
+  const closeBtn = document.createElement("button");
+  closeBtn.textContent = "X"; closeBtn.title = "Close"; closeBtn.className = "close-video-button";
+  closeBtn.addEventListener("click", () => {
+    lastClosedVideo = videoId; wrapper.remove(); saveOpenVideos(); showUndoToast(videoId);
+    if (videoPlayersContainer.children.length === 0 && unhelpfulText) {
+      unhelpfulText.classList.add("active"); unhelpfulText.style.display = "block";
     }
   });
 
-  videoDisplay.appendChild(loadingOverlay);
-  videoDisplay.appendChild(iframe);
-  videoDisplay.appendChild(closeButton);
+  display.append(overlay, iframe, closeBtn);
 
-  // --- CONTROLS SIDEBAR ---
-  const sizeControls = document.createElement("div");
-  sizeControls.classList.add("video-size-controls");
-
-  const createCtrlBtn = (text, cls, title, action) =>
-  {
-    const btn = document.createElement("button");
-    btn.innerHTML = text;
-    btn.className = `size-button ${cls}`;
-    btn.title = title;
-    btn.addEventListener("click", action);
-    return btn;
+  const controls = document.createElement("div");
+  controls.className = "video-size-controls";
+  const mkBtn = (html, cls, title, fn) => {
+    const b = document.createElement("button");
+    b.innerHTML = html; b.className = `size-button ${cls}`; b.title = title;
+    b.addEventListener("click", fn); return b;
   };
-
-  // Plus
-  sizeControls.appendChild(
-    createCtrlBtn("+", "plus", "Increase Size", () =>
-    {
-      const w = videoDisplay.offsetWidth * (1 + RESIZE_STEP);
-      resizeVideoElement(videoDisplay, w);
-    }),
+  controls.append(
+    mkBtn("+","plus","Bigger", () => resizeEl(display, display.offsetWidth * (1 + RESIZE_STEP))),
+    mkBtn("−","minus","Smaller", () => resizeEl(display, display.offsetWidth * (1 - RESIZE_STEP))),
+    mkBtn("↺","default","Reset", () => resizeEl(display, parseInt(display.dataset.initialWidth)))
   );
+  const copySvg = `<svg viewBox="0 0 24 24" width="15" height="15" fill="white"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
+  const copyBtn = mkBtn(copySvg,"copy-mini","Copy & Open", () => {
+    const l = `https://www.youtube-nocookie.com/embed/${videoId}`;
+    window.open(l,'_blank'); navigator.clipboard.writeText(l).catch(()=>{});
+    showToast("Link copied and opened!");
+  });
+  controls.append(copyBtn);
+// Fall back button
+  const fallbackSvg = `
+<svg viewBox="0 0 24 24" width="15" height="15" fill="white">
+  <path d="M12 6V3L8 7l4 4V8c2.76 0 5 2.24 5 5
+           0 .34-.03.67-.1 1h2.02c.05-.33.08-.66.08-1
+           0-3.87-3.13-7-7-7zm-5.9 4C6.05 10.33 6 10.66
+           6 11c0 3.87 3.13 7 7 7v3l4-4-4-4v3
+           c-2.76 0-5-2.24-5-5 0-.34.03-.67.1-1H6.1z"/>
+</svg>`;
 
-  // Minus
-  sizeControls.appendChild(
-    createCtrlBtn("\u2212", "minus", "Decrease Size", () =>
-    {
-      const w = videoDisplay.offsetWidth * (1 - RESIZE_STEP);
-      resizeVideoElement(videoDisplay, w);
-    }),
-  );
-
-  // Reset
-  sizeControls.appendChild(
-    createCtrlBtn("\u21BA", "default", "Reset Size", () =>
-    {
-      const w = parseInt(videoDisplay.dataset.initialWidth);
-      resizeVideoElement(videoDisplay, w);
-    }),
-  );
-
-  // Copy Button (SVG)
-  const copySvg = `<svg viewBox="0 0 24 24" width="16" height="16" fill="white"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>`;
-  const copyBtn = createCtrlBtn(
-    copySvg,
-    "copy-mini",
-    "Copy Video Link",
-    () =>
-    {
-      const finalLink = `https://www.youtube-nocookie.com/embed/${videoId}`;
-      window.open(finalLink, '_blank').focus();
-      navigator.clipboard.writeText(finalLink);
-      showToast("Video Link Copied and Opened!");
-    },
-  );
-  copyBtn.style.marginTop = "10px";
-  copyBtn.style.backgroundColor = "#AB47BC";
-
-  sizeControls.appendChild(copyBtn);
-
-  videoUnitWrapper.appendChild(videoDisplay);
-  videoUnitWrapper.appendChild(sizeControls);
-  videoPlayersContainer.prepend(videoUnitWrapper);
-
-  if (typeof fadeInObserver !== "undefined")
-    fadeInObserver.observe(videoUnitWrapper);
-
-  if (showLoadedFeedback)
-  {
-    showToast("Video Loaded Successfully!");
+const fallbackBtn = mkBtn(
+  fallbackSvg,
+  "fallback-mini",
+  "Try another source",
+  () => {
+    if (srcIdx < sourcesPool.length) {
+      showToast(`Routing to mirror ${srcIdx + 1} of ${sourcesPool.length}...`);
+      tryNext();
+    } else {
+      showToast("No more mirrors available.", true);
+    }
   }
+);
+
+controls.append(fallbackBtn);
+
+  wrapper.append(display, controls);
+  videoPlayersContainer.prepend(wrapper);
+  if (window.fadeInObserver) window.fadeInObserver.observe(wrapper);
+  if (showLoadedFeedback) showToast("Video loaded!");
   saveOpenVideos();
 }
 
-function resizeVideoElement(elementToResize, newWidth)
-{
-  const newHeight = newWidth * ASPECT_RATIO;
-  elementToResize.style.width = `${Math.round(newWidth)}px`;
-  elementToResize.style.height = `${Math.round(newHeight)}px`;
+function resizeEl(el, w) {
+  el.style.width  = `${Math.round(w)}px`;
+  el.style.height = `${Math.round(w * ASPECT_RATIO)}px`;
 }
 
-// --- LAUNCH HANDLER ---
-if (launch)
-{
-  launch.addEventListener("click", async () =>
-  {
+// ─── UNDO TOAST ───────────────────────────────────────
+function showUndoToast(videoId) {
+  document.querySelector('.undo-toast')?.remove();
+  const t = document.createElement("div");
+  t.className = "toast-notification undo-toast";
+
+  document.body.appendChild(t);
+
+  requestAnimationFrame(() => {
+      t.classList.add("show");
+  });
+  t.style.cssText = "border-color:#FFC107;color:#FFC107;bottom:28px;opacity:1;";
+  t.innerHTML = `Video removed. <button onclick="undoClose()">Undo</button>`;
+  document.body.appendChild(t);
+  const timer = setTimeout(() => { t.style.bottom="-60px"; t.style.opacity="0"; setTimeout(()=>t.remove(),500); }, 5000);
+  t.dataset.timer = timer;
+}
+function undoClose() {
+  const t = document.querySelector('.undo-toast');
+  if (t) { clearTimeout(parseInt(t.dataset.timer)); t.remove(); }
+  if (lastClosedVideo) { addVideoPlayer(lastClosedVideo); lastClosedVideo = null; }
+}
+
+// ─── LAUNCH HANDLER ───────────────────────────────────
+if (launch) {
+  launch.addEventListener("click", () => {
     const url = urlInput.value.trim();
-    if (!url) return showToast("Please paste a YouTube link first.");
-
+    if (!url) return showToast("Paste a YouTube link first.");
     const videoId = extractVideoId(url);
-    if (!videoId)
-      return showToast("That doesn't look like a valid YouTube link.");
-
-    launch.disabled = true;
-    showToast("Checking availability...");
-
-    try
-    {
-      await preflightCheck(videoId);
-      addVideoPlayer(videoId);
-      urlInput.value = "";
-    }
-    catch (err)
-    {
-      showToast(err);
-    }
-    finally
-    {
-      launch.disabled = false;
-    }
+    if (!videoId) return showToast("Doesn't look like a valid YouTube link.");
+    addVideoPlayer(videoId);
+    urlInput.value = "";
   });
 }
 
-// --- Button Functions ---
-function toggleOptimization()
-{
+// ─── SETTINGS ─────────────────────────────────────────
+function toggleOptimization() {
   const toggle = document.getElementById("optToggle");
   const statusText = document.getElementById("optStatusText");
   const isOpt = toggle.checked;
-
   localStorage.setItem("optimizedMode", isOpt);
-
-  // Update Text UI
-  if (isOpt)
-  {
-    statusText.textContent = "Enabled";
-    statusText.classList.remove("disabled");
-    statusText.classList.add("enabled");
-    document.body.classList.add("optimized");
-  }
-  else
-  {
-    statusText.textContent = "Disabled";
-    statusText.classList.remove("enabled");
-    statusText.classList.add("disabled");
-    document.body.classList.remove("optimized");
-  }
-
-  // Handle Particles visibility
-  const pContainer = document.getElementById("particles-js");
-  if (pContainer) pContainer.style.display = isOpt ? "none" : "block";
+  statusText.textContent = isOpt ? "On" : "Off";
+  statusText.className = `status-indicator ${isOpt ? 'enabled' : 'disabled'}`;
+  document.body.classList.toggle("optimized", isOpt);
+  const pC = document.getElementById("particles-js");
+  if (pC) pC.style.display = isOpt ? "none" : "block";
+  if (isOpt) destroyParticles();
+  else initParticles();
 }
 
-function clearAllVideos()
-{
+function clearAllVideos() {
   videoPlayersContainer.innerHTML = "";
-  if (unhelpfulText)
-  {
-    unhelpfulText.classList.add("active");
-    unhelpfulText.style.display = "block";
-  }
+  if (unhelpfulText) { unhelpfulText.classList.add("active"); unhelpfulText.style.display = "block"; }
   localStorage.removeItem("savedVideos");
 }
 
-// --- MAIN INIT ---
-document.addEventListener("DOMContentLoaded", () =>
-{
-  // Check saved mode
-  const savedMode = localStorage.getItem("optimizedMode") === "true";
-  const toggle = document.getElementById("optToggle");
-
-  // Set initial UI state
-  if (toggle)
-  {
-    toggle.checked = savedMode;
-    const statusText = document.getElementById("optStatusText");
-    if (savedMode)
-    {
-      statusText.textContent = "Enabled";
-      statusText.classList.add("enabled");
-      document.body.classList.add("optimized");
-      const pContainer = document.getElementById("particles-js");
-      if (pContainer) pContainer.style.display = "none";
-    }
-    else
-    {
-      statusText.classList.add("disabled");
-    }
-  }
-
-  loadSavedVideos();
-});
-
-// Toggle Instructions
-const settingsBox = document.querySelector(".settings-card");
-const instBox = document.getElementById("instructions-home");
-const hideBtn = document.querySelector(".hide-button");
-const showBtn = document.querySelector(".show-button");
-
-if (hideBtn && showBtn && settingsBox && instBox)
-{
-  hideBtn.onclick = () =>
-  {
-    instBox.style.display = "none";
-    settingsBox.style.display = "none";
-    showBtn.style.display = "block";
-  };
-  showBtn.onclick = () =>
-  {
-    instBox.style.display = "block";
-    settingsBox.style.display = "block";
-    showBtn.style.display = "none";
-  };
-}
-        /* =========================================
-           PASTE CONTENT OF Links Page Script HERE
-           (The contents inside <script> tag of index (4).html)
-           ========================================= */
-           const fetchBtn = document.getElementById("fetchLinks");
-const customFetchBtn = document.getElementById("customFetch");
-const customInput = document.getElementById("customAmount");
-const openBtn = document.getElementById("openSelected");
-const selectAllBtn = document.getElementById("selectAll");
-const grid = document.getElementById("linkGrid");
-const countSpan = document.getElementById("count");
-const allLoadedMsg = document.getElementById("allLoadedMsg");
-const progressText = document.getElementById("progressText");
-let allFoundLinks = [];
-let currentIndex = 0;
-let selectedLinks = new Set();
-async function ensureDataLoaded()
-{
-  if (allFoundLinks.length > 0) return !0;
-  fetchBtn.disabled = !0;
-  customFetchBtn.disabled = !0;
-  try
-  {
-    const res = await fetch("https://raw.githubusercontent.com/wea-f/Norepted/refs/heads/master/bphmirror.md", );
-    if (!res.ok) throw new Error("GitHub fetch failed");
-    const text = await res.text();
-    parseMarkdown(text);
-    selectAllBtn.disabled = !1;
-    fetchBtn.disabled = !1;
-    customFetchBtn.disabled = !1;
-    return !0
-  }
-  catch (e)
-  {
-    return !1
-  }
+function clearSearchResults() {
+  const r = document.getElementById("ytSearchResults");
+  const i = document.getElementById("ytSearchInput");
+  const b = document.getElementById("clearSearchBtn");
+  if (r) { r.innerHTML = ""; r.style.display = "none"; }
+  if (i) i.value = "";
+  if (b) b.style.display = "none";
 }
 
-function parseMarkdown(markdown)
-{
-  const urlRegex = /(https?:\/\/[^\s<]+)/g;
-  const lines = markdown.split("\n");
-  let currentHeader = "General";
-  lines.forEach((line) =>
-  {
-    if (line.trim().startsWith("### "))
-    {
-      currentHeader = line.replace(/###/g, "").split("|")[0].split("[")[0].trim()
+// ─── MAIN INIT ────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  // ── changelog modal ──────────────────────────────────
+  const CHANGELOG_VERSION = '1.7';
+  const modal = document.getElementById('changelog-modal');
+  if (modal) {
+    if (localStorage.getItem('cl_seen') !== CHANGELOG_VERSION) {
+      // show it
+      document.body.classList.add("modal-open");
+    } else {
+      modal.classList.add('hidden');
     }
-    const match = line.match(urlRegex);
-    if (match)
-    {
-      allFoundLinks.push(
-      {
-        url: match[0],
-        siteName: currentHeader,
-      })
-    }
-  });
-  console.log(`Parsed ${allFoundLinks.length} links.`)
-}
-async function loadMore(amount)
-{
-  const success = await ensureDataLoaded();
-  if (!success) return;
-  const nextIndex = currentIndex + amount;
-  const batch = allFoundLinks.slice(currentIndex, nextIndex);
-  if (batch.length === 0 && allFoundLinks.length > 0)
-  {
-    finishLoading();
-    return
-  }
-  batch.forEach((linkData, i) =>
-  {
-    const url = linkData.url;
-    const card = document.createElement("div");
-    card.className = "proxy-card fade-in";
-    const displayUrl = url.replace("https://", "").replace("http://", "").replace(/\/$/, "");
-    card.innerHTML = `
-            <div class="proxy-check">
-                <input type="checkbox" class="proxy-checkbox" value="${url}">
-            </div>
-            <div class="proxy-info">
-                <span class="site-tag">${linkData.siteName}</span>
-                <span class="proxy-link" title="${url}">${displayUrl}</span>
-            </div>
-          `;
-    card.addEventListener("click", (e) =>
-    {
-      const box = card.querySelector(".proxy-checkbox");
-      if (e.target === box)
-      {
-        if (box.checked)
-        {
-          selectedLinks.add(url);
-          card.classList.add("selected")
-        }
-        else
-        {
-          selectedLinks.delete(url);
-          card.classList.remove("selected")
-        }
-        updateUI();
-        return
-      }
-      window.open(url, "_blank")
+    document.getElementById('cl-dismiss').addEventListener('click', () => {
+      modal.classList.add('hidden');
+      document.body.classList.remove("modal-open");
+      localStorage.setItem('cl_seen', CHANGELOG_VERSION);
     });
-    grid.appendChild(card);
-    if (window.fadeInObserver)
-    {
-      window.fadeInObserver.observe(card)
+  }
+  // ─────────────────────────────────────────────────────
+  // Fetch api
+  initializeLiveSources();
+  //-------------
+  const saved = localStorage.getItem("optimizedMode");
+  const savedMode = saved === null ? shouldDefaultToOptimized() : saved === "true";
+  const toggle = document.getElementById("optToggle");
+  if (toggle) {
+    toggle.checked = savedMode;
+    const st = document.getElementById("optStatusText");
+    if (savedMode) {
+      if (st) { st.textContent = "On"; st.className = "status-indicator enabled"; }
+      document.body.classList.add("optimized");
+      const pC = document.getElementById("particles-js");
+      if (pC) pC.style.display = "none";
     }
-    else
-    {
-      card.classList.add("active");
-      card.style.opacity = 1
+  }
+  initParticles();
+  loadSavedVideos();
+  const lb = document.getElementById('nav-landing');
+  if (lb) lb.classList.add('active-nav');
+});
+
+// ─── TIME AGO HELPER ──────────────────────────────────
+function timeAgo(isoString) {
+  const diff = (Date.now() - new Date(isoString)) / 1000;
+  if (diff < 60)     return 'just now';
+  if (diff < 3600)   return `${Math.floor(diff/60)}m ago`;
+  if (diff < 86400)  return `${Math.floor(diff/3600)}h ago`;
+  if (diff < 604800) return `${Math.floor(diff/86400)}d ago`;
+  if (diff < 2592000)return `${Math.floor(diff/604800)}w ago`;
+  if (diff < 31536000)return`${Math.floor(diff/2592000)} mo ago`;
+  return `${Math.floor(diff/31536000)}y ago`;
+}
+
+// ─── YOUTUBE SEARCH ───────────────────────────────────
+async function searchYouTube(query, forShorts = false) {
+  const WORKER_URL = 'https://roj32.norepted.workers.dev';
+  
+  const params = new URLSearchParams({ q: query, shorts: forShorts });
+
+  try {
+    const res = await fetch(`${WORKER_URL}?${params}`);
+    const data = await res.json();
+    
+    if (!res.ok || data.error) {
+      // Because the worker now flattens the error, data.error is a clean string
+      const message = data.error || `Server returned status ${res.status}`;
+      console.error("Proxy error details:", data);
+      showToast("YouTube search failed: " + message, true);
+      return null;
     }
+    
+    return data.items || [];
+  } catch(e) {
+    console.error("YouTube search request failed", e);
+    showToast("Search failed. Check console or network connections.", true);
+    return null;
+  }
+}
+function renderSearchResults(items) {
+  const container = document.getElementById("ytSearchResults");
+  const clearBtn  = document.getElementById("clearSearchBtn");
+  if (!container) return;
+  container.innerHTML = ""; container.style.display = "grid";
+  if (clearBtn) clearBtn.style.display = "inline-flex";
+
+  if (!items || items.length === 0) {
+    container.innerHTML = `<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;padding:20px;">No results found.</p>`;
+    return;
+  }
+
+  items.forEach(video => {
+    const videoId = video.id && video.id.videoId;
+    if (!videoId) return;
+    const sn    = video.snippet || {};
+    const title = sn.title || "Untitled";
+    const channel = sn.channelTitle || "";
+    const thumb = ((sn.thumbnails||{}).medium || (sn.thumbnails||{}).default || {}).url
+                  || `https://i.ytimg.com/vi/${videoId}/mqdefault.jpg`;
+    const dateStr = sn.publishedAt ? timeAgo(sn.publishedAt) : '';
+
+    const card = document.createElement("div");
+    card.className = "search-result-card";
+    card.innerHTML = `
+      <div class="search-thumb-wrap">
+        <img src="${thumb}" alt="" loading="lazy">
+      </div>
+      <div class="search-card-info">
+        <p class="search-card-title">${title}</p>
+        <p class="search-card-channel">${channel}</p>
+        ${dateStr ? `<p class="search-card-date">${dateStr}</p>` : ''}
+      </div>`;
+    card.addEventListener("click", () => {
+      // Stay on page — no switchTab call — just add and scroll down
+      addVideoPlayer(videoId);
+      showToast("Video added!");
+      const vs = document.getElementById("videoPlayersContainer");
+      if (vs) setTimeout(() => vs.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+    });
+    container.appendChild(card);
   });
-  currentIndex += batch.length;
-  progressText.classList.remove("hidden");
-  progressText.textContent = `Showing ${currentIndex} of ${allFoundLinks.length} links`;
-  if (currentIndex >= allFoundLinks.length)
-  {
-    finishLoading()
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const searchBtn   = document.getElementById("ytSearchBtn");
+  const searchInput = document.getElementById("ytSearchInput");
+  if (!searchBtn || !searchInput) return;
+
+  async function doSearch() {
+    const q = searchInput.value.trim(); if (!q) return;
+    searchBtn.disabled = true; searchBtn.textContent = "Searching…";
+    const r = document.getElementById("ytSearchResults");
+    if (r) { r.style.display = "grid"; r.innerHTML = `<p style="color:var(--text-muted);grid-column:1/-1;text-align:center;padding:20px;">Loading…</p>`; }
+    const cb = document.getElementById("clearSearchBtn"); if (cb) cb.style.display = "inline-flex";
+    renderSearchResults(await searchYouTube(q));
+    searchBtn.disabled = false; searchBtn.textContent = "Search";
+  }
+  searchBtn.addEventListener("click", doSearch);
+  searchInput.addEventListener("keypress", e => { if (e.key === "Enter") doSearch(); });
+});
+
+// ─── SHORTS SCROLLER ──────────────────────────────────
+let shortsQueue   = [];
+let shortsIndex   = 0;
+let shortsPaused  = false;
+let shortsPointerInScrollArea = false;
+
+let currentShortsSrcIdx = 0;
+
+let lastScrollTime = 0;
+const SCROLL_COOLDOWN = 750; // adjust?
+
+function buildShortsFrame(videoId, autoplay = false) {
+  const wrap = document.getElementById('shortsFrameWrap');
+  if (!wrap) return;
+  wrap.querySelectorAll('iframe').forEach(f => f.remove());
+  wrap.classList.add('has-content');
+  shortsPaused = !autoplay;
+  const iframe = document.createElement('iframe');
+  
+  const auto = autoplay ? "1" : "0";
+  const mute = autoplay ? "&mute=1" : "";
+
+  const sources = getShortsSourcesPool(videoId, auto, mute);
+  iframe.src = sources[currentShortsSrcIdx];
+  // iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=${auto}${mute}&rel=0&playsinline=1&loop=1&playlist=${videoId}&origin=${window.location.origin}`;
+  
+
+  // Explicitly allow autoplay
+  iframe.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+  iframe.setAttribute("allowfullscreen","true");
+  iframe.style.cssText = "width:100%;height:100%;border:none;";
+
+  wrap.appendChild(iframe);
+
+  const emptyMsg = document.getElementById('shortsEmpty');
+  if (emptyMsg) emptyMsg.style.display = 'none';
+
+  const pauseBtn = document.getElementById('shortsPause');
+  if (pauseBtn) pauseBtn.textContent = autoplay ? "Pause" : "Play";
+  updateShortsCounter();
+}
+// Shorts poool v1.7
+function getShortsSourcesPool(id, auto, mute) {
+  const originUrl = encodeURIComponent(window.location.origin);
+  const basePool = [
+    `https://www.youtube-nocookie.com/embed/${id}?autoplay=${auto}${mute}&rel=0&playsinline=1&loop=1&playlist=${id}&origin=${originUrl}`,
+    `https://www.youtube.com/embed/${id}?autoplay=${auto}${mute}&rel=0&playsinline=1&loop=1&playlist=${id}&origin=${originUrl}`
+  ];
+  
+  // Inject live API instances if they exist
+  if (typeof liveEmbedSources !== 'undefined' && liveEmbedSources.length > 0) {
+    liveEmbedSources.forEach(instanceFn => {
+      // Clean up base structure to fit specific instance formatting
+      const sampleUrl = instanceFn(id);
+      const host = sampleUrl.split('/embed/')[0];
+      basePool.push(`${host}/embed/${id}?loop=1&playlist=${id}`);
+    });
+  }
+  
+  return basePool;
+}
+function updateShortsCounter() {
+  const el = document.getElementById('shortsCounter');
+  if (el) el.textContent = `${shortsIndex + 1} / ${shortsQueue.length}`;
+}
+
+function navigateShort(dir) {
+  if (shortsQueue.length === 0) return;
+  currentShortsSrcIdx = 0; // Reset source index for new video
+  shortsIndex = (shortsIndex + dir + shortsQueue.length) % shortsQueue.length;
+  buildShortsFrame(shortsQueue[shortsIndex], true);
+}
+// =====================
+function initShortsControls() {
+  const wrap = document.getElementById('shortsFrameWrap');
+  if (!wrap) return;
+
+  // Track hover states safely using parent delegation container
+  wrap.addEventListener("mouseenter", () => { shortsPointerInScrollArea = true; });
+  wrap.addEventListener("mouseleave", () => { shortsPointerInScrollArea = false; });
+
+  // Handle wheel events smoothly on parent layout
+  wrap.addEventListener("wheel", e => {
+    const sv = document.getElementById('view-shorts');
+    if (!sv || !sv.classList.contains('active-section')) return;
+    
+    // Always prevent default to stop the page from scrolling while hovering the iframe
+    e.preventDefault(); 
+    
+    if (Math.abs(e.deltaY) < 30) return; 
+
+    // THROTTLE: Check if enough time has passed since the last successful scroll
+    const now = Date.now();
+    if (now - lastScrollTime < SCROLL_COOLDOWN) return;
+    
+    lastScrollTime = now;
+    navigateShort(e.deltaY > 0 ? 1 : -1);
+  }, { passive: false });
+  // Handle click (so user can start the first video)
+  wrap.addEventListener("click", (e) => {
+  // Prevent click from double-firing if they clicked the nav buttons
+  if (e.target.tagName.toLowerCase() === 'button') return; 
+  toggleShortPlayback();
+});
+}
+// ===========================
+function addShortsFromUrl() {
+  const input = document.getElementById('shortsPasteInput');
+  if (!input) return;
+  const url = input.value.trim();
+  const id  = extractShortsId(url);
+  if (!id) { showToast("Couldn't find 11 character video ID in that URL. (e.g. MIVI3W6svw8)", true); return; }
+  shortsQueue.push(id);
+  shortsIndex = shortsQueue.length - 1;
+  buildShortsFrame(id, false);
+  input.value = '';
+  showToast("Short added!");
+}
+
+function toggleShortPlayback() {
+  if (shortsQueue.length === 0) return;
+  const wrap = document.getElementById('shortsFrameWrap');
+  const pauseBtn = document.getElementById('shortsPause');
+  if (!wrap) return;
+  const iframe = wrap.querySelector('iframe');
+
+  if (!shortsPaused && iframe) {
+    iframe.dataset.savedSrc = iframe.src;
+    iframe.src = '';
+    shortsPaused = true;
+    if (pauseBtn) pauseBtn.textContent = "Play";
+  } else {
+    buildShortsFrame(shortsQueue[shortsIndex], true);
+    
   }
 }
 
-function finishLoading()
-{
-  fetchBtn.disabled = !0;
-  fetchBtn.textContent = "All Loaded";
-  customFetchBtn.disabled = !0;
-  allLoadedMsg.classList.remove("hidden")
+// Shorts fall back function
+function tryNextShortsSource() {
+  // 1. Don't do anything if the queue is empty
+  if (shortsQueue.length === 0) {
+    if (typeof showToast === "function") showToast("No short loaded to swap.", true);
+    return;
+  }
+
+  const videoId = shortsQueue[shortsIndex];
+  const wrap = document.getElementById('shortsFrameWrap');
+  const iframe = wrap ? wrap.querySelector('iframe') : null;
+
+  if (!iframe) return;
+
+  // 2. We want autoplay to be true when they manually switch mirrors
+  const auto = "1";
+  const mute = "";
+  const sources = getShortsSourcesPool(videoId, auto, mute);
+
+  // 3. Increment our global tracker
+  currentShortsSrcIdx++;
+
+  // 4. If we hit the end of the pool, loop back to the beginning so the button doesn't permanently die
+  if (currentShortsSrcIdx >= sources.length) {
+    currentShortsSrcIdx = 0;
+    if (typeof showToast === "function") showToast("No more mirrors. Looping back to primary source.");
+  } else {
+    if (typeof showToast === "function") showToast(`Routing to mirror ${currentShortsSrcIdx + 1} of ${sources.length}...`);
+  }
+
+  // 5. Swap the source on the existing iframe
+  iframe.src = sources[currentShortsSrcIdx];
+
+  // 6. Reset the pause state just in case they were paused when they clicked the button
+  shortsPaused = false;
+  const pauseBtn = document.getElementById('shortsPause');
+  if (pauseBtn) pauseBtn.textContent = "Pause";
 }
-fetchBtn.addEventListener("click", () =>
-{
-  loadMore(15)
-});
-customFetchBtn.addEventListener("click", () =>
-{
-  let amt = parseInt(customInput.value);
-  if (!amt || amt < 1) amt = 15;
-  loadMore(amt)
-});
-selectAllBtn.addEventListener("click", () =>
-{
-  const checkboxes = document.querySelectorAll(".proxy-checkbox");
-  const shouldSelect = Array.from(checkboxes).some((cb) => !cb.checked);
-  checkboxes.forEach((box) =>
-  {
-    box.checked = shouldSelect;
-    const card = box.closest(".proxy-card");
-    if (shouldSelect)
-    {
-      selectedLinks.add(box.value);
-      card.classList.add("selected")
-    }
-    else
-    {
-      selectedLinks.delete(box.value);
-      card.classList.remove("selected")
-    }
-  });
-  updateUI()
-});
-openBtn.addEventListener("click", () => {
-  if (selectedLinks.size === 0) return;
-  if (selectedLinks.size > 10) {
-    if (!confirm(`You are about to open ${selectedLinks.size} tabs. Continue?`)) return;
-  }
 
-  let blocked = false;
-  selectedLinks.forEach((url) => {
-    const newWin = window.open(url, "_blank");
 
-    if (!newWin || newWin.closed || typeof newWin.closed === 'undefined') {
-      blocked = true;
-    }
-  });
-
-  if (blocked) {
-    alert("One site opened! Please turn on 'Always allow pop-ups and redirects' from Norepted to open multiple links!");
-  }
+// Global Keydown monitoring safely managed outside the iframe
+document.addEventListener("keydown", e => {
+  const sv = document.getElementById('view-shorts');
+  if (!sv || !sv.classList.contains('active-section')) return;
+  if (!shortsPointerInScrollArea) return;
+  
+  if (e.key === 'ArrowUp')   { e.preventDefault(); navigateShort(-1); }
+  if (e.key === 'ArrowDown') { e.preventDefault(); navigateShort(1); }
 });
 
-function updateUI()
-{
-  countSpan.textContent = selectedLinks.size;
-  openBtn.disabled = selectedLinks.size === 0;
-  const checkboxes = document.querySelectorAll(".proxy-checkbox");
-  if (checkboxes.length > 0)
-  {
-    const allChecked = Array.from(checkboxes).every((cb) => cb.checked);
-    selectAllBtn.textContent = allChecked ? "Deselect All" : "Select All Loaded"
-  }
+// Ensure setup runs cleanly after DOM hydration completes
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initShortsControls);
+} else {
+  initShortsControls();
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById('shortsSearchBtn');
+  const inp = document.getElementById('shortsSearchInput');
+  if (!btn || !inp) return;
+
+  async function doShortsSearch() {
+    const q = inp.value.trim(); if (!q) return;
+    btn.disabled = true; btn.textContent = "Searching…";
+    const items = await searchYouTube(q, true);
+    if (items && items.length > 0) {
+      shortsQueue = items.map(i => i.id && i.id.videoId).filter(Boolean);
+      shortsIndex = 0;
+      buildShortsFrame(shortsQueue[0], false);
+      showToast(`Loaded ${shortsQueue.length} shorts!`);
+    } else {
+      showToast("No shorts found.", true);
+    }
+    btn.disabled = false; btn.textContent = "Find Shorts";
+  }
+
+  btn.addEventListener("click", doShortsSearch);
+  inp.addEventListener("keypress", e => { if (e.key === "Enter") doShortsSearch(); });
+});
+
+// ─── BROWSER ──────────────────────────────────────────
+const PROXY_SOURCES = [
+  {
+    label: "CodeTabs",
+    type: "html",
+    build: target => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(target)}`
+  },
+  {
+    label: "ThingProxy",
+    type: "html",
+    build: target => `https://thingproxy.freeboard.io/fetch/${target}`
+  },
+  {
+    label: "CorsProxy",
+    type: "html",
+    build: target => `https://corsproxy.io/?${encodeURIComponent(target)}`
+  },
+  {
+    label: "AllOrigins",
+    type: "html",
+    build: target => `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`
+  },
+  {
+    label: "Reader Mode",
+    type: "reader",
+    build: target => `https://r.jina.ai/http://${target.replace(/^https?:\/\//, "")}`
+  }
+];
+const searchEngines = {
+  google: "https://www.google.com/search?hl=en&gl=us&q=",
+  bing:   "https://www.bing.com/search?cc=us&setlang=en&mkt=en-US&q="
+};
+let activeEngine = 'google', tabs = [], activeTabId = null;
+
+function setEngine(btn, engine) {
+  activeEngine = engine;
+  document.querySelectorAll('.engine-pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const icon = document.getElementById('newtab-engine-icon');
+  if (icon) icon.textContent = engine === 'google' ? 'G' : 'B';
+}
+
+const DEFAULT_SHORTCUTS = [
+  { label:'YouTube', url:'https://www.youtube.com',  icon:'https://www.youtube.com/favicon.ico' },
+  { label:'Google',  url:'https://www.google.com',   icon:'https://www.google.com/favicon.ico' },
+  { label:'GitHub',  url:'https://github.com',       icon:'https://github.com/favicon.ico' },
+  { label:'Reddit',  url:'https://www.reddit.com',   icon:'https://www.reddit.com/favicon.ico' },
+];
+
+function buildShortcuts() {
+  const c = document.getElementById('newtab-shortcuts'); if (!c) return;
+  DEFAULT_SHORTCUTS.forEach(s => {
+    const item = document.createElement('div'); item.className = 'shortcut-item';
+    const icon = document.createElement('div'); icon.className = 'shortcut-icon';
+    const img  = document.createElement('img'); img.src = s.icon; img.alt = '';
+    img.onerror = () => { icon.textContent = s.label[0]; };
+    icon.appendChild(img);
+    const lbl = document.createElement('span'); lbl.className = 'shortcut-label'; lbl.textContent = s.label;
+    item.append(icon, lbl);
+    item.addEventListener('click', () => loadUrlInActiveTab(s.url));
+    c.appendChild(item);
+  });
+}
+
+function createNewTab(url = '') {
+  const tabId = 'tab_' + Date.now();
+  const tabEl = document.createElement('div');
+  tabEl.className = 'browser-tab'; tabEl.id = `ui_${tabId}`;
+  tabEl.innerHTML = `<span class="tab-title">New Tab</span><button class="close-tab" onclick="closeTab('${tabId}',event)">×</button>`;
+  tabEl.onclick = () => switchTabFocus(tabId);
+  document.getElementById('tab-container').appendChild(tabEl);
+  const iframe = document.createElement('iframe');
+  iframe.id = `frame_${tabId}`; iframe.className = 'browser-frame';
+  iframe.sandbox = "allow-forms allow-scripts allow-same-origin allow-popups";
+  document.getElementById('iframes-container').appendChild(iframe);
+  tabs.push({ id: tabId, url });
+  switchTabFocus(tabId);
+  if (url) loadUrlInActiveTab(url);
+}
+
+function closeTab(tabId, event) {
+  event.stopPropagation();
+  document.getElementById(`ui_${tabId}`)?.remove();
+  document.getElementById(`frame_${tabId}`)?.remove();
+  tabs = tabs.filter(t => t.id !== tabId);
+  if (tabs.length === 0) createNewTab();
+  else if (activeTabId === tabId) switchTabFocus(tabs[tabs.length-1].id);
+}
+
+function closeBrowserApp() { switchTab('landing'); }
+
+function toggleStealth() {
+  document.title = "My Drive - Google Drive";
+  document.querySelectorAll("link[rel*='icon']").forEach(el => el.remove());
+  const l = document.createElement('link'); l.rel = 'shortcut icon';
+  l.href = 'https://ssl.gstatic.com/docs/doclist/images/drive_2022q3_32dp.png';
+  document.head.appendChild(l);
+  showToast("Stealth: Tab now looks like Google Drive.");
+}
+
+function switchTabFocus(tabId) {
+  activeTabId = tabId;
+  document.querySelectorAll('.browser-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(`ui_${tabId}`).classList.add('active');
+  document.querySelectorAll('.browser-frame').forEach(f => f.classList.remove('active'));
+  document.getElementById(`frame_${tabId}`).classList.add('active');
+  const td = tabs.find(t => t.id === tabId);
+  document.getElementById('browser-url').value = td.url || '';
+  const nt = document.getElementById('new-tab-screen');
+  if (nt) nt.classList.toggle('active', !td.url);
+}
+
+async function loadUrlInActiveTab(raw, forceProxyIndex = null) {
+  if (!activeTabId || !raw) return;
+  let target = raw.trim();
+  if (/^(http|https):\/\/[^ "]+$|^[^ ".]+\.[^ ".]+$/.test(target)) {
+    if (!target.startsWith('http')) target = 'https://' + target;
+  } else {
+    target = searchEngines[activeEngine] + encodeURIComponent(target);
+  }
+  const td = tabs.find(t => t.id === activeTabId); 
+  td.url = target;
+  
+  document.getElementById(`ui_${activeTabId}`).querySelector('.tab-title').innerText = "Loading…";
+  document.getElementById('new-tab-screen').classList.remove('active');
+  const loader = document.getElementById('browser-loader');
+  const st = document.getElementById('proxy-status');
+  if (loader) loader.style.display = 'block';
+  if (st) { st.classList.remove('hidden'); st.innerText = "Bypassing filters…"; }
+
+
+  const errors = [];
+  
+  // FIX: If forceProxyIndex is passed (manual switch), ONLY try that specific proxy.
+  // If it's a new search (null), map out the whole array so it auto-loops.
+  const proxiesToTry = forceProxyIndex !== null 
+    ? [ { index: forceProxyIndex, proxy: PROXY_SOURCES[forceProxyIndex] } ]
+    : PROXY_SOURCES.map((proxy, index) => ({ index, proxy }));
+
+  for (const item of proxiesToTry) {
+    const proxy = item.proxy;
+    const proxyIndex = item.index;
+    
+    try {
+      const controller = new AbortController();
+      const tid = setTimeout(() => controller.abort(), 7000);
+      if (st) st.innerText = `Trying ${proxy.label}...`;
+      
+      const resp = await fetch(proxy.build(target), { signal: controller.signal });
+      clearTimeout(tid);
+      let html = await resp.text();
+      if (!resp.ok) throw new Error(html.slice(0, 160) || `HTTP ${resp.status}`);
+
+      if (proxy.type === "reader") {
+        html = renderReaderPage(target, html);
+      } else {
+        const base = `<base href="${target}">`;
+        html = html.includes('<head>') ? html.replace('<head>',`<head>${base}`) : base + html;
+      }
+
+      document.getElementById(`frame_${activeTabId}`).srcdoc = html;
+      
+      // CRITICAL: Cache the proxy index that successfully responded on this tab
+      td.currentProxyIndex = proxyIndex; 
+      
+      try { document.getElementById(`ui_${activeTabId}`).querySelector('.tab-title').innerText = new URL(target).hostname; } catch(e){}
+      if (st) {
+        st.classList.remove('hidden');
+        st.innerText = proxy.type === "reader" ? "Loaded in reader mode. Some interactive features may not work." : `Loaded through ${proxy.label}.`;
+      }
+      if (loader) loader.style.display='none';
+      return; // Break out entirely on successful render
+    } catch(e) {
+      errors.push(`${proxy.label}: ${e.name === "AbortError" ? "timed out" : e.message || "failed"}`);
+      console.warn("Proxy source failed", proxy.label, e);
+    }
+  }
+  
+  if (st) {
+    st.innerHTML = `No more Browser sources to try. `;
+    // &nbsp;<button onclick="switchTab('links')" style="background:var(--accent);color:#fff;border:none;border-radius:6px;padding:3px 10px;font-family:'Fredoka',sans-serif;font-size:12px;cursor:pointer;">Try Proxy Links →</button>
+    st.title = errors.join("\n");
+  }
+  if (loader) loader.style.display = 'none';
+}
+
+function switchBrowserProxy() {
+  const td = tabs.find(t => t.id === activeTabId);
+  if (!td || !td.url) {
+    // Falls back to standard alert if showToast isn't in scope
+    if (typeof showToast === "function") showToast("Open a website first before switching proxies!");
+    else alert("Open a website first before switching proxies!");
+    return;
+  }
+  
+  // Grab the tab's current proxy index (default to 0 if undefined) and increment it
+  const currentIdx = td.currentProxyIndex !== undefined ? td.currentProxyIndex : 0;
+  const nextProxyIndex = (currentIdx + 1) % PROXY_SOURCES.length;
+  
+  // IMMEDIATELY update the tab's proxy index cache. 
+  // This ensures that if the manual proxy switch fails, clicking the button again 
+  // will correctly advance to the *next* proxy instead of getting stuck.
+  td.currentProxyIndex = nextProxyIndex;
+  
+  // Force load using ONLY the next proxy in line
+  loadUrlInActiveTab(td.url, nextProxyIndex);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function renderReaderPage(target, text) {
+  const escaped = escapeHtml(text);
+  return `<!doctype html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <base href="${target}">
+        <style>
+          body{margin:0;background:#f8fafc;color:#111827;font-family:system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}
+          main{max-width:860px;margin:0 auto;padding:28px 22px 60px}
+          .reader-bar{position:sticky;top:0;background:#111827;color:#fff;padding:10px 16px;font-size:13px}
+          a{color:#2563eb}
+          pre{white-space:pre-wrap;font:inherit}
+        </style>
+      </head>
+      <body>
+        <div class="reader-bar">Reader mode: ${escapeHtml(target)}</div>
+        <main><pre>${escaped}</pre></main>
+      </body>
+    </html>`;
+}
+
+function refreshActiveTab() {
+  const td = tabs.find(t => t.id === activeTabId);
+  if (td && td.url) loadUrlInActiveTab(td.url);
+}
+
+function loadFromBigSearch() {
+  const v = document.getElementById('big-browser-url').value;
+  document.getElementById('browser-url').value = v;
+  loadUrlInActiveTab(v);
+}
+
+function toggleFullScreen() {
+  const app = document.getElementById('view-browser');
+  if (!document.fullscreenElement) (app.requestFullscreen||app.webkitRequestFullscreen||app.msRequestFullscreen).call(app);
+  else (document.exitFullscreen||document.webkitExitFullscreen).call(document);
+}
+
+document.getElementById('browser-go').addEventListener('click', () => loadUrlInActiveTab(document.getElementById('browser-url').value));
+document.getElementById('browser-url').addEventListener('keypress', e => { if (e.key==='Enter') loadUrlInActiveTab(e.target.value); });
+document.getElementById('big-browser-url').addEventListener('keypress', e => { if (e.key==='Enter') loadFromBigSearch(); });
+
+document.addEventListener("DOMContentLoaded", () => { createNewTab(); buildShortcuts(); });
+
+// Keyboard shortcuts
+document.addEventListener("keyup", e => {
+  if (e.code === "Backslash") {
+      e.preventDefault();
+      e.stopPropagation();
+      document.title = "My Drive - Google Drive";
+      if (typeof setFavicons === "function") {
+        setFavicons("https://ssl.gstatic.com/images/branding/product/1x/drive_2020q4_32dp.png");
+      }
+      console.log("Pressed Backslash and tab successfully changed.");
+  }
+  if (e.code =="Minus") {
+      e.preventDefault();
+      e.stopPropagation();
+      window.location.replace("https://www.google.com/webhp?igu=1");
+  }
+});
     </script>
 </body>
 </html>
