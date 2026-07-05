@@ -1,0 +1,232 @@
+/* ─── BROWSER (full-screen, no separate tab bar) ─────── */
+.full-screen-app {
+  position: fixed !important; inset: 0 !important;
+  width: 100vw !important; height: 100vh !important;
+  max-width: none !important; padding: 0 !important; margin: 0 !important;
+  z-index: 500;
+  /* Match site background so toolbar blends in */
+  background: linear-gradient(to bottom, #1e88e5, #00008b);
+  background-attachment: fixed;
+  display: none;
+}
+.full-screen-app.active-section { display: flex; }
+
+body:has(.full-screen-app.active-section) #site-navbar,
+body:has(.full-screen-app.active-section) #site-footer {
+  display: none;
+}
+
+.browser-shell { width: 100%; height: 100%; display: flex; flex-direction: column; }
+
+/* SINGLE combined toolbar (tabs + controls merged) */
+.browser-toolbar {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 10px;
+  background: rgba(0, 0, 50, 0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0; position: relative;
+  min-height: 50px;
+}
+
+/* Tab strip lives inside the toolbar */
+.tab-strip {
+  display: flex; flex-shrink: 1; min-width: 0;
+  max-width: 340px; overflow-x: auto; gap: 2px;
+  scrollbar-width: none; align-items: center;
+}
+.tab-strip::-webkit-scrollbar { display: none; }
+
+.browser-tab {
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 12px; height: 32px; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: 1px solid transparent;
+  color: var(--text-muted); font-family: 'Fredoka', sans-serif;
+  font-size: 12px; cursor: pointer;
+  min-width: 90px; max-width: 160px;
+  transition: background 0.15s, color 0.15s; white-space: nowrap; user-select: none;
+}
+.browser-tab:hover { background: rgba(255,255,255,0.09); color: var(--text-sub); }
+.browser-tab.active { background: rgba(255,255,255,0.14); border-color: var(--border); color: var(--text); }
+
+.tab-title { flex: 1; overflow: hidden; text-overflow: ellipsis; }
+.close-tab {
+  background: transparent; border: none; color: var(--text-muted);
+  font-size: 14px; line-height: 1; width: 16px; height: 16px;
+  border-radius: 4px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; padding: 0; transition: background 0.1s, color 0.1s;
+}
+.close-tab:hover { background: rgba(239,68,68,0.2); color: var(--red); }
+
+.new-tab-inline {
+  flex-shrink: 0;
+}
+
+.toolbar-divider {
+  width: 1px; height: 24px; background: var(--border); flex-shrink: 0; margin: 0 2px;
+}
+
+.tb-btn {
+  background: transparent; border: none; color: var(--text-sub);
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; transition: background 0.15s, color 0.15s;
+}
+.tb-btn:hover { background: rgba(255,255,255,0.08); color: var(--text); }
+
+.toolbar-engine-pills {
+  display: flex; background: rgba(0,0,0,0.35); border: 1px solid var(--border);
+  border-radius: 8px; padding: 2px; gap: 2px; flex-shrink: 0;
+}
+.engine-pill {
+  background: transparent; border: none; color: var(--text-muted);
+  font-family: 'Fredoka', sans-serif; font-size: 12px; font-weight: 700;
+  width: 26px; height: 24px; border-radius: 6px; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.engine-pill:hover { background: rgba(255,255,255,0.07); color: var(--text); }
+.engine-pill.active { background: var(--accent); color: #fff; }
+
+.toolbar-url-wrap {
+  flex: 1; display: flex; align-items: center;
+  background: rgba(0,0,0,0.38); border: 1px solid var(--border);
+  border-radius: 10px; padding: 0 12px; gap: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s; min-width: 0;
+}
+.url-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(245,124,0,0.12);
+}
+
+.url-bar {
+  flex: 1; background: transparent; border: none; color: var(--text);
+  font-family: 'Fredoka', sans-serif; font-size: 14px; outline: none;
+  padding: 8px 0; min-width: 0; width: 100%; box-shadow: none !important;
+}
+.url-bar::placeholder { color: var(--text-muted); font-family: 'Fredoka', sans-serif; }
+
+.tb-go-btn {
+  background: var(--accent); color: #fff; border: none; border-radius: 8px;
+  padding: 7px 14px; font-family: 'Fredoka', sans-serif;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  flex-shrink: 0; box-shadow: 0 3px 0 var(--accent-dim);
+}
+.tb-go-btn:hover { background: var(--accent-bright); }
+.tb-go-btn:active { box-shadow: none; transform: translateY(1px); }
+
+/* LOADING BAR */
+.browser-loader {
+  position: absolute; bottom: 0; left: 0;
+  height: 2px; width: 100%; background: var(--accent);
+  display: none; animation: loadBar 1.5s ease-in-out infinite; transform-origin: 0% 50%;
+}
+@keyframes loadBar {
+  0%   { transform: translateX(-100%) scaleX(0.3); }
+  50%  { transform: translateX(20%)   scaleX(0.6); }
+  100% { transform: translateX(100%)  scaleX(0.3); }
+}
+
+.proxy-status-bar {
+  background: rgba(245,124,0,0.08); border-bottom: 1px solid rgba(245,124,0,0.2);
+  color: var(--accent); font-family: 'Fredoka', sans-serif; font-size: 12px;
+  padding: 4px 16px; flex-shrink: 0;
+}
+.proxy-status-bar.hidden { display: none; }
+
+/* IFRAMES */
+/* Change background from #fff to transparent */
+.iframes-area { flex: 1; position: relative; background: transparent; overflow: hidden; }
+.browser-frame { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: none; }
+.browser-frame.active { display: block; }
+
+/* NEW TAB — transparent so the gradient bg shows through */
+.newtab-overlay {
+  position: absolute; inset: 0;
+  background: transparent;   /* shows site gradient behind */
+  display: none; align-items: center; justify-content: center;
+  z-index: 10; overflow: hidden;
+}
+.newtab-overlay.active { display: flex; }
+
+/* Subtle dot grid on top of the gradient */
+.newtab-overlay::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+}
+
+.newtab-content {
+  position: relative; z-index: 2;
+  display: flex; flex-direction: column; align-items: center; gap: 28px;
+  width: 100%; max-width: 660px; padding: 0 20px;
+}
+
+.newtab-logo {
+  font-family: 'Fredoka', sans-serif; font-size: 58px; font-weight: 600;
+  color: var(--brand); letter-spacing: 7px;
+  text-shadow: 0 0 50px rgba(245, 73, 39, 0.45), 0 0 100px rgba(245, 73, 39, 0.15);
+  user-select: none;
+}
+
+.newtab-search-wrap {
+  width: 100%; max-width: 560px;
+  display: flex; align-items: center;
+  background: rgba(0,0,50,0.55);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-hi);
+  border-radius: 50px; padding: 0 8px 0 20px; gap: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.newtab-search-input:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(245,124,0,0.12);
+}
+.newtab-engine-icon { color: var(--accent); font-family: 'Fredoka', sans-serif; font-size: 16px; font-weight: 700; flex-shrink: 0; width: 24px; text-align: center; }
+.newtab-search-input {
+  flex: 1; background: transparent; border: none; color: var(--text);
+  font-family: 'Fredoka', sans-serif; font-size: 17px; outline: none;
+  padding: 14px 0; min-width: 0; box-shadow: none !important;
+}
+.newtab-search-input::placeholder { color: var(--text-muted); font-family: 'Fredoka', sans-serif; }
+.newtab-search-btn {
+  background: var(--accent); border: none; color: #fff;
+  width: 40px; height: 40px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; transition: background 0.15s;
+}
+.newtab-search-btn:hover { background: var(--accent-bright); }
+
+.newtab-shortcuts { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 560px; }
+.shortcut-item {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  cursor: pointer; padding: 10px; border-radius: 12px; border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s; width: 74px;
+}
+.shortcut-item:hover { background: rgba(255,255,255,0.06); border-color: var(--border); }
+.shortcut-icon { width: 42px; height: 42px; border-radius: 12px; background: rgba(255,255,255,0.08); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 20px; overflow: hidden; }
+.shortcut-icon img { width: 26px; height: 26px; object-fit: contain; }
+.shortcut-label { font-family: 'Fredoka', sans-serif; font-size: 11px; color: var(--text-sub); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+
+.browser-toolbar {
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-right: 34px;
+}
+
+.browser-toolbar::-webkit-scrollbar {
+  display: none;
+}
+
+.browser-toolbar::after {
+  content: '';
+  position: sticky;
+  right: -34px;
+  width: 34px;
+  height: 38px;
+  flex: 0 0 34px;
+  margin-left: -34px;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(0,0,50,0.92), rgba(0,0,50,0));
+}
