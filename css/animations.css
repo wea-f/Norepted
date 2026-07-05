@@ -1,0 +1,138 @@
+/* ─── FADE-IN ─────────────────────────────────────────── */
+.fade-in { opacity: 0; transform: translateY(14px); transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+.fade-in.active { opacity: 1; transform: translateY(0); }
+
+/* ─── PARTICLES ──────────────────────────────────────── */
+#particles-js {
+  position: fixed;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* ─── OPTIMIZED MODE ──────────────────────────────────── */
+.video-unit-wrapper,
+.search-result-card,
+.proxy-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 260px 180px;
+}
+
+body.optimized * { animation: none !important; transition: none !important; box-shadow: none !important; }
+body.optimized #particles-js { display: none !important; }
+
+.hidden { display: none !important; }
+
+@media (max-width: 760px) {
+  .navbar {
+    height: auto;
+    min-height: 54px;
+    align-items: flex-start;
+    padding: 8px 10px;
+    gap: 8px;
+    position: sticky;
+  }
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 34px;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to left, rgba(0,0,50,0.92), rgba(0,0,50,0));
+}
+
+.logo {
+  padding-top: 6px;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  overflow-x: auto;
+  scrollbar-width: none;
+  justify-content: flex-start;
+  max-width: calc(100vw - 106px);
+  padding-right: 26px;
+}
+
+.nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-btn {
+  padding: 7px 9px;
+  font-size: 12px;
+}
+
+.landing-section {
+  min-height: auto;
+  padding: 34px 14px 28px !important;
+}
+
+.landing-logo-ring {
+  padding: 28px 24px;
+  width: 100%;
+}
+
+.landing-title {
+  letter-spacing: 4px;
+}
+
+.input-row,
+.settings-row-bar,
+.shorts-controls .page-sub {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.video-grid-frame {
+  padding: 12px;
+}
+
+.video-unit-wrapper {
+  width: 100%;
+  padding-right: 0;
+  padding-bottom: 48px;
+}
+
+.video-display {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+}
+
+.video-size-controls {
+  top: auto;
+  right: 50%;
+  bottom: 0;
+  transform: translateX(50%);
+  flex-direction: row;
+}
+
+.shorts-viewer {
+  min-height: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+}
+
+.shorts-frame-wrap {
+  width: min(100%, 320px);
+}
+
+.shorts-nav {
+  flex-direction: row;
+  padding-top: 0;
+}
+
+#shortsPasteInput {
+  width: 100% !important;
+  margin: 8px 0 0 !important;
+}
+
+
