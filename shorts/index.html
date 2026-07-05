@@ -1,0 +1,114 @@
+<html lang="en">
+  <head>
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-56W5VNZD');
+    </script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Norepted v1.7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
+    <script>
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js',new Date());gtag('config','G-ZQCTP11KMS');
+    </script>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/animations.css"/>
+  </head>
+  <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div id="particles-js"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="site-navbar">
+      <div class="logo" onclick="switchTab('landing')" style="cursor:pointer">
+        NOREPTED <span class="version-badge">v1.7</span>
+      </div>
+      <div class="nav-links">
+        <button onclick="switchTab('landing')" class="nav-btn" id="nav-landing">
+          <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Home</span>
+        </button>
+        <button onclick="switchTab('watch')" class="nav-btn" id="nav-home">
+          <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <span>Watch</span>
+        </button>
+        <button onclick="switchTab('shorts')" class="nav-btn" id="nav-shorts">
+          <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14zm-4.5-8.5l-3.5 2 3.5 2v-4z"/></svg>
+          <span>Shorts</span>
+        </button>
+
+        <button onclick="switchTab('about')" class="nav-btn" id="nav-about">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <span>About</span>
+        </button>
+        <button onclick="switchTab('browser')" class="nav-btn nav-btn-accent" id="nav-browser">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z"/></svg>
+          <span>Browser</span>
+        </button>
+        <button onclick="window.open('https://forms.gle/3TEjjsnqWUXgo5kQ7','_blank')" class="nav-btn" id="nav-suggest">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
+          <span>Feedback</span>
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ===== SHORTS ===== -->
+      <section id="view-shorts" class="spa-section active-section">
+        <div class="page-header fade-in">
+          <h2 class="page-title">Shorts Scroller</h2>
+          <p class="page-sub">Scroll through YouTube Shorts. Hover the video and use ↑ ↓ or mouse wheel to cycle videos. </p>
+        </div>
+
+        <div class="shorts-controls card fade-in">
+          <div class="input-row">
+            <input type="text" id="shortsSearchInput" placeholder="Search for Shorts… (e.g. funny cats)"/>
+            <button id="shortsSearchBtn" class="btn-primary">Find Shorts</button>
+          </div>
+          <p class="page-sub" style="margin-top:8px;font-size:0.8rem;">
+            Or paste a Shorts URL: <input type="text" id="shortsPasteInput" placeholder="https://youtube.com/shorts/…" style="width:260px;display:inline-block;padding:6px 12px;font-size:13px;margin-left:8px;"/> 
+            <button onclick="addShortsFromUrl()" class="ghost-btn" style="margin-left:6px;">Add</button>
+          </p>
+        </div>
+
+        <div class="shorts-viewer fade-in" id="shortsViewer">
+          <div class="shorts-frame-wrap" id="shortsFrameWrap">
+            <!-- iframes injected by JS -->
+          </div>
+          <div class="shorts-nav">
+            <button class="shorts-nav-btn" id="shortsPrev" onclick="navigateShort(-1)" title="Previous">↑</button>
+            <span class="shorts-counter" id="shortsCounter">0 / 0</span>
+            <button class="shorts-nav-btn" id="shortsNext" onclick="navigateShort(1)" title="Next">↓</button>
+            <button class="shorts-pause-btn" id="shortsPause" onclick="toggleShortPlayback()" title="Pause or play">Pause</button>
+
+            <button class="shorts-nav-btn fallback-shorts-btn" id="shortsFallback" onclick="tryNextShortsSource()" title="Try another server mirror" style="margin-left: 6px;">↺ Source</button>
+          </div>
+
+          <button id="shortsLoadMore" class="ghost-btn" style="margin-top: 12px; display: none;">Load More</button>
+
+          <div class="shorts-empty" id="shortsEmpty">
+            <svg viewBox="0 0 24 24" width="48" height="48" fill="currentColor" style="opacity:0.25;margin-bottom:12px;"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99z"/></svg>
+            <p>Search for Shorts above or paste a URL to get started.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ===== FOOTER ===== -->
+    <footer id="site-footer" class="fade-in">
+      <div class="credits">
+        <p>Made by <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> / <a href="https://github.com/wea-f" target="_blank">wea-f</a></p>
+        <a href="https://github.com/wea-f/Norepted" target="_blank">View License &amp; Info</a>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="/js/animations.js" defer></script>
+    <script src="/js/ui.js" defer></script>
+    <script src="/js/script.js" defer></script>
+    <script src="/js/shorts.js" defer></script>
+  </body>
+</html>
