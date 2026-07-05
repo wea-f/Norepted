@@ -1,241 +1,213 @@
-<!doctype html>
 <html lang="en">
   <head>
-     <!-- Google Tag Manager -->
     <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          "gtm.start": new Date().getTime(),
-          event: "gtm.js",
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-56W5VNZD");
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-56W5VNZD');
     </script>
-     <!-- End Google Tag Manager -->
-    
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Norepted v1.6.2</title>
-
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./animations.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"
-    ></script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Norepted v1.7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet"/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQCTP11KMS"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-ZQCTP11KMS");
+      window.dataLayer=window.dataLayer||[];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js',new Date());gtag('config','G-ZQCTP11KMS');
     </script>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/animations.css"/>
+    <link rel="stylesheet" href="css/changelog.css"/>
   </head>
-
   <body>
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-56W5VNZD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="particles-js"></div>
-
-    <nav class="navbar fade-in">
-      <div class="logo">Norepted v1.6.2</div>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="site-navbar">
+      <div class="logo" onclick="switchTab('landing')" style="cursor:pointer">
+        NOREPTED <span class="version-badge">v1.7</span>
+      </div>
       <div class="nav-links">
-        <button onclick="home()" class="nav-btn">
+        <button onclick="switchTab('landing')" class="nav-btn" id="nav-landing">
           <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-          Home
+          <span>Home</span>
         </button>
-        <button onclick="bookmarklets()" class="nav-btn">
-          <svg viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
-          Bookmarklets
+        <button onclick="switchTab('watch')" class="nav-btn" id="nav-home">
+          <svg viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+          <span>Watch</span>
         </button>
-        <button onclick="openLinksPage()" class="nav-btn">
-          <span class="badge-new">New!</span>
-          <svg viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
-          Links
+        <button onclick="switchTab('shorts')" class="nav-btn" id="nav-shorts">
+          <svg viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14zm-4.5-8.5l-3.5 2 3.5 2v-4z"/></svg>
+          <span>Shorts</span>
         </button>
-        <button onclick="about()" class="nav-btn">
+
+        <button onclick="switchTab('about')" class="nav-btn" id="nav-about">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-          About
+          <span>About</span>
         </button>
-        <button onclick="suggestions()" class="nav-btn">
+        <button onclick="switchTab('browser')" class="nav-btn nav-btn-accent" id="nav-browser">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z"/></svg>
+          <span>Browser</span>
+        </button>
+        <button onclick="window.open('https://forms.gle/3TEjjsnqWUXgo5kQ7','_blank')" class="nav-btn" id="nav-suggest">
           <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
-          Suggestions
+          <span>Feedback</span>
         </button>
       </div>
     </nav>
 
     <main>
-        <h1 id="title" class="fade-in">YouTube Watcher</h1>
 
-      <div id="instructions" class="card fade-in">
-      <div class="card-header">
-        <h2>Instructions & Controls</h2>
-        <button class="hide-button" title="Hide Instructions and Settings">Hide</button>
-      </div>
-      <div class="card-content">
-        <ul class="instruction-list">
-          <li>
-            <strong>Watch:</strong> Paste a link in the Orange Box and press
-            <span class="highlight">LAUNCH</span> or 
-            <span class="highlight">Enter</span>.
-          </li>
-          
-          <li>
-            <strong>Privacy:</strong> Press
+      <!-- ===== LANDING ===== -->
+      <section id="view-landing" class="spa-section active-section landing-section">
 
-            <span class="highlight">-</span> to exit and hide your history. Press
+        <div class="landing-hero">
+          <div class="landing-logo-ring">
+            <div class="landing-logo-glow"></div>
+            <h1 class="landing-title">NOREPTED</h1>
+            <p class="landing-tagline">Your personal media hub</p>
+          </div>
 
-            <span class="highlight">'</span> for a Tab Cloak.
-          </li>
-
-          <li>
-            <strong>Save & Share:</strong> After the video loads, press
-
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="#AB47BC"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
-            and bookmark the link.
-          </li>
-          <li>
-            <strong>Resize:</strong> Press <span class="highlight">+</span> or
-            <span class="highlight-red">&#x2212;</span> or <span class="highlight-yellow"> &#x21BA; </span> on the side panel.
-
-          </li>
-          <li>
-            <strong>Organize:</strong> Embed multiple videos. Press <span class="highlight-red">X</span> to remove one.
-
-          </li>
-        </ul>
-        <div class="action-row">
-
-          <button
-            id="aboutblank"
-            onclick="aboutblank()"
-            class="secondary-btn">
-            Open in about:blank
-
-          </button>
-
-        </div>
-      </div>
-      </div>  
-        
-        <button class="show-button fade-in">Show Instructions and Settings</button>
-
-        <div class="card fade-in settings-card" id="settings">
-            <div class="card-header">
-                <h2>Settings</h2>
-            </div>
-            <div class="card-content settings-row">
-                <div class="setting-label">
-                    <span>Low Performance Mode</span>
-                    <span id="optStatusText" class="status-indicator disabled">Disabled</span>
-                </div>
-                <label class="switch">
-                    <input type="checkbox" id="optToggle" onchange="toggleOptimization()">
-                    <span class="slider round"></span>
-                </label>
-            </div>
+          <div class="landing-pills">
+            <span class="landing-pill">Distraction free viewing</span>
+            <span class="landing-pill">Privacy-focused</span>
+            <span class="landing-pill">Optimized for students</span>
+          </div>
         </div>
 
-        <div class="watch-interface fade-in">
-            <div class="control-panel">
-                <input type="text" id="link" placeholder="Paste YouTube link here..."/>
-                <button id="launch" class="primary-btn pulse-btn" title="Launch Video">LAUNCH</button>
+        <div class="landing-cards">
+          <div class="landing-card" onclick="switchTab('home')">
+            <div class="landing-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 16.5l6-4.5-6-4.5v9zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
             </div>
+            <div class="landing-card-text">
+              <h3>Watch YouTube</h3>
+              <p>Paste a link or search with multi-video support. </p>
+            </div>
+            <span class="landing-card-arrow">→</span>
+          </div>
 
-            <div class="tools-bar">
-                <button id="clearAll" onclick="clearAllVideos()" class="text-btn">Clear All Videos</button>
+          <div class="landing-card" onclick="switchTab('shorts')">
+            <div class="landing-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14zm-4.5-8.5l-3.5 2 3.5 2v-4z"/></svg>
             </div>
+            <div class="landing-card-text">
+              <h3>Shorts Scroller</h3>
+              <p>Scroll through YouTube Shorts.</p>
+            </div>
+            <span class="landing-card-arrow">→</span>
+          </div>
+
+          <div class="landing-card" onclick="switchTab('browser')">
+            <div class="landing-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95a15.65 15.65 0 0 0-1.38-3.56A8.03 8.03 0 0 1 18.92 8zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56A8.008 8.008 0 0 1 5.08 16zm2.95-8H5.08a8.03 8.03 0 0 1 4.33-3.56c-.6 1.11-1.06 2.31-1.38 3.56zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2s.07-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.008 8.008 0 0 1-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+            </div>
+            <div class="landing-card-text">
+              <h3>Web Browser</h3>
+              <p>Multi-tab browser with fallback proxy support.</p>
+            </div>
+            <span class="landing-card-arrow">→</span>
+          </div>
+
+
+
+        <div class="landing-shortcuts">
+          <span class="shortcut-hint" onclick="toggleStealth()">
+            <kbd>\</kbd> Tab Icon Toggle
+          </span>
+          <span class="shortcut-hint" onclick="window.location.replace('https://google.com')">
+            <kbd>-</kbd> Redirect to Google
+          </span>
+          <span class="shortcut-hint" onclick="aboutblank()">
+            <kbd>☐</kbd> about:blank
+          </span>
         </div>
-
-        <div class="video-section fade-in">
-            <div class="separator-line"></div>
+      </section>
 
 
-            <div class="video-grid-frame">
-              <h3 id="offtext" class="subtle-text">Videos will appear here</h3>
-                <div id="videoPlayersContainer"></div>
-            </div>
 
-        </div>
     </main>
-
-    <footer id="footer" class="fade-in">
-
+    <!-- ===== FOOTER ===== -->
+    <footer id="site-footer" class="fade-in">
       <div class="credits">
-        <p>
-          Made by
-          <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> /
-          <a href="https://github.com/wea-f" target="_blank">wea-f</a>
-        </p>
-        <p class="disclaimer">
-          &#9888;&#65039; I am NOT responsible for how you use Norepted. It is
-          YOUR device. &#9888;&#65039;
-        </p>
-        <a
-          href="https://github.com/wea-f/Norepted"
-          target="_blank"
-          class="license-link"
-          >View License & Info</a
-        >
+        <p>Made by <a href="https://codepen.io/weaF_z" target="_blank">WG563</a> / <a href="https://github.com/wea-f" target="_blank">wea-f</a></p>
+        <a href="https://github.com/wea-f/Norepted" target="_blank">View License &amp; Info</a>
       </div>
     </footer>
-    <script rel="preload" src="animations.js"></script>
-    <script src="script.js"></script>
+    <!-- ===== v1.7 CHANGELOG POP-UP ===== -->
+    <div id="changelog-modal" class="cl-backdrop" role="dialog" aria-modal="true" aria-label="What's new in v1.7">
+  <div class="cl-box">
+    <div class="cl-date" style="text-align: center; font-size: 0.85em; color: #888;">-- 07/04/26 --</div>
+
+    <div class="cl-header">
+      <span class="cl-version">v1.7</span>
+      <h2 class="cl-title">Welcome to <a class="logo2"> Norepted </a> </h2>
+      <p class="cl-sub">v1.7 is a massive update featuring a brand-new multi-tab browser, Youtube Shorts support, and a totally revamped UI.</p>
+    </div>
+
+    <ul class="cl-list">
+      <li>
+        <span class="cl-icon">🌐</span>
+        <div>
+          <strong>Multi-Tab Browser</strong> 
+          Access the web directly inside with the new proxy-based browser.
+        </div>
+      </li>
+      <li>
+        <span class="cl-icon">📱</span>
+        <div>
+          <strong>Shorts Scroller</strong> 
+          Dive into YouTube Shorts with full scroll integration and backup viewing sources.
+        </div>
+      </li>
+      <li>
+        <span class="cl-icon">🔍</span>
+        <div>
+          <strong>In-App YouTube Search</strong> 
+          Securely search for videos directly on the Watch and Shorts page. 
+        </div>
+      </li>
+
+
+
+
+      <li>
+  <span class="cl-icon">🔄</span>
+
+  <div class="cl-content">
+    <strong>Smart Source Switching</strong>
+
+    <div class="cl-tip">
+      Some filters block certain sources. If a video or proxy fails,
+      press the shuffle (🔄) button to instantly try another one.
+    </div>
+  </div>
+</li>
+
+      <li>
+        <span class="cl-icon">⚡</span>
+        <div>
+          <strong>Smarter & Faster</strong> 
+          Accidentally closed a video? Hit the "Undo" pop-up. Slow? Performance mode automatically turns on.
+        </div>
+      </li>
+
+
+    </ul>
+
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="https://github.com/wea-f/Norepted" target="_blank" class="cl-github-link" style="display: inline-block; margin-bottom: 15px;">
+        ★ Star on GitHub
+      </a>
+      <br>
+      <button class="cl-btn" id="cl-dismiss">Got it, let's go →</button>
+    </div>
+  </div>
+</div>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="particles.js"></script>
-    
-
-    <script>
-      // Navigation Functions
-      function aboutblank() {
-        let url = window.location.href;
-        var w = window.open("about:blank", "_blank");
-        w.document.write(
-          '<iframe style="position: absolute;top: 0px;bottom: 0px;right: 0px;width: 100%;border: none;margin: 0;padding: 0;overflow: hidden;z-index: 99999;height: 100%;" src="' +
-            url +
-            '"></iframe>',
-        );
-        w.document.close();
-      }
-      function home() {
-        window.location.assign("./");
-      }
-      function bookmarklets() {
-        window.location.assign("./bookmarklets");
-      }
-      function about() {
-        window.location.assign("./about");
-      }
-
-      function suggestions() {
-        window.open("https://forms.gle/3TEjjsnqWUXgo5kQ7", "_blank").focus();
-      }
-
-      function openLinksPage() {
-        window.location.assign("./links");
-      }
-    </script>
+    <script src="js/script.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/ui.js"></script>
   </body>
 </html>
