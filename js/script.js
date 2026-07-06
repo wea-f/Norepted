@@ -118,9 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (modal) {
     if (localStorage.getItem('cl_seen') !== CHANGELOG_VERSION) {
       // show it
+      modal.classList.remove('hidden');
       document.body.classList.add("modal-open");
-    } else {
-      modal.classList.add('hidden');
     }
     document.getElementById('cl-dismiss').addEventListener('click', () => {
       modal.classList.add('hidden');
