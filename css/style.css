@@ -411,6 +411,7 @@ input:checked + .slider::before { transform: translateX(20px); }
   background: var(--red); color: #fff; border: none; border-radius: 50%;
   width: 24px; height: 24px; font-size: 12px; font-weight: 700;
   cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s ease;
 }
 .close-video-button:hover { background: #f87171; }
 
@@ -418,6 +419,17 @@ input:checked + .slider::before { transform: translateX(20px); }
   position: absolute; right: 0; top: 50%; transform: translateY(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 4px;
   padding: 6px; background: rgba(255,255,255,0.08); border-radius: 10px; border: 1px solid var(--border);
+  opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+}
+.video-unit-wrapper:hover .close-video-button,
+.video-unit-wrapper:focus-within .close-video-button,
+.video-unit-wrapper:hover .video-size-controls,
+.video-unit-wrapper:focus-within .video-size-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (hover: none) {
+  .close-video-button, .video-size-controls { opacity: 1; pointer-events: auto; }
 }
 .size-button {
   width: 32px; height: 32px; background: transparent; color: #fff;
@@ -575,6 +587,15 @@ input:checked + .slider::before { transform: translateX(20px); }
   background: rgba(245,124,0,0.15);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.shorts-mute-btn {
+  width: auto;
+  height: auto;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 .shorts-empty {
