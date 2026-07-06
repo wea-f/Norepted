@@ -1,7 +1,7 @@
 # Norepted v1.7
 #### Watch Youtube without entering to youtube.com
 
-Norepted is your media hub for watching YouTube without ever directly going to youtube.com. v1.7 is the biggest expansion yet — rebuilt with a new look, built-inYouTube search for videos, a Youtube Shorts scroller, multi-source fallback, and a multi-tab proxy browser.
+Norepted is your media hub for watching YouTube without ever directly going to youtube.com. v1.7 is the biggest expansion yet — rebuilt with a new look, built-inYouTube search for videos, a Youtube Shorts scroller, multi-source fallback, and a multi-tab proxy browser. You can also download the [html file](https://github.com/wea-f/Norepted/blob/master/onepagenorepted.html) for yourself if the [links](##-how-to-access) don't work!
 
 <!-- > **Before you start:** What works for you depends entirely on your school's network. Some features require access to external APIs or proxy servers that your school may block. This is normal — see the [Network Compatibility](#-network-compatibility) section below.
 -->
@@ -45,9 +45,9 @@ Norepted is your media hub for watching YouTube without ever directly going to y
 | **CodePen** | [codepen.io/weaF_z/full/RwJVywE](https://codepen.io/weaF_z/full/RwJVywE) |
 | **Google Sites** | [sites.google.com/view/n0repted](https://sites.google.com/view/n0repted/home) |
 | **Google Sites (2)** | [sites.google.com/view/norepted-mirror/home](https://sites.google.com/view/norepted-mirror/home) |
-| **Edgeone** | [norepted.edgeone.app](https://norepted.edgeone.app/) |
 
 *Want to run it locally? [Check the Wiki.](https://github.com/wea-f/Norepted/wiki/Run-Norepted-Locally-with-Terminal)*
+*Links don't work? Download the [onepagenorepted.html](https://github.com/wea-f/Norepted/blob/master/onepagenorepted.html) file and view it yourself!*
 
 ---
 
