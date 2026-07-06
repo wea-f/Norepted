@@ -3,6 +3,11 @@ let shortsQueue   = [];
 let shortsIndex   = 0;
 let shortsPaused  = false;
 let shortsPointerInScrollArea = false;
+// Shorts start muted by default (browsers block un-muted autoplay, and it
+// avoids surprising the user with sudden audio). The overlay that catches
+// scroll/click for navigation also blocks reaching YouTube's native mute
+// button, so we expose our own toggle instead.
+let shortsMuted   = true;
 
 let currentShortsSrcIdx = 0;
 
@@ -18,7 +23,7 @@ function buildShortsFrame(videoId, autoplay = false) {
   const iframe = document.createElement('iframe');
 
   const auto = autoplay ? "1" : "0";
-  const mute = autoplay ? "&mute=1" : "";
+  const mute = shortsMuted ? "&mute=1" : "";
 
   const sources = getShortsSourcesPool(videoId, auto, mute);
   iframe.src = sources[currentShortsSrcIdx];
@@ -37,7 +42,26 @@ function buildShortsFrame(videoId, autoplay = false) {
 
   const pauseBtn = document.getElementById('shortsPause');
   if (pauseBtn) pauseBtn.textContent = autoplay ? "Pause" : "Play";
+  updateShortsMuteBtn();
   updateShortsCounter();
+}
+
+function toggleShortsMute() {
+  if (shortsQueue.length === 0) return;
+  shortsMuted = !shortsMuted;
+  updateShortsMuteBtn();
+  // Rebuild the current video with the new mute state applied. YouTube's
+  // embed API requires a fresh src (with/without &mute=1) since the overlay
+  // that enables scroll-navigation prevents clicking YouTube's own controls.
+  currentShortsSrcIdx = 0;
+  buildShortsFrame(shortsQueue[shortsIndex], true);
+}
+
+function updateShortsMuteBtn() {
+  const btn = document.getElementById('shortsMute');
+  if (!btn) return;
+  btn.textContent = shortsMuted ? "🔇 Unmute" : "🔊 Mute";
+  btn.title = shortsMuted ? "Unmute video" : "Mute video";
 }
 // Shorts poool v1.7
 function getShortsSourcesPool(id, auto, mute) {
@@ -149,9 +173,10 @@ function tryNextShortsSource() {
 
   if (!iframe) return;
 
-  // 2. We want autoplay to be true when they manually switch mirrors
+  // 2. We want autoplay to be true when they manually switch mirrors,
+  // keeping whatever mute state the user currently has set
   const auto = "1";
-  const mute = "";
+  const mute = shortsMuted ? "&mute=1" : "";
   const sources = getShortsSourcesPool(videoId, auto, mute);
 
   // 3. Increment our global tracker
