@@ -58,30 +58,62 @@
     </nav>
 
     <main>
-      <!-- ===== ABOUT ===== -->
-      <section id="view-about" class="spa-section active-section">
+      <!-- ===== WATCH ===== -->
+      <section id="view-home" class="spa-section active-section">
         <div class="page-header fade-in">
-          <h2 class="page-title">About Norepted</h2>
-          <p class="page-sub">A YouTube unblocker built for school &amp; work environments.</p>
-        </div>
-        <div class="card fade-in">
-          <h3 style="color:var(--accent);margin:0 0 10px;">What is it?</h3>
-          <p>Norepted embeds YouTube videos using the same method a teacher uses to embed videos in Google Slides — the official embed URL. It extracts your video ID and loads it in an iframe with no YouTube interface, no ads, and no browsing history.</p>
-          <a href="https://github.com/wea-f/Norepted" target="_blank" style="color:var(--accent);">GitHub Repository →</a>
-        </div>
-        <div class="card fade-in">
-          <h3 style="color:var(--accent);margin:0 0 12px;">Features</h3>
-          <ul class="feature-list">
-            <li><span class="fl-badge">✓</span> Limited* ads in embeds</li>
-            <li><span class="fl-badge">✓</span> YouTube search &amp; Shorts scroller</li>
-            <li><span class="fl-badge">✓</span> Multi-tab proxy browser</li>
-            <li><span class="fl-badge">✓</span> Tab cloaking (looks like Google Drive)</li>
-            <li><span class="fl-badge">✓</span> History wipe shortcut</li>
-            <li><span class="fl-badge">✓</span> Saves your open videos across sessions</li>
-          </ul>
+          <h2 class="page-title">YouTube Watcher</h2>
+          <p class="page-sub">Paste a link or search, then watch in a clean embed.</p>
         </div>
 
-        <div class="separator-line fade-in"></div>
+        <div class="settings-row-bar card fade-in">
+          <div class="settings-left">
+            <span class="settings-label">Low Performance Mode</span>
+            <span id="optStatusText" class="status-indicator disabled">Off</span>
+          </div>
+          <div class="settings-right">
+            <label class="switch">
+              <input type="checkbox" id="optToggle" onchange="toggleOptimization()">
+              <span class="slider"></span>
+            </label>
+            <button onclick="aboutblank()" class="ghost-btn">about:blank</button>
+          </div>
+        </div>
+
+        <div class="input-block fade-in">
+          <div class="input-row">
+            <input type="text" id="link" placeholder="Paste YouTube link here…"/>
+            <button id="launch" class="btn-primary">Launch</button>
+          </div>
+
+          <div class="divider-or">or search YouTube</div>
+
+          <div class="input-row">
+            <input type="text" id="ytSearchInput" placeholder="Search for any video…"/>
+            <button id="ytSearchBtn" class="btn-secondary">Search</button>
+          </div>
+
+          <!-- Search results flow inline, no contained scroll -->
+          <div id="ytSearchResults" class="search-results-grid" style="display:none;"></div>
+
+          <div class="tools-row">
+            <button onclick="clearSearchResults()" class="ghost-btn" id="clearSearchBtn" style="display:none;">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              Clear search
+            </button>
+            <button onclick="clearAllVideos()" class="ghost-btn danger-btn">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+              Clear all videos
+            </button>
+          </div>
+        </div>
+
+        <div class="video-section fade-in">
+          <div class="separator-line"></div>
+          <div class="video-grid-frame">
+            <p id="offtext" class="subtle-text">Videos will appear here</p>
+            <div id="videoPlayersContainer"></div>
+          </div>
+        </div>
       </section>
     </main>
     <!-- ===== FOOTER ===== -->
@@ -95,5 +127,6 @@
     <script src="/js/animations.js" defer></script>
     <script src="/js/ui.js" defer></script>
     <script src="/js/script.js" defer></script>
+    <script src="/js/player.js" defer></script>
   </body>
 </html>
