@@ -2,11 +2,11 @@
 function switchTab(tabName) {
   // Map the tab names from your buttons to their respective clean routes
   const routes = {
-    'landing': '/',
-    'watch': '/watch',
-    'shorts': '/shorts',
-    'browser': '/browser',
-    'about': '/about'
+    'landing': './',
+    'watch': 'watch',
+    'shorts': 'shorts',
+    'browser': 'browser',
+    'about': 'about'
   };
   
   const targetUrl = routes[tabName];
