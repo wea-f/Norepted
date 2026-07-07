@@ -1,22 +1,33 @@
 // ─── NAVIGATION ───────────────────────────────────────
+
+// Figures out the project's base path, e.g. "/repo/" 
+// works whether you're at /repo/, /repo/watch/, etc.
+function getBasePath() {
+  const parts = window.location.pathname.split('/').filter(Boolean);
+  // parts[0] is the repo name on a GitHub Pages project site
+  return parts.length ? `/${parts[0]}/` : '/';
+}
+
 function switchTab(tabName) {
-  // Map the tab names from your buttons to their respective clean routes
+  const base = getBasePath();
+
   const routes = {
-    'landing': './',
-    'watch': 'watch',
-    'shorts': 'shorts',
-    'browser': 'browser',
-    'about': 'about'
+    'landing': base,
+    'watch': base + 'watch/',
+    'shorts': base + 'shorts/',
+    'browser': base + 'browser/',
+    'about': base + 'about/'
   };
-  
+
   const targetUrl = routes[tabName];
-  
+
   if (targetUrl) {
-    // Navigate to the new page (e.g., website/about without the .html)
     window.location.assign(targetUrl);
   } else {
     console.warn(`Route not defined for tab: ${tabName}`);
   }
+}
+// Old code for SPA version
 //   document.querySelectorAll('.spa-section').forEach(el => el.classList.remove('active-section'));
 
 //   const target = document.getElementById('view-' + tabName);
@@ -57,7 +68,7 @@ function switchTab(tabName) {
 //       if (shortsQueue.length > 0) buildShortsFrame(shortsQueue[shortsIndex], false);
 //     }
 //   }
-}
+
 
 
 // ─── ENTER KEY — context-aware ─────────────────────────
