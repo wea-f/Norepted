@@ -38,6 +38,8 @@ Norepted is YOUR media hub for watching YouTube without ever directly going to y
 | **Vercel** | [norepted-delta.vercel.app](https://norepted-delta.vercel.app/) |
 | **Netlify** | [norepted.netlify.app](https://norepted.netlify.app/) |
 | **Cloudflare** | [norepted.norepted.workers.dev](https://norepted.norepted.workers.dev/) |
+| **Render** |[norepted.onrender.com](https://norepted.onrender.com/) |
+| **Gitlab** | [norepted-b5a11d.gitlab.io](https://norepted-b5a11d.gitlab.io/) |
 | **CodeSandbox** | [gzhhqm.csb.app](https://gzhhqm.csb.app) |
 | **Playcode** | [norepted.playcode.io](https://norepted.playcode.io/) *(Press "SKIP INTRO")* |
 | **Playcode (2)** | [2650852.playcode.io](https://2650852.playcode.io/) *(Press "SKIP INTRO")* |
